@@ -16,6 +16,7 @@ extends UIModal
 @onready var _sheet: PanelContainer = %Sheet
 @onready var _margin: MarginContainer = %Margin
 @onready var _scroll: ScrollContainer = %Scroll
+@onready var _pad: MarginContainer = %Pad
 @onready var _page: RuledPage = %Page
 @onready var _title: Label = %Title
 @onready var _rule: ColorRect = %Rule
@@ -75,6 +76,9 @@ func open(readable: ReadableInteractable) -> void:
 	UIInput.sound(readable.open_sound)
 	begin_open()
 	_layout_sheet()
+	# Wrapped text only knows its height after a layout pass.
+	await get_tree().process_frame
+	_layout_sheet()
 
 
 func _on_close() -> void:
@@ -106,8 +110,28 @@ func _apply_look() -> void:
 	_body.horizontal_alignment = l.align
 	_rule.visible = l.rule and _title.visible
 	_rule.color = Color(l.ink, 0.55)
+	# Text fades into the paper at the cut-off edge instead of being sliced.
+	_scroll.scroll_hint_mode = ScrollContainer.SCROLL_HINT_MODE_ALL
+	_scroll.add_theme_color_override(&"scroll_hint_vertical_color", l.paper)
+	# Scroll bar drawn in pencil on the paper rather than in UI white.
+	var bar := _scroll.get_v_scroll_bar()
+	var track := StyleBoxFlat.new()
+	track.bg_color = Color(l.ink, 0.08)
+	track.content_margin_left = 1
+	track.content_margin_right = 1
+	var grab := StyleBoxFlat.new()
+	grab.bg_color = Color(l.ink, 0.32)
+	grab.content_margin_left = 1
+	grab.content_margin_right = 1
+	var grab_hi := grab.duplicate() as StyleBoxFlat
+	grab_hi.bg_color = Color(l.ink, 0.55)
+	bar.add_theme_stylebox_override(&"scroll", track)
+	bar.add_theme_stylebox_override(&"scroll_focus", track)
+	bar.add_theme_stylebox_override(&"grabber", grab)
+	bar.add_theme_stylebox_override(&"grabber_highlight", grab_hi)
+	bar.add_theme_stylebox_override(&"grabber_pressed", grab_hi)
 	_page.ruled = l.ruled
-	_page.rule_color = Color(0.3, 0.42, 0.68, 0.28)
+	_page.rule_color = Color(0.22, 0.42, 0.78, 0.42)
 	_sheet.rotation_degrees = l.tilt_degrees
 	_more.add_theme_color_override(&"font_color", UIStyle.TEXT_DIM)
 
@@ -129,9 +153,10 @@ func _layout_sheet() -> void:
 	var screen := get_viewport_rect().size
 	var w := minf(_look.sheet_size.x, screen.x - screen_margin * 2.0)
 	var h := minf(_look.sheet_size.y, screen.y - screen_margin * 2.0)
-	# A label is as tall as its text needs (up to its card size); pages are fixed.
+	# A label is only as tall as its text needs (up to its card size); pages are fixed.
 	if _style == ReadableInteractable.Style.LABEL:
-		h = _look.sheet_size.y
+		var content := _page.get_combined_minimum_size().y + float(_look.margin_v) * 2.0 + 12.0
+		h = clampf(content, 120.0, h)
 	_sheet.offset_left = -w * 0.5
 	_sheet.offset_right = w * 0.5
 	_sheet.offset_top = -h * 0.5 - 10.0
@@ -179,6 +204,10 @@ func _process(delta: float) -> void:
 			nxt = _scroll_pos
 		_scroll.scroll_vertical = roundi(nxt)
 	var max_scroll := maxf(bar.max_value - _scroll.size.y, 0.0)
+	# Keep text clear of the scroll bar only when there is one.
+	var pad := 18 if max_scroll > 1.0 else 0
+	if _pad.get_theme_constant(&"margin_right") != pad:
+		_pad.add_theme_constant_override(&"margin_right", pad)
 	_more.visible = max_scroll > 1.0 and float(_scroll.scroll_vertical) < max_scroll - 4.0
 
 

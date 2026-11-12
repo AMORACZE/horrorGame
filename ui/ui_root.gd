@@ -41,6 +41,12 @@ func _ready() -> void:
 	# Needs to see the pause key while the tree is paused; children that should
 	# freeze with the game set PROCESS_MODE_PAUSABLE themselves.
 	process_mode = Node.PROCESS_MODE_ALWAYS
+	# One modal at a time: a new request replaces whichever view is up.
+	# (Connected after the children, so the new view has already opened.)
+	Events.examine_requested.connect(func(_e: ExaminableInteractable) -> void:
+		document_reader.request_close())
+	Events.document_requested.connect(func(_r: ReadableInteractable) -> void:
+		examine_view.request_close())
 
 
 ## True while the examine view or the reader is up.
@@ -56,7 +62,11 @@ func _input(event: InputEvent) -> void:
 	if not (back or pause):
 		return
 	if pause_menu.is_open():
-		pause_menu.handle_back()
+		# Escape / B step back a page; Start (pause only) resumes from anywhere.
+		if back:
+			pause_menu.handle_back()
+		else:
+			pause_menu.close()
 	elif examine_view.is_open():
 		examine_view.request_close()
 	elif document_reader.is_open():

@@ -51,6 +51,20 @@ func tap(code: Key) -> void:
 	await frames(2)
 
 
+func pad_tap(button: JoyButton) -> void:
+	var ev := InputEventJoypadButton.new()
+	ev.button_index = button
+	ev.pressed = true
+	Input.parse_input_event(ev)
+	Input.flush_buffered_events()
+	await frames(2)
+	ev = ev.duplicate() as InputEventJoypadButton
+	ev.pressed = false
+	Input.parse_input_event(ev)
+	Input.flush_buffered_events()
+	await frames(2)
+
+
 func _count(sig: String) -> void:
 	_events[sig] = int(_events.get(sig, 0)) + 1
 
@@ -223,6 +237,17 @@ func _run() -> void:
 	Settings.set_value(&"audio", &"master", 0.7)
 	await frames(1)
 	check("row follows external setting change", row.get_value_text() == "70%", row.get_value_text())
+	var reset := ui.pause_menu.find_child("Reset", true, false) as Button
+	reset.pressed.emit()
+	await frames(1)
+	var all_default := true
+	for s: StringName in Settings.DEFAULTS:
+		for k: StringName in Settings.DEFAULTS[s]:
+			if Settings.get_value(s, k) != Settings.DEFAULTS[s][k]:
+				all_default = false
+	check("Reset to defaults restores every key", all_default)
+	check("rows show defaults after reset", row.get_value_text() == "100%", row.get_value_text())
+	ui.pause_menu.show_page(PauseMenu.Page.SETTINGS)
 	await tap(KEY_ESCAPE)
 	check("Escape backs out of Settings first", ui.pause_menu.is_open() and ui.pause_menu.get_page() == PauseMenu.Page.MAIN)
 	await tap(KEY_ESCAPE)
@@ -237,6 +262,31 @@ func _run() -> void:
 	await tap(KEY_ESCAPE)
 	check("Escape closes examine without pausing", not ui.examine_view.is_open() and not ui.pause_menu.is_open() and not get_tree().paused)
 	await frames(2)
+
+	# Gamepad: B closes a modal, Start opens pause, Start resumes even from Settings.
+	note.interact(player)
+	await frames(2)
+	await pad_tap(JOY_BUTTON_B)
+	check("pad B closes the reader", not ui.document_reader.is_open() and not ui.pause_menu.is_open())
+	await frames(2)
+	await pad_tap(JOY_BUTTON_START)
+	check("pad Start opens pause", ui.pause_menu.is_open())
+	ui.pause_menu.show_page(PauseMenu.Page.SETTINGS)
+	await pad_tap(JOY_BUTTON_START)
+	check("pad Start resumes from Settings", not ui.pause_menu.is_open() and not get_tree().paused)
+	await frames(2)
+	check("lock released after pad resume", not Game.is_input_locked())
+
+	# One modal at a time.
+	phone.interact(player)
+	await frames(2)
+	note.interact(player)
+	await frames(2)
+	check("new document replaces the examine view", ui.document_reader.is_open() and not ui.examine_view.is_open())
+	check("still locked while the reader is up", Game.is_input_locked())
+	await tap(KEY_ESCAPE)
+	await frames(2)
+	check("no stale lock after replacing modals", not Game.is_input_locked())
 
 	_restore_settings()
 	ui.queue_free()

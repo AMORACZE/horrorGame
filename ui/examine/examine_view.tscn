@@ -119,10 +119,15 @@ offset_bottom = -56.0
 grow_horizontal = 0
 grow_vertical = 0
 mouse_filter = 2
-theme_override_constants/separation = 8
+theme_override_constants/separation = 26
 alignment = 2
 
-[node name="TurnGlyph" type="PanelContainer" parent="Hints"]
+[node name="Turn" type="HBoxContainer" parent="Hints"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Glyph" type="PanelContainer" parent="Hints/Turn"]
 layout_mode = 2
 mouse_filter = 2
 theme_type_variation = &"KeyCap"
@@ -131,12 +136,17 @@ action = &"look_left"
 keyboard_text = "Drag"
 gamepad_text = "R stick"
 
-[node name="TurnLabel" type="Label" parent="Hints"]
+[node name="Label" type="Label" parent="Hints/Turn"]
 layout_mode = 2
 theme_type_variation = &"Hint"
-text = "Turn   "
+text = "Turn"
 
-[node name="ZoomGlyph" type="PanelContainer" parent="Hints"]
+[node name="Zoom" type="HBoxContainer" parent="Hints"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Glyph" type="PanelContainer" parent="Hints/Zoom"]
 layout_mode = 2
 mouse_filter = 2
 theme_type_variation = &"KeyCap"
@@ -145,18 +155,23 @@ action = &"zoom"
 keyboard_text = "Wheel"
 gamepad_text = "LT / RT"
 
-[node name="ZoomLabel" type="Label" parent="Hints"]
+[node name="Label" type="Label" parent="Hints/Zoom"]
 layout_mode = 2
 theme_type_variation = &"Hint"
-text = "Zoom   "
+text = "Zoom"
 
-[node name="CloseGlyph" type="PanelContainer" parent="Hints"]
+[node name="Close" type="HBoxContainer" parent="Hints"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 8
+
+[node name="Glyph" type="PanelContainer" parent="Hints/Close"]
 layout_mode = 2
 mouse_filter = 2
 theme_type_variation = &"KeyCap"
 script = ExtResource("4_glyph")
 
-[node name="CloseLabel" type="Label" parent="Hints"]
+[node name="Label" type="Label" parent="Hints/Close"]
 layout_mode = 2
 theme_type_variation = &"Hint"
 text = "Put down"

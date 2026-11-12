@@ -52,3 +52,4 @@ theme_type_variation = &"Observation"
 horizontal_alignment = 1
 vertical_alignment = 2
 autowrap_mode = 3
+visible_characters_behavior = 1
