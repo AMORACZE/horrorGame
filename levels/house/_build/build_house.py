@@ -44,8 +44,8 @@ A = "res://audio/"
 I = "res://interaction/"
 LOOK = I + "interactable.gd"
 ATMOS_RIG = "res://atmosphere/afternoon_atmosphere.tscn"
-DUST = "res://atmosphere/dust_motes.tscn"
-HAZE = "res://atmosphere/haze_volume.tscn"
+DUST_SCENE = "res://atmosphere/dust_motes.tscn"
+HAZE_SCENE = "res://atmosphere/haze_volume.tscn"
 
 H = 2.44            # ceiling
 EXT = 0.30          # exterior wall
@@ -81,7 +81,7 @@ BEDROOM_DOOR_X = 5.1
 BASEMENT_DOOR_Z = 0.6
 PANTRY_DOOR_X = 8.3
 BACK_DOOR_Z = 3.4
-HALL_OPEN = (0.45, 2.95)            # x range, hall -> living
+HALL_OPEN = (0.75, 2.75)            # x range, hall -> living
 KITCHEN_OPEN = (2.6, 4.0)           # z range, living -> kitchen
 WEST_WINDOWS_Z = [3.43, 4.40, 5.37]  # three-window picture group, 0.07 mullions
 SOUTH_LIVING_X = [1.6, 4.4]
@@ -347,9 +347,23 @@ def build_shell(sc, root):
 # Fixtures (doors, windows, lights)
 # =============================================================================
 
+def override(sc, parent, name, props):
+    """Set properties on a node inside an instanced scene (an 'editable child'
+    override in .tscn terms)."""
+    sc.nodes.append(('[node name="%s" parent="%s"]' % (name, parent), dict(props)))
+
+
+def glass_out_of_gi(sc, inst_path, glass_parents):
+    """Fixture glass casts no shadow but still blocks SDFGI (fixtures do not set
+    gi_mode); switch it off per placement so sun bounce gets through."""
+    for gp in glass_parents:
+        override(sc, inst_path + "/" + gp, "Glass", {"gi_mode": 0})
+
+
 def window(sc, parent, name, pos, rot_y, blinds=None, sill=SILL):
     """Window fixture + optional venetian blinds mounted inside the head."""
-    inst(sc, parent, name, F + "window_double_hung.tscn", pos, rot_y)
+    path = inst(sc, parent, name, F + "window_double_hung.tscn", pos, rot_y)
+    glass_out_of_gi(sc, path, ["Window/LowerSash", "Window/UpperSash"])
     if blinds is not None:
         raised, angle, bent = blinds
         bp = lp(pos, rot_y, (0, 1.365, 0.085))
@@ -360,8 +374,9 @@ def window(sc, parent, name, pos, rot_y, blinds=None, sill=SILL):
 def build_openings(sc, root):
     fx = n3d(sc, root, "Fixtures")
     hall = n3d(sc, fx, "Hall")
-    inst(sc, hall, "FrontDoor", F + "door_front.tscn", (FRONT_DOOR_X, 0, -0.15), 180.0, {
+    p = inst(sc, hall, "FrontDoor", F + "door_front.tscn", (FRONT_DOOR_X, 0, -0.15), 180.0, {
         "locked": True, "display_name": "Front door"})
+    glass_out_of_gi(sc, p, ["Slab"])
     inst(sc, hall, "BedroomDoor", F + "door_interior.tscn", (BEDROOM_DOOR_X, 0, -0.075), 0.0, {
         "locked": True, "display_name": "Bedroom hall door",
         "locked_observations": STRS(["It's locked.", "The knob turns a little and stops."])})
@@ -387,9 +402,10 @@ def build_openings(sc, root):
     kit = n3d(sc, fx, "Kitchen")
     window(sc, kit, "DinetteWindow", (DINETTE_WINDOW_X, SILL, 6.40), 180.0, blinds=(0.55, 10.0, 2))
     window(sc, kit, "SinkWindow", (SINK_X, SILL_SINK, 6.40), 180.0, blinds=None)
-    inst(sc, kit, "BackDoor", F + "door_front.tscn", (10.50, 0, BACK_DOOR_Z), 90.0, {
+    p = inst(sc, kit, "BackDoor", F + "door_front.tscn", (10.50, 0, BACK_DOOR_Z), 90.0, {
         "locked": True, "display_name": "Back door",
         "locked_observations": STRS(["The deadbolt is thrown.", "Locked. Through the glass: the side yard and the garbage cans."])})
+    glass_out_of_gi(sc, p, ["Slab"])
     inst(sc, kit, "PantryDoor", F + "door_interior.tscn", (PANTRY_DOOR_X, 0, 1.575), 180.0, {
         "start_state": 1, "display_name": "Pantry door", "open_angle_degrees": 92.0,
         "observations": STRS(["It doesn't stay shut on its own.", "The bottom edge is rubbed pale where it drags."])})
@@ -436,7 +452,7 @@ def build_hall(sc, root):
     inst(sc, g, "UmbrellaStand", P + "hallway/umbrella_stand.tscn", (0.20, 0, 0.22), 0.0)
     inst(sc, g, "Shoes", P + "hallway/shoes_pair.tscn", (1.62, 0, 0.30), 200.0)
     inst(sc, g, "ShoesKids", P + "hallway/shoes_pair.tscn", (0.42, 0, 1.25), 75.0)
-    inst(sc, g, "CoatRack", P + "hallway/coat_rack.tscn", (5.62, 0, 1.22), 205.0)
+    inst(sc, g, "CoatRack", P + "hallway/coat_rack.tscn", (5.66, 0, 0.40), 160.0)
     thing(sc, g, "SmokeDetector", (2.0, H, 0.75), 0.0, [
         ("cyl", (0.065, 0.07, 0.035), (0, -0.0175, 0), "plastic_white"),
     ], "Smoke detector", ["The little test light doesn't come on.", "Dust in the vents."], layer=LAYER_INTERACT)
@@ -630,11 +646,49 @@ def sun_rotation():
     return (-SUN_ELEVATION, -SUN_AZIMUTH_TRAVEL, 0.0)
 
 
+# Atmosphere rig knobs (see atmosphere/README.md). Azimuth = bearing the light
+# comes FROM: 245 is west-south-west, so the west group throws long shafts
+# east-north-east across the shag and the south windows rake the floor.
+ATMOSPHERE = {"sun_azimuth": 245.0, "sun_elevation": 36.0, "exposure_bias": -0.5}
+
+# Dust and haze: one box per sunlit window, covering the shaft from the glass
+# to where its patch lands. (centre, size)
+DUST = [
+    ("DustWestGroup", (1.3, 1.0, 3.9), (2.4, 1.9, 3.2), 40.0),
+    ("DustSouthWest", (2.2, 0.9, 5.7), (1.6, 1.6, 1.0), 30.0),
+    ("DustSouthEast", (5.0, 0.9, 5.7), (1.6, 1.6, 1.0), 30.0),
+    ("DustDinette", (7.8, 0.9, 5.6), (1.8, 1.6, 1.2), 35.0),
+]
+HAZE = [
+    ("HazeWestGroup", (0.9, 1.3, 4.2), (1.6, 2.0, 3.2), 0.014),
+    ("HazeSouthLiving", (3.0, 1.3, 5.7), (4.4, 2.0, 1.0), 0.010),
+    ("HazeDinette", (7.5, 1.2, 5.6), (1.6, 1.8, 1.0), 0.012),
+    ("HazeHallClear", (3.0, 1.2, 0.75), (6.0, 2.4, 1.5), -0.006),
+]
+PROBES = [
+    # name, centre, size (room interior), why
+    ("ProbeKitchen", (8.25, 1.22, 3.95), (4.2, 2.44, 4.6)),    # glossy lino
+    ("ProbeHall", (3.0, 1.22, 0.75), (6.0, 2.44, 1.5)),        # the mirror
+]
+
+
+def build_air(sc, g):
+    for name, c, size, density in DUST:
+        inst(sc, g, name, DUST_SCENE, c, 0.0, {"box_size": V3(size), "density": density})
+    for name, c, size, density in HAZE:
+        inst(sc, g, name, HAZE_SCENE, c, 0.0, {"size": V3(size), "haze_density": density})
+    for name, c, size in PROBES:
+        sc.node(name, "ReflectionProbe", g, {
+            "transform": XF(c), "update_mode": 0, "size": V3(size), "box_projection": True,
+            "interior": True, "ambient_mode": 0, "max_distance": 0.0})
+
+
 def build_lighting(sc, root):
     g = n3d(sc, root, "Lighting")
     rig = os.path.join(os.path.dirname(__file__), "..", "..", "..", "atmosphere", "afternoon_atmosphere.tscn")
     if os.path.exists(rig) and not DEBUG_FLAT:
-        inst(sc, g, "Atmosphere", ATMOS_RIG, (0, 0, 0), 0.0)
+        inst(sc, g, "Atmosphere", ATMOS_RIG, (0, 0, 0), 0.0, ATMOSPHERE)
+        build_air(sc, g)
         return
     sky = sc.sub("ProceduralSkyMaterial", sky_top_color=C(0.38, 0.56, 0.80), sky_horizon_color=C(0.86, 0.84, 0.78),
                  ground_horizon_color=C(0.62, 0.58, 0.48), ground_bottom_color=C(0.3, 0.3, 0.22), sun_angle_max=20.0)
@@ -683,7 +737,7 @@ def build():
     build_outside(sc, root)
     build_lighting(sc, root)
     build_audio(sc, root)
-    sc.node("PlayerSpawn", "Marker3D", root, {"transform": XF((FRONT_DOOR_X, 0.0, 0.72), (0, 180, 0))}, groups=["player_spawn"])
+    sc.node("PlayerSpawn", "Marker3D", root, {"transform": XF((FRONT_DOOR_X, 0.0, 0.50), (0, 180, 0))}, groups=["player_spawn"])
     sc.write("_shots/debug_house.tscn" if DEBUG_FLAT else OUT)
 
 

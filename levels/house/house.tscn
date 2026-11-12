@@ -100,6 +100,9 @@
 [ext_resource type="Material" path="res://art/materials/paper_white.tres" id="272_paper_white"]
 [ext_resource type="Material" path="res://art/materials/plant_green.tres" id="281_plant_green"]
 [ext_resource type="Material" path="res://art/materials/glass_dusty.tres" id="288_glass_dusty"]
+[ext_resource type="PackedScene" path="res://atmosphere/afternoon_atmosphere.tscn" id="386_afternoon_atmosphere"]
+[ext_resource type="PackedScene" path="res://atmosphere/dust_motes.tscn" id="387_dust_motes"]
+[ext_resource type="PackedScene" path="res://atmosphere/haze_volume.tscn" id="388_haze_volume"]
 [ext_resource type="PackedScene" path="res://audio/ambience_bed.tscn" id="389_ambience_bed"]
 [ext_resource type="PackedScene" path="res://audio/reverb_zone.tscn" id="390_reverb_zone"]
 [ext_resource type="PackedScene" path="res://audio/ambient_emitter.tscn" id="391_ambient_emitter"]
@@ -268,22 +271,22 @@ size = Vector3(0.548, 2.54, 0.15)
 size = Vector3(0.548, 2.54, 0.075)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_58"]
-size = Vector3(0.45, 2.54, 0.15)
+size = Vector3(0.75, 2.54, 0.15)
 
 [sub_resource type="BoxMesh" id="BoxMesh_59"]
-size = Vector3(0.45, 2.54, 0.075)
+size = Vector3(0.75, 2.54, 0.075)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_61"]
-size = Vector3(2.5, 0.39, 0.15)
+size = Vector3(2, 0.39, 0.15)
 
 [sub_resource type="BoxMesh" id="BoxMesh_62"]
-size = Vector3(2.5, 0.39, 0.075)
+size = Vector3(2, 0.39, 0.075)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_63"]
-size = Vector3(3.125, 2.54, 0.15)
+size = Vector3(3.325, 2.54, 0.15)
 
 [sub_resource type="BoxMesh" id="BoxMesh_64"]
-size = Vector3(3.125, 2.54, 0.075)
+size = Vector3(3.325, 2.54, 0.075)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_65"]
 size = Vector3(0.15, 2.54, 0.323)
@@ -340,13 +343,13 @@ size = Vector3(1.623, 2.54, 0.15)
 size = Vector3(0.019, 2.1, 0.154)
 
 [sub_resource type="BoxMesh" id="BoxMesh_85"]
-size = Vector3(2.5, 0.019, 0.154)
+size = Vector3(2, 0.019, 0.154)
 
 [sub_resource type="BoxMesh" id="BoxMesh_86"]
 size = Vector3(0.064, 2.164, 0.016)
 
 [sub_resource type="BoxMesh" id="BoxMesh_87"]
-size = Vector3(2.62, 0.064, 0.016)
+size = Vector3(2.12, 0.064, 0.016)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_88"]
 size = Vector3(0.019, 2.1, 0.154)
@@ -455,10 +458,10 @@ size = Vector3(0.694, 0.09, 0.014)
 size = Vector3(0.398, 0.09, 0.014)
 
 [sub_resource type="BoxMesh" id="BoxMesh_129"]
-size = Vector3(0.39, 0.09, 0.014)
+size = Vector3(0.69, 0.09, 0.014)
 
 [sub_resource type="BoxMesh" id="BoxMesh_130"]
-size = Vector3(2.99, 0.09, 0.014)
+size = Vector3(3.19, 0.09, 0.014)
 
 [sub_resource type="BoxMesh" id="BoxMesh_131"]
 size = Vector3(0.014, 0.09, 1.5)
@@ -1271,34 +1274,6 @@ size = Vector3(1.2, 0.03, 11.7)
 [sub_resource type="BoxMesh" id="BoxMesh_385"]
 size = Vector3(1.6, 0.37, 1.1)
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_386"]
-sky_top_color = Color(0.38, 0.56, 0.8, 1)
-sky_horizon_color = Color(0.86, 0.84, 0.78, 1)
-ground_horizon_color = Color(0.62, 0.58, 0.48, 1)
-ground_bottom_color = Color(0.3, 0.3, 0.22, 1)
-sun_angle_max = 20
-
-[sub_resource type="Sky" id="Sky_387"]
-sky_material = SubResource("ProceduralSkyMaterial_386")
-
-[sub_resource type="Environment" id="Environment_388"]
-background_mode = 2
-sky = SubResource("Sky_387")
-ambient_light_source = 3
-ambient_light_energy = 0.25
-tonemap_mode = 2
-tonemap_exposure = 1.7
-tonemap_white = 6
-ssao_enabled = true
-glow_enabled = true
-glow_intensity = 0.4
-sdfgi_enabled = true
-sdfgi_use_occlusion = true
-sdfgi_cascades = 3
-sdfgi_min_cell_size = 0.1
-sdfgi_energy = 2.2
-sdfgi_bounce_feedback = 0.8
-
 [node name="House" type="Node3D"]
 
 [node name="Shell" type="Node3D" parent="."]
@@ -1860,44 +1835,44 @@ collision_layer = 1
 collision_mask = 0
 
 [node name="S0" type="CollisionShape3D" parent="Shell/Walls/HallLiving"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, 1.22, 1.575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 1.22, 1.575)
 shape = SubResource("BoxShape3D_58")
 
 [node name="M0N" type="MeshInstance3D" parent="Shell/Walls/HallLiving"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, 1.22, 1.5375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 1.22, 1.5375)
 mesh = SubResource("BoxMesh_59")
 surface_material_override/0 = ExtResource("4_wallpaper_stripe")
 
 [node name="M0P" type="MeshInstance3D" parent="Shell/Walls/HallLiving"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, 1.22, 1.6125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.375, 1.22, 1.6125)
 mesh = SubResource("BoxMesh_59")
 surface_material_override/0 = ExtResource("60_wallpaper_floral")
 
 [node name="S1" type="CollisionShape3D" parent="Shell/Walls/HallLiving"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 2.295, 1.575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2.295, 1.575)
 shape = SubResource("BoxShape3D_61")
 
 [node name="M1N" type="MeshInstance3D" parent="Shell/Walls/HallLiving"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 2.295, 1.5375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2.295, 1.5375)
 mesh = SubResource("BoxMesh_62")
 surface_material_override/0 = ExtResource("4_wallpaper_stripe")
 
 [node name="M1P" type="MeshInstance3D" parent="Shell/Walls/HallLiving"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 2.295, 1.6125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2.295, 1.6125)
 mesh = SubResource("BoxMesh_62")
 surface_material_override/0 = ExtResource("60_wallpaper_floral")
 
 [node name="S2" type="CollisionShape3D" parent="Shell/Walls/HallLiving"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5125, 1.22, 1.575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4125, 1.22, 1.575)
 shape = SubResource("BoxShape3D_63")
 
 [node name="M2N" type="MeshInstance3D" parent="Shell/Walls/HallLiving"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5125, 1.22, 1.5375)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4125, 1.22, 1.5375)
 mesh = SubResource("BoxMesh_64")
 surface_material_override/0 = ExtResource("4_wallpaper_stripe")
 
 [node name="M2P" type="MeshInstance3D" parent="Shell/Walls/HallLiving"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5125, 1.22, 1.6125)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4125, 1.22, 1.6125)
 mesh = SubResource("BoxMesh_64")
 surface_material_override/0 = ExtResource("60_wallpaper_floral")
 
@@ -2029,56 +2004,56 @@ collision_layer = 1
 collision_mask = 0
 
 [node name="T0" type="MeshInstance3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4595, 1.05, 1.575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7595, 1.05, 1.575)
 mesh = SubResource("BoxMesh_83")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="T1" type="MeshInstance3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9405, 1.05, 1.575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7405, 1.05, 1.575)
 mesh = SubResource("BoxMesh_83")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="T2" type="MeshInstance3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 2.0905, 1.575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2.0905, 1.575)
 mesh = SubResource("BoxMesh_85")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="T3" type="MeshInstance3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.422, 1.082, 1.492)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.722, 1.082, 1.492)
 mesh = SubResource("BoxMesh_86")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="T4" type="MeshInstance3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.978, 1.082, 1.492)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.778, 1.082, 1.492)
 mesh = SubResource("BoxMesh_86")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="T5" type="MeshInstance3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 2.132, 1.492)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2.132, 1.492)
 mesh = SubResource("BoxMesh_87")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="T6" type="MeshInstance3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.422, 1.082, 1.658)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.722, 1.082, 1.658)
 mesh = SubResource("BoxMesh_86")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="T7" type="MeshInstance3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.978, 1.082, 1.658)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.778, 1.082, 1.658)
 mesh = SubResource("BoxMesh_86")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="T8" type="MeshInstance3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7, 2.132, 1.658)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 2.132, 1.658)
 mesh = SubResource("BoxMesh_87")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="J0" type="CollisionShape3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4595, 1.05, 1.575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7595, 1.05, 1.575)
 shape = SubResource("BoxShape3D_88")
 
 [node name="J1" type="CollisionShape3D" parent="Shell/Walls/HallLivingCasing"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9405, 1.05, 1.575)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.7405, 1.05, 1.575)
 shape = SubResource("BoxShape3D_88")
 
 [node name="KitchenCasing" type="StaticBody3D" parent="Shell/Walls"]
@@ -2344,12 +2319,12 @@ mesh = SubResource("BoxMesh_128")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="HallS0" type="MeshInstance3D" parent="Shell/Baseboards"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.195, 0.045, 1.493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.345, 0.045, 1.493)
 mesh = SubResource("BoxMesh_129")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="HallS1" type="MeshInstance3D" parent="Shell/Baseboards"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.505, 0.045, 1.493)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.405, 0.045, 1.493)
 mesh = SubResource("BoxMesh_130")
 surface_material_override/0 = ExtResource("84_trim_white")
 
@@ -2369,12 +2344,12 @@ mesh = SubResource("BoxMesh_133")
 surface_material_override/0 = ExtResource("84_trim_white")
 
 [node name="LivN0" type="MeshInstance3D" parent="Shell/Baseboards"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.195, 0.045, 1.657)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.345, 0.045, 1.657)
 mesh = SubResource("BoxMesh_129")
 surface_material_override/0 = ExtResource("134_wood_medium")
 
 [node name="LivN1" type="MeshInstance3D" parent="Shell/Baseboards"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.505, 0.045, 1.657)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.405, 0.045, 1.657)
 mesh = SubResource("BoxMesh_130")
 surface_material_override/0 = ExtResource("134_wood_medium")
 
@@ -2447,6 +2422,9 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 1, 0, -0.15)
 locked = true
 display_name = "Front door"
 
+[node name="Glass" parent="Fixtures/Hall/FrontDoor/Slab"]
+gi_mode = 0
+
 [node name="BedroomDoor" parent="Fixtures/Hall" instance=ExtResource("147_door_interior")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1, 0, -0.075)
 locked = true
@@ -2476,6 +2454,12 @@ display_name = "Hall light switch"
 [node name="WestWindow0" parent="Fixtures/Living" instance=ExtResource("151_window_double_hung")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -0.15, 0.76, 3.43)
 
+[node name="Glass" parent="Fixtures/Living/WestWindow0/Window/LowerSash"]
+gi_mode = 0
+
+[node name="Glass" parent="Fixtures/Living/WestWindow0/Window/UpperSash"]
+gi_mode = 0
+
 [node name="WestWindow0Blinds" parent="Fixtures/Living" instance=ExtResource("152_venetian_blinds")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -0.065, 2.125, 3.43)
 width = 0.84
@@ -2486,6 +2470,12 @@ bent_slat = 3
 
 [node name="WestWindow1" parent="Fixtures/Living" instance=ExtResource("151_window_double_hung")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -0.15, 0.76, 4.4)
+
+[node name="Glass" parent="Fixtures/Living/WestWindow1/Window/LowerSash"]
+gi_mode = 0
+
+[node name="Glass" parent="Fixtures/Living/WestWindow1/Window/UpperSash"]
+gi_mode = 0
 
 [node name="WestWindow1Blinds" parent="Fixtures/Living" instance=ExtResource("152_venetian_blinds")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -0.065, 2.125, 4.4)
@@ -2498,6 +2488,12 @@ bent_slat = 5
 [node name="WestWindow2" parent="Fixtures/Living" instance=ExtResource("151_window_double_hung")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -0.15, 0.76, 5.37)
 
+[node name="Glass" parent="Fixtures/Living/WestWindow2/Window/LowerSash"]
+gi_mode = 0
+
+[node name="Glass" parent="Fixtures/Living/WestWindow2/Window/UpperSash"]
+gi_mode = 0
+
 [node name="WestWindow2Blinds" parent="Fixtures/Living" instance=ExtResource("152_venetian_blinds")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, -0.065, 2.125, 5.37)
 width = 0.84
@@ -2509,6 +2505,12 @@ bent_slat = 7
 [node name="SouthWindow0" parent="Fixtures/Living" instance=ExtResource("151_window_double_hung")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 1.6, 0.76, 6.4)
 
+[node name="Glass" parent="Fixtures/Living/SouthWindow0/Window/LowerSash"]
+gi_mode = 0
+
+[node name="Glass" parent="Fixtures/Living/SouthWindow0/Window/UpperSash"]
+gi_mode = 0
+
 [node name="SouthWindow0Blinds" parent="Fixtures/Living" instance=ExtResource("152_venetian_blinds")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 1.6, 2.125, 6.315)
 width = 0.84
@@ -2519,6 +2521,12 @@ bent_slat = 5
 
 [node name="SouthWindow1" parent="Fixtures/Living" instance=ExtResource("151_window_double_hung")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 4.4, 0.76, 6.4)
+
+[node name="Glass" parent="Fixtures/Living/SouthWindow1/Window/LowerSash"]
+gi_mode = 0
+
+[node name="Glass" parent="Fixtures/Living/SouthWindow1/Window/UpperSash"]
+gi_mode = 0
 
 [node name="SouthWindow1Blinds" parent="Fixtures/Living" instance=ExtResource("152_venetian_blinds")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 4.4, 2.125, 6.315)
@@ -2547,6 +2555,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.95, 0.58, 5.75)
 [node name="DinetteWindow" parent="Fixtures/Kitchen" instance=ExtResource("151_window_double_hung")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 7, 0.76, 6.4)
 
+[node name="Glass" parent="Fixtures/Kitchen/DinetteWindow/Window/LowerSash"]
+gi_mode = 0
+
+[node name="Glass" parent="Fixtures/Kitchen/DinetteWindow/Window/UpperSash"]
+gi_mode = 0
+
 [node name="DinetteWindowBlinds" parent="Fixtures/Kitchen" instance=ExtResource("152_venetian_blinds")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 7, 2.125, 6.315)
 width = 0.84
@@ -2558,11 +2572,20 @@ bent_slat = 2
 [node name="SinkWindow" parent="Fixtures/Kitchen" instance=ExtResource("151_window_double_hung")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 8.975, 0.95, 6.4)
 
+[node name="Glass" parent="Fixtures/Kitchen/SinkWindow/Window/LowerSash"]
+gi_mode = 0
+
+[node name="Glass" parent="Fixtures/Kitchen/SinkWindow/Window/UpperSash"]
+gi_mode = 0
+
 [node name="BackDoor" parent="Fixtures/Kitchen" instance=ExtResource("146_door_front")]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 10.5, 0, 3.4)
 locked = true
 display_name = "Back door"
 locked_observations = Array[String](["The deadbolt is thrown.", "Locked. Through the glass: the side yard and the garbage cans."])
+
+[node name="Glass" parent="Fixtures/Kitchen/BackDoor/Slab"]
+gi_mode = 0
 
 [node name="PantryDoor" parent="Fixtures/Kitchen" instance=ExtResource("147_door_interior")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 8.3, 0, 1.575)
@@ -2742,7 +2765,7 @@ transform = Transform3D(-0.93969, 0, -0.34202, 0, 1, 0, 0.34202, 0, -0.93969, 1.
 transform = Transform3D(0.25882, 0, 0.96593, 0, 1, 0, -0.96593, 0, 0.25882, 0.42, 0, 1.25)
 
 [node name="CoatRack" parent="Hall" instance=ExtResource("184_coat_rack")]
-transform = Transform3D(-0.90631, 0, -0.42262, 0, 1, 0, 0.42262, 0, -0.90631, 5.62, 0, 1.22)
+transform = Transform3D(-0.93969, 0, 0.34202, 0, 1, 0, -0.34202, 0, -0.93969, 5.66, 0, 0.4)
 
 [node name="SmokeDetector" type="StaticBody3D" parent="Hall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.44, 0.75)
@@ -4127,16 +4150,69 @@ surface_material_override/0 = ExtResource("118_concrete")
 
 [node name="Lighting" type="Node3D" parent="."]
 
-[node name="TempEnvironment" type="WorldEnvironment" parent="Lighting"]
-environment = SubResource("Environment_388")
+[node name="Atmosphere" parent="Lighting" instance=ExtResource("386_afternoon_atmosphere")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+sun_azimuth = 245
+sun_elevation = 36
+exposure_bias = -0.5
 
-[node name="TempSun" type="DirectionalLight3D" parent="Lighting"]
-transform = Transform3D(0.46947, 0.53137, -0.70515, 0, 0.79864, 0.60181, 0.88295, -0.28253, 0.37494, 5, 10, 3)
-light_color = Color(1, 0.89, 0.74, 1)
-light_energy = 3
-shadow_enabled = true
-directional_shadow_max_distance = 40
-light_angular_distance = 0.5
+[node name="DustWestGroup" parent="Lighting" instance=ExtResource("387_dust_motes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3, 1, 3.9)
+box_size = Vector3(2.4, 1.9, 3.2)
+density = 40
+
+[node name="DustSouthWest" parent="Lighting" instance=ExtResource("387_dust_motes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0.9, 5.7)
+box_size = Vector3(1.6, 1.6, 1)
+density = 30
+
+[node name="DustSouthEast" parent="Lighting" instance=ExtResource("387_dust_motes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.9, 5.7)
+box_size = Vector3(1.6, 1.6, 1)
+density = 30
+
+[node name="DustDinette" parent="Lighting" instance=ExtResource("387_dust_motes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8, 0.9, 5.6)
+box_size = Vector3(1.8, 1.6, 1.2)
+density = 35
+
+[node name="HazeWestGroup" parent="Lighting" instance=ExtResource("388_haze_volume")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.9, 1.3, 4.2)
+size = Vector3(1.6, 2, 3.2)
+haze_density = 0.014
+
+[node name="HazeSouthLiving" parent="Lighting" instance=ExtResource("388_haze_volume")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.3, 5.7)
+size = Vector3(4.4, 2, 1)
+haze_density = 0.01
+
+[node name="HazeDinette" parent="Lighting" instance=ExtResource("388_haze_volume")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.5, 1.2, 5.6)
+size = Vector3(1.6, 1.8, 1)
+haze_density = 0.012
+
+[node name="HazeHallClear" parent="Lighting" instance=ExtResource("388_haze_volume")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.2, 0.75)
+size = Vector3(6, 2.4, 1.5)
+haze_density = -0.006
+
+[node name="ProbeKitchen" type="ReflectionProbe" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25, 1.22, 3.95)
+update_mode = 0
+size = Vector3(4.2, 2.44, 4.6)
+box_projection = true
+interior = true
+ambient_mode = 0
+max_distance = 0
+
+[node name="ProbeHall" type="ReflectionProbe" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1.22, 0.75)
+update_mode = 0
+size = Vector3(6, 2.44, 1.5)
+box_projection = true
+interior = true
+ambient_mode = 0
+max_distance = 0
 
 [node name="Audio" type="Node3D" parent="."]
 
@@ -4196,4 +4272,4 @@ volume_min_db = -4
 volume_max_db = 0
 
 [node name="PlayerSpawn" type="Marker3D" parent="." groups=["player_spawn"]]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 1, 0, 0.72)
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 1, 0, 0.5)

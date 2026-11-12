@@ -14,7 +14,7 @@ const SURFACES: Array = [
 const ROUTE: Array[Vector2] = [
 	Vector2(1.5, 1.1), Vector2(1.6, 2.15), Vector2(2.7, 2.2), Vector2(4.6, 2.9), Vector2(6.1, 3.3),
 	Vector2(8.3, 3.4), Vector2(6.1, 3.3), Vector2(4.6, 2.9), Vector2(2.7, 2.2), Vector2(1.6, 2.15),
-	Vector2(1.5, 1.1), Vector2(1.0, 0.72),
+	Vector2(1.5, 1.1), Vector2(1.0, 0.5),
 ]
 const CLEAR_RADIUS := 0.45  # 0.9 m wide path
 
@@ -159,7 +159,7 @@ func _test_clearance() -> void:
 	q.shape = shape
 	q.collision_mask = 1  # world: walls and furniture (clutter on layer 3 only is walk-through)
 	var blocked: Array[String] = []
-	var pts: Array[Vector2] = [Vector2(1.0, 0.72)]
+	var pts: Array[Vector2] = [Vector2(1.0, 0.5)]
 	pts.append_array(ROUTE)
 	for i in pts.size() - 1:
 		var a := pts[i]
@@ -180,7 +180,7 @@ func _test_clearance() -> void:
 
 
 func _test_walk() -> void:
-	_place(Vector2(1.0, 0.72), PI)
+	_place(Vector2(1.0, 0.5), PI)
 	await _frames(10)
 	var stuck := ""
 	for target in ROUTE:

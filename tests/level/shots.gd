@@ -10,14 +10,14 @@ extends SceneTree
 ## player's own (1.6 m). Without --shots the default reference set is taken.
 ## Frames go to _shots/level/<name>.png (gitignored).
 
-const DEFAULT_SHOTS := "spawn@1.0,0.72@180,-6;" \
+const DEFAULT_SHOTS := "spawn@1.0,0.5@180,-6;" \
 	+ "hall_east@0.7,0.9@-90,-4;" \
 	+ "living_from_opening@1.7,2.1@150,-12;" \
 	+ "living_tv@1.2,3.4@-80,-10;" \
 	+ "living_west@4.6,3.0@100,-10;" \
 	+ "living_sofa_sun@3.8,5.6@50,-22;" \
 	+ "kitchen_from_living@4.2,3.3@-90,-8;" \
-	+ "kitchen_dinette@9.4,3.0@-140,-18;" \
+	+ "kitchen_dinette@9.4,3.0@140,-18;" \
 	+ "kitchen_sink@7.2,3.0@170,-12;" \
 	+ "pantry@8.1,2.9@-10,-8"
 
