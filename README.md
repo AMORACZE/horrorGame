@@ -20,7 +20,7 @@ in a house, alone, with light, sound and objects that answer when touched.
 | Look | Mouse | Right stick |
 | Interact | E or left click | A |
 | Zoom (camcorder) | Hold right click | Left trigger |
-| Hurry | Shift | Right stick click |
+| Hurry | Shift | Left stick click |
 | Crouch | Ctrl or C | B |
 | Pause / settings | Esc | Start |
 
