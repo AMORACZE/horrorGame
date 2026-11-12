@@ -64,10 +64,16 @@ Files and folders are `snake_case`; nodes are `PascalCase`; classes are
 ```
 Main
 ├─ World            ← level instance, then the player placed at the spawn marker
-├─ ui_root.tscn     CanvasLayer 10   (diegetic-ish HUD: prompt, observation, examine, reader)
-└─ post_fx.tscn     CanvasLayer 50   (VHS shader over world + HUD, then camcorder OSD)
-                    CanvasLayer 100  (pause menu, inside ui_root, drawn clean on top)
+├─ ui_root.tscn     CanvasLayer 10   HUD prompt, observation line, examine view, reader
+│                   CanvasLayer 30   ScreenFade (inside ui_root; fades read as tape)
+│                   CanvasLayer 100  pause menu (inside ui_root; drawn clean on top)
+└─ post_fx.tscn     CanvasLayer 40   camcorder OSD (date stamp, counter, zoom bar)
+                    CanvasLayer 50   VHS shader over everything below it
 ```
+
+- The UI owns the `pause` and `ui_back` actions (`ui/ui_root.gd` is the single
+  router). The player never handles them.
+- Fades: `await ScreenFade.current.fade_out(t)` / `fade_in(t)` / `set_covered(bool)`.
 
 - A level is a `Node3D` scene containing geometry, lights, its own
   `WorldEnvironment`/sun (by instancing an atmosphere rig), emitters and props,
