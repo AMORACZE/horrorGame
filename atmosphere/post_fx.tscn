@@ -1,0 +1,37 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://atmosphere/post_fx.gd" id="1_post"]
+[ext_resource type="Shader" path="res://atmosphere/shaders/vhs.gdshader" id="2_vhs"]
+[ext_resource type="Script" path="res://atmosphere/osd/camcorder_osd.gd" id="3_osd"]
+
+[sub_resource type="ShaderMaterial" id="Mat_vhs"]
+shader = ExtResource("2_vhs")
+
+[node name="PostFx" type="CanvasLayer"]
+process_mode = 3
+layer = 50
+script = ExtResource("1_post")
+
+[node name="OsdLayer" type="CanvasLayer" parent="."]
+process_mode = 3
+layer = 40
+
+[node name="CamcorderOsd" type="Control" parent="OsdLayer"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("3_osd")
+
+[node name="Vhs" type="ColorRect" parent="."]
+material = SubResource("Mat_vhs")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2

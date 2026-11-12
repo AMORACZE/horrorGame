@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://atmosphere/afternoon_atmosphere.gd" id="1_rig"]
+[ext_resource type="Environment" path="res://atmosphere/environments/afternoon.tres" id="2_env"]
+[ext_resource type="CameraAttributesPractical" path="res://atmosphere/environments/camcorder_exposure.tres" id="3_cam"]
+
+[node name="Atmosphere" type="Node3D"]
+script = ExtResource("1_rig")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_env")
+camera_attributes = ExtResource("3_cam")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.34202, 0.56552, -0.75049, 0, 0.79864, 0.60181, 0.93969, -0.20583, 0.27316, 0, 10, 0)
+light_color = Color(1, 0.88, 0.72, 1)
+light_energy = 3.2
+light_indirect_energy = 1.0
+light_volumetric_fog_energy = 4.0
+light_angular_distance = 0.6
+shadow_enabled = true
+shadow_bias = 0.04
+shadow_normal_bias = 0.8
+shadow_blur = 1.0
+directional_shadow_mode = 2
+directional_shadow_split_1 = 0.06
+directional_shadow_split_2 = 0.15
+directional_shadow_split_3 = 0.35
+directional_shadow_blend_splits = true
+directional_shadow_fade_start = 0.9
+directional_shadow_max_distance = 40.0
+directional_shadow_pancake_size = 20.0
