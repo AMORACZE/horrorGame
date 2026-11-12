@@ -1,0 +1,26 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://art/textures/carpet_shag_gold/carpet_shag_gold_albedo.png" id="1"]
+[ext_resource type="Texture2D" path="res://art/textures/carpet_shag_gold/carpet_shag_gold_orm.png" id="2"]
+[ext_resource type="Texture2D" path="res://art/textures/carpet_shag_gold/carpet_shag_gold_normal.png" id="3"]
+
+[resource]
+resource_name = "carpet_shag_gold"
+texture_filter = 5
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("1")
+metallic_specular = 0.3
+roughness = 1
+roughness_texture = ExtResource("2")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.75
+normal_texture = ExtResource("3")
+ao_enabled = true
+ao_light_affect = 0.35
+ao_texture = ExtResource("2")
+ao_texture_channel = 0
+uv1_scale = Vector3(1.33333, 1.33333, 1.33333)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 8.0
+uv1_world_triplanar = true
