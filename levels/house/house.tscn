@@ -2603,9 +2603,9 @@ gi_mode = 0
 
 [node name="PantryDoor" parent="Fixtures/Kitchen" instance=ExtResource("147_door_interior")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 8.3, 0, 1.575)
-start_state = 1
+start_state = 2
 display_name = "Pantry door"
-open_angle_degrees = 92
+open_angle_degrees = 30
 observations = Array[String](["It doesn't stay shut on its own.", "The bottom edge is rubbed pale where it drags."])
 
 [node name="KitchenLight" parent="Fixtures/Kitchen" instance=ExtResource("149_ceiling_light")]

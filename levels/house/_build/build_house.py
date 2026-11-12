@@ -503,7 +503,7 @@ def build_openings(sc, root):
         "locked_observations": STRS(["The deadbolt is thrown.", "Locked. Through the glass: the side yard and the garbage cans."])})
     glass_out_of_gi(sc, p, ["Slab"])
     inst(sc, kit, "PantryDoor", F + "door_interior.tscn", (PANTRY_DOOR_X, 0, 1.575), 180.0, {
-        "start_state": 1, "display_name": "Pantry door", "open_angle_degrees": 92.0,
+        "start_state": 2, "display_name": "Pantry door", "open_angle_degrees": 30.0,
         "observations": STRS(["It doesn't stay shut on its own.", "The bottom edge is rubbed pale where it drags."])})
     inst(sc, kit, "KitchenLight", F + "ceiling_light.tscn", (8.25, H, 3.95), 0.0)
     inst(sc, kit, "KitchenSwitch", F + "light_switch.tscn", (6.15, 1.2, 2.40), 90.0, {

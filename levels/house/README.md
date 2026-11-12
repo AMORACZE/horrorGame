@@ -12,6 +12,10 @@ xvfb-run -a godot --audio-driver Dummy --path . --resolution 960x540 \
     -s res://tests/level/shots.gd                      # views -> _shots/level/*.png
 ```
 
+`HOUSE_DEBUG_FLAT=1 python3 levels/house/_build/build_house.py` writes a
+flat-lit copy (no GI, strong ambient) to `_shots/debug_house.tscn` for
+checking geometry with `tests/fixtures/capture_shots.gd`.
+
 `tests/level/shots.gd` plays through `main.tscn` (real player camera, UI and
 post-process) and takes a default set of eye-height views; pass
 `--shots="name@x,z@yaw,pitch;..."` for others. Committed reference frames are
@@ -30,15 +34,15 @@ z 0.0  +----[FRONT]--+==[sliding]===+----[BEDROOM]---+      .   (mass)   +------
        |(mirror)  S                        thermostat |                   | pantry |
        |  HALL  (oak strip, wood)          coat rack  [BASEMENT]          |shelves |
 z 1.5  +---+=====  cased opening  =====+--[phone]-----+------+------------+[PANTRY]+--+
-z 1.65 |   0.45                       2.95  shelf   boxes   | trash       ajar   fridge|
+z 1.65 |   0.75                       2.75  shelf   boxes   | trash       ajar   fridge|
        |W                                                   | switch               (cal)|
        |W   end    +-------rug-------+                      [ cased  ]                 |
        |W   table  | coffee table    |           TV in oak  [ opening]  dinette        |
        |W  [SOFA]  |                 |         ent. centre  |    table + 4 chairs [BACK]|
        |W   end    +-----------------+   recliner           |                   (box)  |
-       |   table  plant   stereo  mag rack                  |       base  sink  base   |
+       |   table  plant   stereo  mag rack                  |   (patch)   sink  base   |
 z 6.25 +------[S win]-----------------[S win]---------------+--[win]------[win]--------+
-                1.6       (clock 3.0)  4.4                    7.0        8.975
+                1.6       (clock 3.0)  4.4                   6.75        8.975
 ```
 
 | Room | Interior (W x D) | Floor (`surface`) | Walls |
@@ -47,11 +51,11 @@ z 6.25 +------[S win]-----------------[S win]---------------+--[win]------[win]-
 | Living room | 6.00 x 4.60 | gold shag, `carpet` (rug: `rug`) | walnut panelling (east), floral paper (north), yellowed plaster (west, south) |
 | Kitchen / dinette | 4.20 x 4.60 (+ pantry 0.90 x 0.55) | patterned sheet vinyl, `linoleum` | yellowed plaster |
 
-Openings: hall -> living cased opening 2.50 wide (x 0.45..2.95), living ->
+Openings: hall -> living cased opening 2.00 wide (x 0.75..2.75), living ->
 kitchen cased opening 1.40 wide (z 2.60..4.00), both 2.10 high. West wall:
 three double-hung windows side by side (a picture-window group, 0.07 m
 mullions) at z 3.43 / 4.40 / 5.37. South wall: living windows at x 1.6 and
-4.4, dinette window at x 7.0, sink window at x 8.975 (sill raised to 0.95 to
+4.4, dinette window at x 6.75, sink window at x 8.975 (sill raised to 0.95 to
 clear the counter).
 
 ## What is locked, and why (in level terms)
@@ -67,10 +71,51 @@ modelled (solid mass sits behind each one).
 | Basement door (east end of hall) | locked | Basement not built yet. |
 | Back door (east, kitchen) | locked | Bounds the slice; its glass shows the side yard. |
 | Coat closet (hall) | opens | Sliding doors, coats, a box on the shelf. |
-| Pantry door (kitchen) | unlocked, starts **ajar** | The one door that is slightly open. |
+| Pantry door (kitchen) | unlocked, stands open about 30 degrees | The one door left open; it closes and reopens to the same gap. |
 
 Locked lines are plain ("It's locked.", "The knob turns a little and stops.").
 The hall ceiling light has a dead bulb; every lamp starts off.
+
+## Light
+
+`House/Lighting/Atmosphere` is the one `atmosphere/afternoon_atmosphere.tscn`
+rig (sun, sky, SDFGI, haze, camcorder iris). Level knobs, in `ATMOSPHERE` in
+the builder: `sun_azimuth` 236 (light from the south-west-by-west),
+`sun_elevation` 36, `exposure_bias` -0.25 EV. At 245+ the 0.30 m window
+reveals swallow most of the light on the south glass; 236 keeps the long
+striped shafts from the west group across the shag and up the sofa, and lands
+a muntin-patterned patch on the kitchen lino from the dinette window (the
+counter run starts east of that window so the patch reaches the floor).
+
+- Blinds part-open on every living-room window (west group 30-38 degrees, one
+  bent slat each), raised halfway on the dinette window, none over the sink.
+  Harvest-gold drapes drawn fully back on the west group, sheers on the south.
+- A tree south-west of the house breaks the sun on the southern pane of the
+  west group into leaf patches (sphere clusters with gaps, real shadows).
+- `DustMotes` in each sunlit shaft (west group, both south living windows,
+  dinette), `HazeVolume` just inside the west group, along the south living
+  wall and at the dinette window, and a slightly negative haze in the hall so
+  it stays crisp and dim.
+- `ReflectionProbe`s (update once, box projection, interior) in the kitchen
+  (glossy lino) and the hall (the mirror).
+- No fill lights. Lamps, the fan light and the kitchen dome are off; the hall
+  dome has a dead bulb.
+
+Workarounds in the level for other systems (see the builder):
+
+- **Fixture glass and SDFGI.** The window and door glass casts no shadow but
+  keeps the default GI mode, so SDFGI treats every pane as a wall. The builder
+  adds a per-placement override (`gi_mode = 0`) on every `Glass` node.
+- **Rim on palette fabrics.** `carpet_shag_gold`, `carpet_beige`,
+  `fabric_floral_sofa`, `fabric_plaid`, `fabric_corduroy_brown`,
+  `fabric_curtain_heavy` and `dust_sheet` enable `rim` at roughness 1. Godot
+  adds rim light per light without shadowing and with a zero falloff exponent
+  at roughness 1, so those surfaces glow with unshadowed sun (the coat in the
+  dark hall glowed; the shag and sofa blew out). The builder writes
+  rim-less copies to `levels/house/materials/*_norim.tres` (from the current
+  palette, on every build) and overrides every use in the level. Drop this
+  once the palette is fixed: delete `make_norim_materials()` and the
+  overrides follow.
 
 ## Sound
 
@@ -99,6 +144,7 @@ group into patches; a second tree out back; garbage cans by the back step.
 ## Next
 
 - Bedroom wing and basement behind the locked doors, built the same way.
+- Remove the glass / rim workarounds once fixtures and art fix them.
 - Replace the box-built phone table, coats and pantry shelves with real props.
 - A wall phone fixture for the kitchen; a kitchen faucet drip loop.
 - Proper roof geometry (hip) and gutters if any view ever shows them.

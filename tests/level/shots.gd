@@ -19,7 +19,7 @@ const DEFAULT_SHOTS := "spawn@1.0,0.5@180,-6;" \
 	+ "kitchen_from_living@4.2,3.3@-90,-8;" \
 	+ "kitchen_dinette@9.4,3.0@140,-18;" \
 	+ "kitchen_sink@8.0,3.0@175,-25;" \
-	+ "pantry@8.1,2.9@-10,-8"
+	+ "pantry@7.4,3.2@-15,-6"
 
 
 func _initialize() -> void:
