@@ -1,0 +1,208 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/wood_medium.tres" id="1_wood_medium"]
+[ext_resource type="Material" path="res://art/materials/metal_brass.tres" id="2_metal_brass"]
+[ext_resource type="Material" path="res://art/materials/paper_white.tres" id="3_paper_white"]
+[ext_resource type="Texture2D" path="res://props/textures/magazine_01.png" id="4_magazine_01"]
+[ext_resource type="Texture2D" path="res://props/textures/magazine_02.png" id="5_magazine_02"]
+[ext_resource type="Texture2D" path="res://props/textures/magazine_03.png" id="6_magazine_03"]
+[ext_resource type="Material" path="res://art/materials/paper_yellowed.tres" id="7_paper_yellowed"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="8_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.42, 0.022, 0.28)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.014
+bottom_radius = 0.01
+height = 0.03
+radial_segments = 10
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(0.02, 0.34, 0.3)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.15
+bottom_radius = 0.15
+height = 0.02
+radial_segments = 24
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.38, 0.3, 0.012)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6"]
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.4
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7"]
+top_radius = 0.006
+bottom_radius = 0.006
+height = 0.09
+radial_segments = 8
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.21, 0.28, 0.006)
+
+[sub_resource type="QuadMesh" id="QuadMesh_9"]
+size = Vector2(0.21, 0.28)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("4_magazine_01")
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("5_magazine_02")
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("6_magazine_03")
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_13"]
+size = Vector3(0.21, 0.28, 0.008)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_14"]
+size = Vector3(0.42, 0.46, 0.3)
+
+[node name="MagazineRack" type="StaticBody3D"]
+collision_layer = 5
+collision_mask = 0
+metadata/prop_class = "furniture"
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04, 0)
+mesh = SubResource("BoxMesh_1")
+material_override = ExtResource("1_wood_medium")
+
+[node name="Foot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, 0.015, -0.11)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("1_wood_medium")
+
+[node name="Foot2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, 0.015, 0.11)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("1_wood_medium")
+
+[node name="End" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.22, 0)
+mesh = SubResource("BoxMesh_3")
+material_override = ExtResource("1_wood_medium")
+
+[node name="EndTop" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 0.45, -0.2, 0.39, 0)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("1_wood_medium")
+
+[node name="Foot3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.015, -0.11)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("1_wood_medium")
+
+[node name="Foot4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.015, 0.11)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("1_wood_medium")
+
+[node name="End2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.22, 0)
+mesh = SubResource("BoxMesh_3")
+material_override = ExtResource("1_wood_medium")
+
+[node name="EndTop2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 0.45, 0.2, 0.39, 0)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("1_wood_medium")
+
+[node name="Divider" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("1_wood_medium")
+
+[node name="Handle" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.44, 0)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("2_metal_brass")
+
+[node name="HandlePost" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17, 0.395, 0)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("2_metal_brass")
+
+[node name="HandlePost2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17, 0.395, 0)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("2_metal_brass")
+
+[node name="Magazine" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, -0.02, 0.051, 0.06)
+
+[node name="Pages" type="MeshInstance3D" parent="Magazine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("3_paper_white")
+
+[node name="Cover" type="MeshInstance3D" parent="Magazine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0.0032)
+mesh = SubResource("QuadMesh_9")
+material_override = SubResource("StandardMaterial3D_10")
+
+[node name="Magazine2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 0.01, 0.051, 0.085)
+
+[node name="Pages" type="MeshInstance3D" parent="Magazine2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("3_paper_white")
+
+[node name="Cover" type="MeshInstance3D" parent="Magazine2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0.0032)
+mesh = SubResource("QuadMesh_9")
+material_override = SubResource("StandardMaterial3D_11")
+
+[node name="Magazine3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.939693, -0.34202, 0, 0.34202, 0.939693, 0, 0.051, 0.11)
+
+[node name="Pages" type="MeshInstance3D" parent="Magazine3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("3_paper_white")
+
+[node name="Cover" type="MeshInstance3D" parent="Magazine3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0.0032)
+mesh = SubResource("QuadMesh_9")
+material_override = SubResource("StandardMaterial3D_12")
+
+[node name="MagazineBack" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.978148, 0.207912, 0, -0.207912, 0.978148, 0, 0.051, -0.06)
+
+[node name="Pages" type="MeshInstance3D" parent="MagazineBack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+mesh = SubResource("BoxMesh_13")
+material_override = ExtResource("7_paper_yellowed")
+
+[node name="MagazineBack2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.951057, 0.309017, 0, -0.309017, 0.951057, 0.01, 0.051, -0.09)
+
+[node name="Pages" type="MeshInstance3D" parent="MagazineBack2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+mesh = SubResource("BoxMesh_13")
+material_override = ExtResource("7_paper_yellowed")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23, 0)
+shape = SubResource("BoxShape3D_14")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("8_interactable")
+display_name = "Magazine rack"
+observations = Array[String](["Hearth & Home, March 1987. A page corner is folded down at a casserole recipe.", "Trail & Tackle, June 1991. The address label has been torn off.", "Needlecraft Monthly, 1984. Pattern pieces cut out of the middle pages."])

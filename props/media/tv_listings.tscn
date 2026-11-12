@@ -1,0 +1,54 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/paper_white.tres" id="1_paper_white"]
+[ext_resource type="Material" path="res://art/materials/paper_yellowed.tres" id="2_paper_yellowed"]
+[ext_resource type="Texture2D" path="res://props/textures/tv_listings_cover.png" id="3_tv_listings_cover"]
+[ext_resource type="Script" path="res://interaction/readable_interactable.gd" id="4_readable_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.135, 0.005, 0.19)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(0.004, 0.0055, 0.19)
+
+[sub_resource type="QuadMesh" id="QuadMesh_3"]
+size = Vector2(0.135, 0.19)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_tv_listings_cover")
+roughness = 0.85
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5"]
+size = Vector3(0.15, 0.01, 0.2)
+
+[node name="TVListings" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+metadata/prop_class = "tabletop"
+
+[node name="Pages" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.994522, 0, -0.104528, 0, 1, 0, 0.104528, 0, 0.994522, 0, 0.0025, 0)
+mesh = SubResource("BoxMesh_1")
+material_override = ExtResource("1_paper_white")
+
+[node name="Spine" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.994522, 0, -0.104528, 0, 1, 0, 0.104528, 0, 0.994522, -0.0655, 0.00275, -0.007)
+mesh = SubResource("BoxMesh_2")
+material_override = ExtResource("2_paper_yellowed")
+
+[node name="Cover" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.994522, 0.104528, 0, 0, 0, 1, 0.104528, -0.994522, 0, 0, 0.0052, 0)
+mesh = SubResource("QuadMesh_3")
+material_override = SubResource("StandardMaterial3D_4")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.005, 0)
+shape = SubResource("BoxShape3D_5")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("4_readable_interactable")
+display_name = "Screen Weekly"
+title = "Screen Weekly  -  Aug. 21-27, 1993"
+body = "SATURDAY AFTERNOON, AUGUST 21\n\n12:00   2  Farm & Market Report\n        7  MOVIE: \"The Hollow Road\" (1958) Two drifters work a ranch for the summer. 2 hrs.\n       11  Bowling Showcase\n 1:00   4  Calder County Fair Preview\n       22  MOVIE: \"Pennies for April\" (1961) A widow opens a roadside diner. 2 hrs.\n 2:00   2  Garden Doctor: late tomatoes\n        7  Saturday Matinee: \"Captain Orbit and the Glass Moon\" (1966)\n 3:00   4  Auto Racing: Tri-State 200 (live)\n       11  Fix It With Frank: storm doors\n 3:30   2  Wildlife Trails\n 4:00   7  The Grady Family (rerun) Stan loses the car keys before the reunion.\n          (circled in ballpoint)\n       38  Cartoon Corner\n 5:00   2  4  7  Local News\n 5:30   4  Weekend Weather Watch"
+style = 4

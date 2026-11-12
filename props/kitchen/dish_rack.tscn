@@ -1,0 +1,410 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/plastic_beige.tres" id="1_plastic_beige"]
+[ext_resource type="Material" path="res://art/materials/plastic_white.tres" id="2_plastic_white"]
+[ext_resource type="Material" path="res://art/materials/metal_painted_white.tres" id="3_metal_painted_white"]
+[ext_resource type="Material" path="res://art/materials/ceramic_white.tres" id="4_ceramic_white"]
+[ext_resource type="Material" path="res://props/materials/glaze_brown.tres" id="5_glaze_brown"]
+[ext_resource type="Material" path="res://art/materials/appliance_harvest_gold.tres" id="6_appliance_harvest_gold"]
+[ext_resource type="Material" path="res://art/materials/glass_dusty.tres" id="7_glass_dusty"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="8_metal_chrome"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="9_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.47, 0.018, 0.36)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(0.43, 0.002, 0.32)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3"]
+top_radius = 0.0035
+bottom_radius = 0.0035
+height = 0.44
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.003
+bottom_radius = 0.003
+height = 0.44
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5"]
+top_radius = 0.0035
+bottom_radius = 0.0035
+height = 0.32
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6"]
+top_radius = 0.003
+bottom_radius = 0.003
+height = 0.32
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7"]
+top_radius = 0.0035
+bottom_radius = 0.0035
+height = 0.117
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8"]
+top_radius = 0.0025
+bottom_radius = 0.0025
+height = 0.32
+radial_segments = 5
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_9"]
+top_radius = 0.0022
+bottom_radius = 0.0022
+height = 0.075538
+radial_segments = 5
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_10"]
+top_radius = 0.125
+bottom_radius = 0.085
+height = 0.014
+radial_segments = 28
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_11"]
+inner_radius = 0.108
+outer_radius = 0.117
+rings = 28
+ring_segments = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_12"]
+top_radius = 0.041
+bottom_radius = 0.041
+height = 0.094
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_13"]
+top_radius = 0.036
+bottom_radius = 0.031
+height = 0.12
+radial_segments = 24
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_14"]
+size = Vector3(0.07, 0.1, 0.07)
+
+[sub_resource type="BoxMesh" id="BoxMesh_15"]
+size = Vector3(0.014, 0.12, 0.003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16"]
+size = Vector3(0.47, 0.2, 0.36)
+
+[node name="DishRack" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+metadata/prop_class = "tabletop"
+
+[node name="DrainTray" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.009, 0)
+mesh = SubResource("BoxMesh_1")
+material_override = ExtResource("1_plastic_beige")
+
+[node name="TrayWell" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0185, 0)
+mesh = SubResource("BoxMesh_2")
+material_override = ExtResource("2_plastic_white")
+
+[node name="Rail" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 0.035, -0.16)
+mesh = SubResource("CylinderMesh_3")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="TopRail" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 0.135, -0.16)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rail2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 0.035, 0.16)
+mesh = SubResource("CylinderMesh_3")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="TopRail2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0, 0.135, 0.16)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="EndRail" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.22, 0.035, 0)
+mesh = SubResource("CylinderMesh_5")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="EndTop" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.22, 0.135, 0)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Post" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22, 0.0765, -0.16)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Post2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22, 0.0765, 0.16)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="EndRail2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.22, 0.035, 0)
+mesh = SubResource("CylinderMesh_5")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="EndTop2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.22, 0.135, 0)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Post3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0.0765, -0.16)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Post4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22, 0.0765, 0.16)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rib" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.2, 0.035, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, 0.119145, 0, -0.119145, 0.992877, -0.2, 0.0725, -0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, -0.119145, 0, 0.119145, 0.992877, -0.2, 0.0725, 0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rib2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.155556, 0.035, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, 0.119145, 0, -0.119145, 0.992877, -0.155556, 0.0725, -0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, -0.119145, 0, 0.119145, 0.992877, -0.155556, 0.0725, 0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rib3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.111111, 0.035, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, 0.119145, 0, -0.119145, 0.992877, -0.111111, 0.0725, -0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, -0.119145, 0, 0.119145, 0.992877, -0.111111, 0.0725, 0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rib4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.066667, 0.035, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, 0.119145, 0, -0.119145, 0.992877, -0.066667, 0.0725, -0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, -0.119145, 0, 0.119145, 0.992877, -0.066667, 0.0725, 0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rib5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.022222, 0.035, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, 0.119145, 0, -0.119145, 0.992877, -0.022222, 0.0725, -0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, -0.119145, 0, 0.119145, 0.992877, -0.022222, 0.0725, 0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rib6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.022222, 0.035, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, 0.119145, 0, -0.119145, 0.992877, 0.022222, 0.0725, -0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, -0.119145, 0, 0.119145, 0.992877, 0.022222, 0.0725, 0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rib7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.066667, 0.035, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, 0.119145, 0, -0.119145, 0.992877, 0.066667, 0.0725, -0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, -0.119145, 0, 0.119145, 0.992877, 0.066667, 0.0725, 0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rib8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.111111, 0.035, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, 0.119145, 0, -0.119145, 0.992877, 0.111111, 0.0725, -0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, -0.119145, 0, 0.119145, 0.992877, 0.111111, 0.0725, 0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rib9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.155556, 0.035, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, 0.119145, 0, -0.119145, 0.992877, 0.155556, 0.0725, -0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine18" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, -0.119145, 0, 0.119145, 0.992877, 0.155556, 0.0725, 0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Rib10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.2, 0.035, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine19" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, 0.119145, 0, -0.119145, 0.992877, 0.2, 0.0725, -0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Tine20" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.992877, -0.119145, 0, 0.119145, 0.992877, 0.2, 0.0725, 0.0645)
+mesh = SubResource("CylinderMesh_9")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Plate" type="Node3D" parent="."]
+transform = Transform3D(0.207912, 0.978148, 0, -0.978148, 0.207912, 0, 0, 0, 1, -0.154, 0.163, 0)
+
+[node name="Body" type="MeshInstance3D" parent="Plate"]
+mesh = SubResource("CylinderMesh_10")
+material_override = ExtResource("4_ceramic_white")
+
+[node name="Band" type="MeshInstance3D" parent="Plate"]
+transform = Transform3D(1, 0, 0, 0, 0.12, 0, 0, 0, 1, 0, 0.0068, 0)
+mesh = SubResource("TorusMesh_11")
+material_override = ExtResource("5_glaze_brown")
+
+[node name="Plate2" type="Node3D" parent="."]
+transform = Transform3D(0.275637, 0.961262, 0, -0.961262, 0.275637, 0, 0, 0, 1, -0.114, 0.163, 0)
+
+[node name="Body" type="MeshInstance3D" parent="Plate2"]
+mesh = SubResource("CylinderMesh_10")
+material_override = ExtResource("4_ceramic_white")
+
+[node name="Band" type="MeshInstance3D" parent="Plate2"]
+transform = Transform3D(1, 0, 0, 0, 0.12, 0, 0, 0, 1, 0, 0.0068, 0)
+mesh = SubResource("TorusMesh_11")
+material_override = ExtResource("5_glaze_brown")
+
+[node name="Plate3" type="Node3D" parent="."]
+transform = Transform3D(0.34202, 0.939693, 0, -0.939693, 0.34202, 0, 0, 0, 1, -0.074, 0.163, 0)
+
+[node name="Body" type="MeshInstance3D" parent="Plate3"]
+mesh = SubResource("CylinderMesh_10")
+material_override = ExtResource("4_ceramic_white")
+
+[node name="Band" type="MeshInstance3D" parent="Plate3"]
+transform = Transform3D(1, 0, 0, 0, 0.12, 0, 0, 0, 1, 0, 0.0068, 0)
+mesh = SubResource("TorusMesh_11")
+material_override = ExtResource("5_glaze_brown")
+
+[node name="Mug" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, -1, 0.08, 0.086, -0.06)
+mesh = SubResource("CylinderMesh_12")
+material_override = ExtResource("6_appliance_harvest_gold")
+
+[node name="Glass" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, -1, 0.08, 0.099, 0.07)
+mesh = SubResource("CylinderMesh_13")
+material_override = ExtResource("7_glass_dusty")
+
+[node name="Caddy" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.175, 0.035, 0.08)
+
+[node name="Cup" type="MeshInstance3D" parent="Caddy"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+mesh = SubResource("BoxMesh_14")
+material_override = ExtResource("3_metal_painted_white")
+
+[node name="Fork" type="MeshInstance3D" parent="Caddy"]
+transform = Transform3D(0.994522, 0.104528, 0, -0.104528, 0.994522, 0, 0, 0, 1, -0.02, 0.12, -0.01)
+mesh = SubResource("BoxMesh_15")
+material_override = ExtResource("8_metal_chrome")
+
+[node name="Fork2" type="MeshInstance3D" parent="Caddy"]
+transform = Transform3D(0.93912, 0.032795, 0.34202, -0.034899, 0.999391, 0, -0.341812, -0.011936, 0.939693, -0.007, 0.12, 0.01)
+mesh = SubResource("BoxMesh_15")
+material_override = ExtResource("8_metal_chrome")
+
+[node name="Fork3" type="MeshInstance3D" parent="Caddy"]
+transform = Transform3D(0.765578, -0.026735, 0.642788, 0.034899, 0.999391, 0, -0.642396, 0.022433, 0.766044, 0.006, 0.12, -0.01)
+mesh = SubResource("BoxMesh_15")
+material_override = ExtResource("8_metal_chrome")
+
+[node name="Fork4" type="MeshInstance3D" parent="Caddy"]
+transform = Transform3D(0.497261, -0.052264, 0.866025, 0.104528, 0.994522, 0, -0.861281, 0.090524, 0.5, 0.019, 0.12, 0.01)
+mesh = SubResource("BoxMesh_15")
+material_override = ExtResource("8_metal_chrome")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("BoxShape3D_16")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("9_interactable")
+display_name = "Dish rack"
+observations = Array[String](["Three plates, a glass, a mug. All dry.", "A ring of hard-water scale in the drain tray where the water stood."])

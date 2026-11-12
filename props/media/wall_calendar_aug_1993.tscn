@@ -1,0 +1,89 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/metal_dark.tres" id="1_metal_dark"]
+[ext_resource type="Material" path="res://art/materials/paper_white.tres" id="2_paper_white"]
+[ext_resource type="Texture2D" path="res://props/textures/calendar_aug_1993.png" id="3_calendar_aug_1993"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="4_metal_chrome"]
+[ext_resource type="Script" path="res://interaction/readable_interactable.gd" id="5_readable_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.0025
+bottom_radius = 0.0025
+height = 0.02
+radial_segments = 6
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(0.3, 0.46, 0.0008)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(0.3, 0.46, 0.001)
+
+[sub_resource type="QuadMesh" id="QuadMesh_4"]
+size = Vector2(0.3, 0.46)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_calendar_aug_1993")
+roughness = 0.9
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6"]
+top_radius = 0.003
+bottom_radius = 0.003
+height = 0.28
+radial_segments = 8
+rings = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7"]
+size = Vector3(0.3, 0.46, 0.012)
+
+[node name="WallCalendar" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+metadata/prop_class = "wall"
+
+[node name="Nail" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.005, 0.01)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("1_metal_dark")
+
+[node name="Page" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999945, 0.010472, 0, -0.010472, 0.999945, 0, 0, 0, 1, 0, -0.23, 0.002)
+mesh = SubResource("BoxMesh_2")
+material_override = ExtResource("2_paper_white")
+
+[node name="Page2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23, 0.003)
+mesh = SubResource("BoxMesh_2")
+material_override = ExtResource("2_paper_white")
+
+[node name="Page3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.999945, -0.010472, 0, 0.010472, 0.999945, 0, 0, 0, 1, 0, -0.23, 0.004)
+mesh = SubResource("BoxMesh_2")
+material_override = ExtResource("2_paper_white")
+
+[node name="Sheet" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23, 0.0055)
+mesh = SubResource("BoxMesh_3")
+material_override = ExtResource("2_paper_white")
+
+[node name="Face" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23, 0.0062)
+mesh = SubResource("QuadMesh_4")
+material_override = SubResource("StandardMaterial3D_5")
+
+[node name="Binding" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, -0.004, 0.007)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("4_metal_chrome")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.23, 0.006)
+shape = SubResource("BoxShape3D_7")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("5_readable_interactable")
+display_name = "Calendar"
+title = "August 1993"
+body = "AUGUST 1993\nCompliments of Hollis Hardware & Feed, Calder Falls\n\nWed 4    Dentist 2:30\nTue 10   pay gas\nSat 14   Carol b-day\nWed 18   oil chg\nTue 24   (circled in red. Nothing written.)\nFri 27   Library bk due"
+style = 4

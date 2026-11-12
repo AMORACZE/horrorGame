@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://props/architecture/curtain_panels.gd" id="1_curtain_panels"]
+[ext_resource type="Material" path="res://art/materials/fabric_curtain_sheer.tres" id="2_fabric_curtain_sheer"]
+[ext_resource type="Material" path="res://art/materials/metal_painted_white.tres" id="3_metal_painted_white"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="4_interactable"]
+
+[node name="SheerCurtains" type="StaticBody3D"]
+script = ExtResource("1_curtain_panels")
+collision_layer = 4
+collision_mask = 0
+width = 1.6
+height = 1.75
+rod_offset = 0.07
+open_amount = 0
+fullness = 2.2
+pleat_width = 0.08
+pinch_pleat_header = false
+metadata/prop_class = "wall"
+fabric_material = ExtResource("2_fabric_curtain_sheer")
+rod_material = ExtResource("3_metal_painted_white")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("4_interactable")
+display_name = "Sheer curtains"
+observations = Array[String](["Sheer curtains. The sun comes straight through them.", "The hem is grey where it has brushed the sill for years."])

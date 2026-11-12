@@ -1,0 +1,66 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/paper_white.tres" id="1_paper_white"]
+[ext_resource type="Material" path="res://art/materials/paper_yellowed.tres" id="2_paper_yellowed"]
+[ext_resource type="Texture2D" path="res://props/textures/newspaper_front.png" id="3_newspaper_front"]
+[ext_resource type="Script" path="res://interaction/readable_interactable.gd" id="4_readable_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.3, 0.008, 0.38)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(0.295, 0.004, 0.375)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3"]
+top_radius = 0.004
+bottom_radius = 0.004
+height = 0.38
+radial_segments = 8
+rings = 1
+
+[sub_resource type="QuadMesh" id="QuadMesh_4"]
+size = Vector2(0.3, 0.38)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_newspaper_front")
+roughness = 0.95
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6"]
+size = Vector3(0.32, 0.012, 0.4)
+
+[node name="Newspaper" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+metadata/prop_class = "tabletop"
+
+[node name="Fold" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997564, 0, 0.069756, 0, 1, 0, -0.069756, 0, 0.997564, 0, 0.004, 0)
+mesh = SubResource("BoxMesh_1")
+material_override = ExtResource("1_paper_white")
+
+[node name="Section" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.99863, 0, -0.052336, 0, 1, 0, 0.052336, 0, 0.99863, 0.01, 0.002, 0.012)
+mesh = SubResource("BoxMesh_2")
+material_override = ExtResource("2_paper_yellowed")
+
+[node name="FoldEdge" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997564, 0.069756, 0, 0, 0, -1, -0.069756, 0.997564, 0, -0.15, 0.004, 0)
+mesh = SubResource("CylinderMesh_3")
+material_override = ExtResource("1_paper_white")
+
+[node name="Front" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997564, -0.069756, 0, 0, 0, 1, -0.069756, -0.997564, 0, 0, 0.0082, 0)
+mesh = SubResource("QuadMesh_4")
+material_override = SubResource("StandardMaterial3D_5")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006, 0)
+shape = SubResource("BoxShape3D_6")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("4_readable_interactable")
+display_name = "Newspaper"
+title = "The Calder Falls Register"
+body = "THE CALDER FALLS REGISTER\nSaturday, August 21, 1993  -  35 cents\n\nCOUNCIL DELAYS VOTE ON ROUTE 9 STOPLIGHT\nResidents to be heard again Sept. 7\nThe town council put off a decision Thursday on a signal for the Route 9 and Mill Street crossing, after more than forty residents filled the meeting room. \"We'd like to hear from the people who drive it every day,\" council chair Ed Pruitt said.\n\nHEAT ADVISORY EXTENDED THROUGH TUESDAY\nHighs in the mid-nineties are expected through the weekend. The county asks residents to check on elderly neighbors and to water lawns only before 8 a.m.\n\nPIE CONTEST WINNERS NAMED BY FAIR BOARD\nRuth Kalb of Orchard Lane took first in fruit pies for the third year running.\n\nLIBRARY ROOF WORK TO BEGIN IN SEPTEMBER\nThe reading room will close for two weeks while the roof is replaced.\n\nINSIDE: Obituaries 4  -  Weather 2  -  Farm report 6  -  Classifieds 9"
+style = 4

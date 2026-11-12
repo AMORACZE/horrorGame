@@ -1,0 +1,95 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/metal_dark.tres" id="1_metal_dark"]
+[ext_resource type="Material" path="res://art/materials/appliance_avocado.tres" id="2_appliance_avocado"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="3_metal_chrome"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="4_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.145
+bottom_radius = 0.145
+height = 0.025
+radial_segments = 28
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.14
+bottom_radius = 0.135
+height = 0.4
+radial_segments = 28
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_3"]
+inner_radius = 0.136
+outer_radius = 0.146
+rings = 28
+ring_segments = 6
+
+[sub_resource type="SphereMesh" id="SphereMesh_4"]
+radius = 0.145
+height = 0.145
+radial_segments = 28
+rings = 8
+is_hemisphere = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.06, 0.02, 0.025)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.09, 0.012, 0.06)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.02, 0.012, 0.04)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8"]
+height = 0.47
+radius = 0.15
+
+[node name="TrashCan" type="StaticBody3D"]
+collision_layer = 5
+collision_mask = 0
+metadata/prop_class = "furniture"
+
+[node name="Ring" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0125, 0)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("1_metal_dark")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.225, 0)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("2_appliance_avocado")
+
+[node name="Bead" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.425, 0)
+mesh = SubResource("TorusMesh_3")
+material_override = ExtResource("3_metal_chrome")
+
+[node name="Lid" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.28, 0, 0, 0, 1, 0, 0.428, 0)
+mesh = SubResource("SphereMesh_4")
+material_override = ExtResource("2_appliance_avocado")
+
+[node name="Hinge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.43, -0.145)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("1_metal_dark")
+
+[node name="Pedal" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.990268, -0.139173, 0, 0.139173, 0.990268, 0, 0.03, 0.165)
+mesh = SubResource("BoxMesh_6")
+material_override = ExtResource("3_metal_chrome")
+
+[node name="PedalArm" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.03, 0.13)
+mesh = SubResource("BoxMesh_7")
+material_override = ExtResource("1_metal_dark")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235, 0)
+shape = SubResource("CylinderShape3D_8")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("4_interactable")
+display_name = "Trash can"
+observations = Array[String](["A step can. The lid won't stay up on its own.", "Inside: coffee grounds, an egg carton, the paper backing off a roll of film."])

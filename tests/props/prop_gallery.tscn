@@ -1,0 +1,1059 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/floor_hardwood.tres" id="1_floor_hardwood"]
+[ext_resource type="Material" path="res://art/materials/wall_plaster_cream.tres" id="2_wall_plaster_cream"]
+[ext_resource type="Material" path="res://art/materials/trim_white.tres" id="3_trim_white"]
+[ext_resource type="Material" path="res://art/materials/glass_window.tres" id="4_glass_window"]
+[ext_resource type="Material" path="res://art/materials/wall_wood_paneling.tres" id="5_wall_wood_paneling"]
+[ext_resource type="PackedScene" path="res://props/living/sofa_floral.tscn" id="6_sofa_floral"]
+[ext_resource type="PackedScene" path="res://props/living/recliner_corduroy.tscn" id="7_recliner_corduroy"]
+[ext_resource type="PackedScene" path="res://props/living/entertainment_center_oak.tscn" id="8_entertainment_center_oak"]
+[ext_resource type="PackedScene" path="res://props/living/bookshelf.tscn" id="9_bookshelf"]
+[ext_resource type="PackedScene" path="res://props/living/coffee_table_oak_glass.tscn" id="10_coffee_table_oak_glass"]
+[ext_resource type="PackedScene" path="res://props/living/end_table_oak.tscn" id="11_end_table_oak"]
+[ext_resource type="PackedScene" path="res://props/living/magazine_rack.tscn" id="12_magazine_rack"]
+[ext_resource type="PackedScene" path="res://props/living/potted_plant_dry.tscn" id="13_potted_plant_dry"]
+[ext_resource type="PackedScene" path="res://props/living/area_rug.tscn" id="14_area_rug"]
+[ext_resource type="PackedScene" path="res://props/kitchen/dinette_table.tscn" id="15_dinette_table"]
+[ext_resource type="PackedScene" path="res://props/kitchen/dinette_chair.tscn" id="16_dinette_chair"]
+[ext_resource type="PackedScene" path="res://props/kitchen/trash_can.tscn" id="17_trash_can"]
+[ext_resource type="PackedScene" path="res://props/hallway/coat_rack.tscn" id="18_coat_rack"]
+[ext_resource type="PackedScene" path="res://props/hallway/umbrella_stand.tscn" id="19_umbrella_stand"]
+[ext_resource type="PackedScene" path="res://props/hallway/moving_box_closed.tscn" id="20_moving_box_closed"]
+[ext_resource type="PackedScene" path="res://props/hallway/moving_box_open.tscn" id="21_moving_box_open"]
+[ext_resource type="PackedScene" path="res://props/hallway/laundry_basket.tscn" id="22_laundry_basket"]
+[ext_resource type="PackedScene" path="res://props/hallway/floor_fan.tscn" id="23_floor_fan"]
+[ext_resource type="PackedScene" path="res://props/hallway/shoes_pair.tscn" id="24_shoes_pair"]
+[ext_resource type="Material" path="res://art/materials/laminate_formica.tres" id="25_laminate_formica"]
+[ext_resource type="PackedScene" path="res://props/media/vhs_tape_01.tscn" id="26_vhs_tape_01"]
+[ext_resource type="PackedScene" path="res://props/media/vhs_tape_02.tscn" id="27_vhs_tape_02"]
+[ext_resource type="PackedScene" path="res://props/media/vhs_tape_03.tscn" id="28_vhs_tape_03"]
+[ext_resource type="PackedScene" path="res://props/media/vhs_tape_04.tscn" id="29_vhs_tape_04"]
+[ext_resource type="PackedScene" path="res://props/media/vhs_tape_05.tscn" id="30_vhs_tape_05"]
+[ext_resource type="PackedScene" path="res://props/media/vhs_tape_06.tscn" id="31_vhs_tape_06"]
+[ext_resource type="PackedScene" path="res://props/media/vhs_stack.tscn" id="32_vhs_stack"]
+[ext_resource type="PackedScene" path="res://props/media/tape_rewinder.tscn" id="33_tape_rewinder"]
+[ext_resource type="PackedScene" path="res://props/media/game_console.tscn" id="34_game_console"]
+[ext_resource type="PackedScene" path="res://props/media/audio_cassette_01.tscn" id="35_audio_cassette_01"]
+[ext_resource type="PackedScene" path="res://props/media/audio_cassette_02.tscn" id="36_audio_cassette_02"]
+[ext_resource type="PackedScene" path="res://props/media/audio_cassette_pile.tscn" id="37_audio_cassette_pile"]
+[ext_resource type="PackedScene" path="res://props/media/tv_remote.tscn" id="38_tv_remote"]
+[ext_resource type="PackedScene" path="res://props/media/tv_listings.tscn" id="39_tv_listings"]
+[ext_resource type="PackedScene" path="res://props/media/newspaper.tscn" id="40_newspaper"]
+[ext_resource type="PackedScene" path="res://props/media/mail_stack.tscn" id="41_mail_stack"]
+[ext_resource type="PackedScene" path="res://props/media/note.tscn" id="42_note"]
+[ext_resource type="PackedScene" path="res://props/kitchen/mug.tscn" id="43_mug"]
+[ext_resource type="PackedScene" path="res://props/kitchen/drinking_glass.tscn" id="44_drinking_glass"]
+[ext_resource type="PackedScene" path="res://props/kitchen/plate.tscn" id="45_plate"]
+[ext_resource type="PackedScene" path="res://props/kitchen/ashtray_amber.tscn" id="46_ashtray_amber"]
+[ext_resource type="PackedScene" path="res://props/kitchen/cereal_box.tscn" id="47_cereal_box"]
+[ext_resource type="PackedScene" path="res://props/kitchen/fruit_bowl.tscn" id="48_fruit_bowl"]
+[ext_resource type="PackedScene" path="res://props/kitchen/dish_rack.tscn" id="49_dish_rack"]
+[ext_resource type="PackedScene" path="res://props/kitchen/percolator.tscn" id="50_percolator"]
+[ext_resource type="PackedScene" path="res://props/living/sunburst_clock.tscn" id="51_sunburst_clock"]
+[ext_resource type="PackedScene" path="res://props/living/framed_picture_lake.tscn" id="52_framed_picture_lake"]
+[ext_resource type="PackedScene" path="res://props/living/framed_picture_abstract.tscn" id="53_framed_picture_abstract"]
+[ext_resource type="PackedScene" path="res://props/living/framed_picture_barn.tscn" id="54_framed_picture_barn"]
+[ext_resource type="PackedScene" path="res://props/media/wall_calendar_aug_1993.tscn" id="55_wall_calendar_aug_1993"]
+[ext_resource type="PackedScene" path="res://props/hallway/wall_mirror.tscn" id="56_wall_mirror"]
+[ext_resource type="PackedScene" path="res://props/hallway/key_hooks.tscn" id="57_key_hooks"]
+[ext_resource type="PackedScene" path="res://props/kitchen/paper_towel_holder.tscn" id="58_paper_towel_holder"]
+[ext_resource type="Material" path="res://art/materials/wood_dark.tres" id="59_wood_dark"]
+[ext_resource type="PackedScene" path="res://props/living/macrame_plant_hanger.tscn" id="60_macrame_plant_hanger"]
+[ext_resource type="PackedScene" path="res://props/architecture/venetian_blinds.tscn" id="61_venetian_blinds"]
+[ext_resource type="PackedScene" path="res://props/architecture/sheer_curtains.tscn" id="62_sheer_curtains"]
+[ext_resource type="PackedScene" path="res://props/architecture/heavy_drapes.tscn" id="63_heavy_drapes"]
+[ext_resource type="Script" path="res://tests/props/gallery_camera.gd" id="64_gallery_camera"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1"]
+sky_top_color = Color(0.32, 0.5, 0.78, 1)
+sky_horizon_color = Color(0.78, 0.8, 0.8, 1)
+ground_horizon_color = Color(0.7, 0.66, 0.6, 1)
+ground_bottom_color = Color(0.3, 0.27, 0.22, 1)
+sun_angle_max = 20
+
+[sub_resource type="Sky" id="Sky_2"]
+sky_material = SubResource("ProceduralSkyMaterial_1")
+
+[sub_resource type="Environment" id="Environment_3"]
+background_mode = 2
+sky = SubResource("Sky_2")
+ambient_light_source = 3
+ambient_light_energy = 0.45
+reflected_light_source = 2
+tonemap_mode = 2
+tonemap_exposure = 0.75
+ssao_enabled = true
+glow_enabled = true
+glow_intensity = 0.3
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(19, 0.1, 12.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5"]
+size = Vector3(19, 0.1, 12.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(2.45, 2.44, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7"]
+size = Vector3(2.45, 2.44, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.9, 0.9, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_9"]
+size = Vector3(0.9, 0.9, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_10"]
+size = Vector3(0.9, 0.34, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11"]
+size = Vector3(0.9, 0.34, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_12"]
+size = Vector3(1.85, 2.44, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_13"]
+size = Vector3(1.85, 2.44, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_14"]
+size = Vector3(1.4, 0.75, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_15"]
+size = Vector3(1.4, 0.75, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_16"]
+size = Vector3(1.4, 0.24, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_17"]
+size = Vector3(1.4, 0.24, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_18"]
+size = Vector3(12.4, 2.44, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_19"]
+size = Vector3(12.4, 2.44, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_20"]
+size = Vector3(1, 0.03, 0.21)
+
+[sub_resource type="BoxMesh" id="BoxMesh_21"]
+size = Vector3(0.9, 1.2, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_22"]
+size = Vector3(1.5, 0.03, 0.21)
+
+[sub_resource type="BoxMesh" id="BoxMesh_23"]
+size = Vector3(1.4, 1.45, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_24"]
+size = Vector3(0.15, 2.44, 12)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_25"]
+size = Vector3(0.15, 2.44, 12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_26"]
+size = Vector3(6.410529, 0.6, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_27"]
+size = Vector3(6.410529, 0.6, 0.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_28"]
+size = Vector3(4.296226, 0.6, 0.75)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_29"]
+size = Vector3(4.296226, 0.6, 0.75)
+
+[sub_resource type="BoxMesh" id="BoxMesh_30"]
+size = Vector3(0.6, 0.08, 0.1)
+
+[node name="PropGallery" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_3")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.976744, 0.117496, -0.179347, 0, 0.836476, 0.548003, 0.214407, 0.535259, -0.817023, 0, 6, 0)
+light_color = Color(1, 0.93, 0.8, 1)
+light_energy = 1.6
+shadow_enabled = true
+directional_shadow_max_distance = 28
+
+[node name="Room" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 0
+metadata/surface = &"wood"
+
+[node name="Floor" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, -0.075)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("1_floor_hardwood")
+
+[node name="FloorCollision" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, -0.075)
+shape = SubResource("BoxShape3D_5")
+
+[node name="BackWall" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.275, 1.22, -6.075)
+mesh = SubResource("BoxMesh_6")
+material_override = ExtResource("2_wall_plaster_cream")
+
+[node name="WallCollision" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.275, 1.22, -6.075)
+shape = SubResource("BoxShape3D_7")
+
+[node name="BackWall2" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 0.45, -6.075)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("2_wall_plaster_cream")
+
+[node name="WallCollision2" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 0.45, -6.075)
+shape = SubResource("BoxShape3D_9")
+
+[node name="BackWall3" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 2.27, -6.075)
+mesh = SubResource("BoxMesh_10")
+material_override = ExtResource("2_wall_plaster_cream")
+
+[node name="WallCollision3" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 2.27, -6.075)
+shape = SubResource("BoxShape3D_11")
+
+[node name="BackWall4" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.225, 1.22, -6.075)
+mesh = SubResource("BoxMesh_12")
+material_override = ExtResource("2_wall_plaster_cream")
+
+[node name="WallCollision4" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.225, 1.22, -6.075)
+shape = SubResource("BoxShape3D_13")
+
+[node name="BackWall5" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0.375, -6.075)
+mesh = SubResource("BoxMesh_14")
+material_override = ExtResource("2_wall_plaster_cream")
+
+[node name="WallCollision5" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0.375, -6.075)
+shape = SubResource("BoxShape3D_15")
+
+[node name="BackWall6" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 2.32, -6.075)
+mesh = SubResource("BoxMesh_16")
+material_override = ExtResource("2_wall_plaster_cream")
+
+[node name="WallCollision6" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 2.32, -6.075)
+shape = SubResource("BoxShape3D_17")
+
+[node name="BackWall7" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 1.22, -6.075)
+mesh = SubResource("BoxMesh_18")
+material_override = ExtResource("2_wall_plaster_cream")
+
+[node name="WallCollision7" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3, 1.22, -6.075)
+shape = SubResource("BoxShape3D_19")
+
+[node name="Sill" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 0.915, -6.045)
+mesh = SubResource("BoxMesh_20")
+material_override = ExtResource("3_trim_white")
+
+[node name="Glass" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 1.5, -6.125)
+mesh = SubResource("BoxMesh_21")
+material_override = ExtResource("4_glass_window")
+
+[node name="Sill2" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0.765, -6.045)
+mesh = SubResource("BoxMesh_22")
+material_override = ExtResource("3_trim_white")
+
+[node name="Glass2" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 1.475, -6.125)
+mesh = SubResource("BoxMesh_23")
+material_override = ExtResource("4_glass_window")
+
+[node name="SideWall" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.575, 1.22, 0)
+mesh = SubResource("BoxMesh_24")
+material_override = ExtResource("5_wall_wood_paneling")
+
+[node name="WallCollision8" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.575, 1.22, 0)
+shape = SubResource("BoxShape3D_25")
+
+[node name="SideWall2" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.575, 1.22, 0)
+mesh = SubResource("BoxMesh_24")
+material_override = ExtResource("5_wall_wood_paneling")
+
+[node name="WallCollision9" type="CollisionShape3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.575, 1.22, 0)
+shape = SubResource("BoxShape3D_25")
+
+[node name="SofaFloral" parent="." instance=ExtResource("6_sofa_floral")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.100174, 0, -3.9)
+
+[node name="Label" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, -5.100174, 0.06, -3.289)
+pixel_size = 0.0022
+text = "sofa_floral"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="ReclinerCorduroy" parent="." instance=ExtResource("7_recliner_corduroy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.037174, 0, -3.9)
+
+[node name="Label2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, -3.025674, 0.06, -3.269)
+pixel_size = 0.0022
+text = "recliner_corduroy"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="EntertainmentCenterOak" parent="." instance=ExtResource("8_entertainment_center_oak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.226174, 0, -3.9)
+
+[node name="Label3" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, -1.226174, 0.06, -3.453)
+pixel_size = 0.0022
+text = "entertainment_center_oak"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="Bookshelf" parent="." instance=ExtResource("9_bookshelf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.563826, 0, -3.9)
+
+[node name="Label4" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0.563826, 0.06, -3.59)
+pixel_size = 0.0022
+text = "bookshelf"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="CoffeeTableOakGlass" parent="." instance=ExtResource("10_coffee_table_oak_glass")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.173826, 0, -3.9)
+
+[node name="Label5" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 2.173826, 0.06, -3.448)
+pixel_size = 0.0022
+text = "coffee_table_oak_glass"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="EndTableOak" parent="." instance=ExtResource("11_end_table_oak")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.603826, 0, -3.9)
+
+[node name="Label6" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 3.603826, 0.06, -3.47)
+pixel_size = 0.0022
+text = "end_table_oak"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="MagazineRack" parent="." instance=ExtResource("12_magazine_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.643826, 0, -3.9)
+
+[node name="Label7" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 4.643826, 0.06, -3.540757)
+pixel_size = 0.0022
+text = "magazine_rack"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="PottedPlantDry" parent="." instance=ExtResource("13_potted_plant_dry")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.826289, 0, -3.9)
+
+[node name="Label8" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 5.7795, 0.06, -3.376606)
+pixel_size = 0.0022
+text = "potted_plant_dry"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="AreaRug" parent="." instance=ExtResource("14_area_rug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.684197, 0, -1.2)
+
+[node name="Label9" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, -4.684197, 0.06, -0.2)
+pixel_size = 0.0022
+text = "area_rug"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="DinetteTable" parent="." instance=ExtResource("15_dinette_table")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42669, 0, -1.2)
+
+[node name="Label10" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, -2.42669, 0.06, -0.666)
+pixel_size = 0.0022
+text = "dinette_table"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="DinetteChair" parent="." instance=ExtResource("16_dinette_chair")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.22769, 0, -1.2)
+
+[node name="Label11" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, -1.22769, 0.06, -0.812)
+pixel_size = 0.0022
+text = "dinette_chair"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="TrashCan" parent="." instance=ExtResource("17_trash_can")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.42169, 0, -1.2)
+
+[node name="Label12" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, -0.42169, 0.06, -0.854457)
+pixel_size = 0.0022
+text = "trash_can"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="CoatRack" parent="." instance=ExtResource("18_coat_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.46694, 0, -1.2)
+
+[node name="Label13" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 0.46694, 0.06, -0.8012)
+pixel_size = 0.0022
+text = "coat_rack"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="UmbrellaStand" parent="." instance=ExtResource("19_umbrella_stand")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32757, 0, -1.2)
+
+[node name="Label14" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 1.32757, 0.06, -0.932)
+pixel_size = 0.0022
+text = "umbrella_stand"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="MovingBoxClosed" parent="." instance=ExtResource("20_moving_box_closed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.12697, 0, -1.2)
+
+[node name="Label15" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 2.12697, 0.06, -0.81865)
+pixel_size = 0.0022
+text = "moving_box_closed"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="MovingBoxOpen" parent="." instance=ExtResource("21_moving_box_open")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.040301, 0, -1.2)
+
+[node name="Label16" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 3.061375, 0.06, -0.804042)
+pixel_size = 0.0022
+text = "moving_box_open"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="LaundryBasket" parent="." instance=ExtResource("22_laundry_basket")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.065631, 0, -1.2)
+
+[node name="Label17" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 4.067133, 0.06, -0.793825)
+pixel_size = 0.0022
+text = "laundry_basket"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="FloorFan" parent="." instance=ExtResource("23_floor_fan")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.023886, 0, -1.2)
+
+[node name="Label18" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 5.023886, 0.06, -0.87)
+pixel_size = 0.0022
+text = "floor_fan"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="ShoesPair" parent="." instance=ExtResource("24_shoes_pair")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.805833, 0, -1.2)
+
+[node name="Label19" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.819152, 0.573576, 0, -0.573576, 0.819152, 5.815295, 0.06, -0.877557)
+pixel_size = 0.0022
+text = "shoes_pair"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="Plinth" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Top" type="MeshInstance3D" parent="Plinth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("BoxMesh_26")
+material_override = ExtResource("25_laminate_formica")
+
+[node name="Collision" type="CollisionShape3D" parent="Plinth"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_27")
+
+[node name="VhsTape01" parent="." instance=ExtResource("26_vhs_tape_01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.911765, 0.602, 0.9)
+
+[node name="Label20" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.911765, 0.48, 1.3751)
+pixel_size = 0.0022
+text = "vhs_tape_01"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="VhsTape02" parent="." instance=ExtResource("27_vhs_tape_02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.564765, 0.602, 0.9)
+
+[node name="Label21" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.564765, 0.35, 1.3751)
+pixel_size = 0.0022
+text = "vhs_tape_02"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="VhsTape03" parent="." instance=ExtResource("28_vhs_tape_03")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.217765, 0.602, 0.9)
+
+[node name="Label22" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.217765, 0.48, 1.3751)
+pixel_size = 0.0022
+text = "vhs_tape_03"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="VhsTape04" parent="." instance=ExtResource("29_vhs_tape_04")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.870765, 0.602, 0.9)
+
+[node name="Label23" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.870765, 0.35, 1.3751)
+pixel_size = 0.0022
+text = "vhs_tape_04"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="VhsTape05" parent="." instance=ExtResource("30_vhs_tape_05")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.523765, 0.602, 0.9)
+
+[node name="Label24" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.523765, 0.48, 1.3751)
+pixel_size = 0.0022
+text = "vhs_tape_05"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="VhsTape06" parent="." instance=ExtResource("31_vhs_tape_06")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.176765, 0.602, 0.9)
+
+[node name="Label25" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.176765, 0.35, 1.3751)
+pixel_size = 0.0022
+text = "vhs_tape_06"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="VhsStack" parent="." instance=ExtResource("32_vhs_stack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.818201, 0.602, 0.9)
+
+[node name="Label26" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.818547, 0.48, 1.3751)
+pixel_size = 0.0022
+text = "vhs_stack"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="TapeRewinder" parent="." instance=ExtResource("33_tape_rewinder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.431149, 0.602, 0.9)
+
+[node name="Label27" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43499, 0.35, 1.3751)
+pixel_size = 0.0022
+text = "tape_rewinder"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="GameConsole" parent="." instance=ExtResource("34_game_console")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.053881, 0.602, 0.9)
+
+[node name="Label28" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.083617, 0.48, 1.3751)
+pixel_size = 0.0022
+text = "game_console"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="AudioCassette01" parent="." instance=ExtResource("35_audio_cassette_01")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.533532, 0.602, 0.9)
+
+[node name="Label29" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.533532, 0.35, 1.3751)
+pixel_size = 0.0022
+text = "audio_cassette_01"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="AudioCassette02" parent="." instance=ExtResource("36_audio_cassette_02")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.793832, 0.602, 0.9)
+
+[node name="Label30" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.793832, 0.48, 1.3751)
+pixel_size = 0.0022
+text = "audio_cassette_02"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="AudioCassettePile" parent="." instance=ExtResource("37_audio_cassette_pile")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.159638, 0.602, 0.9)
+
+[node name="Label31" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.166403, 0.35, 1.3751)
+pixel_size = 0.0022
+text = "audio_cassette_pile"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="TvRemote" parent="." instance=ExtResource("38_tv_remote")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.514823, 0.602, 0.9)
+
+[node name="Label32" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.514823, 0.48, 1.3751)
+pixel_size = 0.0022
+text = "tv_remote"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="TvListings" parent="." instance=ExtResource("39_tv_listings")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.778242, 0.602, 0.9)
+
+[node name="Label33" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.778063, 0.35, 1.3751)
+pixel_size = 0.0022
+text = "tv_listings"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="Newspaper" parent="." instance=ExtResource("40_newspaper")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.182547, 0.602, 0.9)
+
+[node name="Label34" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.18248, 0.48, 1.3751)
+pixel_size = 0.0022
+text = "newspaper"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="MailStack" parent="." instance=ExtResource("41_mail_stack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.638595, 0.602, 0.9)
+
+[node name="Label35" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.639461, 0.35, 1.3751)
+pixel_size = 0.0022
+text = "mail_stack"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="Note" parent="." instance=ExtResource("42_note")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.967265, 0.602, 0.9)
+
+[node name="Label36" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.967265, 0.48, 1.3751)
+pixel_size = 0.0022
+text = "note"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="Plinth2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.6)
+collision_layer = 1
+collision_mask = 0
+
+[node name="Top" type="MeshInstance3D" parent="Plinth2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("BoxMesh_28")
+material_override = ExtResource("25_laminate_formica")
+
+[node name="Collision" type="CollisionShape3D" parent="Plinth2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+shape = SubResource("BoxShape3D_29")
+
+[node name="Mug" parent="." instance=ExtResource("43_mug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.906313, 0.602, 2.5)
+
+[node name="Label37" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.892338, 0.48, 2.9751)
+pixel_size = 0.0022
+text = "mug"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="DrinkingGlass" parent="." instance=ExtResource("44_drinking_glass")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.498563, 0.602, 2.5)
+
+[node name="Label38" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.498563, 0.35, 2.9751)
+pixel_size = 0.0022
+text = "drinking_glass"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="Plate" parent="." instance=ExtResource("45_plate")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.030563, 0.602, 2.5)
+
+[node name="Label39" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.030563, 0.48, 2.9751)
+pixel_size = 0.0022
+text = "plate"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="AshtrayAmber" parent="." instance=ExtResource("46_ashtray_amber")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.520563, 0.602, 2.5)
+
+[node name="Label40" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.520563, 0.35, 2.9751)
+pixel_size = 0.0022
+text = "ashtray_amber"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="CerealBox" parent="." instance=ExtResource("47_cereal_box")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044563, 0.602, 2.5)
+
+[node name="Label41" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.044563, 0.48, 2.9751)
+pixel_size = 0.0022
+text = "cereal_box"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="FruitBowl" parent="." instance=ExtResource("48_fruit_bowl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.507437, 0.602, 2.5)
+
+[node name="Label42" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.507437, 0.35, 2.9751)
+pixel_size = 0.0022
+text = "fruit_bowl"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="DishRack" parent="." instance=ExtResource("49_dish_rack")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.198437, 0.602, 2.5)
+
+[node name="Label43" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.198437, 0.48, 2.9751)
+pixel_size = 0.0022
+text = "dish_rack"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="Percolator" parent="." instance=ExtResource("50_percolator")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.848437, 0.602, 2.5)
+
+[node name="Label44" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.840775, 0.35, 2.9751)
+pixel_size = 0.0022
+text = "percolator"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="SunburstClock" parent="." instance=ExtResource("51_sunburst_clock")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.879, 1.75, -6)
+
+[node name="Label45" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.879, 0.7, -5.99)
+pixel_size = 0.0022
+text = "sunburst_clock"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="FramedPictureLake" parent="." instance=ExtResource("52_framed_picture_lake")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262, 1.55, -6)
+
+[node name="Label46" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.262, 0.7, -5.99)
+pixel_size = 0.0022
+text = "framed_picture_lake"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="FramedPictureAbstract" parent="." instance=ExtResource("53_framed_picture_abstract")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.332, 1.5, -6)
+
+[node name="Label47" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.332, 0.7, -5.99)
+pixel_size = 0.0022
+text = "framed_picture_abstract"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="FramedPictureBarn" parent="." instance=ExtResource("54_framed_picture_barn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.257588, 1.55, -6)
+
+[node name="Label48" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.257588, 0.7, -5.99)
+pixel_size = 0.0022
+text = "framed_picture_barn"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="WallCalendarAug1993" parent="." instance=ExtResource("55_wall_calendar_aug_1993")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.085576, 1.85, -6)
+
+[node name="Label49" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.085576, 0.7, -5.99)
+pixel_size = 0.0022
+text = "wall_calendar_aug_1993"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="WallMirror" parent="." instance=ExtResource("56_wall_mirror")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.987976, 1.45, -6)
+
+[node name="Label50" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.987976, 0.7, -5.99)
+pixel_size = 0.0022
+text = "wall_mirror"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="KeyHooks" parent="." instance=ExtResource("57_key_hooks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.907976, 1.45, -6)
+
+[node name="Label51" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.907976, 0.7, -5.99)
+pixel_size = 0.0022
+text = "key_hooks"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="PaperTowelHolder" parent="." instance=ExtResource("58_paper_towel_holder")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.687976, 1.3, -6)
+
+[node name="Label52" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.687976, 0.7, -5.99)
+pixel_size = 0.0022
+text = "paper_towel_holder"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="Beam" type="MeshInstance3D" parent="Room"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.597976, 2.4, -5.5)
+mesh = SubResource("BoxMesh_30")
+material_override = ExtResource("59_wood_dark")
+
+[node name="MacramePlantHanger" parent="." instance=ExtResource("60_macrame_plant_hanger")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.597976, 2.36, -5.5)
+
+[node name="Label53" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.597976, 0.7, -5.99)
+pixel_size = 0.0022
+text = "macrame_plant_hanger"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="VenetianBlinds" parent="." instance=ExtResource("61_venetian_blinds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 2.1, -6.14)
+width = 0.88
+height = 1.2
+
+[node name="Label54" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6, 0.6, -5.99)
+pixel_size = 0.0022
+text = "venetian_blinds"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="SheerCurtains" parent="." instance=ExtResource("62_sheer_curtains")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 2.32, -6)
+width = 1.7
+height = 2.27
+
+[node name="HeavyDrapes" parent="." instance=ExtResource("63_heavy_drapes")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 2.32, -6)
+width = 1.9
+height = 2.27
+
+[node name="Label55" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.6, 0.5, -5.75)
+pixel_size = 0.0022
+text = "sheer_curtains + heavy_drapes"
+font_size = 36
+outline_size = 8
+modulate = Color(0.1, 0.08, 0.06, 1)
+outline_modulate = Color(1, 1, 1, 0.8)
+double_sided = false
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.978148, 0.207912, 0, -0.207912, 0.978148, 0, 1.75, 6.2)
+script = ExtResource("64_gallery_camera")
+current = true
+fov = 70

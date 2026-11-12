@@ -1,0 +1,680 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/brick_red.tres" id="1_brick_red"]
+[ext_resource type="Material" path="res://art/materials/appliance_harvest_gold.tres" id="2_appliance_harvest_gold"]
+[ext_resource type="Material" path="res://props/materials/soil_dry.tres" id="3_soil_dry"]
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="4_plastic_black"]
+[ext_resource type="Material" path="res://art/materials/wood_medium.tres" id="5_wood_medium"]
+[ext_resource type="Material" path="res://props/materials/dried_leaf.tres" id="6_dried_leaf"]
+[ext_resource type="Material" path="res://props/materials/dried_leaf_dark.tres" id="7_dried_leaf_dark"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="8_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.165
+bottom_radius = 0.15
+height = 0.02
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.17
+bottom_radius = 0.13
+height = 0.31
+radial_segments = 28
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_3"]
+inner_radius = 0.16
+outer_radius = 0.182
+rings = 28
+ring_segments = 8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.158
+bottom_radius = 0.158
+height = 0.01
+radial_segments = 28
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5"]
+top_radius = 0.166
+bottom_radius = 0.16
+height = 0.012
+radial_segments = 28
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6"]
+top_radius = 0.004
+bottom_radius = 0.007
+height = 0.772075
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7"]
+top_radius = 0.0025
+bottom_radius = 0.0025
+height = 0.02
+radial_segments = 4
+rings = 1
+
+[sub_resource type="PrismMesh" id="PrismMesh_8"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.214695, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_9"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.194092, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_10"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.198541, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_11"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.161025, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_12"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.152106, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_13"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.184984, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_14"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.208815, 0.004)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_15"]
+top_radius = 0.004
+bottom_radius = 0.007
+height = 0.632614
+radial_segments = 6
+rings = 1
+
+[sub_resource type="PrismMesh" id="PrismMesh_16"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.20364, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_17"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.150038, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_18"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.155113, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_19"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.217485, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_20"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.205792, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_21"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.159168, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_22"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.217965, 0.004)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_23"]
+top_radius = 0.004
+bottom_radius = 0.007
+height = 0.521344
+radial_segments = 6
+rings = 1
+
+[sub_resource type="PrismMesh" id="PrismMesh_24"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.209806, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_25"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.204088, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_26"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.167011, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_27"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.19022, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_28"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.167465, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_29"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.211753, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_30"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.166689, 0.004)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_31"]
+top_radius = 0.004
+bottom_radius = 0.007
+height = 0.385357
+radial_segments = 6
+rings = 1
+
+[sub_resource type="PrismMesh" id="PrismMesh_32"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.16228, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_33"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.193001, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_34"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.181199, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_35"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.17535, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_36"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.159824, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_37"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.151488, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_38"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.155268, 0.004)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_39"]
+top_radius = 0.004
+bottom_radius = 0.007
+height = 0.438862
+radial_segments = 6
+rings = 1
+
+[sub_resource type="PrismMesh" id="PrismMesh_40"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.205529, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_41"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.179201, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_42"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.190788, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_43"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.200974, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_44"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.155865, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_45"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.198883, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_46"]
+left_to_right = 0.5
+size = Vector3(0.085, 0.171072, 0.004)
+
+[sub_resource type="PrismMesh" id="PrismMesh_47"]
+left_to_right = 0.5
+size = Vector3(0.05, 0.13, 0.004)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_48"]
+height = 0.34
+radius = 0.18
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_49"]
+size = Vector3(0.4, 0.8, 0.4)
+
+[node name="PottedPlantDry" type="StaticBody3D"]
+collision_layer = 5
+collision_mask = 0
+metadata/prop_class = "furniture"
+
+[node name="Saucer" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.01, 0)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("1_brick_red")
+
+[node name="Pot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.175, 0)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("2_appliance_harvest_gold")
+
+[node name="Rim" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0)
+mesh = SubResource("TorusMesh_3")
+material_override = ExtResource("2_appliance_harvest_gold")
+
+[node name="Soil" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31, 0)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("3_soil_dry")
+
+[node name="SoilGap" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.305, 0)
+mesh = SubResource("CylinderMesh_5")
+material_override = ExtResource("4_plastic_black")
+
+[node name="Stem" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.998656, 0.051808, 0.001344, -0.051808, 0.997312, 0.051808, 0.001344, -0.051808, 0.998656, 0.05, 0.695, -0.01)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("5_wood_medium")
+
+[node name="Petiole" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.734425, -0.417586, 0.535016, 0.417586, -0.899461, -0.128812, 0.535016, 0.128812, 0.834964, 0.037824, 0.532005, -0.000712)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.431474, -0.417586, -0.747381, 0.098931, -0.899461, 0.420632, -0.707948, 0.128812, 0.514287, -0.011178, 0.426456, 0.014404)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.695635, 0.164752, -0.699249, -0.164752, -0.91082, -0.378502, -0.699249, 0.378502, -0.606455, 0.048248, 0.620442, -0.002815)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.627013, 0.164752, -0.466188, -0.034123, -0.91082, -0.410084, -0.355036, 0.378502, -0.7839, 0.065884, 0.522942, 0.037702)
+mesh = SubResource("PrismMesh_9")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole3" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.297547, 0.469762, -0.831138, -0.469762, -0.829928, -0.300904, -0.831138, 0.300904, 0.467619, 0.055898, 0.709801, -0.008191)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.338709, 0.469762, 0.813201, 0.479002, -0.829928, 0.274168, 0.792362, 0.300904, -0.513358, 0.107229, 0.619114, 0.024689)
+mesh = SubResource("PrismMesh_10")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.392429, -0.263859, -0.881123, 0.263859, -0.88541, 0.382659, -0.881123, -0.382659, -0.277839, 0.053161, 0.797796, -0.019627)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.525681, -0.263859, 0.469329, -0.252419, -0.88541, 0.228738, 0.221577, -0.382659, -0.852883, 0.029279, 0.717655, -0.054262)
+mesh = SubResource("PrismMesh_11")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.735807, 0.099545, -0.669835, -0.099545, -0.962492, -0.252387, -0.669835, 0.252387, -0.698299, 0.061395, 0.885575, -0.017876)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.74475, 0.099545, 0.598586, 0.21504, -0.962492, -0.144692, 0.526326, 0.252387, -0.787882, 0.069962, 0.80275, 0.003843)
+mesh = SubResource("PrismMesh_12")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.851908, -0.473556, -0.223603, 0.473556, -0.878906, 0.057178, -0.223603, -0.057178, 0.973002, 0.060264, 0.974961, -0.025572)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.076631, -0.473556, -0.874149, 0.004713, -0.878906, 0.476949, -0.707109, -0.057178, -0.091554, 0.011729, 0.88488, -0.031432)
+mesh = SubResource("PrismMesh_13")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.170865, 0.985219, 0.012211, -0.985219, 0.170685, 0.01451, 0.012211, -0.01451, 0.99982, 0.079452, 1.074007, -0.029745)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.057752, 0.985219, 0.149587, -0.382135, 0.170685, -0.815968, -0.573861, -0.01451, 0.558408, 0.192169, 1.093535, -0.031405)
+mesh = SubResource("PrismMesh_14")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Stem2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.967434, -0.252919, 0.010177, 0.252919, 0.964254, -0.079037, 0.010177, 0.079037, 0.99682, -0.12, 0.615, 0.025)
+mesh = SubResource("CylinderMesh_15")
+material_override = ExtResource("5_wood_medium")
+
+[node name="Petiole8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.882995, -0.0432, 0.467389, 0.0432, -0.98405, -0.172569, 0.467389, 0.172569, -0.867045, -0.088432, 0.48316, 0.016726)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.753892, -0.0432, -0.004853, 0.031476, -0.98405, 0.172935, -0.009241, 0.172569, 0.984921, -0.093263, 0.373123, 0.036022)
+mesh = SubResource("PrismMesh_16")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.694559, 0.555331, 0.457378, -0.555331, -0.81801, 0.149889, 0.457378, -0.149889, 0.876549, -0.100847, 0.55497, 0.019251)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.425452, 0.555331, -0.632532, 0.387472, -0.81801, -0.29845, -0.538324, -0.149889, -0.714724, -0.053633, 0.485423, 0.006508)
+mesh = SubResource("PrismMesh_17")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.90601, 0.351071, 0.236419, -0.351071, -0.935336, 0.043546, 0.236419, -0.043546, 0.970675, -0.121289, 0.623947, 0.026065)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.384986, 0.351071, -0.762229, 0.170989, -0.935336, -0.258467, -0.568934, -0.043546, -0.593465, -0.090551, 0.542052, 0.022252)
+mesh = SubResource("PrismMesh_18")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.41972, 0.272933, -0.865646, -0.272933, -0.94753, -0.166415, -0.865646, 0.166415, 0.47219, -0.140471, 0.693975, 0.033914)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.05423, 0.272933, -0.958896, -0.135598, -0.94753, -0.253983, -0.683119, 0.166415, 0.126538, -0.108062, 0.581462, 0.053675)
+mesh = SubResource("PrismMesh_19")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.286801, 0.138656, -0.947903, -0.138656, -0.98506, -0.102139, -0.947903, 0.102139, 0.301741, -0.160213, 0.763749, 0.039021)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.76699, 0.138656, -0.106282, 0.09819, -0.98506, -0.11734, -0.094227, 0.102139, -0.987388, -0.14456, 0.65254, 0.050552)
+mesh = SubResource("PrismMesh_20")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole13" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.754271, 0.189823, -0.628524, -0.189823, -0.853363, -0.485529, -0.628524, 0.485529, -0.607634, -0.178102, 0.835216, 0.048605)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf13" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.713951, 0.189823, -0.316934, -0.002672, -0.853363, -0.521305, -0.283823, 0.485529, -0.792334, -0.161097, 0.758769, 0.092101)
+mesh = SubResource("PrismMesh_21")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole14" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.928954, 0.218339, -0.298953, -0.218339, -0.329002, -0.918741, -0.298953, 0.918741, -0.257956, -0.196217, 0.91061, 0.058687)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf14" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.744382, 0.218339, 0.58603, 0.595473, -0.329002, -0.708594, 0.036337, 0.918741, -0.393018, -0.170238, 0.871465, 0.168002)
+mesh = SubResource("PrismMesh_22")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Stem3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.962827, 0.268536, 0.029208, -0.268536, 0.939878, 0.210993, 0.029208, -0.210993, 0.977051, 0.07, 0.555, -0.095)
+mesh = SubResource("CylinderMesh_23")
+material_override = ExtResource("5_wood_medium")
+
+[node name="Petiole15" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.884396, 0.086045, -0.458738, -0.086045, -0.935956, -0.341441, -0.458738, 0.341441, -0.820352, 0.04286, 0.44764, -0.069586)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf15" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.978831, 0.086045, -0.161965, 0.023942, -0.935956, -0.351294, -0.181041, 0.341441, -0.92215, 0.052747, 0.340096, -0.030353)
+mesh = SubResource("PrismMesh_24")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole16" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.897306, 0.06411, -0.436729, -0.06411, -0.959977, -0.272642, -0.436729, 0.272642, -0.857283, 0.058741, 0.50375, -0.082924)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf16" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.557678, 0.06411, 0.459032, 0.113554, -0.959977, -0.214219, 0.26869, 0.272642, -0.862206, 0.065924, 0.39619, -0.052376)
+mesh = SubResource("PrismMesh_25")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole17" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.348796, 0.378504, -0.857366, -0.378504, -0.893783, -0.240597, -0.857366, 0.240597, 0.455013, 0.077985, 0.560762, -0.095894)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf17" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.509283, 0.378504, -0.65713, 0.056922, -0.893783, -0.442543, -0.589741, 0.240597, -0.610193, 0.113377, 0.477189, -0.073397)
+mesh = SubResource("PrismMesh_26")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole18" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.793561, 0.385355, 0.470917, -0.385355, -0.917205, 0.101179, 0.470917, -0.101179, 0.876356, 0.094154, 0.616878, -0.111962)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf18" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.610094, 0.385355, -0.035795, -0.250429, -0.917205, -0.124422, -0.053447, -0.101179, 0.991583, 0.134658, 0.520471, -0.122597)
+mesh = SubResource("PrismMesh_27")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole19" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.286268, 0.471209, 0.834274, -0.471209, -0.827378, 0.305626, 0.834274, -0.305626, 0.45889, 0.111112, 0.674126, -0.126656)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf19" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.403746, 0.471209, -0.779033, 0.096419, -0.827378, -0.552892, -0.883507, -0.305626, 0.295665, 0.15528, 0.596574, -0.155303)
+mesh = SubResource("PrismMesh_28")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole20" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.806557, 0.204578, -0.554629, -0.204578, -0.783646, -0.586555, -0.554629, 0.586555, -0.590204, 0.124546, 0.730914, -0.130384)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf20" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.471422, 0.204578, 0.646658, 0.332842, -0.783646, -0.341649, 0.28026, 0.586555, -0.681989, 0.148252, 0.640107, -0.062416)
+mesh = SubResource("PrismMesh_29")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole21" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.19732, 0.959908, -0.1991, -0.959908, 0.147935, -0.2381, -0.1991, 0.2381, 0.950614, 0.148199, 0.796579, -0.146519)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf21" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.260509, 0.959908, 0.004889, -0.457024, 0.147935, -0.858109, -0.766297, 0.2381, 0.513444, 0.237801, 0.810388, -0.124294)
+mesh = SubResource("PrismMesh_30")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Stem4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.998588, -0.0519, 0.011292, 0.0519, 0.908249, -0.415199, 0.011292, 0.415199, 0.90966, -0.02, 0.485, 0.12)
+mesh = SubResource("CylinderMesh_31")
+material_override = ExtResource("5_wood_medium")
+
+[node name="Petiole22" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.320057, -0.245634, -0.915001, 0.245634, -0.954293, 0.170262, -0.915001, -0.170262, 0.365764, -0.018456, 0.405457, 0.086297)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf22" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.080508, -0.245634, -0.962343, 0.140636, -0.954293, 0.218964, -0.672099, -0.170262, 0.161093, -0.040843, 0.318483, 0.07078)
+mesh = SubResource("PrismMesh_32")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole23" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.575154, -0.537813, -0.616405, 0.537813, -0.816372, 0.210462, -0.616405, -0.210462, 0.758783, -0.023678, 0.447086, 0.104295)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf23" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.486737, -0.537813, 0.448097, -0.39111, -0.816372, -0.065345, 0.273289, -0.210462, -0.891593, -0.080956, 0.360142, 0.081881)
+mesh = SubResource("PrismMesh_33")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole24" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.93709, 0.284377, -0.202466, -0.284377, -0.958252, -0.029723, -0.202466, 0.029723, 0.978838, -0.017756, 0.485917, 0.125097)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf24" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.516232, 0.284377, -0.664984, -0.169128, -0.958252, -0.174822, -0.513495, 0.029723, 0.726108, 0.010852, 0.389518, 0.128087)
+mesh = SubResource("PrismMesh_34")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole25" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.597903, -0.190129, -0.778693, 0.190129, -0.977377, 0.092654, -0.778693, -0.092654, 0.620526, -0.024801, 0.525976, 0.142273)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf25" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.556031, -0.190129, 0.740614, -0.168626, -0.977377, -0.080836, 0.637786, -0.092654, -0.667051, -0.043372, 0.430511, 0.133223)
+mesh = SubResource("PrismMesh_35")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole26" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.753287, -0.162206, -0.637376, 0.162206, -0.893355, 0.419054, -0.637376, -0.419054, -0.646642, -0.026822, 0.567066, 0.157409)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf26" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.759611, -0.162206, -0.594044, 0.133433, -0.893355, 0.427506, -0.578486, -0.419054, -0.681433, -0.041406, 0.486743, 0.119731)
+mesh = SubResource("PrismMesh_36")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole27" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.836418, -0.190031, -0.514095, 0.190031, -0.779243, 0.597217, -0.514095, -0.597217, -0.615661, -0.0294, 0.608458, 0.174028)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf27" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.499586, -0.190031, 0.80644, -0.52255, -0.779243, 0.223048, 0.522852, -0.597217, -0.547635, -0.045694, 0.541642, 0.12282)
+mesh = SubResource("PrismMesh_37")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole28" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.854472, -0.4132, 0.31487, 0.4132, 0.173207, -0.894016, 0.31487, 0.894016, 0.318734, -0.033932, 0.658232, 0.20734)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf28" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.778229, -0.4132, 0.414984, 0.362362, 0.173207, 0.909696, -0.429889, 0.894016, 0.015555, -0.070142, 0.673411, 0.285687)
+mesh = SubResource("PrismMesh_38")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Stem5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.910929, 0.410152, -0.044535, -0.410152, 0.888662, -0.205076, -0.044535, 0.205076, 0.977732, 0.11, 0.505, 0.075)
+mesh = SubResource("CylinderMesh_39")
+material_override = ExtResource("5_wood_medium")
+
+[node name="Petiole29" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987775, -0.041152, -0.150355, 0.041152, -0.861469, 0.50614, -0.150355, -0.50614, -0.849244, 0.073588, 0.418385, 0.051939)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf29" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.504961, -0.041152, 0.815197, -0.379184, -0.861469, 0.263955, 0.604328, -0.50614, -0.515541, 0.068948, 0.321242, -0.005136)
+mesh = SubResource("PrismMesh_40")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole30" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.193881, 0.475905, 0.857861, -0.475905, -0.810295, 0.34196, 0.857861, -0.34196, 0.383586, 0.099459, 0.463747, 0.06393)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf30" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.149616, 0.475905, -0.860786, 0.240927, -0.810295, -0.508905, -0.779111, -0.34196, 0.00793, 0.146859, 0.383041, 0.029871)
+mesh = SubResource("PrismMesh_41")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole31" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.030378, -0.244625, -0.969142, 0.244625, -0.938284, 0.244504, -0.969142, -0.244504, 0.031339, 0.112954, 0.507317, 0.075255)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf31" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.231937, -0.244625, -0.930968, 0.150567, -0.938284, 0.29777, -0.809854, -0.244504, -0.211262, 0.087172, 0.408428, 0.049486)
+mesh = SubResource("PrismMesh_42")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole32" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.804261, 0.589429, 0.075748, -0.589429, -0.807441, 0.024746, 0.075748, -0.024746, 0.99682, 0.141994, 0.553476, 0.087803)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf32" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.403979, 0.589429, -0.645777, 0.31501, -0.807441, -0.452569, -0.65607, -0.024746, -0.614942, 0.207119, 0.464264, 0.085068)
+mesh = SubResource("PrismMesh_43")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole33" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.578193, -0.531694, 0.618865, 0.531694, -0.820872, -0.208496, 0.618865, 0.208496, 0.757321, 0.151483, 0.598191, 0.100485)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf33" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.532462, -0.531694, 0.562124, 0.461318, -0.820872, -0.157896, 0.458403, 0.208496, 0.81184, 0.10473, 0.52601, 0.118819)
+mesh = SubResource("PrismMesh_44")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Petiole34" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.93626, -0.263108, 0.232789, 0.263108, -0.964248, -0.031632, 0.232789, 0.031632, 0.972013, 0.174869, 0.641608, 0.109066)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Leaf34" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.108135, -0.263108, -0.95828, -0.061005, -0.964248, 0.257402, -0.960192, 0.031632, -0.124273, 0.146074, 0.536079, 0.112528)
+mesh = SubResource("PrismMesh_45")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Petiole35" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.997997, -0.031861, 0.054649, 0.031861, -0.493148, -0.869362, 0.054649, 0.869362, -0.491145, 0.197881, 0.691169, 0.127794)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="Leaf35" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.514338, -0.031861, 0.637069, 0.362167, -0.493148, -0.680237, 0.22429, 0.869362, -0.362519, 0.194838, 0.644055, 0.210849)
+mesh = SubResource("PrismMesh_46")
+material_override = ExtResource("7_dried_leaf_dark")
+
+[node name="FallenLeaf" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.957718, 0.287679, 0.004057, -0.000587, 0.012147, -0.999926, -0.287707, -0.95765, -0.011465, 0.270123, 0.003, -0.181791)
+mesh = SubResource("PrismMesh_47")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="FallenLeaf2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.748388, 0.663209, 0.008285, 0.00167, 0.014376, -0.999895, -0.663259, -0.748296, -0.011867, -0.126931, 0.003, -0.217422)
+mesh = SubResource("PrismMesh_47")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="FallenLeaf3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.457284, 0.889201, -0.014592, 0.001765, -0.017315, -0.999849, -0.889319, 0.457189, -0.009488, 0.205535, 0.003, -0.192358)
+mesh = SubResource("PrismMesh_47")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="FallenLeaf4" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.512594, 0.856705, -0.057487, -0.009146, -0.072395, -0.997334, -0.858583, -0.510702, 0.044945, -0.353848, 0.003, 0.007856)
+mesh = SubResource("PrismMesh_47")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="FallenLeaf5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.586319, 0.810042, 0.007863, -0.000824, 0.010303, -0.999947, -0.81008, 0.586281, 0.006709, -0.0414, 0.003, 0.243567)
+mesh = SubResource("PrismMesh_47")
+material_override = ExtResource("6_dried_leaf")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17, 0)
+shape = SubResource("CylinderShape3D_48")
+
+[node name="CollisionStems" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72, 0)
+shape = SubResource("BoxShape3D_49")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("8_interactable")
+display_name = "Dead plant"
+observations = Array[String](["The soil has shrunk away from the sides of the pot.", "Leaves on the floor around it, curled up like paper.", "A plastic plant tag in the soil, sun-bleached blank."])

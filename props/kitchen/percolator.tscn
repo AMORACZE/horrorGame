@@ -1,0 +1,161 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="1_plastic_black"]
+[ext_resource type="Material" path="res://art/materials/plastic_white.tres" id="2_plastic_white"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="3_metal_chrome"]
+[ext_resource type="Material" path="res://art/materials/glass_dusty.tres" id="4_glass_dusty"]
+[ext_resource type="Material" path="res://art/materials/rubber_black.tres" id="5_rubber_black"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="6_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.08
+bottom_radius = 0.085
+height = 0.03
+radial_segments = 24
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(0.016, 0.01, 0.006)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3"]
+top_radius = 0.056
+bottom_radius = 0.068
+height = 0.27
+radial_segments = 28
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_4"]
+inner_radius = 0.052
+outer_radius = 0.06
+rings = 24
+ring_segments = 6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5"]
+top_radius = 0.04
+bottom_radius = 0.056
+height = 0.02
+radial_segments = 28
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_6"]
+radius = 0.02
+height = 0.04
+radial_segments = 16
+rings = 8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7"]
+top_radius = 0.013
+bottom_radius = 0.013
+height = 0.006
+radial_segments = 12
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.022, 0.19, 0.03)
+
+[sub_resource type="BoxMesh" id="BoxMesh_9"]
+size = Vector3(0.05, 0.02, 0.024)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_10"]
+top_radius = 0.007
+bottom_radius = 0.014
+height = 0.077936
+radial_segments = 10
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_11"]
+top_radius = 0.003
+bottom_radius = 0.003
+height = 0.126633
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_12"]
+top_radius = 0.003
+bottom_radius = 0.003
+height = 0.143178
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_13"]
+height = 0.35
+radius = 0.085
+
+[node name="Percolator" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+metadata/prop_class = "tabletop"
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("1_plastic_black")
+
+[node name="Switch" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.016, 0.083)
+mesh = SubResource("BoxMesh_2")
+material_override = ExtResource("2_plastic_white")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.165, 0)
+mesh = SubResource("CylinderMesh_3")
+material_override = ExtResource("3_metal_chrome")
+
+[node name="Bead" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+mesh = SubResource("TorusMesh_4")
+material_override = ExtResource("3_metal_chrome")
+
+[node name="Lid" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.31, 0)
+mesh = SubResource("CylinderMesh_5")
+material_override = ExtResource("3_metal_chrome")
+
+[node name="Knob" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 0.335, 0)
+mesh = SubResource("SphereMesh_6")
+material_override = ExtResource("4_glass_dusty")
+
+[node name="KnobBase" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.321, 0)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("1_plastic_black")
+
+[node name="Handle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.104, 0.18, 0)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("1_plastic_black")
+
+[node name="HandleArm" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078, 0.09, 0)
+mesh = SubResource("BoxMesh_9")
+material_override = ExtResource("1_plastic_black")
+
+[node name="HandleArm2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.078, 0.27, 0)
+mesh = SubResource("BoxMesh_9")
+material_override = ExtResource("1_plastic_black")
+
+[node name="Spout" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.834019, 0.551736, 0, -0.551736, 0.834019, 0, 0, 0, 1, 0.0665, 0.2725, 0)
+mesh = SubResource("CylinderMesh_10")
+material_override = ExtResource("3_metal_chrome")
+
+[node name="Cord" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.895262, -0.315873, -0.314214, 0.315873, -0.047381, 0.947618, -0.314214, -0.947618, 0.057357, -0.04, 0.007, -0.14)
+mesh = SubResource("CylinderMesh_11")
+material_override = ExtResource("5_rubber_black")
+
+[node name="Cord2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.956098, 0.209529, 0.204878, -0.209529, 0, 0.977802, 0.204878, -0.977802, 0.043902, -0.045, 0.004, -0.27)
+mesh = SubResource("CylinderMesh_12")
+material_override = ExtResource("5_rubber_black")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.175, 0)
+shape = SubResource("CylinderShape3D_13")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("6_interactable")
+display_name = "Percolator"
+observations = Array[String](["An electric percolator. Coffee still in it, cold, with a skin of oil on top.", "The switch on the base is off.", "The chrome shows the window, stretched sideways."])

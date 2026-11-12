@@ -1,0 +1,138 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/metal_brass.tres" id="1_metal_brass"]
+[ext_resource type="Material" path="res://art/materials/metal_dark.tres" id="2_metal_dark"]
+[ext_resource type="Material" path="res://props/materials/umbrella_navy.tres" id="3_umbrella_navy"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="4_metal_chrome"]
+[ext_resource type="Material" path="res://art/materials/wood_medium.tres" id="5_wood_medium"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="6_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.11
+bottom_radius = 0.1
+height = 0.46
+radial_segments = 24
+rings = 1
+cap_top = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.1
+bottom_radius = 0.1
+height = 0.01
+radial_segments = 24
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_3"]
+inner_radius = 0.103
+outer_radius = 0.118
+rings = 24
+ring_segments = 6
+
+[sub_resource type="TorusMesh" id="TorusMesh_4"]
+inner_radius = 0.103
+outer_radius = 0.115
+rings = 24
+ring_segments = 6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5"]
+top_radius = 0.014
+bottom_radius = 0.034
+height = 0.62
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6"]
+top_radius = 0.004
+bottom_radius = 0.002
+height = 0.03
+radial_segments = 6
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.05, 0.03, 0.004)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8"]
+top_radius = 0.005
+bottom_radius = 0.005
+height = 0.18
+radial_segments = 6
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_9"]
+inner_radius = 0.026
+outer_radius = 0.04
+rings = 16
+ring_segments = 6
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_10"]
+height = 0.47
+radius = 0.12
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_11"]
+size = Vector3(0.1, 0.4, 0.1)
+
+[node name="UmbrellaStand" type="StaticBody3D"]
+collision_layer = 5
+collision_mask = 0
+metadata/prop_class = "furniture"
+
+[node name="Stand" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23, 0)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("1_metal_brass")
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006, 0)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("2_metal_dark")
+
+[node name="Lip" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.46, 0)
+mesh = SubResource("TorusMesh_3")
+material_override = ExtResource("1_metal_brass")
+
+[node name="Band" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0)
+mesh = SubResource("TorusMesh_4")
+material_override = ExtResource("1_metal_brass")
+
+[node name="Umbrella" type="Node3D" parent="."]
+transform = Transform3D(0.992546, -0.121869, 0, 0.121202, 0.987109, 0.104528, -0.012739, -0.103749, 0.994522, 0.02, 0.012, -0.01)
+
+[node name="Canopy" type="MeshInstance3D" parent="Umbrella"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.33, 0)
+mesh = SubResource("CylinderMesh_5")
+material_override = ExtResource("3_umbrella_navy")
+
+[node name="Tip" type="MeshInstance3D" parent="Umbrella"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012, 0)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("4_metal_chrome")
+
+[node name="Strap" type="MeshInstance3D" parent="Umbrella"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.52, 0.028)
+mesh = SubResource("BoxMesh_7")
+material_override = ExtResource("3_umbrella_navy")
+
+[node name="Shaft" type="MeshInstance3D" parent="Umbrella"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72, 0)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("4_metal_chrome")
+
+[node name="Crook" type="MeshInstance3D" parent="Umbrella"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.032, 0.82, 0)
+mesh = SubResource("TorusMesh_9")
+material_override = ExtResource("5_wood_medium")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235, 0)
+shape = SubResource("CylinderShape3D_10")
+
+[node name="CollisionUmbrella" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.68, 0)
+shape = SubResource("BoxShape3D_11")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("6_interactable")
+display_name = "Umbrella stand"
+observations = Array[String](["One umbrella, closed and strapped. The bottom of the stand is dry and dusty."])

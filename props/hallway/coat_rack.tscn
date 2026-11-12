@@ -1,0 +1,367 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/wood_dark.tres" id="1_wood_dark"]
+[ext_resource type="Material" path="res://art/materials/rubber_black.tres" id="2_rubber_black"]
+[ext_resource type="Material" path="res://art/materials/metal_brass.tres" id="3_metal_brass"]
+[ext_resource type="Material" path="res://art/materials/fabric_corduroy_brown.tres" id="4_fabric_corduroy_brown"]
+[ext_resource type="Material" path="res://art/materials/fabric_plaid.tres" id="5_fabric_plaid"]
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="6_plastic_black"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="7_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.022
+bottom_radius = 0.026
+height = 1.74
+radial_segments = 16
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_2"]
+radius = 0.034
+height = 0.068
+radial_segments = 16
+rings = 8
+
+[sub_resource type="TorusMesh" id="TorusMesh_3"]
+inner_radius = 0.02
+outer_radius = 0.034
+rings = 24
+ring_segments = 6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.017
+bottom_radius = 0.017
+height = 0.329005
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_5"]
+radius = 0.02
+height = 0.04
+radial_segments = 10
+rings = 5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6"]
+top_radius = 0.007
+bottom_radius = 0.007
+height = 0.111803
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7"]
+top_radius = 0.007
+bottom_radius = 0.007
+height = 0.080623
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_8"]
+radius = 0.012
+height = 0.024
+radial_segments = 10
+rings = 5
+
+[sub_resource type="TorusMesh" id="TorusMesh_9"]
+inner_radius = 0.03
+outer_radius = 0.058
+rings = 24
+ring_segments = 8
+
+[sub_resource type="PrismMesh" id="PrismMesh_10"]
+left_to_right = 0.5
+size = Vector3(0.46, 0.1, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_11"]
+size = Vector3(0.46, 0.62, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_12"]
+size = Vector3(0.465, 0.06, 0.125)
+
+[sub_resource type="BoxMesh" id="BoxMesh_13"]
+size = Vector3(0.03, 0.62, 0.004)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_14"]
+radius = 0.052
+height = 0.6
+radial_segments = 16
+rings = 4
+
+[sub_resource type="BoxMesh" id="BoxMesh_15"]
+size = Vector3(0.1, 0.05, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_16"]
+size = Vector3(0.11, 0.09, 0.004)
+
+[sub_resource type="BoxMesh" id="BoxMesh_17"]
+size = Vector3(0.115, 0.03, 0.006)
+
+[sub_resource type="SphereMesh" id="SphereMesh_18"]
+radius = 0.008
+height = 0.016
+radial_segments = 8
+rings = 4
+
+[sub_resource type="SphereMesh" id="SphereMesh_19"]
+radius = 0.085
+height = 0.085
+radial_segments = 16
+rings = 6
+is_hemisphere = true
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_20"]
+top_radius = 0.07
+bottom_radius = 0.07
+height = 0.006
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_21"]
+height = 0.05
+radius = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_22"]
+size = Vector3(0.06, 1.8, 0.06)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_23"]
+size = Vector3(0.56, 0.8, 0.16)
+
+[node name="CoatRack" type="StaticBody3D"]
+collision_layer = 5
+collision_mask = 0
+metadata/prop_class = "furniture"
+
+[node name="Post" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89, 0)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("1_wood_dark")
+
+[node name="Finial" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.2, 0, 0, 0, 1, 0, 1.79, 0)
+mesh = SubResource("SphereMesh_2")
+material_override = ExtResource("1_wood_dark")
+
+[node name="Collar" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+mesh = SubResource("TorusMesh_3")
+material_override = ExtResource("1_wood_dark")
+
+[node name="Leg" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.21429, 0.580292, -0.78571, -0.580292, -0.571421, -0.580292, -0.78571, 0.580292, 0.21429, 0.095459, 0.106, 0.095459)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("1_wood_dark")
+
+[node name="LegFoot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, 0.190919, 0.012, 0.190919)
+mesh = SubResource("SphereMesh_5")
+material_override = ExtResource("2_rubber_black")
+
+[node name="Leg2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.21429, -0.580292, 0.78571, 0.580292, -0.571421, -0.580292, 0.78571, 0.580292, 0.21429, -0.095459, 0.106, 0.095459)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("1_wood_dark")
+
+[node name="LegFoot2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, -0.190919, 0.012, 0.190919)
+mesh = SubResource("SphereMesh_5")
+material_override = ExtResource("2_rubber_black")
+
+[node name="Leg3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.21429, -0.580292, -0.78571, 0.580292, -0.571421, 0.580292, -0.78571, -0.580292, 0.21429, -0.095459, 0.106, -0.095459)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("1_wood_dark")
+
+[node name="LegFoot3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, -0.190919, 0.012, -0.190919)
+mesh = SubResource("SphereMesh_5")
+material_override = ExtResource("2_rubber_black")
+
+[node name="Leg4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.21429, 0.580292, 0.78571, -0.580292, -0.571421, 0.580292, 0.78571, -0.580292, 0.21429, 0.095459, 0.106, -0.095459)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("1_wood_dark")
+
+[node name="LegFoot4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.6, 0, 0, 0, 1, 0.190919, 0.012, -0.190919)
+mesh = SubResource("SphereMesh_5")
+material_override = ExtResource("2_rubber_black")
+
+[node name="Hook" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.178885, -0.98387, 0, 0.98387, 0.178885, 0, 1.63, 0.055)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Hook2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.868243, -0.496139, 0, 0.496139, 0.868243, 0, 1.675, 0.13)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="HookTip" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71, 0.15)
+mesh = SubResource("SphereMesh_8")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Hook3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.178885, -0.98387, 0, 0.98387, 0.178885, 0, 0, 0, 1, -0.055, 1.63, 0)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Hook4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.868243, -0.496139, 0, 0.496139, 0.868243, 0, 0, 0, 1, -0.13, 1.675, 0)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="HookTip2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 1.71, 0)
+mesh = SubResource("SphereMesh_8")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Hook5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.178885, 0.98387, 0, -0.98387, 0.178885, 0, 1.63, -0.055)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Hook6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.868243, 0.496139, 0, -0.496139, 0.868243, 0, 1.675, -0.13)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="HookTip3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.71, -0.15)
+mesh = SubResource("SphereMesh_8")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Hook7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.178885, 0.98387, 0, -0.98387, 0.178885, 0, 0, 0, 1, 0.055, 1.63, 0)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Hook8" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.868243, 0.496139, 0, -0.496139, 0.868243, 0, 0, 0, 1, 0.13, 1.675, 0)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="HookTip4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15, 1.71, 0)
+mesh = SubResource("SphereMesh_8")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Jacket" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.99863, -0.052336, 0, 0.052336, 0.99863, 0, 1.7, 0.19)
+
+[node name="Collar" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1.25, 0, 0, 0, 0.6, 0, 0, 0, 1, 0, -0.025, -0.01)
+mesh = SubResource("TorusMesh_9")
+material_override = ExtResource("4_fabric_corduroy_brown")
+
+[node name="Shoulders" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.085, 0)
+mesh = SubResource("PrismMesh_10")
+material_override = ExtResource("5_fabric_plaid")
+
+[node name="Body" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.445, 0)
+mesh = SubResource("BoxMesh_11")
+material_override = ExtResource("5_fabric_plaid")
+
+[node name="Hem" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.73, 0)
+mesh = SubResource("BoxMesh_12")
+material_override = ExtResource("4_fabric_corduroy_brown")
+
+[node name="Placket" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.445, 0.061)
+mesh = SubResource("BoxMesh_13")
+material_override = ExtResource("5_fabric_plaid")
+
+[node name="Sleeve" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(0.99863, 0.052336, 0, -0.052336, 0.99863, 0, 0, 0, 1, -0.225, -0.4, 0.012)
+mesh = SubResource("CapsuleMesh_14")
+material_override = ExtResource("5_fabric_plaid")
+
+[node name="Cuff" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(0.99863, 0.052336, 0, -0.052336, 0.99863, 0, 0, 0, 1, -0.235, -0.69, 0.012)
+mesh = SubResource("BoxMesh_15")
+material_override = ExtResource("4_fabric_corduroy_brown")
+
+[node name="Pocket" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, -0.25, 0.062)
+mesh = SubResource("BoxMesh_16")
+material_override = ExtResource("5_fabric_plaid")
+
+[node name="PocketFlap" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11, -0.205, 0.064)
+mesh = SubResource("BoxMesh_17")
+material_override = ExtResource("4_fabric_corduroy_brown")
+
+[node name="Sleeve2" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(0.99863, -0.052336, 0, 0.052336, 0.99863, 0, 0, 0, 1, 0.225, -0.4, 0.012)
+mesh = SubResource("CapsuleMesh_14")
+material_override = ExtResource("5_fabric_plaid")
+
+[node name="Cuff2" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(0.99863, -0.052336, 0, 0.052336, 0.99863, 0, 0, 0, 1, 0.235, -0.69, 0.012)
+mesh = SubResource("BoxMesh_15")
+material_override = ExtResource("4_fabric_corduroy_brown")
+
+[node name="Pocket2" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, -0.25, 0.062)
+mesh = SubResource("BoxMesh_16")
+material_override = ExtResource("5_fabric_plaid")
+
+[node name="PocketFlap2" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, -0.205, 0.064)
+mesh = SubResource("BoxMesh_17")
+material_override = ExtResource("4_fabric_corduroy_brown")
+
+[node name="Button" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, -0.17, 0.064)
+mesh = SubResource("SphereMesh_18")
+material_override = ExtResource("6_plastic_black")
+
+[node name="Button2" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, -0.29, 0.064)
+mesh = SubResource("SphereMesh_18")
+material_override = ExtResource("6_plastic_black")
+
+[node name="Button3" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, -0.41, 0.064)
+mesh = SubResource("SphereMesh_18")
+material_override = ExtResource("6_plastic_black")
+
+[node name="Button4" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, -0.53, 0.064)
+mesh = SubResource("SphereMesh_18")
+material_override = ExtResource("6_plastic_black")
+
+[node name="Button5" type="MeshInstance3D" parent="Jacket"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.4, 0, -0.65, 0.064)
+mesh = SubResource("SphereMesh_18")
+material_override = ExtResource("6_plastic_black")
+
+[node name="Cap" type="Node3D" parent="."]
+transform = Transform3D(0, 0, 1, 0.939693, 0.34202, 0, -0.34202, 0.939693, 0, -0.16, 1.66, 0)
+
+[node name="Crown" type="MeshInstance3D" parent="Cap"]
+mesh = SubResource("SphereMesh_19")
+material_override = ExtResource("4_fabric_corduroy_brown")
+
+[node name="Brim" type="MeshInstance3D" parent="Cap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.8, 0, 0.002, 0.08)
+mesh = SubResource("CylinderMesh_20")
+material_override = ExtResource("4_fabric_corduroy_brown")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.025, 0)
+shape = SubResource("CylinderShape3D_21")
+
+[node name="CollisionPost" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("BoxShape3D_22")
+
+[node name="CollisionJacket" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.32, 0.19)
+shape = SubResource("BoxShape3D_23")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("7_interactable")
+display_name = "Coat rack"
+observations = Array[String](["A flannel jacket on the front hook. Too warm for August.", "In the jacket pocket: a pencil stub and a receipt from Pell's Market, dated 8/19.", "A cap on the side hook, with a salt line inside the band."])
