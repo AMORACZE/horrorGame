@@ -1,0 +1,45 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://atmosphere/dust_motes.gd" id="1_dust"]
+[ext_resource type="Shader" path="res://atmosphere/shaders/dust_mote.gdshader" id="2_mote"]
+
+[sub_resource type="ParticleProcessMaterial" id="Proc_dust"]
+resource_local_to_scene = true
+lifetime_randomness = 0.4
+emission_shape = 3
+emission_box_extents = Vector3(1, 1.1, 1)
+direction = Vector3(0, 1, 0)
+spread = 180.0
+initial_velocity_min = 0.004
+initial_velocity_max = 0.016
+gravity = Vector3(0, -0.0007, 0)
+scale_min = 0.5
+scale_max = 1.5
+turbulence_enabled = true
+turbulence_noise_strength = 1.0
+turbulence_noise_scale = 3.0
+turbulence_noise_speed = Vector3(0.015, 0.004, 0.01)
+turbulence_noise_speed_random = 0.3
+turbulence_influence_min = 0.02
+turbulence_influence_max = 0.06
+
+[sub_resource type="ShaderMaterial" id="Mat_mote"]
+render_priority = 0
+shader = ExtResource("2_mote")
+
+[sub_resource type="QuadMesh" id="Quad_mote"]
+material = SubResource("Mat_mote")
+size = Vector2(1, 1)
+
+[node name="DustMotes" type="GPUParticles3D"]
+cast_shadow = 0
+gi_mode = 0
+amount = 352
+lifetime = 18.0
+preprocess = 18.0
+fixed_fps = 30
+interpolate = true
+visibility_aabb = AABB(-1.25, -1.35, -1.25, 2.5, 2.7, 2.5)
+process_material = SubResource("Proc_dust")
+draw_pass_1 = SubResource("Quad_mote")
+script = ExtResource("1_dust")

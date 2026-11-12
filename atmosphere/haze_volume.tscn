@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://atmosphere/haze_volume.gd" id="1_haze"]
+
+[sub_resource type="FogMaterial" id="Fog_haze"]
+resource_local_to_scene = true
+density = 0.012
+albedo = Color(0.96, 0.91, 0.84, 1)
+height_falloff = 0.0
+edge_fade = 1.2
+
+[node name="HazeVolume" type="FogVolume"]
+size = Vector3(2, 2.2, 2)
+shape = 3
+material = SubResource("Fog_haze")
+script = ExtResource("1_haze")
