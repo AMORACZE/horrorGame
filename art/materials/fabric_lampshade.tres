@@ -1,5 +1,28 @@
 [gd_resource type="StandardMaterial3D" format=3]
 
+[ext_resource type="Texture2D" path="res://art/textures/fabric_lampshade/fabric_lampshade_albedo.png" id="1"]
+[ext_resource type="Texture2D" path="res://art/textures/fabric_lampshade/fabric_lampshade_orm.png" id="2"]
+[ext_resource type="Texture2D" path="res://art/textures/fabric_lampshade/fabric_lampshade_normal.png" id="3"]
+
 [resource]
-albedo_color = Color(0.9, 0.82, 0.62, 1)
-roughness = 1.0
+resource_name = "fabric_lampshade"
+cull_mode = 2
+texture_filter = 5
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("1")
+metallic_specular = 0.3
+roughness = 1
+roughness_texture = ExtResource("2")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 0.8
+normal_texture = ExtResource("3")
+ao_enabled = true
+ao_light_affect = 0
+ao_texture = ExtResource("2")
+ao_texture_channel = 0
+backlight_enabled = true
+backlight = Color(0.75, 0.62, 0.42, 1)
+uv1_scale = Vector3(6.66667, 6.66667, 6.66667)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 8.0
