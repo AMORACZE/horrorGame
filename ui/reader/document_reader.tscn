@@ -1,0 +1,147 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/reader/document_reader.gd" id="1_reader"]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="2_theme"]
+[ext_resource type="Shader" path="res://ui/common/modal_dim.gdshader" id="3_dim"]
+[ext_resource type="Script" path="res://ui/common/input_glyph.gd" id="4_glyph"]
+[ext_resource type="Script" path="res://ui/reader/ruled_page.gd" id="5_page"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dim"]
+shader = ExtResource("3_dim")
+shader_parameter/amount = 1.0
+shader_parameter/tint = Color(0.03, 0.028, 0.025, 0.68)
+shader_parameter/blur_lod = 3.0
+shader_parameter/blur_radius = 3.0
+shader_parameter/vignette = 0.3
+shader_parameter/desaturate = 0.4
+
+[node name="DocumentReader" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_reader")
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_dim")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Sheet" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.0
+offset_top = -360.0
+offset_right = 290.0
+offset_bottom = 360.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Margin" type="MarginContainer" parent="Sheet"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Scroll" type="ScrollContainer" parent="Sheet/Margin"]
+unique_name_in_owner = true
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="Pad" type="MarginContainer" parent="Sheet/Margin/Scroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Page" type="VBoxContainer" parent="Sheet/Margin/Scroll/Pad"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 14
+script = ExtResource("5_page")
+body_path = NodePath("Body")
+
+[node name="Title" type="Label" parent="Sheet/Margin/Scroll/Pad/Page"]
+unique_name_in_owner = true
+layout_mode = 2
+autowrap_mode = 3
+
+[node name="Rule" type="ColorRect" parent="Sheet/Margin/Scroll/Pad/Page"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 1)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Body" type="Label" parent="Sheet/Margin/Scroll/Pad/Page"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+autowrap_mode = 3
+
+[node name="More" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -50.0
+offset_right = 100.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"Hint"
+text = "more  ▾"
+horizontal_alignment = 1
+
+[node name="Hints" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -420.0
+offset_top = -84.0
+offset_right = -72.0
+offset_bottom = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="CloseGlyph" type="PanelContainer" parent="Hints"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"KeyCap"
+script = ExtResource("4_glyph")
+
+[node name="CloseLabel" type="Label" parent="Hints"]
+layout_mode = 2
+theme_type_variation = &"Hint"
+text = "Put down"

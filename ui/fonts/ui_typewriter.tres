@@ -1,0 +1,5 @@
+[gd_resource type="SystemFont" format=3]
+
+[resource]
+font_names = PackedStringArray("Courier 10 Pitch", "Courier Prime", "Courier New", "Courier", "FreeMono", "Liberation Mono", "DejaVu Sans Mono", "monospace")
+font_weight = 400
