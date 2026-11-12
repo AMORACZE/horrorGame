@@ -14,3 +14,6 @@ __pycache__/
 *.pyc
 # local screenshots from tools/capture.gd
 /_shots/
+
+# Claude Code agent worktrees (local only)
+.claude/worktrees/
