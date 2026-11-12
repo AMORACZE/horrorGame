@@ -32,10 +32,14 @@ func _initialize() -> void:
 	if args.has("pos"):
 		var cam := Camera3D.new()
 		cam.fov = float(args.get("fov", "68"))
-		root.add_child(cam)
-		cam.global_position = _vec(args["pos"])
+		# The root is not in the tree yet during _initialize, so place the camera
+		# with local transforms (it is a direct child of the root: local == global).
+		var pos := _vec(args["pos"])
 		if args.has("look"):
-			cam.look_at(_vec(args["look"]), Vector3.UP)
+			cam.look_at_from_position(pos, _vec(args["look"]), Vector3.UP)
+		else:
+			cam.position = pos
+		root.add_child(cam)
 		cam.make_current()
 
 	await create_timer(float(args.get("wait", "1.5"))).timeout
