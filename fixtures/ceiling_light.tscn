@@ -1,0 +1,165 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://fixtures/light_fixture.gd" id="1_light_fixture"]
+[ext_resource type="Material" path="res://art/materials/metal_painted_white.tres" id="3_metal_painted_white"]
+[ext_resource type="ArrayMesh" path="res://fixtures/meshes/ceiling_dome.res" id="5_ceiling_dome"]
+[ext_resource type="Material" path="res://fixtures/materials/glass_frosted.tres" id="6_glass_frosted"]
+[ext_resource type="Material" path="res://art/materials/metal_brass.tres" id="8_metal_brass"]
+[ext_resource type="Material" path="res://fixtures/materials/bulb_glass.tres" id="12_bulb_glass"]
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="14_plastic_black"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="16_interactable"]
+[ext_resource type="Script" path="res://interaction/powered_light.gd" id="17_powered_light"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.165
+bottom_radius = 0.17
+height = 0.022
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.158
+bottom_radius = 0.158
+height = 0.006
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7"]
+top_radius = 0.003
+bottom_radius = 0.003
+height = 0.03
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_9"]
+radius = 0.012
+height = 0.02
+radial_segments = 14
+rings = 8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_10"]
+top_radius = 0.016
+bottom_radius = 0.012
+height = 0.006
+radial_segments = 14
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_11"]
+radius = 0.027
+height = 0.06
+radial_segments = 20
+rings = 10
+
+[sub_resource type="BoxMesh" id="BoxMesh_13"]
+size = Vector3(0.008, 0.003, 0.004)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_15"]
+radius = 0.17
+height = 0.12
+
+[node name="CeilingLight" type="Node3D"]
+script = ExtResource("1_light_fixture")
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 5
+collision_mask = 0
+
+[node name="Pan" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.011, 0)
+mesh = SubResource("CylinderMesh_2")
+surface_material_override/0 = ExtResource("3_metal_painted_white")
+
+[node name="PanLip" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.025, 0)
+mesh = SubResource("CylinderMesh_4")
+surface_material_override/0 = ExtResource("3_metal_painted_white")
+
+[node name="Glass" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, -1, 0, -0.026, 0)
+cast_shadow = 0
+mesh = ExtResource("5_ceiling_dome")
+surface_material_override/0 = ExtResource("6_glass_frosted")
+
+[node name="Stud" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.118, 0)
+mesh = SubResource("CylinderMesh_7")
+surface_material_override/0 = ExtResource("8_metal_brass")
+
+[node name="Finial" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.122, 0)
+mesh = SubResource("SphereMesh_9")
+surface_material_override/0 = ExtResource("8_metal_brass")
+
+[node name="FinialCap" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.112, 0)
+mesh = SubResource("CylinderMesh_10")
+surface_material_override/0 = ExtResource("8_metal_brass")
+
+[node name="Bulb0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, 1, -0.045, -0.06, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_11")
+surface_material_override/0 = ExtResource("12_bulb_glass")
+
+[node name="Bulb1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, 1, 0.045, -0.06, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_11")
+surface_material_override/0 = ExtResource("12_bulb_glass")
+
+[node name="Fly0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04605, -0.104, 0.01558)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("14_plastic_black")
+
+[node name="Fly1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.682, 0, 0.73135, 0, 1, 0, -0.73135, 0, 0.682, -0.05049, -0.104, 0.03453)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("14_plastic_black")
+
+[node name="Fly2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(-0.06976, 0, 0.99756, 0, 1, 0, -0.99756, 0, -0.06976, -0.03955, -0.104, -0.02447)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("14_plastic_black")
+
+[node name="Fly3" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(-0.77715, 0, 0.62932, 0, 1, 0, -0.62932, 0, -0.77715, 0.07087, -0.104, -0.02822)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("14_plastic_black")
+
+[node name="Fly4" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(-0.99027, 0, -0.13917, 0, 1, 0, 0.13917, 0, -0.99027, 0.03042, -0.104, 0.03175)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("14_plastic_black")
+
+[node name="Light" type="OmniLight3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.075, 0)
+light_color = Color(1, 0.71, 0.42, 1)
+light_energy = 1.5
+light_size = 0.08
+shadow_enabled = true
+omni_range = 7.5
+omni_attenuation = 1
+omni_shadow_mode = 1
+shadow_bias = 0.05
+shadow_normal_bias = 1.5
+
+[node name="Shape" type="CollisionShape3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06, 0)
+shape = SubResource("CylinderShape3D_15")
+
+[node name="Look" type="Node" parent="Body"]
+script = ExtResource("16_interactable")
+display_name = "Ceiling light"
+observations = Array[String](["A few dead flies in the bottom of the glass.", "It's on the wall switch."])
+
+[node name="Power" type="Node" parent="."]
+script = ExtResource("17_powered_light")
+lights = Array[NodePath]([NodePath("../Body/Light")])
+bulb_meshes = Array[NodePath]([NodePath("../Body/Glass"), NodePath("../Body/Bulb0"), NodePath("../Body/Bulb1")])
+bulb_emission_energy = 2.2

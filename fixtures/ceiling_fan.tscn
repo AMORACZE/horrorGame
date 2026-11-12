@@ -1,0 +1,445 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://fixtures/ceiling_fan.gd" id="1_ceiling_fan"]
+[ext_resource type="Material" path="res://art/materials/metal_brass.tres" id="3_metal_brass"]
+[ext_resource type="Material" path="res://art/materials/wood_dark.tres" id="8_wood_dark"]
+[ext_resource type="ArrayMesh" path="res://fixtures/meshes/bowl_glass.res" id="12_bowl_glass"]
+[ext_resource type="Material" path="res://fixtures/materials/glass_frosted.tres" id="13_glass_frosted"]
+[ext_resource type="Material" path="res://fixtures/materials/bulb_glass.tres" id="16_bulb_glass"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="18_interactable"]
+[ext_resource type="Material" path="res://art/materials/wood_light.tres" id="24_wood_light"]
+[ext_resource type="Script" path="res://interaction/switch_interactable.gd" id="28_switch_interactable"]
+[ext_resource type="Script" path="res://interaction/fan_motor.gd" id="29_fan_motor"]
+[ext_resource type="Script" path="res://interaction/powered_light.gd" id="30_powered_light"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.05
+bottom_radius = 0.075
+height = 0.065
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.0125
+bottom_radius = 0.0125
+height = 0.11
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5"]
+top_radius = 0.03
+bottom_radius = 0.06
+height = 0.03
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6"]
+top_radius = 0.11
+bottom_radius = 0.105
+height = 0.105
+radial_segments = 32
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7"]
+top_radius = 0.112
+bottom_radius = 0.112
+height = 0.014
+radial_segments = 32
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_9"]
+top_radius = 0.105
+bottom_radius = 0.075
+height = 0.025
+radial_segments = 32
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_10"]
+top_radius = 0.075
+bottom_radius = 0.06
+height = 0.06
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_11"]
+top_radius = 0.06
+bottom_radius = 0.06
+height = 0.012
+radial_segments = 24
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_14"]
+radius = 0.011
+height = 0.02
+radial_segments = 12
+rings = 6
+
+[sub_resource type="SphereMesh" id="SphereMesh_15"]
+radius = 0.03
+height = 0.065
+radial_segments = 20
+rings = 10
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_17"]
+radius = 0.12
+height = 0.5
+
+[sub_resource type="BoxMesh" id="BoxMesh_19"]
+size = Vector3(0.15, 0.006, 0.034)
+
+[sub_resource type="BoxMesh" id="BoxMesh_20"]
+size = Vector3(0.03, 0.012, 0.03)
+
+[sub_resource type="BoxMesh" id="BoxMesh_21"]
+size = Vector3(0.46, 0.007, 0.14)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_22"]
+top_radius = 0.07
+bottom_radius = 0.07
+height = 0.007
+radial_segments = 20
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_23"]
+size = Vector3(0.3, 0.0075, 0.09)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_25"]
+top_radius = 0.0013
+bottom_radius = 0.0013
+height = 0.21
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_26"]
+top_radius = 0.0045
+bottom_radius = 0.007
+height = 0.03
+radial_segments = 10
+rings = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_27"]
+size = Vector3(0.035, 0.24, 0.035)
+
+[node name="CeilingFan" type="Node3D"]
+script = ExtResource("1_ceiling_fan")
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 5
+collision_mask = 0
+
+[node name="Canopy" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0325, 0)
+mesh = SubResource("CylinderMesh_2")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Downrod" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.115, 0)
+mesh = SubResource("CylinderMesh_4")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Coupler" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.18, 0)
+mesh = SubResource("CylinderMesh_5")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Housing" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.2475, 0)
+mesh = SubResource("CylinderMesh_6")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Band" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.236, 0)
+mesh = SubResource("CylinderMesh_7")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="HousingBottom" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3125, 0)
+mesh = SubResource("CylinderMesh_9")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="SwitchCup" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.355, 0)
+mesh = SubResource("CylinderMesh_10")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Fitter" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.391, 0)
+mesh = SubResource("CylinderMesh_11")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Glass" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, -1, 0, -0.396, 0)
+cast_shadow = 0
+mesh = ExtResource("12_bowl_glass")
+surface_material_override/0 = ExtResource("13_glass_frosted")
+
+[node name="Finial" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.492, 0)
+mesh = SubResource("SphereMesh_14")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Bulb" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, -1, 0, -0.43, 0)
+cast_shadow = 0
+mesh = SubResource("SphereMesh_15")
+surface_material_override/0 = ExtResource("16_bulb_glass")
+
+[node name="Light" type="OmniLight3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.44, 0)
+light_color = Color(1, 0.71, 0.42, 1)
+light_energy = 1.6
+light_size = 0.05
+shadow_enabled = true
+omni_range = 7.5
+omni_attenuation = 1
+omni_shadow_mode = 1
+shadow_bias = 0.05
+shadow_normal_bias = 1.5
+
+[node name="Shape" type="CollisionShape3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("CylinderShape3D_17")
+
+[node name="Look" type="Node" parent="Body"]
+script = ExtResource("18_interactable")
+display_name = "Ceiling fan"
+observations = Array[String](["Dust on the leading edge of every blade.", "The brass has gone brown where hands never touched it."])
+
+[node name="Rotor" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.272, 0)
+
+[node name="Arm0" type="Node3D" parent="Rotor"]
+
+[node name="Iron" type="MeshInstance3D" parent="Rotor/Arm0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165, -0.004, 0)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="IronDrop" type="MeshInstance3D" parent="Rotor/Arm0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, -0.01, 0)
+mesh = SubResource("BoxMesh_20")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Pitch" type="Node3D" parent="Rotor/Arm0"]
+transform = Transform3D(1, 0, 0, 0, 0.97815, -0.20791, 0, 0.20791, 0.97815, 0.43, -0.018, 0)
+
+[node name="Blade" type="MeshInstance3D" parent="Rotor/Arm0/Pitch"]
+mesh = SubResource("BoxMesh_21")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="Tip" type="MeshInstance3D" parent="Rotor/Arm0/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0, 0)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="Cane" type="MeshInstance3D" parent="Rotor/Arm0/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0, 0)
+mesh = SubResource("BoxMesh_23")
+surface_material_override/0 = ExtResource("24_wood_light")
+
+[node name="Arm1" type="Node3D" parent="Rotor"]
+transform = Transform3D(0.30902, 0, 0.95106, 0, 1, 0, -0.95106, 0, 0.30902, 0, 0, 0)
+
+[node name="Iron" type="MeshInstance3D" parent="Rotor/Arm1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165, -0.004, 0)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="IronDrop" type="MeshInstance3D" parent="Rotor/Arm1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, -0.01, 0)
+mesh = SubResource("BoxMesh_20")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Pitch" type="Node3D" parent="Rotor/Arm1"]
+transform = Transform3D(1, 0, 0, 0, 0.97815, -0.20791, 0, 0.20791, 0.97815, 0.43, -0.018, 0)
+
+[node name="Blade" type="MeshInstance3D" parent="Rotor/Arm1/Pitch"]
+mesh = SubResource("BoxMesh_21")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="Tip" type="MeshInstance3D" parent="Rotor/Arm1/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0, 0)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="Cane" type="MeshInstance3D" parent="Rotor/Arm1/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0, 0)
+mesh = SubResource("BoxMesh_23")
+surface_material_override/0 = ExtResource("24_wood_light")
+
+[node name="Arm2" type="Node3D" parent="Rotor"]
+transform = Transform3D(-0.80902, 0, 0.58779, 0, 1, 0, -0.58779, 0, -0.80902, 0, 0, 0)
+
+[node name="Iron" type="MeshInstance3D" parent="Rotor/Arm2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165, -0.004, 0)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="IronDrop" type="MeshInstance3D" parent="Rotor/Arm2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, -0.01, 0)
+mesh = SubResource("BoxMesh_20")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Pitch" type="Node3D" parent="Rotor/Arm2"]
+transform = Transform3D(1, 0, 0, 0, 0.97815, -0.20791, 0, 0.20791, 0.97815, 0.43, -0.018, 0)
+
+[node name="Blade" type="MeshInstance3D" parent="Rotor/Arm2/Pitch"]
+mesh = SubResource("BoxMesh_21")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="Tip" type="MeshInstance3D" parent="Rotor/Arm2/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0, 0)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="Cane" type="MeshInstance3D" parent="Rotor/Arm2/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0, 0)
+mesh = SubResource("BoxMesh_23")
+surface_material_override/0 = ExtResource("24_wood_light")
+
+[node name="Arm3" type="Node3D" parent="Rotor"]
+transform = Transform3D(-0.80902, 0, -0.58779, 0, 1, 0, 0.58779, 0, -0.80902, 0, 0, 0)
+
+[node name="Iron" type="MeshInstance3D" parent="Rotor/Arm3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165, -0.004, 0)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="IronDrop" type="MeshInstance3D" parent="Rotor/Arm3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, -0.01, 0)
+mesh = SubResource("BoxMesh_20")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Pitch" type="Node3D" parent="Rotor/Arm3"]
+transform = Transform3D(1, 0, 0, 0, 0.97815, -0.20791, 0, 0.20791, 0.97815, 0.43, -0.018, 0)
+
+[node name="Blade" type="MeshInstance3D" parent="Rotor/Arm3/Pitch"]
+mesh = SubResource("BoxMesh_21")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="Tip" type="MeshInstance3D" parent="Rotor/Arm3/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0, 0)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="Cane" type="MeshInstance3D" parent="Rotor/Arm3/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0, 0)
+mesh = SubResource("BoxMesh_23")
+surface_material_override/0 = ExtResource("24_wood_light")
+
+[node name="Arm4" type="Node3D" parent="Rotor"]
+transform = Transform3D(0.30902, 0, -0.95106, 0, 1, 0, 0.95106, 0, 0.30902, 0, 0, 0)
+
+[node name="Iron" type="MeshInstance3D" parent="Rotor/Arm4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165, -0.004, 0)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="IronDrop" type="MeshInstance3D" parent="Rotor/Arm4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, -0.01, 0)
+mesh = SubResource("BoxMesh_20")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Pitch" type="Node3D" parent="Rotor/Arm4"]
+transform = Transform3D(1, 0, 0, 0, 0.97815, -0.20791, 0, 0.20791, 0.97815, 0.43, -0.018, 0)
+
+[node name="Blade" type="MeshInstance3D" parent="Rotor/Arm4/Pitch"]
+mesh = SubResource("BoxMesh_21")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="Tip" type="MeshInstance3D" parent="Rotor/Arm4/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0, 0)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("8_wood_dark")
+
+[node name="Cane" type="MeshInstance3D" parent="Rotor/Arm4/Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, 0, 0)
+mesh = SubResource("BoxMesh_23")
+surface_material_override/0 = ExtResource("24_wood_light")
+
+[node name="FanChain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035, -0.37, 0.03)
+
+[node name="Links" type="MeshInstance3D" parent="FanChain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105, 0)
+mesh = SubResource("CylinderMesh_25")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Fob" type="MeshInstance3D" parent="FanChain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.225, 0)
+mesh = SubResource("CylinderMesh_26")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="FanChainBody" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.035, -0.48, 0.03)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape3D" parent="FanChainBody"]
+shape = SubResource("BoxShape3D_27")
+
+[node name="Pull" type="Node" parent="FanChainBody"]
+script = ExtResource("28_switch_interactable")
+display_name = "Fan chain"
+mode = 1
+targets = Array[NodePath]([NodePath("../../Motor")])
+on_prompt = "Pull (fan on)"
+off_prompt = "Pull (fan off)"
+lever = NodePath("../../FanChain")
+lever_on_rotation_degrees = Vector3(0, 0, 0)
+lever_off_rotation_degrees = Vector3(0, 0, 0)
+lever_tug_offset = Vector3(0, -0.018, 0)
+cooldown = 0.35
+on_sound = &"lamp_click"
+off_sound = &"lamp_click"
+observations = Array[String](["It wobbles a little as it comes up to speed."])
+
+[node name="LightChain" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035, -0.37, 0.03)
+
+[node name="Links" type="MeshInstance3D" parent="LightChain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.105, 0)
+mesh = SubResource("CylinderMesh_25")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="Fob" type="MeshInstance3D" parent="LightChain"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.225, 0)
+mesh = SubResource("CylinderMesh_26")
+surface_material_override/0 = ExtResource("3_metal_brass")
+
+[node name="LightChainBody" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.035, -0.48, 0.03)
+collision_layer = 4
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape3D" parent="LightChainBody"]
+shape = SubResource("BoxShape3D_27")
+
+[node name="Pull" type="Node" parent="LightChainBody"]
+script = ExtResource("28_switch_interactable")
+display_name = "Light chain"
+mode = 1
+targets = Array[NodePath]([NodePath("../../Power")])
+on_prompt = "Pull (light on)"
+off_prompt = "Pull (light off)"
+lever = NodePath("../../LightChain")
+lever_on_rotation_degrees = Vector3(0, 0, 0)
+lever_off_rotation_degrees = Vector3(0, 0, 0)
+lever_tug_offset = Vector3(0, -0.018, 0)
+cooldown = 0.35
+on_sound = &"lamp_click"
+off_sound = &"lamp_click"
+observations = Array[String](["The chain is warm."])
+
+[node name="Motor" type="Node" parent="."]
+script = ExtResource("29_fan_motor")
+rotor = NodePath("../Rotor")
+max_rpm = 92
+spin_up_time = 6
+spin_down_time = 16
+
+[node name="Power" type="Node" parent="."]
+script = ExtResource("30_powered_light")
+lights = Array[NodePath]([NodePath("../Body/Light")])
+bulb_meshes = Array[NodePath]([NodePath("../Body/Glass"), NodePath("../Body/Bulb")])
+bulb_emission_energy = 2.4

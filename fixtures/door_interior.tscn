@@ -1,0 +1,290 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://fixtures/door_fixture.gd" id="1_door_fixture"]
+[ext_resource type="Material" path="res://art/materials/trim_white.tres" id="3_trim_white"]
+[ext_resource type="Material" path="res://art/materials/metal_brass.tres" id="14_metal_brass"]
+[ext_resource type="Material" path="res://art/materials/wood_light.tres" id="16_wood_light"]
+[ext_resource type="Script" path="res://interaction/door_interactable.gd" id="25_door_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(0.019, 2.062, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4"]
+size = Vector3(0.019, 2.062, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.854, 0.019, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6"]
+size = Vector3(0.854, 0.019, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.064, 2.112, 0.016)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.012, 2.112, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_9"]
+size = Vector3(0.954, 0.064, 0.016)
+
+[sub_resource type="BoxMesh" id="BoxMesh_10"]
+size = Vector3(0.954, 0.012, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_11"]
+size = Vector3(0.012, 2.043, 0.032)
+
+[sub_resource type="BoxMesh" id="BoxMesh_12"]
+size = Vector3(0.816, 0.012, 0.032)
+
+[sub_resource type="BoxMesh" id="BoxMesh_13"]
+size = Vector3(0.0015, 0.07, 0.026)
+
+[sub_resource type="BoxMesh" id="BoxMesh_15"]
+size = Vector3(0.81, 2.03, 0.035)
+
+[sub_resource type="BoxMesh" id="BoxMesh_17"]
+size = Vector3(0.002, 2.03, 0.035)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_18"]
+top_radius = 0.0065
+bottom_radius = 0.0065
+height = 0.089
+radial_segments = 12
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_19"]
+radius = 0.0065
+height = 0.008
+radial_segments = 12
+rings = 6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_20"]
+top_radius = 0.027
+bottom_radius = 0.029
+height = 0.007
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_21"]
+top_radius = 0.011
+bottom_radius = 0.013
+height = 0.028
+radial_segments = 24
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_22"]
+radius = 0.029
+height = 0.05
+radial_segments = 20
+rings = 10
+
+[sub_resource type="BoxMesh" id="BoxMesh_23"]
+size = Vector3(0.0015, 0.057, 0.025)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_24"]
+size = Vector3(0.81, 2.03, 0.035)
+
+[node name="DoorInterior" type="Node3D"]
+script = ExtResource("1_door_fixture")
+display_name = "Door"
+
+[node name="Frame" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="JambL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4175, 1.031, 0)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="JambShapeL" type="CollisionShape3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4175, 1.031, 0)
+shape = SubResource("BoxShape3D_4")
+
+[node name="JambR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4175, 1.031, 0)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="JambShapeR" type="CollisionShape3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4175, 1.031, 0)
+shape = SubResource("BoxShape3D_4")
+
+[node name="Head" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0525, 0)
+mesh = SubResource("BoxMesh_5")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="HeadShape" type="CollisionShape3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0525, 0)
+shape = SubResource("BoxShape3D_6")
+
+[node name="CasingFrontL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445, 1.056, 0.083)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="BeadFrontL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.471, 1.056, 0.094)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="CasingFrontR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.445, 1.056, 0.083)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="BeadFrontR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.471, 1.056, 0.094)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="CasingHeadFront" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08, 0.083)
+mesh = SubResource("BoxMesh_9")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="BeadHeadFront" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.106, 0.094)
+mesh = SubResource("BoxMesh_10")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="CasingBackL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.445, 1.056, -0.083)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="BeadBackL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.471, 1.056, -0.094)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="CasingBackR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.445, 1.056, -0.083)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="BeadBackR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.471, 1.056, -0.094)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="CasingHeadBack" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08, -0.083)
+mesh = SubResource("BoxMesh_9")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="BeadHeadBack" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.106, -0.094)
+mesh = SubResource("BoxMesh_10")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="StopL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.402, 1.0215, -0.021)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="StopR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.402, 1.0215, -0.021)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="StopHead" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.037, -0.021)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("3_trim_white")
+
+[node name="Strike" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4072, 0.91, -0.0545)
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="Slab" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.408, 0, -0.072)
+collision_layer = 5
+collision_mask = 0
+
+[node name="SlabMesh" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.408, 1.025, 0.0175)
+mesh = SubResource("BoxMesh_15")
+surface_material_override/0 = ExtResource("16_wood_light")
+
+[node name="EdgeBand" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.814, 1.025, 0.0175)
+mesh = SubResource("BoxMesh_17")
+surface_material_override/0 = ExtResource("16_wood_light")
+
+[node name="Hinge0" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.21, -0.002)
+mesh = SubResource("CylinderMesh_18")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="HingeTip0" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.258, -0.002)
+mesh = SubResource("SphereMesh_19")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="Hinge1" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.075, -0.002)
+mesh = SubResource("CylinderMesh_18")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="HingeTip1" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.123, -0.002)
+mesh = SubResource("SphereMesh_19")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="Hinge2" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.86, -0.002)
+mesh = SubResource("CylinderMesh_18")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="HingeTip2" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.908, -0.002)
+mesh = SubResource("SphereMesh_19")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="RoseA" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.753, 0.91, -0.0035)
+mesh = SubResource("CylinderMesh_20")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="ShankA" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.753, 0.91, -0.021)
+mesh = SubResource("CylinderMesh_21")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="KnobA" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.753, 0.91, -0.052)
+mesh = SubResource("SphereMesh_22")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="RoseB" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.753, 0.91, 0.0385)
+mesh = SubResource("CylinderMesh_20")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="ShankB" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.753, 0.91, 0.056)
+mesh = SubResource("CylinderMesh_21")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="KnobB" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.753, 0.91, 0.087)
+mesh = SubResource("SphereMesh_22")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="LatchPlate" type="MeshInstance3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8138, 0.91, 0.0175)
+mesh = SubResource("BoxMesh_23")
+surface_material_override/0 = ExtResource("14_metal_brass")
+
+[node name="SlabShape" type="CollisionShape3D" parent="Slab"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.408, 1.025, 0.0175)
+shape = SubResource("BoxShape3D_24")
+
+[node name="Door" type="Node" parent="Slab"]
+script = ExtResource("25_door_interactable")
+display_name = "Door"
+observations = Array[String](["The knob turns loose before it catches.", "The bottom edge is rubbed pale where it drags on the carpet."])
+locked_observations = Array[String](["It's locked.", "Locked. The knob doesn't give at all."])

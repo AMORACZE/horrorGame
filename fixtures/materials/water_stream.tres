@@ -1,0 +1,10 @@
+[gd_resource type="ShaderMaterial" format=3]
+
+[ext_resource type="Shader" path="res://fixtures/shaders/water_stream.gdshader" id="1"]
+
+[resource]
+shader = ExtResource("1")
+shader_parameter/water_color = Color(0.82, 0.88, 0.9, 0.55)
+shader_parameter/speed = 2.6
+shader_parameter/streaks = 14.0
+shader_parameter/wobble = 0.0006
