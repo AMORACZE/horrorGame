@@ -262,7 +262,7 @@ def build_shell(sc, root):
     sh = n3d(sc, root, "Shell")
     wl = n3d(sc, sh, "Walls")
     hall_w, liv_w, kit_w = "wallpaper_stripe", "wallpaper_floral", "wall_plaster_cream"
-    panel, plaster, siding, mass = "wall_wood_paneling", "wall_plaster_cream", "wood_light", "wall_plaster_cream"
+    panel, plaster, siding, mass = "wall_wood_paneling", "wall_plaster_cream", "brick_red", "wall_plaster_cream"
 
     fw, fy0, fy1 = CUT_FRONT
     dw, dy0, dy1 = CUT_DOOR
@@ -312,7 +312,7 @@ def build_shell(sc, root):
     floor_slab(sc, fl, "KitchenFloor", (6.075, 10.50, 1.575, 6.40), ROOMS["Kitchen"]["floor"], "linoleum")
     floor_slab(sc, fl, "PantryFloor", (7.85, 8.75, 0.95, 1.575), ROOMS["Kitchen"]["floor"], "linoleum")
     # Thresholds under the front and back doors sit on the slab edge.
-    solid(sc, fl, "Foundation", -0.30, 10.65, GRADE - 0.2, -0.30, -1.40, 6.55, "brick_red")
+    solid(sc, fl, "Foundation", -0.30, 10.65, GRADE - 0.2, -0.30, -1.40, 6.55, "concrete")
     ce = n3d(sc, sh, "Ceiling")
     solid(sc, ce, "CeilingSlab", -0.30, 10.65, H, H + 0.30, -1.40, 6.55, "ceiling_popcorn")
     solid(sc, ce, "Attic", -0.30, 10.65, H + 0.30, H + 0.80, -1.40, 6.55, "wood_dark", collide=False)
@@ -373,7 +373,7 @@ def build_openings(sc, root):
 
     liv = n3d(sc, fx, "Living")
     for i, z in enumerate(WEST_WINDOWS_Z):
-        window(sc, liv, "WestWindow%d" % i, (-0.15, SILL, z), 90.0, blinds=(0.0, 14.0 + 4 * i, 3 + 2 * i))
+        window(sc, liv, "WestWindow%d" % i, (-0.15, SILL, z), 90.0, blinds=(0.0, 30.0 + 4 * i, 3 + 2 * i))
     for i, x in enumerate(SOUTH_LIVING_X):
         window(sc, liv, "SouthWindow%d" % i, (x, SILL, 6.40), 180.0, blinds=(0.35 if i == 0 else 0.0, 22.0, 5))
     inst(sc, liv, "CeilingFan", F + "ceiling_fan.tscn", (3.2, H, 3.95), 0.0)
@@ -553,7 +553,7 @@ def build_kitchen(sc, root):
                           "The top shelf is lined with contact paper, curling at the corners."], collide=True)
     # Garbage cans outside the back door (seen through its glass).
     out = n3d(sc, g, "BackStep")
-    solid(sc, out, "Step", 10.65, 11.6, GRADE, -0.03, 2.8, 4.0, "brick_red")
+    solid(sc, out, "Step", 10.65, 11.6, GRADE, -0.03, 2.8, 4.0, "concrete")
     for i, z in enumerate((4.6, 5.25)):
         cyl(sc, out, "Can%d" % i, 0.28, 0.26, 0.85, (11.1, GRADE + 0.425, z), "metal_chrome")
         cyl(sc, out, "Lid%d" % i, 0.30, 0.30, 0.04, (11.1, GRADE + 0.87, z), "metal_chrome")
@@ -599,7 +599,7 @@ def build_outside(sc, root):
     solid(sc, g, "Lawn", -60.0, 60.0, GRADE - 0.5, GRADE, -60.0, 60.0, "plant_green")
     # West side yard: our strip of lawn, a low hedge, the neighbour's drive and house.
     solid(sc, g, "Hedge", -7.2, -6.2, GRADE, GRADE + 1.15, -4.0, 15.0, "plant_green", collide=False)
-    solid(sc, g, "Driveway", -10.5, -7.6, GRADE, GRADE + 0.02, -30.0, 9.0, "plastic_grey", collide=False)
+    solid(sc, g, "Driveway", -10.5, -7.6, GRADE, GRADE + 0.02, -30.0, 9.0, "concrete", collide=False)
     neighbour_house(sc, g, "WestNeighbour", -20.0, -11.0, -6.0, 9.0, 3.0, "wall_plaster_cream", "wood_dark",
                     [((-10.98, GRADE + 1.7, 0.5), (0.05, 1.1, 0.9)), ((-10.98, GRADE + 1.7, 4.8), (0.05, 1.1, 0.9))])
     # South: back yard, a board fence, the house behind.
@@ -613,11 +613,11 @@ def build_outside(sc, root):
     for x in (2.0, 8.0):
         cyl(sc, g, "LinePost%d" % int(x), 0.03, 0.03, 1.95, (x, GRADE + 0.975, 11.0), "metal_chrome", segs=8)
     # The tree that breaks up the sun on the west windows, and one out back.
-    tree(sc, g, "WestTree", (-4.6, GRADE, 6.6), 3.6, (0.0, 4.9, 0.0, 2.4, 1.3, 2.2), seed=1418)
+    tree(sc, g, "WestTree", (-4.2, GRADE, 9.6), 4.0, (0.0, 5.4, 0.0, 2.2, 1.2, 1.9), seed=1418, leaf_count=30)
     tree(sc, g, "BackTree", (9.0, GRADE, 13.5), 4.2, (0.0, 5.4, 0.0, 2.6, 1.5, 2.6), seed=93)
     # Front: street-side lawn, a walk to the door.
-    solid(sc, g, "FrontWalk", 0.4, 1.6, GRADE, GRADE + 0.03, -12.0, -0.30, "plastic_grey", collide=False)
-    solid(sc, g, "FrontStoop", 0.2, 1.8, GRADE, -0.03, -1.4, -0.30, "brick_red", collide=False)
+    solid(sc, g, "FrontWalk", 0.4, 1.6, GRADE, GRADE + 0.03, -12.0, -0.30, "concrete", collide=False)
+    solid(sc, g, "FrontStoop", 0.2, 1.8, GRADE, -0.03, -1.4, -0.30, "concrete", collide=False)
 
 
 # =============================================================================
