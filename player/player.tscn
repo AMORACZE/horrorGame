@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_player"]
+[ext_resource type="Script" path="res://player/camera/head_bob.gd" id="2_bob"]
+[ext_resource type="Script" path="res://player/camera/handheld_sway.gd" id="3_sway"]
+[ext_resource type="Script" path="res://player/camera/camcorder_camera.gd" id="4_cam"]
+[ext_resource type="Script" path="res://player/player_footsteps.gd" id="5_steps"]
+[ext_resource type="Script" path="res://player/player_interactor.gd" id="6_interact"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_body"]
+radius = 0.3
+height = 1.75
+
+[node name="Player" type="CharacterBody3D"]
+collision_layer = 2
+collision_mask = 9
+script = ExtResource("1_player")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.875, 0)
+shape = SubResource("CapsuleShape3D_body")
+
+[node name="Head" type="Node3D" parent="."]
+top_level = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
+
+[node name="HeadBob" type="Node3D" parent="Head"]
+script = ExtResource("2_bob")
+
+[node name="HandheldSway" type="Node3D" parent="Head/HeadBob"]
+script = ExtResource("3_sway")
+
+[node name="Camera" type="Camera3D" parent="Head/HeadBob/HandheldSway"]
+current = true
+fov = 68.0
+near = 0.05
+script = ExtResource("4_cam")
+
+[node name="Footsteps" type="Node" parent="."]
+script = ExtResource("5_steps")
+
+[node name="Interactor" type="Node" parent="."]
+script = ExtResource("6_interact")
