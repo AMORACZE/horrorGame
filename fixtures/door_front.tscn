@@ -315,6 +315,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.458, 1.522, 0.0225)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_24")
 surface_material_override/0 = ExtResource("25_glass_window")
+gi_mode = 0
 
 [node name="MuntinV" type="MeshInstance3D" parent="Slab"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.458, 1.522, 0.0225)

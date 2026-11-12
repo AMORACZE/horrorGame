@@ -20,7 +20,7 @@ means "this many metres per repeat" on any box regardless of its size.
 | Material | What it is | Mapping | Metres per tile (W x H) | Notes |
 |---|---|---|---|---|
 | `wall_wood_paneling` | 1970s random-groove walnut-look plywood panelling, satin; one 4x8 ft sheet per tile, grooves vertical | world triplanar | 1.22 x 2.44 | Tile is one full sheet: 1.22 m wide, 2.44 m tall (= ceiling), anchored at y=0; scuffs near the floor, smudges at hand height. |
-| `carpet_shag_gold` | Deep gold/orange shag pile with matted traffic areas | world triplanar | 0.75 | Floors only. Rim term fakes fibre sheen at grazing angles. |
+| `carpet_shag_gold` | Deep gold/orange shag pile with matted traffic areas | world triplanar | 0.75 | Floors only. |
 | `carpet_beige` | Beige cut-pile wall-to-wall carpet (1990s bedrooms/halls) | world triplanar | 0.5 |  |
 | `floor_hardwood` | 2-1/4" red-oak strip floor, amber finish worn in traffic paths | world triplanar | 1.2 | Strips run along world Z. Build rooms so the long axis is Z, or use it as is (strips across the room are also period-correct). |
 | `floor_hardwood_dusty` **(new)** | Same strip floor under a film of dust (unused rooms, attic, under furniture) | world triplanar | 1.2 |  |

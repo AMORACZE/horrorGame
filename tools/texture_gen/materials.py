@@ -39,10 +39,10 @@ MATERIALS = {
         normal_scale=1.0, ao_light_affect=0.25, notes='Tile is one full sheet: 1.22 m wide, 2.44 m tall (= ceiling), anchored at y=0; scuffs near the floor, smudges at hand height.'),
     'carpet_shag_gold': M('Deep gold/orange shag pile with matted traffic areas',
         'world', (0.75, 0.75), 'carpet_shag_gold', 'carpet_shag_gold', 'carpet_shag_gold',
-        normal_scale=0.75, ao_light_affect=0.35, specular=0.3, rim=0.25, notes='Floors only. Rim term fakes fibre sheen at grazing angles.'),
+        normal_scale=0.75, ao_light_affect=0.35, specular=0.3, notes='Floors only.'),
     'carpet_beige': M('Beige cut-pile wall-to-wall carpet (1990s bedrooms/halls)',
         'world', (0.5, 0.5), 'carpet_beige', 'carpet_beige', 'carpet_beige',
-        normal_scale=0.6, ao_light_affect=0.25, specular=0.3, rim=0.2),
+        normal_scale=0.6, ao_light_affect=0.25, specular=0.3),
     'floor_hardwood': M('2-1/4" red-oak strip floor, amber finish worn in traffic paths',
         'world', (1.2, 1.2), 'floor_hardwood', 'floor_hardwood', 'floor_hardwood',
         normal_scale=1.0, ao_light_affect=0.1, notes='Strips run along world Z. Build rooms so the long axis is Z, or use it as is (strips across the room are also period-correct).'),
@@ -124,13 +124,13 @@ MATERIALS = {
     # ---------------------------------------------------------------- fabrics (object)
     'fabric_floral_sofa': M('1980s floral upholstery: dusty rose/mauve blooms, teal-sage leaves, oatmeal basket weave',
         'object', (0.6, 0.6), 'fabric_floral_sofa', 'fabric_floral_sofa', 'fabric_floral_sofa',
-        normal_scale=1.0, specular=0.35, rim=0.3),
+        normal_scale=1.0, specular=0.35),
     'fabric_corduroy_brown': M('Brown wide-wale corduroy (4 mm wales, vertical on sides)',
         'object', (0.2, 0.2), 'fabric_corduroy_brown', 'fabric_corduroy_brown', 'fabric_corduroy_brown',
-        normal_scale=1.0, specular=0.35, rim=0.35),
+        normal_scale=1.0, specular=0.35),
     'fabric_plaid': M('Brown / rust / mustard / cream tartan in 2/2 twill (recliner, blanket)',
         'object', (0.25, 0.25), 'fabric_plaid', 'fabric_plaid', 'fabric_plaid',
-        normal_scale=1.0, specular=0.35, rim=0.25),
+        normal_scale=1.0, specular=0.35),
     'fabric_lampshade': M('Slubby cream linen lampshade, glows when lit from inside',
         'object', (0.15, 0.15), 'fabric_lampshade', 'fabric_lampshade', 'fabric_lampshade',
         normal_scale=0.8, specular=0.3, cull='disabled', backlight=(0.75, 0.62, 0.42),
@@ -141,14 +141,14 @@ MATERIALS = {
         notes='Alpha blend + backlight: glows warmly with the sun behind it; casts no shadow (alpha pass), so the sun shaft still reaches the floor. Avoid stacking several sheers in a row (blend sorting).'),
     'fabric_curtain_heavy': M('Lined harvest-gold slub-weave drapes with deep pleats',
         'object', (0.6, 0.6), 'fabric_curtain_heavy', 'fabric_curtain_heavy', 'fabric_curtain_heavy',
-        normal_scale=1.0, specular=0.3, backlight=(0.22, 0.16, 0.05), rim=0.2,
+        normal_scale=1.0, specular=0.3, backlight=(0.22, 0.16, 0.05),
         notes='Opaque (casts full shadow). Faint warm backlight for sun bleeding through the edges.'),
     'leather_brown': M('Brown leather (recliner, belt, wallet): pebble grain, creases, rubbed patina',
         'object', (0.25, 0.25), 'leather_brown', 'leather_brown', 'leather_brown', normal_scale=1.0),
     'rubber_black': M('Black rubber with grey bloom (feet, hoses, cords)', 'object', (0.15, 0.15),
         'rubber_black', 'rubber_black', 'rubber_black', normal_scale=1.0, specular=0.35),
     'dust_sheet': M('Unbleached muslin drop cloth thrown over furniture', 'object', (0.5, 0.5),
-        'dust_sheet', 'dust_sheet', 'dust_sheet', normal_scale=1.0, specular=0.3, rim=0.2, cull='disabled'),
+        'dust_sheet', 'dust_sheet', 'dust_sheet', normal_scale=1.0, specular=0.3, cull='disabled'),
 
     # ---------------------------------------------------------------- glass & screens
     'glass_dusty': M('Grimy glass (cabinet doors, picture frames, garage window)', 'object', (0.5, 0.5),
@@ -244,6 +244,8 @@ def render(name: str, m: dict) -> str:
         props.append('normal_enabled = true')
         props.append(f'normal_scale = {m.get("normal_scale", 1.0):g}')
         props.append(f'normal_texture = {tex(T.format(m["normal"], "normal"))}')
+    # No palette material uses rim: Godot adds it per light without shadows, so
+    # at roughness 1 a fabric in a dark room glows with unshadowed sunlight.
     if m.get('rim'):
         props.append('rim_enabled = true')
         props.append(f'rim = {m["rim"]:g}')

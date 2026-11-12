@@ -101,22 +101,6 @@ counter run starts east of that window so the patch reaches the floor).
 - No fill lights. Lamps, the fan light and the kitchen dome are off; the hall
   dome has a dead bulb.
 
-Workarounds in the level for other systems (see the builder):
-
-- **Fixture glass and SDFGI.** The window and door glass casts no shadow but
-  keeps the default GI mode, so SDFGI treats every pane as a wall. The builder
-  adds a per-placement override (`gi_mode = 0`) on every `Glass` node.
-- **Rim on palette fabrics.** `carpet_shag_gold`, `carpet_beige`,
-  `fabric_floral_sofa`, `fabric_plaid`, `fabric_corduroy_brown`,
-  `fabric_curtain_heavy` and `dust_sheet` enable `rim` at roughness 1. Godot
-  adds rim light per light without shadowing and with a zero falloff exponent
-  at roughness 1, so those surfaces glow with unshadowed sun (the coat in the
-  dark hall glowed; the shag and sofa blew out). The builder writes
-  rim-less copies to `levels/house/materials/*_norim.tres` (from the current
-  palette, on every build) and overrides every use in the level. Drop this
-  once the palette is fixed: delete `make_norim_materials()` and the
-  overrides follow.
-
 ## Sound
 
 All from `audio/` helpers, under `House/Audio`:
@@ -144,7 +128,6 @@ group into patches; a second tree out back; garbage cans by the back step.
 ## Next
 
 - Bedroom wing and basement behind the locked doors, built the same way.
-- Remove the glass / rim workarounds once fixtures and art fix them.
 - Replace the box-built phone table, coats and pantry shelves with real props.
 - A wall phone fixture for the kitchen; a kitchen faucet drip loop.
 - Proper roof geometry (hip) and gutters if any view ever shows them.

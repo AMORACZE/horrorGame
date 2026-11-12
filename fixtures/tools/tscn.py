@@ -212,6 +212,10 @@ def _mesh_node(sc, parent, name, mesh, mat, pos, rot, scale, cast, visible, basi
     props["mesh"] = mesh
     if mat:
         props["surface_material_override/0"] = sc.mat(mat)
+    if mat == "glass_window":
+        # Window panes cast no shadow, so they must not block SDFGI either, or
+        # the sun's bounce stops at the glass.
+        props["gi_mode"] = 0
     if extra:
         props.update(extra)
     return sc.node(name, "MeshInstance3D", parent, props)

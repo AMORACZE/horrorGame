@@ -220,6 +220,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.365, 0)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_17")
 surface_material_override/0 = ExtResource("18_glass_window")
+gi_mode = 0
 
 [node name="MuntinV1" type="MeshInstance3D" parent="Window/LowerSash"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12667, 0.365, 0)
@@ -264,6 +265,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.01, 0)
 cast_shadow = 0
 mesh = SubResource("BoxMesh_23")
 surface_material_override/0 = ExtResource("18_glass_window")
+gi_mode = 0
 
 [node name="MuntinV1" type="MeshInstance3D" parent="Window/UpperSash"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12667, 1.01, 0)
