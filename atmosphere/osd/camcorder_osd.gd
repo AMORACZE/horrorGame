@@ -61,6 +61,9 @@ func _ready() -> void:
 	_apply_enabled(bool(Settings.get_value(&"video", &"osd_enabled")))
 	Events.setting_changed.connect(_on_setting_changed)
 	Events.camera_zoom_changed.connect(show_zoom)
+	# The camcorder's clock is the game's clock: anything that shows the time
+	# (wall clocks, a VCR) finds it through this group.
+	add_to_group(&"camcorder_clock")
 
 
 ## Restart the clock and counter from the exported start values.
@@ -104,6 +107,11 @@ func _process(delta: float) -> void:
 	elif zoom_bar_alpha > 0.0:
 		zoom_bar_alpha = maxf(0.0, zoom_bar_alpha - delta * 2.5)
 		queue_redraw()
+
+
+## Time of day in seconds since midnight, as shown by the date stamp.
+func get_time_of_day_seconds() -> float:
+	return fposmod(float(start_hour * 3600 + start_minute * 60) + _elapsed_seconds(), 86400.0)
 
 
 func _elapsed_seconds() -> float:

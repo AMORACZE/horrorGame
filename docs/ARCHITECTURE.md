@@ -92,6 +92,13 @@ Main
 | `Game` | `core/game.gd` | World flags (`set_flag/get_flag/has_flag`), `Game.player`, input-lock stack (`lock_input(self)` / `unlock_input(self)` / `is_input_locked()`). |
 | `Audio` | `core/audio_manager.gd` | `play(id)`, `play_at(id, pos)`, `play_attached(id, node)`, `play_footstep(surface, pos, intensity)`, `get_stream(id)`, `has_sound(id)`. |
 
+`Audio` also offers `played(id, player)` (signal), `get_def(id)`,
+`configure_player_3d(player, id)`, `enter_reverb_zone` / `exit_reverb_zone`
+(used by `audio/reverb_zone.tscn`) and `stop_all_world()`.
+
+The camcorder's on-screen clock is the game clock. It lives in group
+`camcorder_clock` and answers `get_time_of_day_seconds()`; wall clocks follow it.
+
 Rules:
 
 - **Modal UI** (examine, reader, pause) calls `Game.lock_input(self)` when it
@@ -115,9 +122,13 @@ The player's reticle ray hits the body and resolves the component with
   `create_examine_visual()` and shows the copy in an isolated viewport.
 - `ReadableInteractable`: emits `Events.document_requested(self)`; has `title`,
   `body`, `style`.
-- Behaviours in `interaction/` subclass `Interactable` and override `_interact`,
-  `get_prompt`, `can_interact`: door, drawer/sliding part, hinged lid/cabinet
-  door, switch (drives lights), device toggle (TV, lamp, faucet).
+- Behaviours in `interaction/` subclass `Interactable`:
+  `MovingPartInteractable` (shared open/close motion, locks, flags, never
+  pushes the player) with `HingedPartInteractable`, `SlidingPartInteractable`
+  and `DoorInteractable` on top; `SwitchInteractable` driving `Switchable`
+  components (`PoweredLight`, `FanMotor`, `FlickerLight`);
+  `DeviceToggleInteractable` (TV, faucet, phone); `JammedInteractable`
+  (things that only rattle). `LoopEmitter` owns a fixture's looping sound.
 
 Player-side contract: reach 2.0 m from the camera; ray mask = layers 1 + 3 +
 4 so walls occlude; on focus change call `unfocus/focus` and emit
