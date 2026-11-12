@@ -1,0 +1,474 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/wood_oak_cabinet.tres" id="2_wood_oak_cabinet"]
+[ext_resource type="Material" path="res://art/materials/wood_dark.tres" id="4_wood_dark"]
+[ext_resource type="Material" path="res://art/materials/wood_light.tres" id="6_wood_light"]
+[ext_resource type="Material" path="res://art/materials/laminate_formica.tres" id="13_laminate_formica"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="16_metal_chrome"]
+[ext_resource type="Material" path="res://art/materials/metal_dark.tres" id="23_metal_dark"]
+[ext_resource type="Script" path="res://interaction/hinged_part_interactable.gd" id="33_hinged_part_interact"]
+[ext_resource type="Material" path="res://art/materials/paper_yellowed.tres" id="39_paper_yellowed"]
+[ext_resource type="Script" path="res://interaction/sliding_part_interactable.gd" id="41_sliding_part_interac"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="42_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.018, 0.872, 0.59)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(0.874, 0.1, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.874, 0.018, 0.59)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.874, 0.754, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.874, 0.018, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_9"]
+size = Vector3(0.038, 0.772, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_10"]
+size = Vector3(0.038, 0.528, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_11"]
+size = Vector3(0.834, 0.038, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_12"]
+size = Vector3(0.91, 0.038, 0.635)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_14"]
+size = Vector3(0.91, 0.038, 0.635)
+
+[sub_resource type="BoxMesh" id="BoxMesh_15"]
+size = Vector3(0.91, 0.04, 0.003)
+
+[sub_resource type="BoxMesh" id="BoxMesh_17"]
+size = Vector3(0.91, 0.1, 0.012)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18"]
+size = Vector3(0.018, 0.872, 0.59)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_19"]
+size = Vector3(0.874, 0.118, 0.59)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_20"]
+size = Vector3(0.874, 0.754, 0.006)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_21"]
+size = Vector3(0.91, 0.21, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_22"]
+size = Vector3(0.012, 0.05, 0.002)
+
+[sub_resource type="BoxMesh" id="BoxMesh_24"]
+size = Vector3(0.423, 0.553, 0.019)
+
+[sub_resource type="BoxMesh" id="BoxMesh_25"]
+size = Vector3(0.311, 0.441, 0.001)
+
+[sub_resource type="BoxMesh" id="BoxMesh_26"]
+size = Vector3(0.299, 0.429, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_27"]
+size = Vector3(0.269, 0.399, 0.003)
+
+[sub_resource type="BoxMesh" id="BoxMesh_28"]
+size = Vector3(0.014, 0.05, 0.002)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_29"]
+top_radius = 0.0035
+bottom_radius = 0.0035
+height = 0.05
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_30"]
+top_radius = 0.0035
+bottom_radius = 0.0035
+height = 0.024
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_31"]
+top_radius = 0.0045
+bottom_radius = 0.0045
+height = 0.088
+radial_segments = 10
+rings = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_32"]
+size = Vector3(0.423, 0.553, 0.019)
+
+[sub_resource type="BoxMesh" id="BoxMesh_34"]
+size = Vector3(0.859, 0.155, 0.019)
+
+[sub_resource type="BoxMesh" id="BoxMesh_35"]
+size = Vector3(0.012, 0.085, 0.48)
+
+[sub_resource type="BoxMesh" id="BoxMesh_36"]
+size = Vector3(0.804, 0.085, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_37"]
+size = Vector3(0.804, 0.005, 0.48)
+
+[sub_resource type="BoxMesh" id="BoxMesh_38"]
+size = Vector3(0.778, 0.0012, 0.464)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_40"]
+size = Vector3(0.859, 0.155, 0.499)
+
+[node name="KitchenCabinetBase" type="Node3D"]
+
+[node name="Carcass" type="StaticBody3D" parent="."]
+collision_layer = 5
+collision_mask = 0
+
+[node name="SideL" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.446, 0.436, 0.295)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="SideR" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.446, 0.436, 0.295)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="ToeKick" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0.528)
+mesh = SubResource("BoxMesh_3")
+surface_material_override/0 = ExtResource("4_wood_dark")
+
+[node name="Deck" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109, 0.295)
+mesh = SubResource("BoxMesh_5")
+surface_material_override/0 = ExtResource("6_wood_light")
+
+[node name="Back" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.495, 0.003)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("6_wood_light")
+
+[node name="Shelf" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0.31)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("6_wood_light")
+
+[node name="StileL" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.436, 0.486, 0.6)
+mesh = SubResource("BoxMesh_9")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="StileR" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436, 0.486, 0.6)
+mesh = SubResource("BoxMesh_9")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="Mullion" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402, 0.6)
+mesh = SubResource("BoxMesh_10")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="RailTop" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.853, 0.6)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="RailMid" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.685, 0.6)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="RailBottom" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119, 0.6)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="Counter" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.891, 0.3175)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("13_laminate_formica")
+
+[node name="ShapeCounter" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.891, 0.3175)
+shape = SubResource("BoxShape3D_14")
+
+[node name="CounterEdge" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89, 0.6365)
+mesh = SubResource("BoxMesh_15")
+surface_material_override/0 = ExtResource("16_metal_chrome")
+
+[node name="Backsplash" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96, 0.006)
+mesh = SubResource("BoxMesh_17")
+surface_material_override/0 = ExtResource("13_laminate_formica")
+
+[node name="ShapeSideL" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.446, 0.436, 0.295)
+shape = SubResource("BoxShape3D_18")
+
+[node name="ShapeSideR" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.446, 0.436, 0.295)
+shape = SubResource("BoxShape3D_18")
+
+[node name="ShapeDeck" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.059, 0.295)
+shape = SubResource("BoxShape3D_19")
+
+[node name="ShapeBack" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.495, 0.003)
+shape = SubResource("BoxShape3D_20")
+
+[node name="ShapeFrameTop" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.767, 0.6)
+shape = SubResource("BoxShape3D_21")
+
+[node name="FrameLeafL0" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4475, 0.195, 0.611)
+mesh = SubResource("BoxMesh_22")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="FrameLeafL1" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4475, 0.608, 0.611)
+mesh = SubResource("BoxMesh_22")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="FrameLeafR0" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4475, 0.195, 0.611)
+mesh = SubResource("BoxMesh_22")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="FrameLeafR1" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4475, 0.608, 0.611)
+mesh = SubResource("BoxMesh_22")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="DoorL" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4297, 0.1253, 0.61)
+collision_layer = 5
+collision_mask = 0
+
+[node name="Slab" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2115, 0.2765, 0.0095)
+mesh = SubResource("BoxMesh_24")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="Groove" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2115, 0.2765, 0.0195)
+mesh = SubResource("BoxMesh_25")
+surface_material_override/0 = ExtResource("4_wood_dark")
+
+[node name="Panel" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2115, 0.2765, 0.022)
+mesh = SubResource("BoxMesh_26")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="PanelBevel" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2115, 0.2765, 0.0255)
+mesh = SubResource("BoxMesh_27")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="HingeLeaf0" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008, 0.07, 0.02)
+mesh = SubResource("BoxMesh_28")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="HingeKnuckle0" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0.07, 0.0195)
+mesh = SubResource("CylinderMesh_29")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="HingeLeaf1" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008, 0.483, 0.02)
+mesh = SubResource("BoxMesh_28")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="HingeKnuckle1" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0.483, 0.0195)
+mesh = SubResource("CylinderMesh_29")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="PullPost0" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.391, 0.425, 0.031)
+mesh = SubResource("CylinderMesh_30")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="PullPost1" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.391, 0.501, 0.031)
+mesh = SubResource("CylinderMesh_30")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="PullBar" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.391, 0.463, 0.045)
+mesh = SubResource("CylinderMesh_31")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="Shape" type="CollisionShape3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2115, 0.2765, 0.0095)
+shape = SubResource("BoxShape3D_32")
+
+[node name="Hinge" type="Node" parent="DoorL"]
+script = ExtResource("33_hinged_part_interact")
+display_name = "Cabinet"
+axis = Vector3(0, 1, 0)
+open_angle_degrees = -105
+open_duration = 0.55
+close_duration = 0.42
+open_profile = 1
+close_profile = 2
+stop_bump = 0.006
+open_sound = &"cabinet_open"
+close_sound = &"cabinet_close"
+observations = Array[String](["Empty shelves. Shelf paper, and crumbs in the corners.", "The hinge squeals a little."])
+
+[node name="DoorR" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4297, 0.1253, 0.61)
+collision_layer = 5
+collision_mask = 0
+
+[node name="Slab" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2115, 0.2765, 0.0095)
+mesh = SubResource("BoxMesh_24")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="Groove" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2115, 0.2765, 0.0195)
+mesh = SubResource("BoxMesh_25")
+surface_material_override/0 = ExtResource("4_wood_dark")
+
+[node name="Panel" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2115, 0.2765, 0.022)
+mesh = SubResource("BoxMesh_26")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="PanelBevel" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2115, 0.2765, 0.0255)
+mesh = SubResource("BoxMesh_27")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="HingeLeaf0" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008, 0.07, 0.02)
+mesh = SubResource("BoxMesh_28")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="HingeKnuckle0" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 0.07, 0.0195)
+mesh = SubResource("CylinderMesh_29")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="HingeLeaf1" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008, 0.483, 0.02)
+mesh = SubResource("BoxMesh_28")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="HingeKnuckle1" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 0.483, 0.0195)
+mesh = SubResource("CylinderMesh_29")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="PullPost0" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.391, 0.425, 0.031)
+mesh = SubResource("CylinderMesh_30")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="PullPost1" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.391, 0.501, 0.031)
+mesh = SubResource("CylinderMesh_30")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="PullBar" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.391, 0.463, 0.045)
+mesh = SubResource("CylinderMesh_31")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="Shape" type="CollisionShape3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2115, 0.2765, 0.0095)
+shape = SubResource("BoxShape3D_32")
+
+[node name="Hinge" type="Node" parent="DoorR"]
+script = ExtResource("33_hinged_part_interact")
+display_name = "Cabinet"
+axis = Vector3(0, 1, 0)
+open_angle_degrees = 105
+open_duration = 0.55
+close_duration = 0.42
+open_profile = 1
+close_profile = 2
+stop_bump = 0.006
+open_sound = &"cabinet_open"
+close_sound = &"cabinet_close"
+observations = Array[String](["The hinge squeals a little.", "Empty shelves. Shelf paper, and crumbs in the corners."])
+
+[node name="Drawer" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.704, 0.61)
+collision_layer = 5
+collision_mask = 0
+
+[node name="Front" type="MeshInstance3D" parent="Drawer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, 0.0095)
+mesh = SubResource("BoxMesh_34")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="SideL" type="MeshInstance3D" parent="Drawer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.396, 0.0545, -0.24)
+mesh = SubResource("BoxMesh_35")
+surface_material_override/0 = ExtResource("6_wood_light")
+
+[node name="SideR" type="MeshInstance3D" parent="Drawer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.396, 0.0545, -0.24)
+mesh = SubResource("BoxMesh_35")
+surface_material_override/0 = ExtResource("6_wood_light")
+
+[node name="Back" type="MeshInstance3D" parent="Drawer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0545, -0.474)
+mesh = SubResource("BoxMesh_36")
+surface_material_override/0 = ExtResource("6_wood_light")
+
+[node name="Bottom" type="MeshInstance3D" parent="Drawer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0125, -0.24)
+mesh = SubResource("BoxMesh_37")
+surface_material_override/0 = ExtResource("6_wood_light")
+
+[node name="Liner" type="MeshInstance3D" parent="Drawer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0156, -0.24)
+mesh = SubResource("BoxMesh_38")
+surface_material_override/0 = ExtResource("39_paper_yellowed")
+
+[node name="PullPost0" type="MeshInstance3D" parent="Drawer"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.038, 0.07, 0.031)
+mesh = SubResource("CylinderMesh_30")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="PullPost1" type="MeshInstance3D" parent="Drawer"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.038, 0.07, 0.031)
+mesh = SubResource("CylinderMesh_30")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="PullBar" type="MeshInstance3D" parent="Drawer"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.07, 0.045)
+mesh = SubResource("CylinderMesh_31")
+surface_material_override/0 = ExtResource("23_metal_dark")
+
+[node name="Shape" type="CollisionShape3D" parent="Drawer"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, -0.2305)
+shape = SubResource("BoxShape3D_40")
+
+[node name="Drawer" type="Node" parent="Drawer"]
+script = ExtResource("41_sliding_part_interac")
+display_name = "Drawer"
+axis = Vector3(0, 0, 1)
+distance = 0.38
+open_duration = 0.42
+close_duration = 0.36
+open_profile = 2
+close_profile = 2
+stop_bump = 0.012
+open_sound = &"drawer_open"
+close_sound = &"drawer_close"
+observations = Array[String](["Twist ties, a dead battery, a book of matches.", "Crumbs in the seams."])
+
+[node name="Look" type="Node" parent="Carcass"]
+script = ExtResource("42_interactable")
+display_name = "Counter"
+observations = Array[String](["The laminate is lifting at the seam.", "A burn mark the shape of a pot bottom."])

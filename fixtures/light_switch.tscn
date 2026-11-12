@@ -1,0 +1,100 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://fixtures/light_switch.gd" id="1_light_switch"]
+[ext_resource type="Material" path="res://art/materials/plastic_beige.tres" id="3_plastic_beige"]
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="6_plastic_black"]
+[ext_resource type="Material" path="res://art/materials/metal_dark.tres" id="9_metal_dark"]
+[ext_resource type="Script" path="res://interaction/switch_interactable.gd" id="13_switch_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(0.07, 0.114, 0.004)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(0.064, 0.108, 0.003)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.011, 0.024, 0.001)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7"]
+top_radius = 0.0034
+bottom_radius = 0.0036
+height = 0.0014
+radial_segments = 12
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.005, 0.0007, 0.0004)
+
+[sub_resource type="BoxMesh" id="BoxMesh_10"]
+size = Vector3(0.0085, 0.0065, 0.016)
+
+[sub_resource type="BoxMesh" id="BoxMesh_11"]
+size = Vector3(0.009, 0.0075, 0.003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_12"]
+size = Vector3(0.08, 0.125, 0.03)
+
+[node name="LightSwitch" type="Node3D"]
+script = ExtResource("1_light_switch")
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Plate" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.002)
+mesh = SubResource("BoxMesh_2")
+surface_material_override/0 = ExtResource("3_plastic_beige")
+
+[node name="PlateBevel" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0045)
+mesh = SubResource("BoxMesh_4")
+surface_material_override/0 = ExtResource("3_plastic_beige")
+
+[node name="Slot" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0062)
+mesh = SubResource("BoxMesh_5")
+surface_material_override/0 = ExtResource("6_plastic_black")
+
+[node name="Screw0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.0302, 0.0063)
+mesh = SubResource("CylinderMesh_7")
+surface_material_override/0 = ExtResource("3_plastic_beige")
+
+[node name="ScrewSlot0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0302, 0.0071)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("9_metal_dark")
+
+[node name="Screw1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, -0.0302, 0.0063)
+mesh = SubResource("CylinderMesh_7")
+surface_material_override/0 = ExtResource("3_plastic_beige")
+
+[node name="ScrewSlot1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0302, 0.0071)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("9_metal_dark")
+
+[node name="Lever" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.006)
+
+[node name="Bat" type="MeshInstance3D" parent="Body/Lever"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.008)
+mesh = SubResource("BoxMesh_10")
+surface_material_override/0 = ExtResource("3_plastic_beige")
+
+[node name="BatTip" type="MeshInstance3D" parent="Body/Lever"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0155)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("3_plastic_beige")
+
+[node name="Shape" type="CollisionShape3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.015)
+shape = SubResource("BoxShape3D_12")
+
+[node name="Switch" type="Node" parent="Body"]
+script = ExtResource("13_switch_interactable")
+display_name = "Light switch"
+lever = NodePath("../Lever")
+observations = Array[String](["The plate is grey around the toggle from fingers.", "It snaps over harder than I expect."])

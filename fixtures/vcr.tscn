@@ -1,0 +1,223 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="2_plastic_black"]
+[ext_resource type="Material" path="res://art/materials/plastic_grey.tres" id="5_plastic_grey"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="8_metal_chrome"]
+[ext_resource type="Material" path="res://fixtures/materials/vfd_window.tres" id="10_vfd_window"]
+[ext_resource type="Material" path="res://art/materials/rubber_black.tres" id="15_rubber_black"]
+[ext_resource type="Script" path="res://interaction/device_toggle_interactable.gd" id="17_device_toggle_intera"]
+[ext_resource type="Script" path="res://interaction/hinged_part_interactable.gd" id="21_hinged_part_interact"]
+[ext_resource type="Script" path="res://fixtures/components/vfd_display.gd" id="22_vfd_display"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.43, 0.084, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(0.426, 0.004, 0.296)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(0.428, 0.082, 0.005)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.196, 0.034, 0.002)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.4, 0.0016, 0.0008)
+
+[sub_resource type="BoxMesh" id="BoxMesh_9"]
+size = Vector3(0.115, 0.03, 0.002)
+
+[sub_resource type="BoxMesh" id="BoxMesh_11"]
+size = Vector3(0.013, 0.006, 0.004)
+
+[sub_resource type="BoxMesh" id="BoxMesh_12"]
+size = Vector3(0.024, 0.011, 0.005)
+
+[sub_resource type="BoxMesh" id="BoxMesh_13"]
+size = Vector3(0.016, 0.007, 0.004)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_14"]
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.005
+radial_segments = 10
+rings = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16"]
+size = Vector3(0.43, 0.093, 0.305)
+
+[sub_resource type="BoxMesh" id="BoxMesh_18"]
+size = Vector3(0.19, 0.03, 0.003)
+
+[sub_resource type="BoxMesh" id="BoxMesh_19"]
+size = Vector3(0.19, 0.0012, 0.0006)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_20"]
+size = Vector3(0.19, 0.03, 0.008)
+
+[node name="Vcr" type="Node3D"]
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 5
+collision_mask = 0
+
+[node name="Case" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.047, 0)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Lid" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.091, -0.002)
+mesh = SubResource("BoxMesh_3")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Fascia" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.047, 0.1525)
+mesh = SubResource("BoxMesh_4")
+surface_material_override/0 = ExtResource("5_plastic_grey")
+
+[node name="SlotRecess" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0.059, 0.1555)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Trim" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.037, 0.1554)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("8_metal_chrome")
+
+[node name="DisplayWindow" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0.063, 0.1555)
+mesh = SubResource("BoxMesh_9")
+surface_material_override/0 = ExtResource("10_vfd_window")
+
+[node name="Clock" type="Label3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.13, 0.062, 0.1573)
+pixel_size = 0.0006
+text = "12:00"
+font_size = 34
+outline_size = 0
+modulate = Color(0.45, 1, 0.86, 1)
+shaded = false
+double_sided = false
+no_depth_test = false
+fixed_size = false
+
+[node name="Button0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.083, 0.029, 0.1565)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Button1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.102, 0.029, 0.1565)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Button2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121, 0.029, 0.1565)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Button3" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.14, 0.029, 0.1565)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Button4" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.159, 0.029, 0.1565)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Button5" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.178, 0.029, 0.1565)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="PowerButton" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.188, 0.03, 0.1565)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="EjectButton" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0.063, 0.1565)
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Foot0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, 0.0025, 0.12)
+mesh = SubResource("CylinderMesh_14")
+surface_material_override/0 = ExtResource("15_rubber_black")
+
+[node name="Foot1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19, 0.0025, 0.12)
+mesh = SubResource("CylinderMesh_14")
+surface_material_override/0 = ExtResource("15_rubber_black")
+
+[node name="Foot2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19, 0.0025, -0.12)
+mesh = SubResource("CylinderMesh_14")
+surface_material_override/0 = ExtResource("15_rubber_black")
+
+[node name="Foot3" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19, 0.0025, -0.12)
+mesh = SubResource("CylinderMesh_14")
+surface_material_override/0 = ExtResource("15_rubber_black")
+
+[node name="Shape" type="CollisionShape3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0465, 0)
+shape = SubResource("BoxShape3D_16")
+
+[node name="Power" type="Node" parent="Body"]
+script = ExtResource("17_device_toggle_intera")
+display_name = "VCR"
+on_prompt = "Turn on"
+off_prompt = "Turn off"
+targets = Array[NodePath]([NodePath("../../Display")])
+moving_part = NodePath("../PowerButton")
+on_offset = Vector3(0, 0, -0.002)
+move_time = 0.05
+on_sound = &"button_press"
+off_sound = &"button_press"
+observations = Array[String](["It whirs, then nothing. There's no tape in it."])
+
+[node name="Flap" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.06, 0.0755, 0.1565)
+collision_layer = 4
+collision_mask = 0
+
+[node name="FlapMesh" type="MeshInstance3D" parent="Flap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.015, 0.0015)
+mesh = SubResource("BoxMesh_18")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="FlapLine" type="MeshInstance3D" parent="Flap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.004, 0.0032)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("5_plastic_grey")
+
+[node name="Shape" type="CollisionShape3D" parent="Flap"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.015, 0.004)
+shape = SubResource("BoxShape3D_20")
+
+[node name="Flap" type="Node" parent="Flap"]
+script = ExtResource("21_hinged_part_interact")
+display_name = "Tape slot"
+open_prompt = "Push the flap"
+close_prompt = "Let go"
+axis = Vector3(1, 0, 0)
+open_angle_degrees = 72
+open_duration = 0.18
+close_duration = 0.12
+open_profile = 0
+close_profile = 2
+stop_bump = 0.03
+auto_close_after = 0.7
+open_sound = &"button_press"
+close_sound = &"thud_soft"
+sound_volume_db = -6
+block_mask = 0
+observations = Array[String](["Empty. No tape inside.", "The flap snaps back on its spring."])
+
+[node name="Display" type="Node" parent="."]
+script = ExtResource("22_vfd_display")
+label = NodePath("../Body/Clock")

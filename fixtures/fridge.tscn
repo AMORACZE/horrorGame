@@ -1,0 +1,689 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/appliance_harvest_gold.tres" id="2_appliance_harvest_go"]
+[ext_resource type="Material" path="res://art/materials/plastic_white.tres" id="4_plastic_white"]
+[ext_resource type="Material" path="res://art/materials/metal_dark.tres" id="8_metal_dark"]
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="10_plastic_black"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="20_metal_chrome"]
+[ext_resource type="Material" path="res://art/materials/glass_dusty.tres" id="24_glass_dusty"]
+[ext_resource type="Material" path="res://fixtures/materials/baking_soda_box.tres" id="28_baking_soda_box"]
+[ext_resource type="Material" path="res://art/materials/ceramic_white.tres" id="31_ceramic_white"]
+[ext_resource type="Material" path="res://fixtures/materials/glass_frosted.tres" id="33_glass_frosted"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="39_interactable"]
+[ext_resource type="Script" path="res://interaction/powered_light.gd" id="40_powered_light"]
+[ext_resource type="Script" path="res://interaction/loop_emitter.gd" id="41_loop_emitter"]
+[ext_resource type="Material" path="res://art/materials/rubber_black.tres" id="45_rubber_black"]
+[ext_resource type="Material" path="res://art/materials/wood_medium.tres" id="52_wood_medium"]
+[ext_resource type="Script" path="res://interaction/hinged_part_interactable.gd" id="54_hinged_part_interact"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.012, 1.56, 0.7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(0.038, 0.98, 0.64)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.038, 0.44, 0.64)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.76, 0.012, 0.7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.736, 1.56, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_9"]
+size = Vector3(0.76, 0.1, 0.66)
+
+[sub_resource type="BoxMesh" id="BoxMesh_11"]
+size = Vector3(0.72, 0.07, 0.004)
+
+[sub_resource type="BoxMesh" id="BoxMesh_12"]
+size = Vector3(0.7, 0.005, 0.004)
+
+[sub_resource type="BoxMesh" id="BoxMesh_13"]
+size = Vector3(0.736, 0.05, 0.64)
+
+[sub_resource type="BoxMesh" id="BoxMesh_14"]
+size = Vector3(0.66, 0.98, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_15"]
+size = Vector3(0.66, 0.44, 0.05)
+
+[sub_resource type="BoxMesh" id="BoxMesh_16"]
+size = Vector3(0.736, 0.036, 0.64)
+
+[sub_resource type="BoxMesh" id="BoxMesh_17"]
+size = Vector3(0.736, 0.09, 0.688)
+
+[sub_resource type="BoxMesh" id="BoxMesh_18"]
+size = Vector3(0.76, 0.036, 0.004)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_19"]
+top_radius = 0.004
+bottom_radius = 0.004
+height = 0.66
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_21"]
+top_radius = 0.003
+bottom_radius = 0.003
+height = 0.66
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_22"]
+top_radius = 0.0022
+bottom_radius = 0.0022
+height = 0.58
+radial_segments = 6
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_23"]
+size = Vector3(0.66, 0.012, 0.58)
+
+[sub_resource type="BoxMesh" id="BoxMesh_25"]
+size = Vector3(0.315, 0.2, 0.54)
+
+[sub_resource type="BoxMesh" id="BoxMesh_26"]
+size = Vector3(0.12, 0.02, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_27"]
+size = Vector3(0.07, 0.1, 0.045)
+
+[sub_resource type="BoxMesh" id="BoxMesh_29"]
+size = Vector3(0.11, 0.028, 0.29)
+
+[sub_resource type="BoxMesh" id="BoxMesh_30"]
+size = Vector3(0.66, 0.006, 0.6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_32"]
+size = Vector3(0.11, 0.028, 0.055)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_34"]
+size = Vector3(0.04, 1.66, 0.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_35"]
+size = Vector3(0.76, 0.05, 0.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_36"]
+size = Vector3(0.76, 0.15, 0.7)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37"]
+size = Vector3(0.76, 1.66, 0.06)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_38"]
+size = Vector3(0.76, 0.09, 0.7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_42"]
+size = Vector3(0.76, 1.03, 0.055)
+
+[sub_resource type="BoxMesh" id="BoxMesh_43"]
+size = Vector3(0.68, 0.95, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_44"]
+size = Vector3(0.72, 0.02, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_46"]
+size = Vector3(0.02, 0.99, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_47"]
+size = Vector3(0.6, 0.012, 0.085)
+
+[sub_resource type="BoxMesh" id="BoxMesh_48"]
+size = Vector3(0.6, 0.05, 0.005)
+
+[sub_resource type="BoxMesh" id="BoxMesh_49"]
+size = Vector3(0.022, 0.022, 0.035)
+
+[sub_resource type="BoxMesh" id="BoxMesh_50"]
+size = Vector3(0.026, 0.35, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_51"]
+size = Vector3(0.012, 0.33, 0.002)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_53"]
+size = Vector3(0.76, 1.03, 0.065)
+
+[sub_resource type="BoxMesh" id="BoxMesh_55"]
+size = Vector3(0.76, 0.51, 0.055)
+
+[sub_resource type="BoxMesh" id="BoxMesh_56"]
+size = Vector3(0.68, 0.43, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_57"]
+size = Vector3(0.02, 0.47, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_58"]
+size = Vector3(0.026, 0.27, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_59"]
+size = Vector3(0.012, 0.25, 0.002)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_60"]
+size = Vector3(0.76, 0.51, 0.065)
+
+[node name="Fridge" type="Node3D"]
+
+[node name="Cabinet" type="StaticBody3D" parent="."]
+collision_layer = 5
+collision_mask = 0
+
+[node name="SideL" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.374, 0.88, 0.35)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="LinerL" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349, 0.61, 0.38)
+mesh = SubResource("BoxMesh_3")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="FzLinerL" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.349, 1.39, 0.38)
+mesh = SubResource("BoxMesh_5")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="SideR" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.374, 0.88, 0.35)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="LinerR" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349, 0.61, 0.38)
+mesh = SubResource("BoxMesh_3")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="FzLinerR" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349, 1.39, 0.38)
+mesh = SubResource("BoxMesh_5")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="Top" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.654, 0.35)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="Back" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.88, 0.006)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("8_metal_dark")
+
+[node name="Base" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0.33)
+mesh = SubResource("BoxMesh_9")
+surface_material_override/0 = ExtResource("10_plastic_black")
+
+[node name="Grille" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0.662)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("8_metal_dark")
+
+[node name="GrilleSlat0" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022, 0.666)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="GrilleSlat1" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.033, 0.666)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="GrilleSlat2" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.044, 0.666)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="GrilleSlat3" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.055, 0.666)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="GrilleSlat4" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.066, 0.666)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="GrilleSlat5" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.077, 0.666)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="LinerBottom" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0.38)
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="LinerBack" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.61, 0.037)
+mesh = SubResource("BoxMesh_14")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="FzLinerBack" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.39, 0.037)
+mesh = SubResource("BoxMesh_15")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="FzLinerTop" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63, 0.38)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="Divider" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0.356)
+mesh = SubResource("BoxMesh_17")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="DividerFace" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14, 0.698)
+mesh = SubResource("BoxMesh_18")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="Shelf0Front" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.52, 0.66)
+mesh = SubResource("CylinderMesh_19")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Back" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.52, 0.08)
+mesh = SubResource("CylinderMesh_21")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Rod0" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.315, 0.522, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Rod1" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.245, 0.522, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Rod2" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.175, 0.522, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Rod3" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.105, 0.522, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Rod4" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.035, 0.522, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Rod5" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.035, 0.522, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Rod6" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.105, 0.522, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Rod7" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.175, 0.522, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Rod8" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.245, 0.522, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf0Rod9" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.315, 0.522, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Front" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.8, 0.66)
+mesh = SubResource("CylinderMesh_19")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Back" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.8, 0.08)
+mesh = SubResource("CylinderMesh_21")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Rod0" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.315, 0.802, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Rod1" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.245, 0.802, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Rod2" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.175, 0.802, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Rod3" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.105, 0.802, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Rod4" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.035, 0.802, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Rod5" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.035, 0.802, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Rod6" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.105, 0.802, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Rod7" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.175, 0.802, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Rod8" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.245, 0.802, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="Shelf1Rod9" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.315, 0.802, 0.37)
+mesh = SubResource("CylinderMesh_22")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="CrisperLid" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.38, 0.36)
+mesh = SubResource("BoxMesh_23")
+surface_material_override/0 = ExtResource("24_glass_dusty")
+
+[node name="CrisperL" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165, 0.255, 0.36)
+mesh = SubResource("BoxMesh_25")
+surface_material_override/0 = ExtResource("24_glass_dusty")
+
+[node name="CrisperHandleL" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165, 0.33, 0.636)
+mesh = SubResource("BoxMesh_26")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="CrisperR" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165, 0.255, 0.36)
+mesh = SubResource("BoxMesh_25")
+surface_material_override/0 = ExtResource("24_glass_dusty")
+
+[node name="CrisperHandleR" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.165, 0.33, 0.636)
+mesh = SubResource("BoxMesh_26")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="BakingSoda" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(0.97815, 0, 0.20791, 0, 1, 0, -0.20791, 0, 0.97815, -0.22, 0.86, 0.22)
+mesh = SubResource("BoxMesh_27")
+surface_material_override/0 = ExtResource("28_baking_soda_box")
+
+[node name="IceTray" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.14, 1.184, 0.34)
+mesh = SubResource("BoxMesh_29")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="Frost" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.172, 0.36)
+mesh = SubResource("BoxMesh_30")
+surface_material_override/0 = ExtResource("31_ceramic_white")
+
+[node name="LightCover" type="MeshInstance3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.064, 0.12)
+cast_shadow = 0
+mesh = SubResource("BoxMesh_32")
+surface_material_override/0 = ExtResource("33_glass_frosted")
+
+[node name="InteriorLamp" type="OmniLight3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 1.03, 0.16)
+light_color = Color(1, 0.82, 0.62, 1)
+light_energy = 0.9
+light_size = 0.03
+shadow_enabled = true
+omni_range = 1.7
+omni_attenuation = 1
+omni_shadow_mode = 1
+shadow_bias = 0.05
+shadow_normal_bias = 1.5
+
+[node name="ShapeSideL" type="CollisionShape3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36, 0.83, 0.35)
+shape = SubResource("BoxShape3D_34")
+
+[node name="ShapeSideR" type="CollisionShape3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36, 0.83, 0.35)
+shape = SubResource("BoxShape3D_34")
+
+[node name="ShapeTop" type="CollisionShape3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.635, 0.35)
+shape = SubResource("BoxShape3D_35")
+
+[node name="ShapeBase" type="CollisionShape3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0.35)
+shape = SubResource("BoxShape3D_36")
+
+[node name="ShapeBack" type="CollisionShape3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.83, 0.03)
+shape = SubResource("BoxShape3D_37")
+
+[node name="ShapeDivider" type="CollisionShape3D" parent="Cabinet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.125, 0.35)
+shape = SubResource("BoxShape3D_38")
+
+[node name="Look" type="Node" parent="Cabinet"]
+script = ExtResource("39_interactable")
+display_name = "Refrigerator"
+observations = Array[String](["It hums, then clicks, then hums.", "The side is warm. That's the coils."])
+
+[node name="InteriorLight" type="Node" parent="."]
+script = ExtResource("40_powered_light")
+lights = Array[NodePath]([NodePath("../Cabinet/InteriorLamp")])
+bulb_meshes = Array[NodePath]([NodePath("../Cabinet/LightCover")])
+bulb_emission_energy = 2.5
+warm_up_time = 0.05
+temperature_kelvin = 2800
+
+[node name="Hum" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, 0.1)
+script = ExtResource("41_loop_emitter")
+sound_id = &"fridge_hum"
+autoplay_loop = true
+volume_db = -14
+
+[node name="FreshDoor" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38, 0.1, 0.7)
+collision_layer = 5
+collision_mask = 0
+
+[node name="Outer" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.515, 0.0375)
+mesh = SubResource("BoxMesh_42")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="Inner" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.515, 0.005)
+mesh = SubResource("BoxMesh_43")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="GasketTop" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 1, 0.004)
+mesh = SubResource("BoxMesh_44")
+surface_material_override/0 = ExtResource("45_rubber_black")
+
+[node name="GasketBottom" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.03, 0.004)
+mesh = SubResource("BoxMesh_44")
+surface_material_override/0 = ExtResource("45_rubber_black")
+
+[node name="GasketL" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73, 0.515, 0.004)
+mesh = SubResource("BoxMesh_46")
+surface_material_override/0 = ExtResource("45_rubber_black")
+
+[node name="GasketR" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.515, 0.004)
+mesh = SubResource("BoxMesh_46")
+surface_material_override/0 = ExtResource("45_rubber_black")
+
+[node name="Bin0" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.18, -0.0425)
+mesh = SubResource("BoxMesh_47")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="BinRail0" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.205, -0.083)
+mesh = SubResource("BoxMesh_48")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="Bin1" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.46, -0.0425)
+mesh = SubResource("BoxMesh_47")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="BinRail1" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.485, -0.083)
+mesh = SubResource("BoxMesh_48")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="Bin2" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.76, -0.0425)
+mesh = SubResource("BoxMesh_47")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="BinRail2" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.785, -0.083)
+mesh = SubResource("BoxMesh_48")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="HandlePost0" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.715, 0.62, 0.0825)
+mesh = SubResource("BoxMesh_49")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="HandlePost1" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.715, 0.92, 0.0825)
+mesh = SubResource("BoxMesh_49")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="HandleGrip" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.715, 0.77, 0.11)
+mesh = SubResource("BoxMesh_50")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="HandleInsert" type="MeshInstance3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.715, 0.77, 0.1205)
+mesh = SubResource("BoxMesh_51")
+surface_material_override/0 = ExtResource("52_wood_medium")
+
+[node name="Shape" type="CollisionShape3D" parent="FreshDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.515, 0.0325)
+shape = SubResource("BoxShape3D_53")
+
+[node name="Hinge" type="Node" parent="FreshDoor"]
+script = ExtResource("54_hinged_part_interact")
+display_name = "Refrigerator"
+axis = Vector3(0, 1, 0)
+open_angle_degrees = 110
+open_duration = 1
+close_duration = 0.7
+open_profile = 1
+close_profile = 2
+stop_bump = 0.005
+open_sound = &"fridge_open"
+close_sound = &"fridge_close"
+observations = Array[String](["Cold air spills out over my feet.", "Nothing in here but a box of baking soda."])
+lit_while_open = Array[NodePath]([NodePath("../../InteriorLight")])
+
+[node name="FreezerDoor" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.38, 1.15, 0.7)
+collision_layer = 5
+collision_mask = 0
+
+[node name="Outer" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.255, 0.0375)
+mesh = SubResource("BoxMesh_55")
+surface_material_override/0 = ExtResource("2_appliance_harvest_go")
+
+[node name="Inner" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.255, 0.005)
+mesh = SubResource("BoxMesh_56")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="GasketTop" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.48, 0.004)
+mesh = SubResource("BoxMesh_44")
+surface_material_override/0 = ExtResource("45_rubber_black")
+
+[node name="GasketBottom" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.03, 0.004)
+mesh = SubResource("BoxMesh_44")
+surface_material_override/0 = ExtResource("45_rubber_black")
+
+[node name="GasketL" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.73, 0.255, 0.004)
+mesh = SubResource("BoxMesh_57")
+surface_material_override/0 = ExtResource("45_rubber_black")
+
+[node name="GasketR" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03, 0.255, 0.004)
+mesh = SubResource("BoxMesh_57")
+surface_material_override/0 = ExtResource("45_rubber_black")
+
+[node name="Bin0" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.2, -0.0425)
+mesh = SubResource("BoxMesh_47")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="BinRail0" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.225, -0.083)
+mesh = SubResource("BoxMesh_48")
+surface_material_override/0 = ExtResource("4_plastic_white")
+
+[node name="HandlePost0" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.715, 0.08, 0.0825)
+mesh = SubResource("BoxMesh_49")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="HandlePost1" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.715, 0.3, 0.0825)
+mesh = SubResource("BoxMesh_49")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="HandleGrip" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.715, 0.19, 0.11)
+mesh = SubResource("BoxMesh_58")
+surface_material_override/0 = ExtResource("20_metal_chrome")
+
+[node name="HandleInsert" type="MeshInstance3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.715, 0.19, 0.1205)
+mesh = SubResource("BoxMesh_59")
+surface_material_override/0 = ExtResource("52_wood_medium")
+
+[node name="Shape" type="CollisionShape3D" parent="FreezerDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38, 0.255, 0.0325)
+shape = SubResource("BoxShape3D_60")
+
+[node name="Hinge" type="Node" parent="FreezerDoor"]
+script = ExtResource("54_hinged_part_interact")
+display_name = "Freezer"
+axis = Vector3(0, 1, 0)
+open_angle_degrees = 110
+open_duration = 1
+close_duration = 0.7
+open_profile = 1
+close_profile = 2
+stop_bump = 0.005
+open_sound = &"fridge_open"
+close_sound = &"fridge_close"
+observations = Array[String](["Frost on the walls, thick as a finger.", "An ice tray with no ice in it."])

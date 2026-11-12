@@ -1,0 +1,276 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/plastic_beige.tres" id="2_plastic_beige"]
+[ext_resource type="Material" path="res://art/materials/plastic_grey.tres" id="5_plastic_grey"]
+[ext_resource type="Material" path="res://art/materials/plastic_white.tres" id="7_plastic_white"]
+[ext_resource type="Material" path="res://art/materials/glass_dusty.tres" id="9_glass_dusty"]
+[ext_resource type="Material" path="res://art/materials/paper_white.tres" id="11_paper_white"]
+[ext_resource type="ArrayMesh" path="res://fixtures/meshes/phone_cord.res" id="18_phone_cord"]
+[ext_resource type="Material" path="res://art/materials/rubber_black.tres" id="21_rubber_black"]
+[ext_resource type="Script" path="res://interaction/device_toggle_interactable.gd" id="23_device_toggle_intera"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.19, 0.03, 0.22)
+
+[sub_resource type="PrismMesh" id="PrismMesh_3"]
+left_to_right = 1
+size = Vector3(0.22, 0.045, 0.19)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(0.074, 0.003, 0.094)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.0165, 0.006, 0.0135)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.06, 0.0015, 0.016)
+
+[sub_resource type="BoxMesh" id="BoxMesh_10"]
+size = Vector3(0.056, 0.001, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_12"]
+size = Vector3(0.036, 0.03, 0.056)
+
+[sub_resource type="BoxMesh" id="BoxMesh_13"]
+size = Vector3(0.013, 0.012, 0.013)
+
+[sub_resource type="BoxMesh" id="BoxMesh_14"]
+size = Vector3(0.13, 0.022, 0.036)
+
+[sub_resource type="BoxMesh" id="BoxMesh_15"]
+size = Vector3(0.14, 0.008, 0.032)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_16"]
+top_radius = 0.026
+bottom_radius = 0.028
+height = 0.034
+radial_segments = 20
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_17"]
+top_radius = 0.022
+bottom_radius = 0.022
+height = 0.001
+radial_segments = 20
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_19"]
+top_radius = 0.0022
+bottom_radius = 0.0022
+height = 0.3
+radial_segments = 6
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_20"]
+top_radius = 0.008
+bottom_radius = 0.008
+height = 0.003
+radial_segments = 8
+rings = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_22"]
+size = Vector3(0.21, 0.13, 0.22)
+
+[node name="Telephone" type="Node3D"]
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 5
+collision_mask = 0
+
+[node name="Base" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_plastic_beige")
+
+[node name="Wedge" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.0525, 0)
+mesh = SubResource("PrismMesh_3")
+surface_material_override/0 = ExtResource("2_plastic_beige")
+
+[node name="Keypad" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 0.97972, -0.2004, 0, 0.2004, 0.97972, 0, 0.04186, 0.052)
+
+[node name="Bezel" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0015, 0)
+mesh = SubResource("BoxMesh_4")
+surface_material_override/0 = ExtResource("5_plastic_grey")
+
+[node name="Key0" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022, 0.004, -0.0315)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key1" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, -0.0315)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key2" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022, 0.004, -0.0315)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key3" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022, 0.004, -0.0105)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key4" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, -0.0105)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key5" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022, 0.004, -0.0105)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key6" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022, 0.004, 0.0105)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key7" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, 0.0105)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key8" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022, 0.004, 0.0105)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key9" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.022, 0.004, 0.0315)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key10" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, 0.0315)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Key11" type="MeshInstance3D" parent="Body/Keypad"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.022, 0.004, 0.0315)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="NumberCard" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 0.97972, -0.2004, 0, 0.2004, 0.97972, 0, 0.03266, 0.097)
+
+[node name="CardWindow" type="MeshInstance3D" parent="Body/NumberCard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00075, 0)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("9_glass_dusty")
+
+[node name="Card" type="MeshInstance3D" parent="Body/NumberCard"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0003, 0)
+mesh = SubResource("BoxMesh_10")
+surface_material_override/0 = ExtResource("11_paper_white")
+
+[node name="HornL" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07, 0.077, -0.055)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("2_plastic_beige")
+
+[node name="HornR" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0.077, -0.055)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("2_plastic_beige")
+
+[node name="Plungers" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.055)
+
+[node name="Plunger0" type="MeshInstance3D" parent="Body/Plungers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.036, 0.084, 0)
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Plunger1" type="MeshInstance3D" parent="Body/Plungers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.036, 0.084, 0)
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("7_plastic_white")
+
+[node name="Handset" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.112, -0.055)
+
+[node name="Handle" type="MeshInstance3D" parent="Body/Handset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006, 0)
+mesh = SubResource("BoxMesh_14")
+surface_material_override/0 = ExtResource("2_plastic_beige")
+
+[node name="HandleTop" type="MeshInstance3D" parent="Body/Handset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.019, 0)
+mesh = SubResource("BoxMesh_15")
+surface_material_override/0 = ExtResource("2_plastic_beige")
+
+[node name="Earpiece" type="MeshInstance3D" parent="Body/Handset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087, -0.003, 0)
+mesh = SubResource("CylinderMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_beige")
+
+[node name="EarpieceFace" type="MeshInstance3D" parent="Body/Handset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.087, -0.0205, 0)
+mesh = SubResource("CylinderMesh_17")
+surface_material_override/0 = ExtResource("5_plastic_grey")
+
+[node name="Mouthpiece" type="MeshInstance3D" parent="Body/Handset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.087, -0.003, 0)
+mesh = SubResource("CylinderMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_beige")
+
+[node name="MouthpieceFace" type="MeshInstance3D" parent="Body/Handset"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.087, -0.0205, 0)
+mesh = SubResource("CylinderMesh_17")
+surface_material_override/0 = ExtResource("5_plastic_grey")
+
+[node name="Cord" type="MeshInstance3D" parent="Body"]
+mesh = ExtResource("18_phone_cord")
+surface_material_override/0 = ExtResource("2_plastic_beige")
+
+[node name="LineCord" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.04, 0.003, -0.26)
+mesh = SubResource("CylinderMesh_19")
+surface_material_override/0 = ExtResource("5_plastic_grey")
+
+[node name="Foot0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.0015, 0.09)
+mesh = SubResource("CylinderMesh_20")
+surface_material_override/0 = ExtResource("21_rubber_black")
+
+[node name="Foot1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.0015, 0.09)
+mesh = SubResource("CylinderMesh_20")
+surface_material_override/0 = ExtResource("21_rubber_black")
+
+[node name="Foot2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.0015, -0.09)
+mesh = SubResource("CylinderMesh_20")
+surface_material_override/0 = ExtResource("21_rubber_black")
+
+[node name="Foot3" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.0015, -0.09)
+mesh = SubResource("CylinderMesh_20")
+surface_material_override/0 = ExtResource("21_rubber_black")
+
+[node name="Shape" type="CollisionShape3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065, 0)
+shape = SubResource("BoxShape3D_22")
+
+[node name="Phone" type="Node" parent="Body"]
+script = ExtResource("23_device_toggle_intera")
+display_name = "Telephone"
+on_prompt = "Pick up"
+off_prompt = "Hang up"
+show_when_off = Array[NodePath]([NodePath("../Handset"), NodePath("../Cord")])
+moving_part = NodePath("../Plungers")
+on_offset = Vector3(0, 0.008, 0)
+move_time = 0.06
+on_sound = &"phone_pickup"
+off_sound = &"phone_hangup"
+loop_sound = &"phone_dial_tone"
+loop_volume_db = -14
+loop_unit_size = 1
+loop_delay = 0.3
+cooldown = 0.5
+observations = Array[String](["Dial tone.", "The earpiece is warm from sitting in the sun."])

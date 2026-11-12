@@ -1,0 +1,296 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/trim_white.tres" id="2_trim_white"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="11_metal_chrome"]
+[ext_resource type="Material" path="res://art/materials/metal_dark.tres" id="13_metal_dark"]
+[ext_resource type="Material" path="res://art/materials/plastic_beige.tres" id="15_plastic_beige"]
+[ext_resource type="Material" path="res://art/materials/wood_light.tres" id="17_wood_light"]
+[ext_resource type="Material" path="res://art/materials/wood_medium.tres" id="19_wood_medium"]
+[ext_resource type="Script" path="res://interaction/sliding_part_interactable.gd" id="24_sliding_part_interac"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.019, 2.064, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3"]
+size = Vector3(0.019, 2.064, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(1.558, 0.019, 0.15)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5"]
+size = Vector3(1.558, 0.019, 0.15)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.064, 2.114, 0.016)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.012, 2.114, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(1.658, 0.064, 0.016)
+
+[sub_resource type="BoxMesh" id="BoxMesh_9"]
+size = Vector3(1.658, 0.012, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_10"]
+size = Vector3(1.52, 0.028, 0.09)
+
+[sub_resource type="BoxMesh" id="BoxMesh_12"]
+size = Vector3(1.52, 0.004, 0.09)
+
+[sub_resource type="BoxMesh" id="BoxMesh_14"]
+size = Vector3(0.04, 0.012, 0.09)
+
+[sub_resource type="BoxMesh" id="BoxMesh_16"]
+size = Vector3(0.78, 2, 0.032)
+
+[sub_resource type="BoxMesh" id="BoxMesh_18"]
+size = Vector3(0.78, 0.004, 0.034)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_20"]
+top_radius = 0.021
+bottom_radius = 0.021
+height = 0.004
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_21"]
+top_radius = 0.016
+bottom_radius = 0.016
+height = 0.0045
+radial_segments = 24
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_22"]
+size = Vector3(0.025, 0.03, 0.012)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_23"]
+size = Vector3(0.78, 2, 0.032)
+
+[node name="ClosetSliding" type="Node3D"]
+
+[node name="Frame" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="JambL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7695, 1.032, 0)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="JambShapeL" type="CollisionShape3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7695, 1.032, 0)
+shape = SubResource("BoxShape3D_3")
+
+[node name="JambR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7695, 1.032, 0)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="JambShapeR" type="CollisionShape3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7695, 1.032, 0)
+shape = SubResource("BoxShape3D_3")
+
+[node name="Head" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0545, 0)
+mesh = SubResource("BoxMesh_4")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="HeadShape" type="CollisionShape3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0545, 0)
+shape = SubResource("BoxShape3D_5")
+
+[node name="CasingFrontL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.797, 1.057, 0.083)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="BeadFrontL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.823, 1.057, 0.094)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="CasingFrontR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.797, 1.057, 0.083)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="BeadFrontR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.823, 1.057, 0.094)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="CasingHeadFront" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.082, 0.083)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="BeadHeadFront" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.108, 0.094)
+mesh = SubResource("BoxMesh_9")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="CasingBackL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.797, 1.057, -0.083)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="BeadBackL" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.823, 1.057, -0.094)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="CasingBackR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.797, 1.057, -0.083)
+mesh = SubResource("BoxMesh_6")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="BeadBackR" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.823, 1.057, -0.094)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="CasingHeadBack" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.082, -0.083)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="BeadHeadBack" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.108, -0.094)
+mesh = SubResource("BoxMesh_9")
+surface_material_override/0 = ExtResource("2_trim_white")
+
+[node name="Track" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.031, 0)
+mesh = SubResource("BoxMesh_10")
+surface_material_override/0 = ExtResource("11_metal_chrome")
+
+[node name="TrackLip" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.016, 0)
+mesh = SubResource("BoxMesh_12")
+surface_material_override/0 = ExtResource("13_metal_dark")
+
+[node name="FloorGuide" type="MeshInstance3D" parent="Frame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006, 0)
+mesh = SubResource("BoxMesh_14")
+surface_material_override/0 = ExtResource("15_plastic_beige")
+
+[node name="PanelBack" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.37, 0.012, -0.025)
+collision_layer = 5
+collision_mask = 0
+
+[node name="Slab" type="MeshInstance3D" parent="PanelBack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("17_wood_light")
+
+[node name="EdgeTop" type="MeshInstance3D" parent="PanelBack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.998, 0)
+mesh = SubResource("BoxMesh_18")
+surface_material_override/0 = ExtResource("19_wood_medium")
+
+[node name="Pull" type="MeshInstance3D" parent="PanelBack"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.33, 1, 0.017)
+mesh = SubResource("CylinderMesh_20")
+surface_material_override/0 = ExtResource("11_metal_chrome")
+
+[node name="PullCup" type="MeshInstance3D" parent="PanelBack"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.33, 1, 0.0172)
+mesh = SubResource("CylinderMesh_21")
+surface_material_override/0 = ExtResource("13_metal_dark")
+
+[node name="PullBack" type="MeshInstance3D" parent="PanelBack"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.33, 1, -0.017)
+mesh = SubResource("CylinderMesh_20")
+surface_material_override/0 = ExtResource("11_metal_chrome")
+
+[node name="Hanger0" type="MeshInstance3D" parent="PanelBack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31, 2.015, 0)
+mesh = SubResource("BoxMesh_22")
+surface_material_override/0 = ExtResource("13_metal_dark")
+
+[node name="Hanger1" type="MeshInstance3D" parent="PanelBack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31, 2.015, 0)
+mesh = SubResource("BoxMesh_22")
+surface_material_override/0 = ExtResource("13_metal_dark")
+
+[node name="Shape" type="CollisionShape3D" parent="PanelBack"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_23")
+
+[node name="Slide" type="Node" parent="PanelBack"]
+script = ExtResource("24_sliding_part_interac")
+display_name = "Closet door"
+open_prompt = "Slide open"
+close_prompt = "Slide shut"
+axis = Vector3(1, 0, 0)
+distance = 0.72
+open_duration = 0.95
+close_duration = 0.85
+open_profile = 2
+close_profile = 2
+stop_bump = 0.008
+open_sound = &"drawer_open"
+close_sound = &"drawer_close"
+observations = Array[String](["It rolls on a bad wheel and shudders.", "Grit in the track."])
+
+[node name="PanelFront" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37, 0.012, 0.025)
+collision_layer = 5
+collision_mask = 0
+
+[node name="Slab" type="MeshInstance3D" parent="PanelFront"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("17_wood_light")
+
+[node name="EdgeTop" type="MeshInstance3D" parent="PanelFront"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.998, 0)
+mesh = SubResource("BoxMesh_18")
+surface_material_override/0 = ExtResource("19_wood_medium")
+
+[node name="Pull" type="MeshInstance3D" parent="PanelFront"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.33, 1, 0.017)
+mesh = SubResource("CylinderMesh_20")
+surface_material_override/0 = ExtResource("11_metal_chrome")
+
+[node name="PullCup" type="MeshInstance3D" parent="PanelFront"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.33, 1, 0.0172)
+mesh = SubResource("CylinderMesh_21")
+surface_material_override/0 = ExtResource("13_metal_dark")
+
+[node name="PullBack" type="MeshInstance3D" parent="PanelFront"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.33, 1, -0.017)
+mesh = SubResource("CylinderMesh_20")
+surface_material_override/0 = ExtResource("11_metal_chrome")
+
+[node name="Hanger0" type="MeshInstance3D" parent="PanelFront"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.31, 2.015, 0)
+mesh = SubResource("BoxMesh_22")
+surface_material_override/0 = ExtResource("13_metal_dark")
+
+[node name="Hanger1" type="MeshInstance3D" parent="PanelFront"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31, 2.015, 0)
+mesh = SubResource("BoxMesh_22")
+surface_material_override/0 = ExtResource("13_metal_dark")
+
+[node name="Shape" type="CollisionShape3D" parent="PanelFront"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_23")
+
+[node name="Slide" type="Node" parent="PanelFront"]
+script = ExtResource("24_sliding_part_interac")
+display_name = "Closet door"
+open_prompt = "Slide open"
+close_prompt = "Slide shut"
+axis = Vector3(-1, 0, 0)
+distance = 0.72
+open_duration = 0.95
+close_duration = 0.85
+open_profile = 2
+close_profile = 2
+stop_bump = 0.008
+open_sound = &"drawer_open"
+close_sound = &"drawer_close"
+observations = Array[String](["It rolls on a bad wheel and shudders.", "Grit in the track."])

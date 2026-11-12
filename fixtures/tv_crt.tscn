@@ -1,0 +1,376 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="2_plastic_black"]
+[ext_resource type="Material" path="res://art/materials/plastic_grey.tres" id="9_plastic_grey"]
+[ext_resource type="ArrayMesh" path="res://fixtures/meshes/crt_face.res" id="10_crt_face"]
+[ext_resource type="Material" path="res://art/materials/crt_screen_off.tres" id="11_crt_screen_off"]
+[ext_resource type="Material" path="res://fixtures/materials/crt_static.tres" id="12_crt_static"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="18_metal_chrome"]
+[ext_resource type="Material" path="res://fixtures/materials/led_red.tres" id="22_led_red"]
+[ext_resource type="Material" path="res://fixtures/materials/led_dark.tres" id="23_led_dark"]
+[ext_resource type="Material" path="res://art/materials/rubber_black.tres" id="25_rubber_black"]
+[ext_resource type="Script" path="res://interaction/device_toggle_interactable.gd" id="30_device_toggle_intera"]
+[ext_resource type="Script" path="res://fixtures/components/crt_screen.gd" id="31_crt_screen"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.52, 0.05, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(0.52, 0.12, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(0.075, 0.28, 0.12)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.37, 0.28, 0.01)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6"]
+top_radius = 0.19092
+bottom_radius = 0.33941
+height = 0.33
+radial_segments = 4
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.25, 0.2, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.18, 0.006, 0.002)
+
+[sub_resource type="BoxMesh" id="BoxMesh_13"]
+size = Vector3(0.382, 0.014, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_14"]
+size = Vector3(0.014, 0.28, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_15"]
+size = Vector3(0.48, 0.05, 0.003)
+
+[sub_resource type="BoxMesh" id="BoxMesh_16"]
+size = Vector3(0.004, 0.034, 0.002)
+
+[sub_resource type="BoxMesh" id="BoxMesh_17"]
+size = Vector3(0.06, 0.009, 0.0015)
+
+[sub_resource type="BoxMesh" id="BoxMesh_19"]
+size = Vector3(0.012, 0.008, 0.005)
+
+[sub_resource type="BoxMesh" id="BoxMesh_20"]
+size = Vector3(0.03, 0.014, 0.008)
+
+[sub_resource type="SphereMesh" id="SphereMesh_21"]
+radius = 0.0028
+height = 0.0056
+radial_segments = 8
+rings = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_24"]
+top_radius = 0.015
+bottom_radius = 0.016
+height = 0.015
+radial_segments = 10
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_26"]
+size = Vector3(0.09, 0.022, 0.06)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_27"]
+top_radius = 0.0022
+bottom_radius = 0.003
+height = 0.46
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_28"]
+radius = 0.0042
+height = 0.0084
+radial_segments = 8
+rings = 4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_29"]
+size = Vector3(0.52, 0.47, 0.47)
+
+[node name="TvCrt" type="Node3D"]
+
+[node name="Body" type="StaticBody3D" parent="."]
+collision_layer = 5
+collision_mask = 0
+
+[node name="FrontTop" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.44, 0.16)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="FrontBottom" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.075, 0.16)
+mesh = SubResource("BoxMesh_3")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="FrontL" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2225, 0.275, 0.16)
+mesh = SubResource("BoxMesh_4")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="FrontR" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2225, 0.275, 0.16)
+mesh = SubResource("BoxMesh_4")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="TubeBack" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0.11)
+mesh = SubResource("BoxMesh_5")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Rear" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.70711, 0, 0.70711, -0.58926, 0, 0.58926, 0, -1, 0, 0, 0.235, -0.065)
+mesh = SubResource("CylinderMesh_6")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="RearCap" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235, -0.235)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Vent0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.18, -0.2455)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="Vent1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.202, -0.2455)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="Vent2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.224, -0.2455)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="Vent3" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.246, -0.2455)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="Vent4" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.268, -0.2455)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="Vent5" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.29, -0.2455)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="ScreenGlass" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0.214)
+mesh = ExtResource("10_crt_face")
+surface_material_override/0 = ExtResource("11_crt_screen_off")
+
+[node name="ScreenStatic" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0.2146)
+cast_shadow = 0
+visible = false
+mesh = ExtResource("10_crt_face")
+surface_material_override/0 = ExtResource("12_crt_static")
+
+[node name="MaskTop" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.416, 0.223)
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="MaskBottom" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.134, 0.223)
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="MaskL" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.186, 0.275, 0.223)
+mesh = SubResource("BoxMesh_14")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="MaskR" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.186, 0.275, 0.223)
+mesh = SubResource("BoxMesh_14")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="ControlStrip" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.068, 0.2215)
+mesh = SubResource("BoxMesh_15")
+surface_material_override/0 = ExtResource("9_plastic_grey")
+
+[node name="Grille0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.21, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Grille1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.198, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Grille2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.186, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Grille3" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.174, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Grille4" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.162, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Grille5" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.15, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Grille6" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Grille7" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.126, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Grille8" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.114, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Grille9" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_16")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Badge" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_17")
+surface_material_override/0 = ExtResource("18_metal_chrome")
+
+[node name="Button0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Button1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.088, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Button2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="Button3" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.124, 0.068, 0.2235)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="PowerButton" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19, 0.068, 0.2245)
+mesh = SubResource("BoxMesh_20")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="LedOn" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222, 0.068, 0.2232)
+visible = false
+mesh = SubResource("SphereMesh_21")
+surface_material_override/0 = ExtResource("22_led_red")
+
+[node name="LedOff" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222, 0.068, 0.2232)
+mesh = SubResource("SphereMesh_21")
+surface_material_override/0 = ExtResource("23_led_dark")
+
+[node name="Foot0" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2, 0.0075, 0.17)
+mesh = SubResource("CylinderMesh_24")
+surface_material_override/0 = ExtResource("25_rubber_black")
+
+[node name="Foot1" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.0075, 0.17)
+mesh = SubResource("CylinderMesh_24")
+surface_material_override/0 = ExtResource("25_rubber_black")
+
+[node name="Foot2" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, 0.0075, -0.02)
+mesh = SubResource("CylinderMesh_24")
+surface_material_override/0 = ExtResource("25_rubber_black")
+
+[node name="Foot3" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18, 0.0075, -0.02)
+mesh = SubResource("CylinderMesh_24")
+surface_material_override/0 = ExtResource("25_rubber_black")
+
+[node name="AntennaBase" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.476, 0.12)
+mesh = SubResource("BoxMesh_26")
+surface_material_override/0 = ExtResource("2_plastic_black")
+
+[node name="EarL" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.88295, -0.46947, 0, 0.45921, 0.86365, 0.20791, -0.09761, -0.18357, 0.97815, -0.12798, 0.68564, 0.07778)
+mesh = SubResource("CylinderMesh_27")
+surface_material_override/0 = ExtResource("18_metal_chrome")
+
+[node name="EarTipL" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23596, 0.88428, 0.03556)
+mesh = SubResource("SphereMesh_28")
+surface_material_override/0 = ExtResource("18_metal_chrome")
+
+[node name="EarR" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(0.88295, 0.46947, 0, -0.45921, 0.86365, 0.20791, 0.09761, -0.18357, 0.97815, 0.12798, 0.68564, 0.07778)
+mesh = SubResource("CylinderMesh_27")
+surface_material_override/0 = ExtResource("18_metal_chrome")
+
+[node name="EarTipR" type="MeshInstance3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23596, 0.88428, 0.03556)
+mesh = SubResource("SphereMesh_28")
+surface_material_override/0 = ExtResource("18_metal_chrome")
+
+[node name="Spill" type="SpotLight3D" parent="Body"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0.275, 0.26)
+light_color = Color(0.78, 0.84, 1, 1)
+light_energy = 1.4
+shadow_enabled = true
+spot_range = 4.5
+spot_angle = 68
+spot_attenuation = 1.2
+light_size = 0.3
+visible = false
+
+[node name="Shape" type="CollisionShape3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.235, 0)
+shape = SubResource("BoxShape3D_29")
+
+[node name="Power" type="Node" parent="Body"]
+script = ExtResource("30_device_toggle_intera")
+display_name = "Television"
+on_prompt = "Turn on"
+off_prompt = "Turn off"
+targets = Array[NodePath]([NodePath("../../Screen")])
+show_when_on = Array[NodePath]([NodePath("../LedOn")])
+show_when_off = Array[NodePath]([NodePath("../LedOff")])
+moving_part = NodePath("../PowerButton")
+on_offset = Vector3(0, 0, -0.004)
+move_time = 0.06
+on_sound = &"tv_on"
+off_sound = &"tv_off"
+loop_sound = &"tv_static"
+loop_volume_db = -10
+loop_delay = 0.45
+cooldown = 0.5
+observations = Array[String](["Nothing but snow.", "The glass crackles with static when I lean in."])
+
+[node name="Screen" type="Node" parent="."]
+script = ExtResource("31_crt_screen")
+screen_mesh = NodePath("../Body/ScreenStatic")
+lights = Array[NodePath]([NodePath("../Body/Spill")])
+flicker = 0.32
+rate = 20

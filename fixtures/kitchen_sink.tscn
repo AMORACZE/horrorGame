@@ -1,0 +1,830 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/wood_oak_cabinet.tres" id="2_wood_oak_cabinet"]
+[ext_resource type="Material" path="res://art/materials/wood_dark.tres" id="4_wood_dark"]
+[ext_resource type="Material" path="res://art/materials/wood_light.tres" id="6_wood_light"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="12_metal_chrome"]
+[ext_resource type="Material" path="res://art/materials/laminate_formica.tres" id="14_laminate_formica"]
+[ext_resource type="Material" path="res://art/materials/metal_dark.tres" id="20_metal_dark"]
+[ext_resource type="Script" path="res://interaction/hinged_part_interactable.gd" id="30_hinged_part_interact"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="33_interactable"]
+[ext_resource type="Material" path="res://art/materials/brick_red.tres" id="49_brick_red"]
+[ext_resource type="Material" path="res://art/materials/plastic_white.tres" id="56_plastic_white"]
+[ext_resource type="Material" path="res://art/materials/glass_dusty.tres" id="64_glass_dusty"]
+[ext_resource type="Material" path="res://fixtures/materials/index_blue.tres" id="68_index_blue"]
+[ext_resource type="Material" path="res://fixtures/materials/water_stream.tres" id="70_water_stream"]
+[ext_resource type="Script" path="res://interaction/device_toggle_interactable.gd" id="73_device_toggle_intera"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.018, 0.872, 0.59)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(0.874, 0.1, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.874, 0.018, 0.59)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.874, 0.754, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.038, 0.772, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_9"]
+size = Vector3(0.038, 0.528, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_10"]
+size = Vector3(0.834, 0.038, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_11"]
+size = Vector3(0.91, 0.04, 0.003)
+
+[sub_resource type="BoxMesh" id="BoxMesh_13"]
+size = Vector3(0.91, 0.1, 0.012)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_15"]
+size = Vector3(0.018, 0.872, 0.59)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_16"]
+size = Vector3(0.874, 0.118, 0.59)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_17"]
+size = Vector3(0.874, 0.754, 0.006)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_18"]
+size = Vector3(0.91, 0.21, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_19"]
+size = Vector3(0.012, 0.05, 0.002)
+
+[sub_resource type="BoxMesh" id="BoxMesh_21"]
+size = Vector3(0.423, 0.553, 0.019)
+
+[sub_resource type="BoxMesh" id="BoxMesh_22"]
+size = Vector3(0.311, 0.441, 0.001)
+
+[sub_resource type="BoxMesh" id="BoxMesh_23"]
+size = Vector3(0.299, 0.429, 0.006)
+
+[sub_resource type="BoxMesh" id="BoxMesh_24"]
+size = Vector3(0.269, 0.399, 0.003)
+
+[sub_resource type="BoxMesh" id="BoxMesh_25"]
+size = Vector3(0.014, 0.05, 0.002)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_26"]
+top_radius = 0.0035
+bottom_radius = 0.0035
+height = 0.05
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_27"]
+top_radius = 0.0035
+bottom_radius = 0.0035
+height = 0.024
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_28"]
+top_radius = 0.0045
+bottom_radius = 0.0045
+height = 0.088
+radial_segments = 10
+rings = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_29"]
+size = Vector3(0.423, 0.553, 0.019)
+
+[sub_resource type="BoxMesh" id="BoxMesh_31"]
+size = Vector3(0.859, 0.155, 0.019)
+
+[sub_resource type="BoxMesh" id="BoxMesh_32"]
+size = Vector3(0.73, 0.06, 0.004)
+
+[sub_resource type="BoxMesh" id="BoxMesh_34"]
+size = Vector3(0.91, 0.038, 0.13)
+
+[sub_resource type="BoxMesh" id="BoxMesh_35"]
+size = Vector3(0.91, 0.038, 0.085)
+
+[sub_resource type="BoxMesh" id="BoxMesh_36"]
+size = Vector3(0.165, 0.038, 0.42)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_37"]
+size = Vector3(0.91, 0.038, 0.13)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_38"]
+size = Vector3(0.91, 0.038, 0.085)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_39"]
+size = Vector3(0.165, 0.038, 0.42)
+
+[sub_resource type="BoxMesh" id="BoxMesh_40"]
+size = Vector3(0.58, 0.004, 0.42)
+
+[sub_resource type="BoxMesh" id="BoxMesh_41"]
+size = Vector3(0.004, 0.19, 0.42)
+
+[sub_resource type="BoxMesh" id="BoxMesh_42"]
+size = Vector3(0.58, 0.19, 0.004)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_43"]
+size = Vector3(0.58, 0.01, 0.42)
+
+[sub_resource type="BoxMesh" id="BoxMesh_44"]
+size = Vector3(0.604, 0.004, 0.012)
+
+[sub_resource type="BoxMesh" id="BoxMesh_45"]
+size = Vector3(0.012, 0.004, 0.42)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_46"]
+top_radius = 0.045
+bottom_radius = 0.045
+height = 0.004
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_47"]
+top_radius = 0.03
+bottom_radius = 0.03
+height = 0.002
+radial_segments = 24
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_48"]
+radius = 0.05
+height = 0.002
+radial_segments = 20
+rings = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_50"]
+top_radius = 0.019
+bottom_radius = 0.019
+height = 0.24
+radial_segments = 14
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_51"]
+radius = 0.026
+height = 0.06
+radial_segments = 14
+rings = 8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_52"]
+top_radius = 0.019
+bottom_radius = 0.019
+height = 0.36
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_53"]
+top_radius = 0.005
+bottom_radius = 0.005
+height = 0.5
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_54"]
+top_radius = 0.012
+bottom_radius = 0.012
+height = 0.04
+radial_segments = 10
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_55"]
+size = Vector3(0.028, 0.012, 0.008)
+
+[sub_resource type="BoxMesh" id="BoxMesh_57"]
+size = Vector3(0.21, 0.018, 0.055)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_58"]
+top_radius = 0.02
+bottom_radius = 0.022
+height = 0.04
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_59"]
+top_radius = 0.011
+bottom_radius = 0.011
+height = 0.2
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_60"]
+top_radius = 0.0125
+bottom_radius = 0.012
+height = 0.02
+radial_segments = 14
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_61"]
+top_radius = 0.009
+bottom_radius = 0.009
+height = 0.001
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_62"]
+top_radius = 0.016
+bottom_radius = 0.018
+height = 0.022
+radial_segments = 24
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_63"]
+size = Vector3(0.062, 0.013, 0.013)
+
+[sub_resource type="BoxMesh" id="BoxMesh_65"]
+size = Vector3(0.013, 0.013, 0.062)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_66"]
+top_radius = 0.011
+bottom_radius = 0.011
+height = 0.018
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_67"]
+top_radius = 0.006
+bottom_radius = 0.006
+height = 0.0015
+radial_segments = 10
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_69"]
+top_radius = 0.0055
+bottom_radius = 0.0045
+height = 0.1995
+radial_segments = 10
+rings = 1
+cap_top = false
+cap_bottom = false
+
+[sub_resource type="SphereMesh" id="SphereMesh_71"]
+radius = 0.028
+height = 0.007
+radial_segments = 14
+rings = 4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_72"]
+size = Vector3(0.22, 0.08, 0.25)
+
+[node name="KitchenSink" type="Node3D"]
+
+[node name="Carcass" type="StaticBody3D" parent="."]
+collision_layer = 5
+collision_mask = 0
+
+[node name="SideL" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.446, 0.436, 0.295)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="SideR" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.446, 0.436, 0.295)
+mesh = SubResource("BoxMesh_1")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="ToeKick" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0.528)
+mesh = SubResource("BoxMesh_3")
+surface_material_override/0 = ExtResource("4_wood_dark")
+
+[node name="Deck" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109, 0.295)
+mesh = SubResource("BoxMesh_5")
+surface_material_override/0 = ExtResource("6_wood_light")
+
+[node name="Back" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.495, 0.003)
+mesh = SubResource("BoxMesh_7")
+surface_material_override/0 = ExtResource("6_wood_light")
+
+[node name="StileL" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.436, 0.486, 0.6)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="StileR" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436, 0.486, 0.6)
+mesh = SubResource("BoxMesh_8")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="Mullion" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.402, 0.6)
+mesh = SubResource("BoxMesh_9")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="RailTop" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.853, 0.6)
+mesh = SubResource("BoxMesh_10")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="RailMid" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.685, 0.6)
+mesh = SubResource("BoxMesh_10")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="RailBottom" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119, 0.6)
+mesh = SubResource("BoxMesh_10")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="CounterEdge" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.89, 0.6365)
+mesh = SubResource("BoxMesh_11")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="Backsplash" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.96, 0.006)
+mesh = SubResource("BoxMesh_13")
+surface_material_override/0 = ExtResource("14_laminate_formica")
+
+[node name="ShapeSideL" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.446, 0.436, 0.295)
+shape = SubResource("BoxShape3D_15")
+
+[node name="ShapeSideR" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.446, 0.436, 0.295)
+shape = SubResource("BoxShape3D_15")
+
+[node name="ShapeDeck" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.059, 0.295)
+shape = SubResource("BoxShape3D_16")
+
+[node name="ShapeBack" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.495, 0.003)
+shape = SubResource("BoxShape3D_17")
+
+[node name="ShapeFrameTop" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.767, 0.6)
+shape = SubResource("BoxShape3D_18")
+
+[node name="FrameLeafL0" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4475, 0.195, 0.611)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="FrameLeafL1" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4475, 0.608, 0.611)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="FrameLeafR0" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4475, 0.195, 0.611)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="FrameLeafR1" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4475, 0.608, 0.611)
+mesh = SubResource("BoxMesh_19")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="DoorL" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4297, 0.1253, 0.61)
+collision_layer = 5
+collision_mask = 0
+
+[node name="Slab" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2115, 0.2765, 0.0095)
+mesh = SubResource("BoxMesh_21")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="Groove" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2115, 0.2765, 0.0195)
+mesh = SubResource("BoxMesh_22")
+surface_material_override/0 = ExtResource("4_wood_dark")
+
+[node name="Panel" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2115, 0.2765, 0.022)
+mesh = SubResource("BoxMesh_23")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="PanelBevel" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2115, 0.2765, 0.0255)
+mesh = SubResource("BoxMesh_24")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="HingeLeaf0" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008, 0.07, 0.02)
+mesh = SubResource("BoxMesh_25")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="HingeKnuckle0" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0.07, 0.0195)
+mesh = SubResource("CylinderMesh_26")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="HingeLeaf1" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.008, 0.483, 0.02)
+mesh = SubResource("BoxMesh_25")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="HingeKnuckle1" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.001, 0.483, 0.0195)
+mesh = SubResource("CylinderMesh_26")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="PullPost0" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.391, 0.425, 0.031)
+mesh = SubResource("CylinderMesh_27")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="PullPost1" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.391, 0.501, 0.031)
+mesh = SubResource("CylinderMesh_27")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="PullBar" type="MeshInstance3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.391, 0.463, 0.045)
+mesh = SubResource("CylinderMesh_28")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="Shape" type="CollisionShape3D" parent="DoorL"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2115, 0.2765, 0.0095)
+shape = SubResource("BoxShape3D_29")
+
+[node name="Hinge" type="Node" parent="DoorL"]
+script = ExtResource("30_hinged_part_interact")
+display_name = "Cabinet"
+axis = Vector3(0, 1, 0)
+open_angle_degrees = -105
+open_duration = 0.55
+close_duration = 0.42
+open_profile = 1
+close_profile = 2
+stop_bump = 0.006
+open_sound = &"cabinet_open"
+close_sound = &"cabinet_close"
+observations = Array[String](["The pipes under here are sweating.", "It smells like old damp wood."])
+
+[node name="DoorR" type="AnimatableBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4297, 0.1253, 0.61)
+collision_layer = 5
+collision_mask = 0
+
+[node name="Slab" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2115, 0.2765, 0.0095)
+mesh = SubResource("BoxMesh_21")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="Groove" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2115, 0.2765, 0.0195)
+mesh = SubResource("BoxMesh_22")
+surface_material_override/0 = ExtResource("4_wood_dark")
+
+[node name="Panel" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2115, 0.2765, 0.022)
+mesh = SubResource("BoxMesh_23")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="PanelBevel" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2115, 0.2765, 0.0255)
+mesh = SubResource("BoxMesh_24")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="HingeLeaf0" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008, 0.07, 0.02)
+mesh = SubResource("BoxMesh_25")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="HingeKnuckle0" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 0.07, 0.0195)
+mesh = SubResource("CylinderMesh_26")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="HingeLeaf1" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008, 0.483, 0.02)
+mesh = SubResource("BoxMesh_25")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="HingeKnuckle1" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, 0.483, 0.0195)
+mesh = SubResource("CylinderMesh_26")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="PullPost0" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.391, 0.425, 0.031)
+mesh = SubResource("CylinderMesh_27")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="PullPost1" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.391, 0.501, 0.031)
+mesh = SubResource("CylinderMesh_27")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="PullBar" type="MeshInstance3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.391, 0.463, 0.045)
+mesh = SubResource("CylinderMesh_28")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="Shape" type="CollisionShape3D" parent="DoorR"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2115, 0.2765, 0.0095)
+shape = SubResource("BoxShape3D_29")
+
+[node name="Hinge" type="Node" parent="DoorR"]
+script = ExtResource("30_hinged_part_interact")
+display_name = "Cabinet"
+axis = Vector3(0, 1, 0)
+open_angle_degrees = 105
+open_duration = 0.55
+close_duration = 0.42
+open_profile = 1
+close_profile = 2
+stop_bump = 0.006
+open_sound = &"cabinet_open"
+close_sound = &"cabinet_close"
+observations = Array[String](["It smells like old damp wood.", "The pipes under here are sweating."])
+
+[node name="FalseFront" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.769, 0.6195)
+mesh = SubResource("BoxMesh_31")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="FalseFrontPanel" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.769, 0.631)
+mesh = SubResource("BoxMesh_32")
+surface_material_override/0 = ExtResource("2_wood_oak_cabinet")
+
+[node name="FalsePullPost0" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.038, 0.769, 0.641)
+mesh = SubResource("CylinderMesh_27")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="FalsePullPost1" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.038, 0.769, 0.641)
+mesh = SubResource("CylinderMesh_27")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="FalsePullBar" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.769, 0.655)
+mesh = SubResource("CylinderMesh_28")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="Look" type="Node" parent="Carcass"]
+script = ExtResource("33_interactable")
+display_name = "Sink"
+observations = Array[String](["A rust ring around the drain.", "The counter is warm where the sun lands on it."])
+
+[node name="CounterBack" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.891, 0.065)
+mesh = SubResource("BoxMesh_34")
+surface_material_override/0 = ExtResource("14_laminate_formica")
+
+[node name="CounterFront" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.891, 0.5925)
+mesh = SubResource("BoxMesh_35")
+surface_material_override/0 = ExtResource("14_laminate_formica")
+
+[node name="CounterL" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3725, 0.891, 0.34)
+mesh = SubResource("BoxMesh_36")
+surface_material_override/0 = ExtResource("14_laminate_formica")
+
+[node name="CounterR" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3725, 0.891, 0.34)
+mesh = SubResource("BoxMesh_36")
+surface_material_override/0 = ExtResource("14_laminate_formica")
+
+[node name="ShapeCounterBack" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.891, 0.065)
+shape = SubResource("BoxShape3D_37")
+
+[node name="ShapeCounterFront" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.891, 0.5925)
+shape = SubResource("BoxShape3D_38")
+
+[node name="ShapeCounterL" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3725, 0.891, 0.34)
+shape = SubResource("BoxShape3D_39")
+
+[node name="ShapeCounterR" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3725, 0.891, 0.34)
+shape = SubResource("BoxShape3D_39")
+
+[node name="BowlBottom" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72, 0.34)
+mesh = SubResource("BoxMesh_40")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="BowlL" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.29, 0.815, 0.34)
+mesh = SubResource("BoxMesh_41")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="BowlR" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29, 0.815, 0.34)
+mesh = SubResource("BoxMesh_41")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="BowlBack" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0.13)
+mesh = SubResource("BoxMesh_42")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="BowlFront" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.815, 0.55)
+mesh = SubResource("BoxMesh_42")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="ShapeBowl" type="CollisionShape3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.72, 0.34)
+shape = SubResource("BoxShape3D_43")
+
+[node name="RimBack" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.912, 0.124)
+mesh = SubResource("BoxMesh_44")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="RimFront" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.912, 0.556)
+mesh = SubResource("BoxMesh_44")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="RimL" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.296, 0.912, 0.34)
+mesh = SubResource("BoxMesh_45")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="RimR" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.296, 0.912, 0.34)
+mesh = SubResource("BoxMesh_45")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="Drain" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.723, 0.36)
+mesh = SubResource("CylinderMesh_46")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="DrainBasket" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7255, 0.36)
+mesh = SubResource("CylinderMesh_47")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="RustRing" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7224, 0.36)
+mesh = SubResource("SphereMesh_48")
+surface_material_override/0 = ExtResource("49_brick_red")
+
+[node name="Tailpiece" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0.36)
+mesh = SubResource("CylinderMesh_50")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="Trap" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.475, 0.36)
+mesh = SubResource("SphereMesh_51")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="TrapArm" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0.475, 0.18)
+mesh = SubResource("CylinderMesh_52")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="Supply0" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.55, 0.03)
+mesh = SubResource("CylinderMesh_53")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="Valve0" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, -0.1, 0.3, 0.03)
+mesh = SubResource("CylinderMesh_54")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="ValveHandle0" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0.3, 0.055)
+mesh = SubResource("BoxMesh_55")
+surface_material_override/0 = ExtResource("56_plastic_white")
+
+[node name="Supply1" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.55, 0.03)
+mesh = SubResource("CylinderMesh_53")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="Valve1" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.1, 0.3, 0.03)
+mesh = SubResource("CylinderMesh_54")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="ValveHandle1" type="MeshInstance3D" parent="Carcass"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.3, 0.055)
+mesh = SubResource("BoxMesh_55")
+surface_material_override/0 = ExtResource("56_plastic_white")
+
+[node name="Faucet" type="StaticBody3D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="DeckPlate" type="MeshInstance3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.919, 0.065)
+mesh = SubResource("BoxMesh_57")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="SpoutBase" type="MeshInstance3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.948, 0.065)
+mesh = SubResource("CylinderMesh_58")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="Spout" type="MeshInstance3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, -0.12707, -0.99189, 0, 0.99189, -0.12707, 0, 0.952, 0.165)
+mesh = SubResource("CylinderMesh_59")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="Aerator" type="MeshInstance3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.932, 0.262)
+mesh = SubResource("CylinderMesh_60")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="AeratorMesh" type="MeshInstance3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9215, 0.262)
+mesh = SubResource("CylinderMesh_61")
+surface_material_override/0 = ExtResource("20_metal_dark")
+
+[node name="HotHandleBase" type="MeshInstance3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.939, 0.065)
+mesh = SubResource("CylinderMesh_62")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="HotHandle" type="Node3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.08, 0.962, 0.065)
+
+[node name="Cross0" type="MeshInstance3D" parent="Faucet/HotHandle"]
+mesh = SubResource("BoxMesh_63")
+surface_material_override/0 = ExtResource("64_glass_dusty")
+
+[node name="Cross1" type="MeshInstance3D" parent="Faucet/HotHandle"]
+mesh = SubResource("BoxMesh_65")
+surface_material_override/0 = ExtResource("64_glass_dusty")
+
+[node name="Hub" type="MeshInstance3D" parent="Faucet/HotHandle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0)
+mesh = SubResource("CylinderMesh_66")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="Index" type="MeshInstance3D" parent="Faucet/HotHandle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0115, 0)
+mesh = SubResource("CylinderMesh_67")
+surface_material_override/0 = ExtResource("49_brick_red")
+
+[node name="ColdHandleBase" type="MeshInstance3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.939, 0.065)
+mesh = SubResource("CylinderMesh_62")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="ColdHandle" type="Node3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08, 0.962, 0.065)
+
+[node name="Cross0" type="MeshInstance3D" parent="Faucet/ColdHandle"]
+mesh = SubResource("BoxMesh_63")
+surface_material_override/0 = ExtResource("64_glass_dusty")
+
+[node name="Cross1" type="MeshInstance3D" parent="Faucet/ColdHandle"]
+mesh = SubResource("BoxMesh_65")
+surface_material_override/0 = ExtResource("64_glass_dusty")
+
+[node name="Hub" type="MeshInstance3D" parent="Faucet/ColdHandle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.002, 0)
+mesh = SubResource("CylinderMesh_66")
+surface_material_override/0 = ExtResource("12_metal_chrome")
+
+[node name="Index" type="MeshInstance3D" parent="Faucet/ColdHandle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0115, 0)
+mesh = SubResource("CylinderMesh_67")
+surface_material_override/0 = ExtResource("68_index_blue")
+
+[node name="Water" type="MeshInstance3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82175, 0.262)
+cast_shadow = 0
+visible = false
+mesh = SubResource("CylinderMesh_69")
+surface_material_override/0 = ExtResource("70_water_stream")
+
+[node name="Splash" type="MeshInstance3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.724, 0.262)
+cast_shadow = 0
+visible = false
+mesh = SubResource("SphereMesh_71")
+surface_material_override/0 = ExtResource("70_water_stream")
+
+[node name="Shape" type="CollisionShape3D" parent="Faucet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.95, 0.15)
+shape = SubResource("BoxShape3D_72")
+
+[node name="Tap" type="Node" parent="Faucet"]
+script = ExtResource("73_device_toggle_intera")
+display_name = "Faucet"
+on_prompt = "Turn on"
+off_prompt = "Turn off"
+show_when_on = Array[NodePath]([NodePath("../Water"), NodePath("../Splash")])
+moving_part = NodePath("../ColdHandle")
+on_rotation_degrees = Vector3(0, 80, 0)
+move_time = 0.35
+on_sound = &"faucet_squeak"
+off_sound = &"faucet_squeak"
+loop_sound = &"faucet_run"
+loop_anchor = NodePath("../Water")
+loop_volume_db = -8
+cooldown = 0.45
+observations = Array[String](["It runs brown for a second, then clear.", "The water's warm. The pipes sat in the sun all day."])
