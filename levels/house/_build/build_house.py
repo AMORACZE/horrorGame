@@ -35,6 +35,9 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from tscn import *  # noqa: E402,F403
 
 OUT = "levels/house/house.tscn"
+# HOUSE_DEBUG_FLAT=1: write a flat-lit inspection copy (no GI, strong ambient)
+# to _shots/debug_house.tscn instead, for checking geometry in screenshots.
+DEBUG_FLAT = os.environ.get("HOUSE_DEBUG_FLAT") == "1"
 F = "res://fixtures/"
 P = "res://props/"
 A = "res://audio/"
@@ -299,7 +302,6 @@ def build_shell(sc, root):
     solid(sc, ms, "ClosetWest", 2.12, 2.25, SKIN_BOT, SKIN_TOP, -1.40, -0.15, plaster)
     solid(sc, ms, "ClosetBack", 2.12, 3.98, SKIN_BOT, SKIN_TOP, -1.40, -0.80, plaster)
     solid(sc, ms, "BedroomWing", 3.85, 6.20, SKIN_BOT, SKIN_TOP, -1.40, -0.15, mass)
-    solid(sc, ms, "FrontWestNorth", -0.30, 2.12, SKIN_BOT, SKIN_TOP, -1.40, -0.30, siding)
     # North of the kitchen: basement stair (behind the hall door) and pantry niche.
     solid(sc, ms, "Basement", 6.15, 7.85, SKIN_BOT, SKIN_TOP, -1.40, 1.50, mass)
     solid(sc, ms, "PantryBack", 7.85, 8.75, SKIN_BOT, SKIN_TOP, -1.40, 0.95, plaster)
@@ -504,7 +506,7 @@ def build_living(sc, root):
     inst(sc, g, "Fan", P + "hallway/floor_fan.tscn", (0.55, 0, 2.05), 140.0)
     # Drapes on the west group (drawn back), sheers on the south windows.
     inst(sc, g, "WestDrapes", P + "architecture/heavy_drapes.tscn", (0.0, 2.30, 4.40), 90.0, {
-        "width": 3.40, "height": 2.05, "open_amount": 0.82})
+        "width": 3.60, "height": 2.05, "open_amount": 1.0})
     for i, x in enumerate(SOUTH_LIVING_X):
         inst(sc, g, "SouthSheers%d" % i, P + "architecture/sheer_curtains.tscn", (x, 2.27, 6.25), 180.0, {
             "width": 1.20, "height": 1.62, "open_amount": 0.72 if i == 0 else 0.55})
@@ -631,7 +633,7 @@ def sun_rotation():
 def build_lighting(sc, root):
     g = n3d(sc, root, "Lighting")
     rig = os.path.join(os.path.dirname(__file__), "..", "..", "..", "atmosphere", "afternoon_atmosphere.tscn")
-    if os.path.exists(rig):
+    if os.path.exists(rig) and not DEBUG_FLAT:
         inst(sc, g, "Atmosphere", ATMOS_RIG, (0, 0, 0), 0.0)
         return
     sky = sc.sub("ProceduralSkyMaterial", sky_top_color=C(0.38, 0.56, 0.80), sky_horizon_color=C(0.86, 0.84, 0.78),
@@ -641,6 +643,9 @@ def build_lighting(sc, root):
                  tonemap_mode=2, tonemap_exposure=1.0, ssao_enabled=True, glow_enabled=True, glow_intensity=0.4,
                  sdfgi_enabled=True, sdfgi_use_occlusion=True, sdfgi_cascades=3, sdfgi_min_cell_size=0.1,
                  sdfgi_energy=1.2)
+    if DEBUG_FLAT:
+        env = sc.sub("Environment", background_mode=2, sky=skyr, ambient_light_source=2, ambient_light_color=C(1, 1, 1),
+                     ambient_light_energy=0.9, tonemap_mode=2)
     sc.node("TempEnvironment", "WorldEnvironment", g, {"environment": env})
     sc.node("TempSun", "DirectionalLight3D", g, {
         "transform": XF((5, 10, 3), sun_rotation()), "light_color": C(1.0, 0.89, 0.74), "light_energy": 3.0,
@@ -679,7 +684,7 @@ def build():
     build_lighting(sc, root)
     build_audio(sc, root)
     sc.node("PlayerSpawn", "Marker3D", root, {"transform": XF((FRONT_DOOR_X, 0.0, 0.72), (0, 180, 0))}, groups=["player_spawn"])
-    sc.write(OUT)
+    sc.write("_shots/debug_house.tscn" if DEBUG_FLAT else OUT)
 
 
 if __name__ == "__main__":
