@@ -238,7 +238,7 @@ func _test_front_door() -> void:
 
 func _test_responders() -> void:
 	# Closet panel, kitchen drawer, fridge door: they move.
-	for path: String in ["Fixtures/Hall/Closet/PanelFront/Slide", "Fixtures/Kitchen/BaseWest/Drawer/Drawer",
+	for path: String in ["Fixtures/Hall/Closet/PanelFront/Slide", "Fixtures/Kitchen/BaseEast/Drawer/Drawer",
 			"Fixtures/Kitchen/Fridge/FreshDoor/Hinge"]:
 		var part := _find(path) as MovingPartInteractable
 		if part == null:

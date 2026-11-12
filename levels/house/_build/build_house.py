@@ -86,7 +86,7 @@ HALL_OPEN = (0.75, 2.75)            # x range, hall -> living
 KITCHEN_OPEN = (2.6, 4.0)           # z range, living -> kitchen
 WEST_WINDOWS_Z = [3.43, 4.40, 5.37]  # three-window picture group, 0.07 mullions
 SOUTH_LIVING_X = [1.6, 4.4]
-DINETTE_WINDOW_X = 7.0
+DINETTE_WINDOW_X = 6.75
 SINK_X = 8.975
 
 # Sun used until the atmosphere rig exists (WSW, ~37 degrees up).
@@ -434,9 +434,9 @@ def build_shell(sc, root):
     baseboard_run(sc, bb, "KitN", "x", 6.15, 10.35, 1.65, 1, [gap(PANTRY_DOOR_X, dw)], kit)
     baseboard_run(sc, bb, "KitW", "z", 1.65, 6.25, 6.15, 1, [(KITCHEN_OPEN[0] - 0.06, KITCHEN_OPEN[1] + 0.06)], kit)
     baseboard_run(sc, bb, "KitE", "z", 1.65, 6.25, 10.35, -1, [gap(BACK_DOOR_Z, fw)], kit)
-    baseboard_run(sc, bb, "KitS", "x", 6.15, 7.62, 6.25, -1, [], kit)
+    baseboard_run(sc, bb, "KitS", "x", 6.15, 8.53, 6.25, -1, [], kit)
     # Kitchen backsplash behind the counter run.
-    box(sc, bb, "Backsplash", (2.73, 0.10, 0.012), (8.98, 0.96, 6.244), "laminate_formica")
+    box(sc, bb, "Backsplash", (1.82, 0.10, 0.012), (9.435, 0.96, 6.244), "laminate_formica")
 
 
 # =============================================================================
@@ -509,10 +509,8 @@ def build_openings(sc, root):
     inst(sc, kit, "KitchenSwitch", F + "light_switch.tscn", (6.15, 1.2, 2.40), 90.0, {
         "targets": NPS(["../KitchenLight"]), "display_name": "Kitchen light switch"})
     # Cabinet run along the south wall (backs on the wall at z = 6.25, fronts north).
-    inst(sc, kit, "BaseWest", F + "kitchen_cabinet_base.tscn", (8.065, 0, 6.25), 180.0)
     inst(sc, kit, "Sink", F + "kitchen_sink.tscn", (SINK_X, 0, 6.25), 180.0)
     inst(sc, kit, "BaseEast", F + "kitchen_cabinet_base.tscn", (9.885, 0, 6.25), 180.0)
-    inst(sc, kit, "WallCabWest", F + "kitchen_cabinet_wall.tscn", (8.065, 1.37, 6.25), 180.0)
     inst(sc, kit, "WallCabEast", F + "kitchen_cabinet_wall.tscn", (9.885, 1.37, 6.25), 180.0)
     inst(sc, kit, "Fridge", F + "fridge.tscn", (9.93, 0, 1.65), 0.0)
 
@@ -637,15 +635,15 @@ def build_kitchen(sc, root):
     inst(sc, g, "PlateNorth", P + "kitchen/plate.tscn", (7.32, ty, 4.62), 0.0)
     inst(sc, g, "MugWest", P + "kitchen/mug.tscn", (6.95, ty, 4.60), 20.0)
     inst(sc, g, "MugNorth", P + "kitchen/mug.tscn", (7.55, ty, 4.62), 200.0)
-    inst(sc, g, "Mail", P + "media/mail_stack.tscn", (7.60, ty, 5.02), 12.0)
-    inst(sc, g, "Newspaper", P + "media/newspaper.tscn", (7.20, ty, 5.05), -8.0)
-    inst(sc, g, "Ashtray", P + "kitchen/ashtray_amber.tscn", (7.02, ty, 5.10), 0.0)
-    inst(sc, g, "FruitBowl", P + "kitchen/fruit_bowl.tscn", (7.22, ty, 4.82), 0.0)
+    inst(sc, g, "Mail", P + "media/mail_stack.tscn", (7.55, ty, 5.08), 12.0)
+    inst(sc, g, "Newspaper", P + "media/newspaper.tscn", (7.23, ty, 5.03), -8.0)
+    inst(sc, g, "Ashtray", P + "kitchen/ashtray_amber.tscn", (6.88, ty, 5.13), 0.0)
+    inst(sc, g, "FruitBowl", P + "kitchen/fruit_bowl.tscn", (9.85, 1.66, 2.05), 0.0)
     cy = 0.91
-    inst(sc, g, "DishRack", P + "kitchen/dish_rack.tscn", (8.25, cy, 5.98), 180.0)
-    inst(sc, g, "Glass", P + "kitchen/drinking_glass.tscn", (7.80, cy, 5.90), 0.0)
-    inst(sc, g, "Percolator", P + "kitchen/percolator.tscn", (10.0, cy, 5.98), 180.0)
-    inst(sc, g, "Cereal", P + "kitchen/cereal_box.tscn", (9.62, cy, 5.95), 165.0)
+    inst(sc, g, "DishRack", P + "kitchen/dish_rack.tscn", (9.68, cy, 5.98), 180.0)
+    inst(sc, g, "Glass", P + "kitchen/drinking_glass.tscn", (8.78, SILL_SINK, 6.22), 0.0)
+    inst(sc, g, "Percolator", P + "kitchen/percolator.tscn", (10.15, cy, 5.98), 180.0)
+    inst(sc, g, "Cereal", P + "kitchen/cereal_box.tscn", (7.62, ty, 4.86), 200.0)
     inst(sc, g, "PaperTowels", P + "kitchen/paper_towel_holder.tscn", (9.885, 1.33, 6.25), 180.0)
     inst(sc, g, "Calendar", P + "media/wall_calendar_aug_1993.tscn", (9.10, 1.72, 1.65), 0.0)
     inst(sc, g, "FridgeNote", P + "media/note.tscn", (9.78, 1.32, 2.418), 0.0, {"preset": 1}, rot=(90, 0, 0))
@@ -743,9 +741,11 @@ def sun_rotation():
 
 
 # Atmosphere rig knobs (see atmosphere/README.md). Azimuth = bearing the light
-# comes FROM: 245 is west-south-west, so the west group throws long shafts
-# east-north-east across the shag and the south windows rake the floor.
-ATMOSPHERE = {"sun_azimuth": 245.0, "sun_elevation": 36.0, "exposure_bias": -0.5}
+# comes FROM: 236 is south-west by west: the west group still throws long shafts
+# across the shag, and the south windows (0.30 m deep reveals) are not so
+# grazing that their jambs swallow the light, so the dinette window lands a
+# patch on the lino. (At 245+ the south patches shrink to slivers.)
+ATMOSPHERE = {"sun_azimuth": 236.0, "sun_elevation": 36.0, "exposure_bias": -0.25}
 
 # Dust and haze: one box per sunlit window, covering the shaft from the glass
 # to where its patch lands. (centre, size)

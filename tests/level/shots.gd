@@ -18,7 +18,7 @@ const DEFAULT_SHOTS := "spawn@1.0,0.5@180,-6;" \
 	+ "living_sofa_sun@3.8,5.6@50,-22;" \
 	+ "kitchen_from_living@4.2,3.3@-90,-8;" \
 	+ "kitchen_dinette@9.4,3.0@140,-18;" \
-	+ "kitchen_sink@7.2,3.0@170,-12;" \
+	+ "kitchen_sink@8.0,3.0@175,-25;" \
 	+ "pantry@8.1,2.9@-10,-8"
 
 
