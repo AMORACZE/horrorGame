@@ -74,7 +74,8 @@ modelled (solid mass sits behind each one).
 | Pantry door (kitchen) | unlocked, stands open about 30 degrees | The one door left open; it closes and reopens to the same gap. |
 
 Locked lines are plain ("It's locked.", "The knob turns a little and stops.").
-The hall ceiling light has a dead bulb; every lamp starts off.
+Every lamp and ceiling light starts off. The hall has no window, so its
+east end is close to black until the switch by the front door is used.
 
 ## Light
 
@@ -98,8 +99,8 @@ counter run starts east of that window so the patch reaches the floor).
   it stays crisp and dim.
 - `ReflectionProbe`s (update once, box projection, interior) in the kitchen
   (glossy lino) and the hall (the mirror).
-- No fill lights. Lamps, the fan light and the kitchen dome are off; the hall
-  dome has a dead bulb.
+- No fill lights. Lamps, the fan light, the kitchen dome and the hall dome
+  are off and all work.
 
 ## Sound
 

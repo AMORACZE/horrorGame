@@ -376,7 +376,7 @@ def build_openings(sc, root):
         "locked": True, "display_name": "Basement door",
         "locked_observations": STRS(["Locked.", "Cooler air comes under it, and the smell of concrete."])})
     inst(sc, hall, "Closet", F + "closet_sliding.tscn", (CLOSET_X, 0, -0.075), 0.0)
-    inst(sc, hall, "HallLight", F + "ceiling_light.tscn", (3.0, H, 0.75), 0.0, {"dead_bulb": True})
+    inst(sc, hall, "HallLight", F + "ceiling_light.tscn", (3.0, H, 0.75), 0.0)
     inst(sc, hall, "HallSwitch", F + "light_switch.tscn", (1.66, 1.2, 0.0), 0.0, {
         "targets": NPS(["../HallLight"]), "display_name": "Hall light switch"})
 

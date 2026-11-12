@@ -2439,7 +2439,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05, 0, -0.075)
 
 [node name="HallLight" parent="Fixtures/Hall" instance=ExtResource("149_ceiling_light")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 2.44, 0.75)
-dead_bulb = true
 
 [node name="HallSwitch" parent="Fixtures/Hall" instance=ExtResource("150_light_switch")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66, 1.2, 0)
