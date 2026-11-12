@@ -1,6 +1,22 @@
 [gd_resource type="StandardMaterial3D" format=3]
 
+[ext_resource type="Texture2D" path="res://art/textures/glass_dusty/glass_dusty_albedo.png" id="1"]
+[ext_resource type="Texture2D" path="res://art/textures/glass_dusty/glass_dusty_orm.png" id="2"]
+
 [resource]
+resource_name = "glass_dusty"
 transparency = 1
-albedo_color = Color(0.8, 0.8, 0.74, 0.35)
-roughness = 0.4
+texture_filter = 5
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("1")
+metallic_specular = 0.5
+roughness = 1
+roughness_texture = ExtResource("2")
+roughness_texture_channel = 1
+ao_enabled = true
+ao_light_affect = 0
+ao_texture = ExtResource("2")
+ao_texture_channel = 0
+uv1_scale = Vector3(2, 2, 2)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 8.0
