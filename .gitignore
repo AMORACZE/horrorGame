@@ -1,0 +1,16 @@
+# Godot 4
+.godot/
+*.translation
+export_presets.cfg
+/build/
+/exports/
+# OS / editors
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+# Python tooling
+__pycache__/
+*.pyc
+# local screenshots from tools/capture.gd
+/_shots/
