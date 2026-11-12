@@ -29,6 +29,7 @@ keeps sunlight and GI out of places it should not reach.
 import math
 import os
 import random
+import re
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -107,11 +108,106 @@ def lp(origin, rot_y, local):
     return (origin[0] + c * x + s * z, origin[1] + y, origin[2] - s * x + c * z)
 
 
+# --- Rim workaround -----------------------------------------------------------
+# Several palette fabrics (art/materials) enable `rim` with roughness 1. In
+# Godot's shader the rim term is added per light WITHOUT shadow attenuation, and
+# at roughness 1 its falloff exponent is 0, so it becomes a flat, unshadowed
+# glow from the sun on every face: carpets and sofas blow out and a jacket in
+# the dark hall glows. Until the palette changes, this level uses copies of
+# those materials with the rim lines removed (levels/house/materials/*_norim.tres,
+# regenerated from art/materials on every build) on its own geometry and as
+# per-instance overrides on props and fixtures.
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "..", ".."))
+NORIM_DIR = "levels/house/materials"
+RIM_MATS = {}  # "res://art/materials/x.tres" -> "res://levels/house/materials/x_norim.tres"
+
+
+def make_norim_materials():
+    os.makedirs(os.path.join(ROOT, NORIM_DIR), exist_ok=True)
+    adir = os.path.join(ROOT, "art", "materials")
+    for fn in sorted(os.listdir(adir)):
+        if not fn.endswith(".tres"):
+            continue
+        with open(os.path.join(adir, fn)) as f:
+            text = f.read()
+        if "rim_enabled = true" not in text:
+            continue
+        out = []
+        for line in text.splitlines():
+            if line.startswith("rim"):
+                continue
+            if line.startswith("[gd_resource"):
+                line = re.sub(r' uid="[^"]*"', "", line)
+            out.append(line)
+        name = fn[:-5] + "_norim.tres"
+        with open(os.path.join(ROOT, NORIM_DIR, name), "w") as f:
+            f.write("\n".join(out) + "\n")
+        RIM_MATS["res://art/materials/" + fn] = "res://%s/%s" % (NORIM_DIR, name)
+
+
+_orig_mat = Scene.mat
+
+
+def _mat_norim(self, name):
+    if name.startswith("res://"):
+        path = name
+    elif name.startswith("fx:"):
+        path = None
+    else:
+        path = "res://art/materials/%s.tres" % name
+    if path in RIM_MATS:
+        return self.ext(RIM_MATS[path], "Material")
+    return _orig_mat(self, name)
+
+
+Scene.mat = _mat_norim
+
+_scan_cache = {}
+
+
+def rim_overrides(scene_path):
+    """[(node path inside the scene or '.', property, replacement)] for every
+    property in the scene that points at a rim material."""
+    if scene_path in _scan_cache:
+        return _scan_cache[scene_path]
+    out = []
+    ids = {}
+    node = None
+    with open(os.path.join(ROOT, scene_path.replace("res://", ""))) as f:
+        for line in f:
+            line = line.strip()
+            m = re.match(r'\[ext_resource type="Material" path="([^"]+)" id="([^"]+)"\]', line)
+            if m:
+                if m.group(1) in RIM_MATS:
+                    ids[m.group(2)] = RIM_MATS[m.group(1)]
+                continue
+            m = re.match(r'\[node name="([^"]+)"(?: type="[^"]+")?(?: parent="([^"]+)")?', line)
+            if m:
+                nm, par = m.group(1), m.group(2)
+                node = "." if par is None else (nm if par == "." else par + "/" + nm)
+                continue
+            m = re.match(r'([\w/]+) = ExtResource\("([^"]+)"\)', line)
+            if m and node is not None and m.group(2) in ids:
+                out.append((node, m.group(1), ids[m.group(2)]))
+    _scan_cache[scene_path] = out
+    return out
+
+
 def inst(sc, parent, name, path, pos, rot_y=0.0, props=None, rot=None):
     p = {"transform": XF(pos, rot if rot is not None else (0, rot_y, 0))}
+    over = rim_overrides(path)
+    for node, prop, rep in over:
+        if node == ".":
+            p[prop] = sc.ext(rep, "Material")
     if props:
         p.update(props)
-    return sc.node(name, None, parent, p, instance=sc.ext(path, "PackedScene"))
+    ipath = sc.node(name, None, parent, p, instance=sc.ext(path, "PackedScene"))
+    for node, prop, rep in over:
+        if node != ".":
+            nm = node.rsplit("/", 1)[-1]
+            par = ipath + ("/" + node.rsplit("/", 1)[0] if "/" in node else "")
+            sc.nodes.append(('[node name="%s" parent="%s"]' % (nm, par), {prop: sc.ext(rep, "Material")}))
+    return ipath
 
 
 def look(sc, body, display, lines, prompt=None):
@@ -727,6 +823,7 @@ def build_audio(sc, root):
 
 
 def build():
+    make_norim_materials()
     sc = Scene("House")
     root = "."
     build_shell(sc, root)
