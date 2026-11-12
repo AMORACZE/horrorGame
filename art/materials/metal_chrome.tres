@@ -1,6 +1,24 @@
 [gd_resource type="StandardMaterial3D" format=3]
 
+[ext_resource type="Texture2D" path="res://art/textures/metal_chrome/metal_chrome_albedo.png" id="1"]
+[ext_resource type="Texture2D" path="res://art/textures/metal_chrome/metal_chrome_orm.png" id="2"]
+
 [resource]
-albedo_color = Color(0.8, 0.8, 0.82, 1)
-metallic = 1.0
-roughness = 0.2
+resource_name = "metal_chrome"
+texture_filter = 5
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("1")
+metallic = 1
+metallic_specular = 0.5
+metallic_texture = ExtResource("2")
+metallic_texture_channel = 2
+roughness = 1
+roughness_texture = ExtResource("2")
+roughness_texture_channel = 1
+ao_enabled = true
+ao_light_affect = 0
+ao_texture = ExtResource("2")
+ao_texture_channel = 0
+uv1_scale = Vector3(3.33333, 3.33333, 3.33333)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 8.0

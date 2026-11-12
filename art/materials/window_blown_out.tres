@@ -1,0 +1,21 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[ext_resource type="Texture2D" path="res://art/textures/window_blown_out/window_blown_out_albedo.png" id="1"]
+
+[resource]
+resource_name = "window_blown_out"
+texture_filter = 5
+specular_mode = 2
+disable_receive_shadows = true
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+metallic_specular = 0.5
+roughness = 1
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 2.2
+emission_texture = ExtResource("1")
+uv1_scale = Vector3(0.25, 0.20492, 0.25)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 8.0
+uv1_world_triplanar = true

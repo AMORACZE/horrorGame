@@ -1,5 +1,28 @@
 [gd_resource type="StandardMaterial3D" format=3]
 
+[ext_resource type="Texture2D" path="res://art/textures/enamel/enamel_albedo.png" id="1"]
+[ext_resource type="Texture2D" path="res://art/textures/enamel/enamel_orm.png" id="2"]
+[ext_resource type="Texture2D" path="res://art/textures/enamel/enamel_normal.png" id="3"]
+
 [resource]
-albedo_color = Color(0.78, 0.6, 0.2, 1)
-roughness = 0.4
+resource_name = "appliance_harvest_gold"
+texture_filter = 5
+albedo_color = Color(0.8, 0.6, 0.22, 1)
+albedo_texture = ExtResource("1")
+metallic_specular = 0.5
+roughness = 1
+roughness_texture = ExtResource("2")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_scale = 1
+normal_texture = ExtResource("3")
+clearcoat_enabled = true
+clearcoat = 0.6
+clearcoat_roughness = 0.12
+ao_enabled = true
+ao_light_affect = 0
+ao_texture = ExtResource("2")
+ao_texture_channel = 0
+uv1_scale = Vector3(2.5, 2.5, 2.5)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 8.0
