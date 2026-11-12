@@ -1287,7 +1287,8 @@ sky = SubResource("Sky_387")
 ambient_light_source = 3
 ambient_light_energy = 0.25
 tonemap_mode = 2
-tonemap_exposure = 1
+tonemap_exposure = 1.7
+tonemap_white = 6
 ssao_enabled = true
 glow_enabled = true
 glow_intensity = 0.4
@@ -1295,7 +1296,8 @@ sdfgi_enabled = true
 sdfgi_use_occlusion = true
 sdfgi_cascades = 3
 sdfgi_min_cell_size = 0.1
-sdfgi_energy = 1.2
+sdfgi_energy = 2.2
+sdfgi_bounce_feedback = 0.8
 
 [node name="House" type="Node3D"]
 

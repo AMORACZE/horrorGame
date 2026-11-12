@@ -640,9 +640,9 @@ def build_lighting(sc, root):
                  ground_horizon_color=C(0.62, 0.58, 0.48), ground_bottom_color=C(0.3, 0.3, 0.22), sun_angle_max=20.0)
     skyr = sc.sub("Sky", sky_material=sky)
     env = sc.sub("Environment", background_mode=2, sky=skyr, ambient_light_source=3, ambient_light_energy=0.25,
-                 tonemap_mode=2, tonemap_exposure=1.0, ssao_enabled=True, glow_enabled=True, glow_intensity=0.4,
-                 sdfgi_enabled=True, sdfgi_use_occlusion=True, sdfgi_cascades=3, sdfgi_min_cell_size=0.1,
-                 sdfgi_energy=1.2)
+                 tonemap_mode=2, tonemap_exposure=1.7, tonemap_white=6.0, ssao_enabled=True, glow_enabled=True,
+                 glow_intensity=0.4, sdfgi_enabled=True, sdfgi_use_occlusion=True, sdfgi_cascades=3,
+                 sdfgi_min_cell_size=0.1, sdfgi_energy=2.2, sdfgi_bounce_feedback=0.8)
     if DEBUG_FLAT:
         env = sc.sub("Environment", background_mode=2, sky=skyr, ambient_light_source=2, ambient_light_color=C(1, 1, 1),
                      ambient_light_energy=0.9, tonemap_mode=2)
