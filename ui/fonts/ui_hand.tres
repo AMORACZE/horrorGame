@@ -1,0 +1,6 @@
+[gd_resource type="SystemFont" format=3]
+
+[resource]
+font_names = PackedStringArray("Segoe Print", "Bradley Hand", "Noteworthy", "Bitstream Charter", "Georgia", "FreeSerif", "DejaVu Serif", "serif")
+font_italic = true
+font_weight = 400

@@ -1,0 +1,164 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/pause/pause_menu.gd" id="1_pause"]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="2_theme"]
+[ext_resource type="Shader" path="res://ui/common/modal_dim.gdshader" id="3_dim"]
+[ext_resource type="Script" path="res://ui/common/input_glyph.gd" id="4_glyph"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dim"]
+shader = ExtResource("3_dim")
+shader_parameter/amount = 1.0
+shader_parameter/tint = Color(0.02, 0.02, 0.02, 0.74)
+shader_parameter/blur_lod = 3.0
+shader_parameter/blur_radius = 3.0
+shader_parameter/vignette = 0.3
+shader_parameter/desaturate = 0.6
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 100
+script = ExtResource("1_pause")
+
+[node name="Root" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+
+[node name="Dim" type="ColorRect" parent="Root"]
+material = SubResource("ShaderMaterial_dim")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainPage" type="VBoxContainer" parent="Root"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.5
+anchor_right = 0.1
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -110.0
+offset_right = 384.0
+offset_bottom = 110.0
+grow_vertical = 2
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Title" type="Label" parent="Root/MainPage"]
+layout_mode = 2
+theme_type_variation = &"MenuTitle"
+text = "PAUSED"
+
+[node name="Spacer" type="Control" parent="Root/MainPage"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Resume" type="Button" parent="Root/MainPage"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+alignment = 0
+
+[node name="SettingsButton" type="Button" parent="Root/MainPage"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Settings"
+alignment = 0
+
+[node name="Quit" type="Button" parent="Root/MainPage"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit to desktop"
+alignment = 0
+
+[node name="SettingsPage" type="VBoxContainer" parent="Root"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1
+anchor_top = 0.08
+anchor_right = 0.1
+anchor_bottom = 0.92
+offset_left = -16.0
+offset_right = 644.0
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="Title" type="Label" parent="Root/SettingsPage"]
+layout_mode = 2
+theme_type_variation = &"MenuTitle"
+text = "SETTINGS"
+
+[node name="SettingsScroll" type="ScrollContainer" parent="Root/SettingsPage"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+follow_focus = true
+scroll_hint_mode = 1
+
+[node name="Rows" type="VBoxContainer" parent="Root/SettingsPage/SettingsScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Footer" type="HBoxContainer" parent="Root/SettingsPage"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Reset" type="Button" parent="Root/SettingsPage/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Reset to defaults"
+alignment = 0
+
+[node name="Back" type="Button" parent="Root/SettingsPage/Footer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Back"
+alignment = 0
+
+[node name="Hints" type="HBoxContainer" parent="Root"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -420.0
+offset_top = -84.0
+offset_right = -72.0
+offset_bottom = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="BackGlyph" type="PanelContainer" parent="Root/Hints"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"KeyCap"
+script = ExtResource("4_glyph")
+action = &"ui_back"
+
+[node name="BackHint" type="Label" parent="Root/Hints"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Hint"
+text = "Resume"

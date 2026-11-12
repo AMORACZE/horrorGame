@@ -1,0 +1,162 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://ui/examine/examine_view.gd" id="1_view"]
+[ext_resource type="Theme" path="res://ui/theme.tres" id="2_theme"]
+[ext_resource type="Shader" path="res://ui/common/modal_dim.gdshader" id="3_dim"]
+[ext_resource type="Script" path="res://ui/common/input_glyph.gd" id="4_glyph"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dim"]
+shader = ExtResource("3_dim")
+shader_parameter/amount = 1.0
+shader_parameter/tint = Color(0.03, 0.028, 0.025, 0.6)
+shader_parameter/blur_lod = 2.5
+shader_parameter/blur_radius = 3.0
+shader_parameter/vignette = 0.35
+shader_parameter/desaturate = 0.35
+
+[node name="ExamineView" type="Control"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_theme")
+script = ExtResource("1_view")
+
+[node name="Dim" type="ColorRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_dim")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+stretch = true
+
+[node name="Viewport" type="SubViewport" parent="ViewportContainer"]
+unique_name_in_owner = true
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+msaa_3d = 1
+screen_space_aa = 1
+size = Vector2i(1280, 720)
+render_target_update_mode = 0
+
+[node name="Pivot" type="Node3D" parent="ViewportContainer/Viewport"]
+unique_name_in_owner = true
+
+[node name="Camera" type="Camera3D" parent="ViewportContainer/Viewport"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1)
+current = true
+fov = 30.0
+
+[node name="KeyLight" type="DirectionalLight3D" parent="ViewportContainer/Viewport"]
+unique_name_in_owner = true
+light_color = Color(1, 0.93, 0.82, 1)
+light_energy = 1.5
+
+[node name="FillLight" type="DirectionalLight3D" parent="ViewportContainer/Viewport"]
+unique_name_in_owner = true
+light_color = Color(0.78, 0.85, 1, 1)
+light_energy = 0.45
+
+[node name="RimLight" type="DirectionalLight3D" parent="ViewportContainer/Viewport"]
+unique_name_in_owner = true
+light_color = Color(1, 0.97, 0.92, 1)
+light_energy = 0.9
+
+[node name="Caption" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = -170.0
+offset_right = 620.0
+offset_bottom = -56.0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 6
+alignment = 2
+
+[node name="Title" type="Label" parent="Caption"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Caption"
+
+[node name="Description" type="Label" parent="Caption"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"CaptionBody"
+autowrap_mode = 3
+
+[node name="Hints" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -520.0
+offset_top = -84.0
+offset_right = -72.0
+offset_bottom = -56.0
+grow_horizontal = 0
+grow_vertical = 0
+mouse_filter = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="TurnGlyph" type="PanelContainer" parent="Hints"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"KeyCap"
+script = ExtResource("4_glyph")
+action = &"look_left"
+keyboard_text = "Drag"
+gamepad_text = "R stick"
+
+[node name="TurnLabel" type="Label" parent="Hints"]
+layout_mode = 2
+theme_type_variation = &"Hint"
+text = "Turn   "
+
+[node name="ZoomGlyph" type="PanelContainer" parent="Hints"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"KeyCap"
+script = ExtResource("4_glyph")
+action = &"zoom"
+keyboard_text = "Wheel"
+gamepad_text = "LT / RT"
+
+[node name="ZoomLabel" type="Label" parent="Hints"]
+layout_mode = 2
+theme_type_variation = &"Hint"
+text = "Zoom   "
+
+[node name="CloseGlyph" type="PanelContainer" parent="Hints"]
+layout_mode = 2
+mouse_filter = 2
+theme_type_variation = &"KeyCap"
+script = ExtResource("4_glyph")
+
+[node name="CloseLabel" type="Label" parent="Hints"]
+layout_mode = 2
+theme_type_variation = &"Hint"
+text = "Put down"
