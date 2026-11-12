@@ -1,0 +1,263 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/carpet_beige.tres" id="1_carpet_beige"]
+[ext_resource type="Material" path="res://art/materials/fabric_plaid.tres" id="2_fabric_plaid"]
+[ext_resource type="Material" path="res://art/materials/carpet_shag_gold.tres" id="3_carpet_shag_gold"]
+[ext_resource type="Material" path="res://art/materials/paper_yellowed.tres" id="4_paper_yellowed"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="5_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(2.4, 0.008, 1.7)
+
+[sub_resource type="BoxMesh" id="BoxMesh_2"]
+size = Vector3(2.14, 0.003, 1.44)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(2, 0.002, 1.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(1.88, 0.002, 1.18)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(1.8, 0.002, 1.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.5, 0.002, 0.5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.28, 0.002, 0.28)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.1, 0.002, 0.1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_9"]
+size = Vector3(0.07, 0.003, 0.012)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_10"]
+size = Vector3(2.4, 0.012, 1.7)
+
+[node name="AreaRug" type="StaticBody3D"]
+collision_layer = 5
+collision_mask = 0
+metadata/surface = &"rug"
+metadata/prop_class = "furniture"
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.004, 0)
+mesh = SubResource("BoxMesh_1")
+material_override = ExtResource("1_carpet_beige")
+
+[node name="Field" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0095, 0)
+mesh = SubResource("BoxMesh_2")
+material_override = ExtResource("2_fabric_plaid")
+
+[node name="Inner" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.011, 0)
+mesh = SubResource("BoxMesh_3")
+material_override = ExtResource("1_carpet_beige")
+
+[node name="Border" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0118, 0)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_carpet_shag_gold")
+
+[node name="BorderInner" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0122, 0)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("1_carpet_beige")
+
+[node name="Medallion" type="Node3D" parent="."]
+transform = Transform3D(1.5, 0, 0, 0, 1, 0, 0, 0, 0.9, 0, 0, 0)
+
+[node name="Diamond" type="MeshInstance3D" parent="Medallion"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.0128, 0)
+mesh = SubResource("BoxMesh_6")
+material_override = ExtResource("3_carpet_shag_gold")
+
+[node name="Core" type="MeshInstance3D" parent="Medallion"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.0134, 0)
+mesh = SubResource("BoxMesh_7")
+material_override = ExtResource("2_fabric_plaid")
+
+[node name="Eye" type="MeshInstance3D" parent="Medallion"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.014, 0)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("1_carpet_beige")
+
+[node name="Fringe" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, -1.233, 0.0015, -0.79)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.233, 0.0015, -0.668462)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, 0.156434, 0, 1, 0, -0.156434, 0, 0.987688, -1.233, 0.0015, -0.546923)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, -1.233, 0.0015, -0.425385)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.233, 0.0015, -0.303846)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, 0.156434, 0, 1, 0, -0.156434, 0, 0.987688, -1.233, 0.0015, -0.182308)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, -1.233, 0.0015, -0.060769)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.233, 0.0015, 0.060769)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe9" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, 0.156434, 0, 1, 0, -0.156434, 0, 0.987688, -1.233, 0.0015, 0.182308)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, -1.233, 0.0015, 0.303846)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.233, 0.0015, 0.425385)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, 0.156434, 0, 1, 0, -0.156434, 0, 0.987688, -1.233, 0.0015, 0.546923)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe13" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, -1.233, 0.0015, 0.668462)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.233, 0.0015, 0.79)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe15" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, 1.233, 0.0015, -0.79)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.233, 0.0015, -0.668462)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe17" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, 0.156434, 0, 1, 0, -0.156434, 0, 0.987688, 1.233, 0.0015, -0.546923)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe18" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, 1.233, 0.0015, -0.425385)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe19" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.233, 0.0015, -0.303846)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe20" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, 0.156434, 0, 1, 0, -0.156434, 0, 0.987688, 1.233, 0.0015, -0.182308)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe21" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, 1.233, 0.0015, -0.060769)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe22" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.233, 0.0015, 0.060769)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe23" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, 0.156434, 0, 1, 0, -0.156434, 0, 0.987688, 1.233, 0.0015, 0.182308)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe24" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, 1.233, 0.0015, 0.303846)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe25" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.233, 0.0015, 0.425385)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe26" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, 0.156434, 0, 1, 0, -0.156434, 0, 0.987688, 1.233, 0.0015, 0.546923)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe27" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.987688, 0, -0.156434, 0, 1, 0, 0.156434, 0, 0.987688, 1.233, 0.0015, 0.668462)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Fringe28" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.233, 0.0015, 0.79)
+mesh = SubResource("BoxMesh_9")
+cast_shadow = 0
+material_override = ExtResource("4_paper_yellowed")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006, 0)
+shape = SubResource("BoxShape3D_10")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("5_interactable")
+display_name = "Rug"
+observations = Array[String](["The pile is worn down in a path from the hall to the sofa.", "One corner curls up off the floor."])

@@ -1,0 +1,84 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/appliance_harvest_gold.tres" id="1_appliance_harvest_gold"]
+[ext_resource type="Material" path="res://props/materials/glaze_brown.tres" id="2_glaze_brown"]
+[ext_resource type="Material" path="res://props/materials/coffee_dried.tres" id="3_coffee_dried"]
+[ext_resource type="Script" path="res://interaction/examinable_interactable.gd" id="4_examinable_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.041
+bottom_radius = 0.041
+height = 0.094
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.0413
+bottom_radius = 0.0413
+height = 0.011
+radial_segments = 24
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_3"]
+inner_radius = 0.0375
+outer_radius = 0.0418
+rings = 24
+ring_segments = 6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.0378
+bottom_radius = 0.0378
+height = 0.002
+radial_segments = 24
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_5"]
+inner_radius = 0.017
+outer_radius = 0.025
+rings = 24
+ring_segments = 8
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_6"]
+height = 0.094
+radius = 0.042
+
+[node name="Mug" type="RigidBody3D"]
+collision_layer = 12
+collision_mask = 9
+mass = 0.32
+metadata/prop_class = "loose"
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.047, 0)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("1_appliance_harvest_gold")
+
+[node name="Stripe" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.072, 0)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("2_glaze_brown")
+
+[node name="Rim" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.094, 0)
+mesh = SubResource("TorusMesh_3")
+material_override = ExtResource("1_appliance_harvest_gold")
+
+[node name="Coffee" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0925, 0)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("3_coffee_dried")
+
+[node name="Handle" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.95, 0, 0, 0, 0, -1.35, 0, 1, 0, 0.046, 0.05, 0)
+mesh = SubResource("TorusMesh_5")
+material_override = ExtResource("1_appliance_harvest_gold")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.047, 0)
+shape = SubResource("CylinderShape3D_6")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("4_examinable_interactable")
+display_name = "Mug"
+prompt = "Pick up"
+description = "A harvest-gold mug with a brown stripe. Cold coffee in the bottom with a skin on it. The handle has been glued back on."

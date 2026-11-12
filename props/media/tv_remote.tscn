@@ -1,0 +1,163 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="1_plastic_black"]
+[ext_resource type="Material" path="res://props/materials/ir_window.tres" id="2_ir_window"]
+[ext_resource type="Material" path="res://props/materials/plastic_red.tres" id="3_plastic_red"]
+[ext_resource type="Material" path="res://art/materials/plastic_grey.tres" id="4_plastic_grey"]
+[ext_resource type="Material" path="res://props/materials/packing_tape.tres" id="5_packing_tape"]
+[ext_resource type="Script" path="res://interaction/examinable_interactable.gd" id="6_examinable_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.05, 0.02, 0.2)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.025
+bottom_radius = 0.025
+height = 0.2
+radial_segments = 12
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(0.03, 0.012, 0.002)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(0.012, 0.004, 0.009)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.01, 0.003, 0.007)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.012, 0.004, 0.026)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.052, 0.001, 0.035)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8"]
+size = Vector3(0.05, 0.022, 0.2)
+
+[node name="TVRemote" type="RigidBody3D"]
+collision_layer = 12
+collision_mask = 9
+mass = 0.12
+metadata/prop_class = "loose"
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.011, 0)
+mesh = SubResource("BoxMesh_1")
+material_override = ExtResource("1_plastic_black")
+
+[node name="Rounded" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 0.45, 0, 0, 0.011, 0)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("1_plastic_black")
+
+[node name="IRWindow" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.012, 0.1005)
+mesh = SubResource("BoxMesh_3")
+material_override = ExtResource("2_ir_window")
+
+[node name="Power" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012, 0.0225, 0.078)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_plastic_red")
+
+[node name="Key" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 0.0222, 0.05)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0222, 0.05)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014, 0.0222, 0.05)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 0.0222, 0.036)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0222, 0.036)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014, 0.0222, 0.036)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 0.0222, 0.022)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0222, 0.022)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014, 0.0222, 0.022)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 0.0222, 0.008)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0222, 0.008)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014, 0.0222, 0.008)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.014, 0.0222, -0.006)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0222, -0.006)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Key15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014, 0.0222, -0.006)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Rocker" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.012, 0.0225, -0.04)
+mesh = SubResource("BoxMesh_6")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Rocker2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012, 0.0225, -0.04)
+mesh = SubResource("BoxMesh_6")
+material_override = ExtResource("4_plastic_grey")
+
+[node name="Tape" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0003, -0.06)
+mesh = SubResource("BoxMesh_7")
+material_override = ExtResource("5_packing_tape")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.011, 0)
+shape = SubResource("BoxShape3D_8")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("6_examinable_interactable")
+display_name = "Remote control"
+prompt = "Pick up"
+description = "The TV remote. The numbers have worn off the 3 and the 4. The battery door is held on with tape."
+examine_rotation_degrees = Vector3(-50, 25, 0)

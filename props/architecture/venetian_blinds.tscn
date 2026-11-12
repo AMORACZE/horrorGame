@@ -1,0 +1,15 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://props/architecture/venetian_blinds.gd" id="1_venetian_blinds"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="2_interactable"]
+
+[node name="VenetianBlinds" type="StaticBody3D"]
+script = ExtResource("1_venetian_blinds")
+collision_layer = 4
+collision_mask = 0
+metadata/prop_class = "wall"
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("2_interactable")
+display_name = "Blinds"
+observations = Array[String](["Venetian blinds, tilted half open. Dust lies along the top of every slat.", "One slat near the bottom is bent, as if someone pinched it to look out."])

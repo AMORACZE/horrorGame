@@ -1,0 +1,73 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/glass_dusty.tres" id="1_glass_dusty"]
+[ext_resource type="Material" path="res://art/materials/paper_white.tres" id="2_paper_white"]
+[ext_resource type="Script" path="res://interaction/examinable_interactable.gd" id="3_examinable_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.036
+bottom_radius = 0.031
+height = 0.12
+radial_segments = 24
+rings = 1
+cap_top = false
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.031
+bottom_radius = 0.031
+height = 0.012
+radial_segments = 24
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_3"]
+inner_radius = 0.0335
+outer_radius = 0.038
+rings = 24
+ring_segments = 5
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.029
+bottom_radius = 0.029
+height = 0.0008
+radial_segments = 20
+rings = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_5"]
+height = 0.12
+radius = 0.035
+
+[node name="DrinkingGlass" type="RigidBody3D"]
+collision_layer = 12
+collision_mask = 9
+mass = 0.22
+metadata/prop_class = "loose"
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("1_glass_dusty")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006, 0)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("1_glass_dusty")
+
+[node name="Rim" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12, 0)
+mesh = SubResource("TorusMesh_3")
+material_override = ExtResource("1_glass_dusty")
+
+[node name="Residue" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0125, 0)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("2_paper_white")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
+shape = SubResource("CylinderShape3D_5")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("3_examinable_interactable")
+display_name = "Glass"
+prompt = "Pick up"
+description = "An empty tumbler. A dried white ring in the bottom, and a fingerprint near the top."

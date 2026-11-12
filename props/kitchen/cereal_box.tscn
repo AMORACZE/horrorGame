@@ -1,0 +1,95 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/cardboard.tres" id="1_cardboard"]
+[ext_resource type="Texture2D" path="res://props/textures/cereal_front.png" id="2_cereal_front"]
+[ext_resource type="Texture2D" path="res://props/textures/cereal_side.png" id="3_cereal_side"]
+[ext_resource type="Material" path="res://art/materials/paper_white.tres" id="4_paper_white"]
+[ext_resource type="Script" path="res://interaction/readable_interactable.gd" id="5_readable_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.19, 0.28, 0.07)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2"]
+size = Vector2(0.19, 0.28)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("2_cereal_front")
+roughness = 0.6
+
+[sub_resource type="QuadMesh" id="QuadMesh_4"]
+size = Vector2(0.07, 0.28)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_cereal_side")
+roughness = 0.6
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.19, 0.002, 0.0385)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.19, 0.002, 0.035)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.17, 0.03, 0.058)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_9"]
+size = Vector3(0.19, 0.3, 0.07)
+
+[node name="CerealBox" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+metadata/prop_class = "tabletop"
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0)
+mesh = SubResource("BoxMesh_1")
+material_override = ExtResource("1_cardboard")
+
+[node name="Front" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 0.0355)
+mesh = SubResource("QuadMesh_2")
+material_override = SubResource("StandardMaterial3D_3")
+
+[node name="Back" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0.14, -0.0355)
+mesh = SubResource("QuadMesh_2")
+material_override = SubResource("StandardMaterial3D_3")
+
+[node name="SideR" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0.0955, 0.14, 0)
+mesh = SubResource("QuadMesh_4")
+material_override = SubResource("StandardMaterial3D_5")
+
+[node name="SideL" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 0, -1, 0, 1, 0, 1, 0, 0, -0.0955, 0.14, 0)
+mesh = SubResource("QuadMesh_4")
+material_override = SubResource("StandardMaterial3D_5")
+
+[node name="FlapBack" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.906308, 0.422618, 0, -0.422618, 0.906308, 0, 0.292, -0.023)
+mesh = SubResource("BoxMesh_6")
+material_override = ExtResource("1_cardboard")
+
+[node name="FlapFront" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.951057, -0.309017, 0, 0.309017, 0.951057, 0, 0.288, 0.031)
+mesh = SubResource("BoxMesh_7")
+material_override = ExtResource("1_cardboard")
+
+[node name="Bag" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.275, 0)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("4_paper_white")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.15, 0)
+shape = SubResource("BoxShape3D_9")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("5_readable_interactable")
+display_name = "Cereal box"
+observations = Array[String](["The top is folded open. The inner bag is rolled down and clipped."])
+title = "Golden Hoops"
+body = "GOLDEN HOOPS\nToasted oat & honey rings\nPrairie Mills  -  Net wt 15 oz\n\nFREE glow ruler inside!\n\nSide panel: Nutrition information per serving. Best if used by MAR 94.\n\nBack panel: \"HOOP HUNT! How many hoops can you find hiding on the farm?\" The answer coupon in the bottom corner has been cut out."
+style = 4

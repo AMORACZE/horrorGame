@@ -1,0 +1,373 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://props/living/sunburst_clock.gd" id="1_sunburst_clock"]
+[ext_resource type="Material" path="res://art/materials/wood_dark.tres" id="2_wood_dark"]
+[ext_resource type="Material" path="res://art/materials/metal_brass.tres" id="3_metal_brass"]
+[ext_resource type="Material" path="res://art/materials/plastic_white.tres" id="4_plastic_white"]
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="5_plastic_black"]
+[ext_resource type="Material" path="res://props/materials/plastic_red.tres" id="6_plastic_red"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="7_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.118
+bottom_radius = 0.118
+height = 0.026
+radial_segments = 32
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.104
+bottom_radius = 0.104
+height = 0.018
+radial_segments = 32
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_3"]
+top_radius = 0.092
+bottom_radius = 0.092
+height = 0.004
+radial_segments = 32
+rings = 1
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(0.006, 0.016, 0.002)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.004, 0.01, 0.002)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_6"]
+top_radius = 0.0035
+bottom_radius = 0.0035
+height = 0.185
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_7"]
+radius = 0.013
+height = 0.026
+radial_segments = 12
+rings = 6
+
+[sub_resource type="PrismMesh" id="PrismMesh_8"]
+left_to_right = 0.5
+size = Vector3(0.032, 0.12, 0.008)
+
+[sub_resource type="BoxMesh" id="BoxMesh_9"]
+size = Vector3(0.011, 0.056, 0.0018)
+
+[sub_resource type="BoxMesh" id="BoxMesh_10"]
+size = Vector3(0.0075, 0.082, 0.0015)
+
+[sub_resource type="BoxMesh" id="BoxMesh_11"]
+size = Vector3(0.0022, 0.094, 0.0012)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_12"]
+top_radius = 0.0065
+bottom_radius = 0.0065
+height = 0.006
+radial_segments = 12
+rings = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_13"]
+size = Vector3(0.62, 0.62, 0.05)
+
+[node name="SunburstClock" type="StaticBody3D"]
+script = ExtResource("1_sunburst_clock")
+collision_layer = 4
+collision_mask = 0
+metadata/prop_class = "wall"
+
+[node name="BackPlate" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0.013)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Bezel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0.032)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Dial" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0.042)
+mesh = SubResource("CylinderMesh_3")
+material_override = ExtResource("4_plastic_white")
+
+[node name="Marker" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.078, 0.0445)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0.039, 0.06755, 0.0445)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 0.06755, 0.039, 0.0445)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0.078, 0, 0.0445)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, 0.06755, -0.039, 0.0445)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.866025, 0.5, 0, -0.5, -0.866025, 0, 0, 0, 1, 0.039, -0.06755, 0.0445)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, 1, 0, -0.078, 0.0445)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.866025, -0.5, 0, 0.5, -0.866025, 0, 0, 0, 1, -0.039, -0.06755, 0.0445)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, -0.06755, -0.039, 0.0445)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker10" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, -0.078, 0, 0.0445)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker11" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, -0.06755, 0.039, 0.0445)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Marker12" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -0.039, 0.06755, 0.0445)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("5_plastic_black")
+
+[node name="Ray" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, 1, 0, -1, 0, 0, 0, 0, 1, 0.2075, 0, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.308, 0, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.258819, 0.965926, 0, -0.965926, 0.258819, 0, 0, 0, 1, 0.164207, 0.043999, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 0.1797, 0.10375, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.266736, 0.154, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 0.120208, 0.120208, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 0.10375, 0.1797, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154, 0.266736, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 0.043999, 0.164207, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2075, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.308, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -0.043999, 0.164207, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -0.10375, 0.1797, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154, 0.266736, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike5" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.120208, 0.120208, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, -0.1797, 0.10375, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip6" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.266736, 0.154, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike6" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.258819, -0.965926, 0, 0.965926, 0.258819, 0, 0, 0, 1, -0.164207, 0.043999, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray7" type="MeshInstance3D" parent="."]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, -0.2075, 0, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip7" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.308, 0, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.258819, -0.965926, 0, 0.965926, -0.258819, 0, 0, 0, 1, -0.164207, -0.043999, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5, -0.866025, 0, 0.866025, -0.5, 0, 0, 0, 1, -0.1797, -0.10375, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip8" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.266736, -0.154, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.707107, -0.707107, 0, 0.707107, -0.707107, 0, 0, 0, 1, -0.120208, -0.120208, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.866025, -0.5, 0, 0.5, -0.866025, 0, 0, 0, 1, -0.10375, -0.1797, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip9" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.154, -0.266736, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.965926, -0.258819, 0, 0.258819, -0.965926, 0, 0, 0, 1, -0.043999, -0.164207, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 0, 0, 0, -1, 0, -0.2075, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.308, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike10" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.965926, 0.258819, 0, -0.258819, -0.965926, 0, 0, 0, 1, 0.043999, -0.164207, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.866025, 0.5, 0, -0.5, -0.866025, 0, 0, 0, 1, 0.10375, -0.1797, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154, -0.266736, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike11" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.707107, 0.707107, 0, -0.707107, -0.707107, 0, 0, 0, 1, 0.120208, -0.120208, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Ray12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5, 0.866025, 0, -0.866025, -0.5, 0, 0, 0, 1, 0.1797, -0.10375, 0.02)
+mesh = SubResource("CylinderMesh_6")
+material_override = ExtResource("3_metal_brass")
+
+[node name="RayTip12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.266736, -0.154, 0.02)
+mesh = SubResource("SphereMesh_7")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Spike12" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.258819, 0.965926, 0, -0.965926, -0.258819, 0, 0, 0, 1, 0.164207, -0.043999, 0.016)
+mesh = SubResource("PrismMesh_8")
+material_override = ExtResource("2_wood_dark")
+
+[node name="Hands" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.047)
+
+[node name="HourHand" type="Node3D" parent="Hands"]
+
+[node name="Blade" type="MeshInstance3D" parent="Hands/HourHand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.022, 0)
+mesh = SubResource("BoxMesh_9")
+material_override = ExtResource("5_plastic_black")
+
+[node name="MinuteHand" type="Node3D" parent="Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0025)
+
+[node name="Blade" type="MeshInstance3D" parent="Hands/MinuteHand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.033, 0)
+mesh = SubResource("BoxMesh_10")
+material_override = ExtResource("5_plastic_black")
+
+[node name="SecondHand" type="Node3D" parent="Hands"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0048)
+
+[node name="Blade" type="MeshInstance3D" parent="Hands/SecondHand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032, 0)
+mesh = SubResource("BoxMesh_11")
+material_override = ExtResource("6_plastic_red")
+
+[node name="Cap" type="MeshInstance3D" parent="Hands"]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0.0075)
+mesh = SubResource("CylinderMesh_12")
+material_override = ExtResource("3_metal_brass")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.025)
+shape = SubResource("BoxShape3D_13")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("7_interactable")
+display_name = "Wall clock"
+observations = Array[String](["A sunburst clock. Brass rays and teak spikes. It's running.", "The second hand lands a little short of each mark, every time.", "Ten to four, near enough."])

@@ -1,0 +1,1880 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/wood_medium.tres" id="1_wood_medium"]
+[ext_resource type="Material" path="res://art/materials/wood_dark.tres" id="2_wood_dark"]
+[ext_resource type="Texture2D" path="res://props/textures/book_spines.png" id="3_book_spines"]
+[ext_resource type="Material" path="res://art/materials/book_cover_d.tres" id="4_book_cover_d"]
+[ext_resource type="Material" path="res://art/materials/book_cover_c.tres" id="5_book_cover_c"]
+[ext_resource type="Material" path="res://art/materials/book_cover_a.tres" id="6_book_cover_a"]
+[ext_resource type="Material" path="res://art/materials/book_cover_b.tres" id="7_book_cover_b"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="8_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.02, 1.8, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2"]
+size = Vector3(0.02, 1.8, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_3"]
+size = Vector3(0.92, 0.022, 0.31)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4"]
+size = Vector3(0.9, 0.022, 0.3)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.86, 0.07, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.86, 1.78, 0.006)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7"]
+size = Vector3(0.86, 1.8, 0.01)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8"]
+size = Vector3(0.86, 0.02, 0.29)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_9"]
+size = Vector3(0.86, 0.02, 0.29)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_10"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_11"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.0625, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_12"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.125, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_13"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.1875, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_14"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.25, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.3125, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_16"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.375, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_17"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.4375, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.5, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_19"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.5625, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_20"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.625, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_21"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.6875, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_22"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.75, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_23"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.8125, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_24"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.875, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_25"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("3_book_spines")
+roughness = 0.8
+uv1_scale = Vector3(0.0625, 1, 1)
+uv1_offset = Vector3(0.9375, 0, 0)
+
+[sub_resource type="BoxMesh" id="BoxMesh_26"]
+size = Vector3(0.034498, 0.25578, 0.176938)
+
+[sub_resource type="QuadMesh" id="QuadMesh_27"]
+size = Vector2(0.033808, 0.250665)
+
+[sub_resource type="BoxMesh" id="BoxMesh_28"]
+size = Vector3(0.030659, 0.261022, 0.173996)
+
+[sub_resource type="QuadMesh" id="QuadMesh_29"]
+size = Vector2(0.030046, 0.255801)
+
+[sub_resource type="BoxMesh" id="BoxMesh_30"]
+size = Vector3(0.029308, 0.256586, 0.205464)
+
+[sub_resource type="QuadMesh" id="QuadMesh_31"]
+size = Vector2(0.028722, 0.251454)
+
+[sub_resource type="BoxMesh" id="BoxMesh_32"]
+size = Vector3(0.041794, 0.253952, 0.188564)
+
+[sub_resource type="QuadMesh" id="QuadMesh_33"]
+size = Vector2(0.040958, 0.248873)
+
+[sub_resource type="BoxMesh" id="BoxMesh_34"]
+size = Vector3(0.022841, 0.251631, 0.200249)
+
+[sub_resource type="QuadMesh" id="QuadMesh_35"]
+size = Vector2(0.022384, 0.246598)
+
+[sub_resource type="BoxMesh" id="BoxMesh_36"]
+size = Vector3(0.025142, 0.25075, 0.204025)
+
+[sub_resource type="QuadMesh" id="QuadMesh_37"]
+size = Vector2(0.024639, 0.245735)
+
+[sub_resource type="BoxMesh" id="BoxMesh_38"]
+size = Vector3(0.040899, 0.299473, 0.171598)
+
+[sub_resource type="QuadMesh" id="QuadMesh_39"]
+size = Vector2(0.040081, 0.293483)
+
+[sub_resource type="BoxMesh" id="BoxMesh_40"]
+size = Vector3(0.033151, 0.254916, 0.190159)
+
+[sub_resource type="QuadMesh" id="QuadMesh_41"]
+size = Vector2(0.032488, 0.249817)
+
+[sub_resource type="BoxMesh" id="BoxMesh_42"]
+size = Vector3(0.035546, 0.280719, 0.196847)
+
+[sub_resource type="QuadMesh" id="QuadMesh_43"]
+size = Vector2(0.034835, 0.275105)
+
+[sub_resource type="BoxMesh" id="BoxMesh_44"]
+size = Vector3(0.032057, 0.24099, 0.177351)
+
+[sub_resource type="QuadMesh" id="QuadMesh_45"]
+size = Vector2(0.031416, 0.23617)
+
+[sub_resource type="BoxMesh" id="BoxMesh_46"]
+size = Vector3(0.031178, 0.278618, 0.159003)
+
+[sub_resource type="QuadMesh" id="QuadMesh_47"]
+size = Vector2(0.030554, 0.273045)
+
+[sub_resource type="BoxMesh" id="BoxMesh_48"]
+size = Vector3(0.030596, 0.291128, 0.172251)
+
+[sub_resource type="QuadMesh" id="QuadMesh_49"]
+size = Vector2(0.029984, 0.285306)
+
+[sub_resource type="BoxMesh" id="BoxMesh_50"]
+size = Vector3(0.025575, 0.263021, 0.163383)
+
+[sub_resource type="QuadMesh" id="QuadMesh_51"]
+size = Vector2(0.025064, 0.257761)
+
+[sub_resource type="BoxMesh" id="BoxMesh_52"]
+size = Vector3(0.030009, 0.242069, 0.196614)
+
+[sub_resource type="QuadMesh" id="QuadMesh_53"]
+size = Vector2(0.029409, 0.237227)
+
+[sub_resource type="BoxMesh" id="BoxMesh_54"]
+size = Vector3(0.04078, 0.256045, 0.174626)
+
+[sub_resource type="QuadMesh" id="QuadMesh_55"]
+size = Vector2(0.039964, 0.250925)
+
+[sub_resource type="BoxMesh" id="BoxMesh_56"]
+size = Vector3(0.028094, 0.271539, 0.191597)
+
+[sub_resource type="QuadMesh" id="QuadMesh_57"]
+size = Vector2(0.027532, 0.266108)
+
+[sub_resource type="BoxMesh" id="BoxMesh_58"]
+size = Vector3(0.032242, 0.285914, 0.155392)
+
+[sub_resource type="QuadMesh" id="QuadMesh_59"]
+size = Vector2(0.031597, 0.280196)
+
+[sub_resource type="BoxMesh" id="BoxMesh_60"]
+size = Vector3(0.043634, 0.299288, 0.190572)
+
+[sub_resource type="QuadMesh" id="QuadMesh_61"]
+size = Vector2(0.042761, 0.293302)
+
+[sub_resource type="BoxMesh" id="BoxMesh_62"]
+size = Vector3(0.033933, 0.289325, 0.190695)
+
+[sub_resource type="QuadMesh" id="QuadMesh_63"]
+size = Vector2(0.033255, 0.283539)
+
+[sub_resource type="BoxMesh" id="BoxMesh_64"]
+size = Vector3(0.033625, 0.249688, 0.187114)
+
+[sub_resource type="QuadMesh" id="QuadMesh_65"]
+size = Vector2(0.032953, 0.244694)
+
+[sub_resource type="BoxMesh" id="BoxMesh_66"]
+size = Vector3(0.047452, 0.286033, 0.152631)
+
+[sub_resource type="QuadMesh" id="QuadMesh_67"]
+size = Vector2(0.046503, 0.280312)
+
+[sub_resource type="BoxMesh" id="BoxMesh_68"]
+size = Vector3(0.031316, 0.259779, 0.209275)
+
+[sub_resource type="QuadMesh" id="QuadMesh_69"]
+size = Vector2(0.03069, 0.254583)
+
+[sub_resource type="BoxMesh" id="BoxMesh_70"]
+size = Vector3(0.045297, 0.24769, 0.209005)
+
+[sub_resource type="QuadMesh" id="QuadMesh_71"]
+size = Vector2(0.044391, 0.242736)
+
+[sub_resource type="BoxMesh" id="BoxMesh_72"]
+size = Vector3(0.025352, 0.213186, 0.208027)
+
+[sub_resource type="QuadMesh" id="QuadMesh_73"]
+size = Vector2(0.024845, 0.208922)
+
+[sub_resource type="BoxMesh" id="BoxMesh_74"]
+size = Vector3(0.036376, 0.236247, 0.20932)
+
+[sub_resource type="QuadMesh" id="QuadMesh_75"]
+size = Vector2(0.035648, 0.231522)
+
+[sub_resource type="BoxMesh" id="BoxMesh_76"]
+size = Vector3(0.030895, 0.247418, 0.18257)
+
+[sub_resource type="QuadMesh" id="QuadMesh_77"]
+size = Vector2(0.030277, 0.24247)
+
+[sub_resource type="BoxMesh" id="BoxMesh_78"]
+size = Vector3(0.035884, 0.203632, 0.154649)
+
+[sub_resource type="QuadMesh" id="QuadMesh_79"]
+size = Vector2(0.035167, 0.199559)
+
+[sub_resource type="BoxMesh" id="BoxMesh_80"]
+size = Vector3(0.039108, 0.218561, 0.174602)
+
+[sub_resource type="QuadMesh" id="QuadMesh_81"]
+size = Vector2(0.038326, 0.21419)
+
+[sub_resource type="BoxMesh" id="BoxMesh_82"]
+size = Vector3(0.033818, 0.228081, 0.178282)
+
+[sub_resource type="QuadMesh" id="QuadMesh_83"]
+size = Vector2(0.033142, 0.223519)
+
+[sub_resource type="BoxMesh" id="BoxMesh_84"]
+size = Vector3(0.02234, 0.200362, 0.184366)
+
+[sub_resource type="QuadMesh" id="QuadMesh_85"]
+size = Vector2(0.021893, 0.196355)
+
+[sub_resource type="BoxMesh" id="BoxMesh_86"]
+size = Vector3(0.033238, 0.198142, 0.199147)
+
+[sub_resource type="QuadMesh" id="QuadMesh_87"]
+size = Vector2(0.032573, 0.19418)
+
+[sub_resource type="BoxMesh" id="BoxMesh_88"]
+size = Vector3(0.042909, 0.23947, 0.206382)
+
+[sub_resource type="QuadMesh" id="QuadMesh_89"]
+size = Vector2(0.042051, 0.234681)
+
+[sub_resource type="BoxMesh" id="BoxMesh_90"]
+size = Vector3(0.046546, 0.241998, 0.179648)
+
+[sub_resource type="QuadMesh" id="QuadMesh_91"]
+size = Vector2(0.045615, 0.237158)
+
+[sub_resource type="BoxMesh" id="BoxMesh_92"]
+size = Vector3(0.038319, 0.247128, 0.163786)
+
+[sub_resource type="QuadMesh" id="QuadMesh_93"]
+size = Vector2(0.037553, 0.242186)
+
+[sub_resource type="BoxMesh" id="BoxMesh_94"]
+size = Vector3(0.043986, 0.196316, 0.173344)
+
+[sub_resource type="QuadMesh" id="QuadMesh_95"]
+size = Vector2(0.043106, 0.192389)
+
+[sub_resource type="BoxMesh" id="BoxMesh_96"]
+size = Vector3(0.027904, 0.248498, 0.166114)
+
+[sub_resource type="QuadMesh" id="QuadMesh_97"]
+size = Vector2(0.027346, 0.243528)
+
+[sub_resource type="BoxMesh" id="BoxMesh_98"]
+size = Vector3(0.034841, 0.194647, 0.180898)
+
+[sub_resource type="QuadMesh" id="QuadMesh_99"]
+size = Vector2(0.034144, 0.190754)
+
+[sub_resource type="BoxMesh" id="BoxMesh_100"]
+size = Vector3(0.044038, 0.21016, 0.150496)
+
+[sub_resource type="QuadMesh" id="QuadMesh_101"]
+size = Vector2(0.043157, 0.205957)
+
+[sub_resource type="BoxMesh" id="BoxMesh_102"]
+size = Vector3(0.04152, 0.196245, 0.19734)
+
+[sub_resource type="QuadMesh" id="QuadMesh_103"]
+size = Vector2(0.04069, 0.19232)
+
+[sub_resource type="BoxMesh" id="BoxMesh_104"]
+size = Vector3(0.034147, 0.211133, 0.172685)
+
+[sub_resource type="QuadMesh" id="QuadMesh_105"]
+size = Vector2(0.033464, 0.206911)
+
+[sub_resource type="BoxMesh" id="BoxMesh_106"]
+size = Vector3(0.03, 0.25, 0.19)
+
+[sub_resource type="QuadMesh" id="QuadMesh_107"]
+size = Vector2(0.0294, 0.245)
+
+[sub_resource type="BoxMesh" id="BoxMesh_108"]
+size = Vector3(0.029177, 0.232407, 0.164534)
+
+[sub_resource type="QuadMesh" id="QuadMesh_109"]
+size = Vector2(0.028594, 0.227759)
+
+[sub_resource type="BoxMesh" id="BoxMesh_110"]
+size = Vector3(0.02653, 0.212239, 0.185703)
+
+[sub_resource type="QuadMesh" id="QuadMesh_111"]
+size = Vector2(0.025999, 0.207994)
+
+[sub_resource type="BoxMesh" id="BoxMesh_112"]
+size = Vector3(0.029436, 0.239548, 0.178502)
+
+[sub_resource type="QuadMesh" id="QuadMesh_113"]
+size = Vector2(0.028848, 0.234757)
+
+[sub_resource type="BoxMesh" id="BoxMesh_114"]
+size = Vector3(0.047159, 0.202284, 0.202121)
+
+[sub_resource type="QuadMesh" id="QuadMesh_115"]
+size = Vector2(0.046216, 0.198238)
+
+[sub_resource type="BoxMesh" id="BoxMesh_116"]
+size = Vector3(0.03032, 0.208182, 0.181549)
+
+[sub_resource type="QuadMesh" id="QuadMesh_117"]
+size = Vector2(0.029714, 0.204018)
+
+[sub_resource type="BoxMesh" id="BoxMesh_118"]
+size = Vector3(0.029928, 0.237438, 0.159622)
+
+[sub_resource type="QuadMesh" id="QuadMesh_119"]
+size = Vector2(0.029329, 0.232689)
+
+[sub_resource type="BoxMesh" id="BoxMesh_120"]
+size = Vector3(0.039706, 0.20345, 0.198832)
+
+[sub_resource type="QuadMesh" id="QuadMesh_121"]
+size = Vector2(0.038912, 0.199381)
+
+[sub_resource type="BoxMesh" id="BoxMesh_122"]
+size = Vector3(0.030721, 0.210108, 0.201883)
+
+[sub_resource type="QuadMesh" id="QuadMesh_123"]
+size = Vector2(0.030106, 0.205906)
+
+[sub_resource type="BoxMesh" id="BoxMesh_124"]
+size = Vector3(0.037121, 0.184092, 0.187781)
+
+[sub_resource type="QuadMesh" id="QuadMesh_125"]
+size = Vector2(0.036379, 0.18041)
+
+[sub_resource type="BoxMesh" id="BoxMesh_126"]
+size = Vector3(0.028296, 0.211278, 0.164752)
+
+[sub_resource type="QuadMesh" id="QuadMesh_127"]
+size = Vector2(0.02773, 0.207053)
+
+[sub_resource type="BoxMesh" id="BoxMesh_128"]
+size = Vector3(0.034531, 0.180148, 0.182204)
+
+[sub_resource type="QuadMesh" id="QuadMesh_129"]
+size = Vector2(0.03384, 0.176545)
+
+[sub_resource type="BoxMesh" id="BoxMesh_130"]
+size = Vector3(0.041215, 0.193454, 0.198562)
+
+[sub_resource type="QuadMesh" id="QuadMesh_131"]
+size = Vector2(0.040391, 0.189584)
+
+[sub_resource type="BoxMesh" id="BoxMesh_132"]
+size = Vector3(0.037954, 0.18324, 0.186699)
+
+[sub_resource type="QuadMesh" id="QuadMesh_133"]
+size = Vector2(0.037195, 0.179576)
+
+[sub_resource type="BoxMesh" id="BoxMesh_134"]
+size = Vector3(0.040008, 0.212677, 0.161099)
+
+[sub_resource type="QuadMesh" id="QuadMesh_135"]
+size = Vector2(0.039207, 0.208423)
+
+[sub_resource type="BoxMesh" id="BoxMesh_136"]
+size = Vector3(0.030587, 0.188321, 0.163356)
+
+[sub_resource type="QuadMesh" id="QuadMesh_137"]
+size = Vector2(0.029975, 0.184555)
+
+[sub_resource type="BoxMesh" id="BoxMesh_138"]
+size = Vector3(0.028827, 0.203284, 0.192026)
+
+[sub_resource type="QuadMesh" id="QuadMesh_139"]
+size = Vector2(0.028251, 0.199218)
+
+[sub_resource type="BoxMesh" id="BoxMesh_140"]
+size = Vector3(0.029277, 0.199352, 0.206199)
+
+[sub_resource type="QuadMesh" id="QuadMesh_141"]
+size = Vector2(0.028692, 0.195365)
+
+[sub_resource type="BoxMesh" id="BoxMesh_142"]
+size = Vector3(0.034106, 0.229727, 0.179364)
+
+[sub_resource type="QuadMesh" id="QuadMesh_143"]
+size = Vector2(0.033424, 0.225132)
+
+[sub_resource type="BoxMesh" id="BoxMesh_144"]
+size = Vector3(0.031513, 0.195598, 0.182096)
+
+[sub_resource type="QuadMesh" id="QuadMesh_145"]
+size = Vector2(0.030882, 0.191686)
+
+[sub_resource type="BoxMesh" id="BoxMesh_146"]
+size = Vector3(0.025277, 0.188825, 0.202661)
+
+[sub_resource type="QuadMesh" id="QuadMesh_147"]
+size = Vector2(0.024772, 0.185048)
+
+[sub_resource type="BoxMesh" id="BoxMesh_148"]
+size = Vector3(0.022013, 0.23187, 0.158939)
+
+[sub_resource type="QuadMesh" id="QuadMesh_149"]
+size = Vector2(0.021573, 0.227233)
+
+[sub_resource type="BoxMesh" id="BoxMesh_150"]
+size = Vector3(0.032404, 0.238015, 0.150279)
+
+[sub_resource type="QuadMesh" id="QuadMesh_151"]
+size = Vector2(0.031756, 0.233255)
+
+[sub_resource type="BoxMesh" id="BoxMesh_152"]
+size = Vector3(0.041486, 0.206346, 0.154005)
+
+[sub_resource type="QuadMesh" id="QuadMesh_153"]
+size = Vector2(0.040656, 0.202219)
+
+[sub_resource type="BoxMesh" id="BoxMesh_154"]
+size = Vector3(0.037418, 0.203945, 0.162559)
+
+[sub_resource type="QuadMesh" id="QuadMesh_155"]
+size = Vector2(0.036669, 0.199866)
+
+[sub_resource type="BoxMesh" id="BoxMesh_156"]
+size = Vector3(0.03984, 0.180738, 0.183696)
+
+[sub_resource type="QuadMesh" id="QuadMesh_157"]
+size = Vector2(0.039043, 0.177124)
+
+[sub_resource type="BoxMesh" id="BoxMesh_158"]
+size = Vector3(0.038573, 0.195275, 0.188975)
+
+[sub_resource type="QuadMesh" id="QuadMesh_159"]
+size = Vector2(0.037802, 0.19137)
+
+[sub_resource type="BoxMesh" id="BoxMesh_160"]
+size = Vector3(0.037147, 0.207844, 0.202708)
+
+[sub_resource type="QuadMesh" id="QuadMesh_161"]
+size = Vector2(0.036404, 0.203687)
+
+[sub_resource type="BoxMesh" id="BoxMesh_162"]
+size = Vector3(0.024696, 0.18991, 0.16314)
+
+[sub_resource type="QuadMesh" id="QuadMesh_163"]
+size = Vector2(0.024202, 0.186112)
+
+[sub_resource type="BoxMesh" id="BoxMesh_164"]
+size = Vector3(0.047145, 0.209005, 0.199354)
+
+[sub_resource type="QuadMesh" id="QuadMesh_165"]
+size = Vector2(0.046202, 0.204825)
+
+[sub_resource type="BoxMesh" id="BoxMesh_166"]
+size = Vector3(0.03184, 0.217823, 0.183531)
+
+[sub_resource type="QuadMesh" id="QuadMesh_167"]
+size = Vector2(0.031203, 0.213466)
+
+[sub_resource type="BoxMesh" id="BoxMesh_168"]
+size = Vector3(0.036176, 0.21553, 0.189957)
+
+[sub_resource type="QuadMesh" id="QuadMesh_169"]
+size = Vector2(0.035452, 0.211219)
+
+[sub_resource type="BoxMesh" id="BoxMesh_170"]
+size = Vector3(0.03094, 0.192821, 0.184563)
+
+[sub_resource type="QuadMesh" id="QuadMesh_171"]
+size = Vector2(0.030321, 0.188965)
+
+[sub_resource type="BoxMesh" id="BoxMesh_172"]
+size = Vector3(0.031095, 0.213857, 0.19688)
+
+[sub_resource type="QuadMesh" id="QuadMesh_173"]
+size = Vector2(0.030473, 0.20958)
+
+[sub_resource type="BoxMesh" id="BoxMesh_174"]
+size = Vector3(0.026272, 0.217649, 0.154167)
+
+[sub_resource type="QuadMesh" id="QuadMesh_175"]
+size = Vector2(0.025746, 0.213296)
+
+[sub_resource type="BoxMesh" id="BoxMesh_176"]
+size = Vector3(0.039615, 0.180178, 0.206614)
+
+[sub_resource type="QuadMesh" id="QuadMesh_177"]
+size = Vector2(0.038823, 0.176574)
+
+[sub_resource type="BoxMesh" id="BoxMesh_178"]
+size = Vector3(0.043383, 0.218493, 0.155115)
+
+[sub_resource type="QuadMesh" id="QuadMesh_179"]
+size = Vector2(0.042515, 0.214123)
+
+[sub_resource type="BoxMesh" id="BoxMesh_180"]
+size = Vector3(0.034429, 0.217071, 0.179984)
+
+[sub_resource type="QuadMesh" id="QuadMesh_181"]
+size = Vector2(0.03374, 0.212729)
+
+[sub_resource type="BoxMesh" id="BoxMesh_182"]
+size = Vector3(0.027832, 0.195662, 0.163517)
+
+[sub_resource type="QuadMesh" id="QuadMesh_183"]
+size = Vector2(0.027276, 0.191749)
+
+[sub_resource type="BoxMesh" id="BoxMesh_184"]
+size = Vector3(0.022173, 0.21932, 0.185952)
+
+[sub_resource type="QuadMesh" id="QuadMesh_185"]
+size = Vector2(0.021729, 0.214933)
+
+[sub_resource type="BoxMesh" id="BoxMesh_186"]
+size = Vector3(0.24, 0.03, 0.18)
+
+[sub_resource type="QuadMesh" id="QuadMesh_187"]
+size = Vector2(0.2352, 0.0285)
+
+[sub_resource type="BoxMesh" id="BoxMesh_188"]
+size = Vector3(0.222, 0.038, 0.18)
+
+[sub_resource type="QuadMesh" id="QuadMesh_189"]
+size = Vector2(0.21756, 0.0361)
+
+[sub_resource type="BoxMesh" id="BoxMesh_190"]
+size = Vector3(0.204, 0.03, 0.18)
+
+[sub_resource type="QuadMesh" id="QuadMesh_191"]
+size = Vector2(0.19992, 0.0285)
+
+[sub_resource type="BoxMesh" id="BoxMesh_192"]
+size = Vector3(0.186, 0.038, 0.18)
+
+[sub_resource type="QuadMesh" id="QuadMesh_193"]
+size = Vector2(0.18228, 0.0361)
+
+[node name="Bookshelf" type="StaticBody3D"]
+collision_layer = 5
+collision_mask = 0
+metadata/prop_class = "furniture"
+
+[node name="Side" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44, 0.9, 0)
+mesh = SubResource("BoxMesh_1")
+material_override = ExtResource("1_wood_medium")
+
+[node name="CollisionSide" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.44, 0.9, 0)
+shape = SubResource("BoxShape3D_2")
+
+[node name="Side2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44, 0.9, 0)
+mesh = SubResource("BoxMesh_1")
+material_override = ExtResource("1_wood_medium")
+
+[node name="CollisionSide2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44, 0.9, 0)
+shape = SubResource("BoxShape3D_2")
+
+[node name="Top" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.789, 0.005)
+mesh = SubResource("BoxMesh_3")
+material_override = ExtResource("1_wood_medium")
+
+[node name="CollisionTop" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.789, 0)
+shape = SubResource("BoxShape3D_4")
+
+[node name="Kick" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.035, 0.13)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("1_wood_medium")
+
+[node name="Back" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -0.147)
+mesh = SubResource("BoxMesh_6")
+material_override = ExtResource("2_wood_dark")
+
+[node name="CollisionBack" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, -0.145)
+shape = SubResource("BoxShape3D_7")
+
+[node name="Shelf" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, -0.005)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("1_wood_medium")
+
+[node name="CollisionShelf" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.08, -0.005)
+shape = SubResource("BoxShape3D_9")
+
+[node name="Shelf2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.005)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("1_wood_medium")
+
+[node name="CollisionShelf2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, -0.005)
+shape = SubResource("BoxShape3D_9")
+
+[node name="Shelf3" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -0.005)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("1_wood_medium")
+
+[node name="CollisionShelf3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -0.005)
+shape = SubResource("BoxShape3D_9")
+
+[node name="Shelf4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, -0.005)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("1_wood_medium")
+
+[node name="CollisionShelf4" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, -0.005)
+shape = SubResource("BoxShape3D_9")
+
+[node name="Shelf5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48, -0.005)
+mesh = SubResource("BoxMesh_8")
+material_override = ExtResource("1_wood_medium")
+
+[node name="CollisionShelf5" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.48, -0.005)
+shape = SubResource("BoxShape3D_9")
+
+[node name="Book" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.407751, 0.09, 0.046531)
+
+[node name="Body" type="MeshInstance3D" parent="Book"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12789, 0)
+mesh = SubResource("BoxMesh_26")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.12789, 0.089269)
+mesh = SubResource("QuadMesh_27")
+material_override = SubResource("StandardMaterial3D_13")
+
+[node name="Book2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.372502, 0.09, 0.048002)
+
+[node name="Body" type="MeshInstance3D" parent="Book2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130511, 0)
+mesh = SubResource("BoxMesh_28")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.130511, 0.087798)
+mesh = SubResource("QuadMesh_29")
+material_override = SubResource("StandardMaterial3D_21")
+
+[node name="Book3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.341306, 0.09, 0.032268)
+
+[node name="Body" type="MeshInstance3D" parent="Book3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128293, 0)
+mesh = SubResource("BoxMesh_30")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128293, 0.103532)
+mesh = SubResource("QuadMesh_31")
+material_override = SubResource("StandardMaterial3D_24")
+
+[node name="Book4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.305732, 0.09, 0.040718)
+
+[node name="Body" type="MeshInstance3D" parent="Book4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126976, 0)
+mesh = SubResource("BoxMesh_32")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.126976, 0.095082)
+mesh = SubResource("QuadMesh_33")
+material_override = SubResource("StandardMaterial3D_14")
+
+[node name="Book5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.270659, 0.09, 0.034876)
+
+[node name="Body" type="MeshInstance3D" parent="Book5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125815, 0)
+mesh = SubResource("BoxMesh_34")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125815, 0.100924)
+mesh = SubResource("QuadMesh_35")
+material_override = SubResource("StandardMaterial3D_18")
+
+[node name="Book6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.245017, 0.09, 0.032988)
+
+[node name="Body" type="MeshInstance3D" parent="Book6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125375, 0)
+mesh = SubResource("BoxMesh_36")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125375, 0.102812)
+mesh = SubResource("QuadMesh_37")
+material_override = SubResource("StandardMaterial3D_22")
+
+[node name="Book7" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.211952, 0.09, 0.049201)
+
+[node name="Body" type="MeshInstance3D" parent="Book7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.149736, 0)
+mesh = SubResource("BoxMesh_38")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.149736, 0.086599)
+mesh = SubResource("QuadMesh_39")
+material_override = SubResource("StandardMaterial3D_13")
+
+[node name="Book8" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.172507, 0.09, 0.039921)
+
+[node name="Body" type="MeshInstance3D" parent="Book8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.127458, 0)
+mesh = SubResource("BoxMesh_40")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.127458, 0.095879)
+mesh = SubResource("QuadMesh_41")
+material_override = SubResource("StandardMaterial3D_10")
+
+[node name="Book9" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.13727, 0.09, 0.036577)
+
+[node name="Body" type="MeshInstance3D" parent="Book9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14036, 0)
+mesh = SubResource("BoxMesh_42")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14036, 0.099223)
+mesh = SubResource("QuadMesh_43")
+material_override = SubResource("StandardMaterial3D_16")
+
+[node name="Book10" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.103204, 0.09, 0.046325)
+
+[node name="Body" type="MeshInstance3D" parent="Book10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120495, 0)
+mesh = SubResource("BoxMesh_44")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120495, 0.089475)
+mesh = SubResource("QuadMesh_45")
+material_override = SubResource("StandardMaterial3D_23")
+
+[node name="Book11" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.071563, 0.09, 0.055498)
+
+[node name="Body" type="MeshInstance3D" parent="Book11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139309, 0)
+mesh = SubResource("BoxMesh_46")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.139309, 0.080302)
+mesh = SubResource("QuadMesh_47")
+material_override = SubResource("StandardMaterial3D_15")
+
+[node name="Book12" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.038229, 0.09, 0.048874)
+
+[node name="Body" type="MeshInstance3D" parent="Book12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.145564, 0)
+mesh = SubResource("BoxMesh_48")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.145564, 0.086926)
+mesh = SubResource("QuadMesh_49")
+material_override = SubResource("StandardMaterial3D_22")
+
+[node name="Book13" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.008659, 0.09, 0.053309)
+
+[node name="Body" type="MeshInstance3D" parent="Book13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.131511, 0)
+mesh = SubResource("BoxMesh_50")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.131511, 0.082491)
+mesh = SubResource("QuadMesh_51")
+material_override = SubResource("StandardMaterial3D_19")
+
+[node name="Book14" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020199, 0.09, 0.036693)
+
+[node name="Body" type="MeshInstance3D" parent="Book14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.121034, 0)
+mesh = SubResource("BoxMesh_52")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.121034, 0.099107)
+mesh = SubResource("QuadMesh_53")
+material_override = SubResource("StandardMaterial3D_25")
+
+[node name="Book15" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055953, 0.09, 0.047687)
+
+[node name="Body" type="MeshInstance3D" parent="Book15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128023, 0)
+mesh = SubResource("BoxMesh_54")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.128023, 0.088113)
+mesh = SubResource("QuadMesh_55")
+material_override = SubResource("StandardMaterial3D_12")
+
+[node name="Book16" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.090646, 0.09, 0.039201)
+
+[node name="Body" type="MeshInstance3D" parent="Book16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135769, 0)
+mesh = SubResource("BoxMesh_56")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135769, 0.096599)
+mesh = SubResource("QuadMesh_57")
+material_override = SubResource("StandardMaterial3D_11")
+
+[node name="Book17" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12274, 0.09, 0.057304)
+
+[node name="Body" type="MeshInstance3D" parent="Book17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142957, 0)
+mesh = SubResource("BoxMesh_58")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book17"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.142957, 0.078496)
+mesh = SubResource("QuadMesh_59")
+material_override = SubResource("StandardMaterial3D_19")
+
+[node name="Book18" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.162317, 0.09, 0.039714)
+
+[node name="Body" type="MeshInstance3D" parent="Book18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.149644, 0)
+mesh = SubResource("BoxMesh_60")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book18"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.149644, 0.096086)
+mesh = SubResource("QuadMesh_61")
+material_override = SubResource("StandardMaterial3D_21")
+
+[node name="Book19" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.202403, 0.09, 0.039653)
+
+[node name="Body" type="MeshInstance3D" parent="Book19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144663, 0)
+mesh = SubResource("BoxMesh_62")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book19"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.144663, 0.096147)
+mesh = SubResource("QuadMesh_63")
+material_override = SubResource("StandardMaterial3D_22")
+
+[node name="Book20" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.239056, 0.09, 0.041443)
+
+[node name="Body" type="MeshInstance3D" parent="Book20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124844, 0)
+mesh = SubResource("BoxMesh_64")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book20"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124844, 0.094357)
+mesh = SubResource("QuadMesh_65")
+material_override = SubResource("StandardMaterial3D_23")
+
+[node name="Book21" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.280784, 0.09, 0.058684)
+
+[node name="Body" type="MeshInstance3D" parent="Book21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143016, 0)
+mesh = SubResource("BoxMesh_66")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book21"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.143016, 0.077116)
+mesh = SubResource("QuadMesh_67")
+material_override = SubResource("StandardMaterial3D_11")
+
+[node name="Book22" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.322875, 0.09, 0.030363)
+
+[node name="Body" type="MeshInstance3D" parent="Book22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.129889, 0)
+mesh = SubResource("BoxMesh_68")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book22"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.129889, 0.105437)
+mesh = SubResource("QuadMesh_69")
+material_override = SubResource("StandardMaterial3D_19")
+
+[node name="Book23" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.362193, 0.09, 0.030497)
+
+[node name="Body" type="MeshInstance3D" parent="Book23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123845, 0)
+mesh = SubResource("BoxMesh_70")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book23"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123845, 0.105303)
+mesh = SubResource("QuadMesh_71")
+material_override = SubResource("StandardMaterial3D_24")
+
+[node name="Book24" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.412324, 0.46, 0.030986)
+
+[node name="Body" type="MeshInstance3D" parent="Book24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106593, 0)
+mesh = SubResource("BoxMesh_72")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book24"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106593, 0.104814)
+mesh = SubResource("QuadMesh_73")
+material_override = SubResource("StandardMaterial3D_14")
+
+[node name="Book25" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.378796, 0.46, 0.03034)
+
+[node name="Body" type="MeshInstance3D" parent="Book25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118124, 0)
+mesh = SubResource("BoxMesh_74")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book25"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118124, 0.10546)
+mesh = SubResource("QuadMesh_75")
+material_override = SubResource("StandardMaterial3D_14")
+
+[node name="Book26" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.342287, 0.46, 0.043715)
+
+[node name="Body" type="MeshInstance3D" parent="Book26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123709, 0)
+mesh = SubResource("BoxMesh_76")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book26"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123709, 0.092085)
+mesh = SubResource("QuadMesh_77")
+material_override = SubResource("StandardMaterial3D_17")
+
+[node name="Book27" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.306943, 0.46, 0.057675)
+
+[node name="Body" type="MeshInstance3D" parent="Book27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101816, 0)
+mesh = SubResource("BoxMesh_78")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book27"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101816, 0.078125)
+mesh = SubResource("QuadMesh_79")
+material_override = SubResource("StandardMaterial3D_15")
+
+[node name="Book28" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.267129, 0.46, 0.047699)
+
+[node name="Body" type="MeshInstance3D" parent="Book28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109281, 0)
+mesh = SubResource("BoxMesh_80")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book28"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109281, 0.088101)
+mesh = SubResource("QuadMesh_81")
+material_override = SubResource("StandardMaterial3D_25")
+
+[node name="Book29" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22888, 0.46, 0.045859)
+
+[node name="Body" type="MeshInstance3D" parent="Book29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11404, 0)
+mesh = SubResource("BoxMesh_82")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book29"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11404, 0.089941)
+mesh = SubResource("QuadMesh_83")
+material_override = SubResource("StandardMaterial3D_11")
+
+[node name="Book30" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.19961, 0.46, 0.042817)
+
+[node name="Body" type="MeshInstance3D" parent="Book30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100181, 0)
+mesh = SubResource("BoxMesh_84")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book30"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.100181, 0.092983)
+mesh = SubResource("QuadMesh_85")
+material_override = SubResource("StandardMaterial3D_21")
+
+[node name="Book31" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.170767, 0.46, 0.035426)
+
+[node name="Body" type="MeshInstance3D" parent="Book31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099071, 0)
+mesh = SubResource("BoxMesh_86")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book31"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099071, 0.100374)
+mesh = SubResource("QuadMesh_87")
+material_override = SubResource("StandardMaterial3D_16")
+
+[node name="Book32" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.132077, 0.46, 0.031809)
+
+[node name="Body" type="MeshInstance3D" parent="Book32"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119735, 0)
+mesh = SubResource("BoxMesh_88")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book32"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119735, 0.103991)
+mesh = SubResource("QuadMesh_89")
+material_override = SubResource("StandardMaterial3D_25")
+
+[node name="Book33" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.011456, 0.46, 0.045176)
+
+[node name="Body" type="MeshInstance3D" parent="Book33"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120999, 0)
+mesh = SubResource("BoxMesh_90")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book33"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.120999, 0.090624)
+mesh = SubResource("QuadMesh_91")
+material_override = SubResource("StandardMaterial3D_19")
+
+[node name="Book34" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.031733, 0.46, 0.053107)
+
+[node name="Body" type="MeshInstance3D" parent="Book34"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123564, 0)
+mesh = SubResource("BoxMesh_92")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book34"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.123564, 0.082693)
+mesh = SubResource("QuadMesh_93")
+material_override = SubResource("StandardMaterial3D_15")
+
+[node name="Book35" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.073394, 0.46, 0.048328)
+
+[node name="Body" type="MeshInstance3D" parent="Book35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.098158, 0)
+mesh = SubResource("BoxMesh_94")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book35"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.098158, 0.087472)
+mesh = SubResource("QuadMesh_95")
+material_override = SubResource("StandardMaterial3D_20")
+
+[node name="Book36" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.110495, 0.46, 0.051943)
+
+[node name="Body" type="MeshInstance3D" parent="Book36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124249, 0)
+mesh = SubResource("BoxMesh_96")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book36"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.124249, 0.083857)
+mesh = SubResource("QuadMesh_97")
+material_override = SubResource("StandardMaterial3D_24")
+
+[node name="Book37" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.141875, 0.46, 0.044551)
+
+[node name="Body" type="MeshInstance3D" parent="Book37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.097324, 0)
+mesh = SubResource("BoxMesh_98")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book37"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.097324, 0.091249)
+mesh = SubResource("QuadMesh_99")
+material_override = SubResource("StandardMaterial3D_24")
+
+[node name="Book38" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18136, 0.46, 0.059752)
+
+[node name="Body" type="MeshInstance3D" parent="Book38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10508, 0)
+mesh = SubResource("BoxMesh_100")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book38"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10508, 0.076048)
+mesh = SubResource("QuadMesh_101")
+material_override = SubResource("StandardMaterial3D_13")
+
+[node name="Book39" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225844, 0.46, 0.03633)
+
+[node name="Body" type="MeshInstance3D" parent="Book39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.098122, 0)
+mesh = SubResource("BoxMesh_102")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book39"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.098122, 0.09947)
+mesh = SubResource("QuadMesh_103")
+material_override = SubResource("StandardMaterial3D_15")
+
+[node name="Book40" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.266003, 0.46, 0.048658)
+
+[node name="Body" type="MeshInstance3D" parent="Book40"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105567, 0)
+mesh = SubResource("BoxMesh_104")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book40"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105567, 0.087142)
+mesh = SubResource("QuadMesh_105")
+material_override = SubResource("StandardMaterial3D_16")
+
+[node name="BookLeaning" type="Node3D" parent="."]
+transform = Transform3D(0.970296, -0.241922, 0, 0.241922, 0.970296, 0, 0, 0, 1, 0.303352, 0.46, 0.04)
+
+[node name="Body" type="MeshInstance3D" parent="BookLeaning"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0)
+mesh = SubResource("BoxMesh_106")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="BookLeaning"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.125, 0.0958)
+mesh = SubResource("QuadMesh_107")
+material_override = SubResource("StandardMaterial3D_17")
+
+[node name="Book41" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.410411, 0.81, 0.052733)
+
+[node name="Body" type="MeshInstance3D" parent="Book41"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.116204, 0)
+mesh = SubResource("BoxMesh_108")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book41"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.116204, 0.083067)
+mesh = SubResource("QuadMesh_109")
+material_override = SubResource("StandardMaterial3D_12")
+
+[node name="Book42" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.380756, 0.81, 0.042149)
+
+[node name="Body" type="MeshInstance3D" parent="Book42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106119, 0)
+mesh = SubResource("BoxMesh_110")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book42"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106119, 0.093651)
+mesh = SubResource("QuadMesh_111")
+material_override = SubResource("StandardMaterial3D_13")
+
+[node name="Book43" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.352372, 0.81, 0.045749)
+
+[node name="Body" type="MeshInstance3D" parent="Book43"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119774, 0)
+mesh = SubResource("BoxMesh_112")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book43"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119774, 0.090051)
+mesh = SubResource("QuadMesh_113")
+material_override = SubResource("StandardMaterial3D_19")
+
+[node name="Book44" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313906, 0.81, 0.03394)
+
+[node name="Body" type="MeshInstance3D" parent="Book44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101142, 0)
+mesh = SubResource("BoxMesh_114")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book44"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101142, 0.10186)
+mesh = SubResource("QuadMesh_115")
+material_override = SubResource("StandardMaterial3D_16")
+
+[node name="Book45" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273921, 0.81, 0.044225)
+
+[node name="Body" type="MeshInstance3D" parent="Book45"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.104091, 0)
+mesh = SubResource("BoxMesh_116")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book45"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.104091, 0.091575)
+mesh = SubResource("QuadMesh_117")
+material_override = SubResource("StandardMaterial3D_20")
+
+[node name="Book46" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.243137, 0.81, 0.055189)
+
+[node name="Body" type="MeshInstance3D" parent="Book46"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118719, 0)
+mesh = SubResource("BoxMesh_118")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book46"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.118719, 0.080611)
+mesh = SubResource("QuadMesh_119")
+material_override = SubResource("StandardMaterial3D_24")
+
+[node name="Book47" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.205776, 0.81, 0.035584)
+
+[node name="Body" type="MeshInstance3D" parent="Book47"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101725, 0)
+mesh = SubResource("BoxMesh_120")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book47"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101725, 0.100216)
+mesh = SubResource("QuadMesh_121")
+material_override = SubResource("StandardMaterial3D_19")
+
+[node name="Book48" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.169342, 0.81, 0.034058)
+
+[node name="Body" type="MeshInstance3D" parent="Book48"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105054, 0)
+mesh = SubResource("BoxMesh_122")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book48"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105054, 0.101742)
+mesh = SubResource("QuadMesh_123")
+material_override = SubResource("StandardMaterial3D_21")
+
+[node name="Book49" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.134399, 0.81, 0.041109)
+
+[node name="Body" type="MeshInstance3D" parent="Book49"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.092046, 0)
+mesh = SubResource("BoxMesh_124")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book49"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.092046, 0.094691)
+mesh = SubResource("QuadMesh_125")
+material_override = SubResource("StandardMaterial3D_21")
+
+[node name="Book50" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099216, 0.81, 0.052624)
+
+[node name="Body" type="MeshInstance3D" parent="Book50"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.105639, 0)
+mesh = SubResource("BoxMesh_126")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book50"]
+transform = Transform3D(-1, 0, 0, 0, -1, 0, 0, 0, 1, 0, 0.105639, 0.083176)
+mesh = SubResource("QuadMesh_127")
+material_override = SubResource("StandardMaterial3D_23")
+
+[node name="Book51" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.065371, 0.81, 0.043898)
+
+[node name="Body" type="MeshInstance3D" parent="Book51"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.090074, 0)
+mesh = SubResource("BoxMesh_128")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book51"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.090074, 0.091902)
+mesh = SubResource("QuadMesh_129")
+material_override = SubResource("StandardMaterial3D_17")
+
+[node name="Book52" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.026486, 0.81, 0.035719)
+
+[node name="Body" type="MeshInstance3D" parent="Book52"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.096727, 0)
+mesh = SubResource("BoxMesh_130")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book52"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.096727, 0.100081)
+mesh = SubResource("QuadMesh_131")
+material_override = SubResource("StandardMaterial3D_19")
+
+[node name="Book53" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014753, 0.81, 0.04165)
+
+[node name="Body" type="MeshInstance3D" parent="Book53"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09162, 0)
+mesh = SubResource("BoxMesh_132")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book53"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09162, 0.09415)
+mesh = SubResource("QuadMesh_133")
+material_override = SubResource("StandardMaterial3D_17")
+
+[node name="Book54" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.054898, 0.81, 0.05445)
+
+[node name="Body" type="MeshInstance3D" parent="Book54"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106338, 0)
+mesh = SubResource("BoxMesh_134")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book54"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106338, 0.08135)
+mesh = SubResource("QuadMesh_135")
+material_override = SubResource("StandardMaterial3D_10")
+
+[node name="Book55" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.092225, 0.81, 0.053322)
+
+[node name="Body" type="MeshInstance3D" parent="Book55"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.094161, 0)
+mesh = SubResource("BoxMesh_136")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book55"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.094161, 0.082478)
+mesh = SubResource("QuadMesh_137")
+material_override = SubResource("StandardMaterial3D_18")
+
+[node name="Book56" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.124142, 0.81, 0.038987)
+
+[node name="Body" type="MeshInstance3D" parent="Book56"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101642, 0)
+mesh = SubResource("BoxMesh_138")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book56"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101642, 0.096813)
+mesh = SubResource("QuadMesh_139")
+material_override = SubResource("StandardMaterial3D_21")
+
+[node name="Book57" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155704, 0.81, 0.0319)
+
+[node name="Body" type="MeshInstance3D" parent="Book57"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099676, 0)
+mesh = SubResource("BoxMesh_140")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book57"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.099676, 0.1039)
+mesh = SubResource("QuadMesh_141")
+material_override = SubResource("StandardMaterial3D_16")
+
+[node name="Book58" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.189904, 0.81, 0.045318)
+
+[node name="Body" type="MeshInstance3D" parent="Book58"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.114863, 0)
+mesh = SubResource("BoxMesh_142")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book58"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.114863, 0.090482)
+mesh = SubResource("QuadMesh_143")
+material_override = SubResource("StandardMaterial3D_24")
+
+[node name="Book59" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225102, 0.81, 0.043952)
+
+[node name="Body" type="MeshInstance3D" parent="Book59"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.097799, 0)
+mesh = SubResource("BoxMesh_144")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book59"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.097799, 0.091848)
+mesh = SubResource("QuadMesh_145")
+material_override = SubResource("StandardMaterial3D_13")
+
+[node name="Book60" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.254264, 0.81, 0.03367)
+
+[node name="Body" type="MeshInstance3D" parent="Book60"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.094412, 0)
+mesh = SubResource("BoxMesh_146")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book60"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.094412, 0.10213)
+mesh = SubResource("QuadMesh_147")
+material_override = SubResource("StandardMaterial3D_17")
+
+[node name="Book61" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27981, 0.81, 0.05553)
+
+[node name="Body" type="MeshInstance3D" parent="Book61"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115935, 0)
+mesh = SubResource("BoxMesh_148")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book61"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.115935, 0.08027)
+mesh = SubResource("QuadMesh_149")
+material_override = SubResource("StandardMaterial3D_19")
+
+[node name="Book62" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.307135, 0.81, 0.05986)
+
+[node name="Body" type="MeshInstance3D" parent="Book62"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119008, 0)
+mesh = SubResource("BoxMesh_150")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book62"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.119008, 0.07594)
+mesh = SubResource("QuadMesh_151")
+material_override = SubResource("StandardMaterial3D_19")
+
+[node name="Book63" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.344445, 0.81, 0.057998)
+
+[node name="Body" type="MeshInstance3D" parent="Book63"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103173, 0)
+mesh = SubResource("BoxMesh_152")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book63"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103173, 0.077802)
+mesh = SubResource("QuadMesh_153")
+material_override = SubResource("StandardMaterial3D_15")
+
+[node name="Book64" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.385963, 0.81, 0.053721)
+
+[node name="Body" type="MeshInstance3D" parent="Book64"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101972, 0)
+mesh = SubResource("BoxMesh_154")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book64"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.101972, 0.082079)
+mesh = SubResource("QuadMesh_155")
+material_override = SubResource("StandardMaterial3D_22")
+
+[node name="Book65" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10508, 1.16, 0.043152)
+
+[node name="Body" type="MeshInstance3D" parent="Book65"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.090369, 0)
+mesh = SubResource("BoxMesh_156")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book65"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.090369, 0.092648)
+mesh = SubResource("QuadMesh_157")
+material_override = SubResource("StandardMaterial3D_25")
+
+[node name="Book66" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.062892, 1.16, 0.040513)
+
+[node name="Body" type="MeshInstance3D" parent="Book66"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.097638, 0)
+mesh = SubResource("BoxMesh_158")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book66"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.097638, 0.095287)
+mesh = SubResource("QuadMesh_159")
+material_override = SubResource("StandardMaterial3D_16")
+
+[node name="Book67" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024611, 1.16, 0.033646)
+
+[node name="Body" type="MeshInstance3D" parent="Book67"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103922, 0)
+mesh = SubResource("BoxMesh_160")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book67"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.103922, 0.102154)
+mesh = SubResource("QuadMesh_161")
+material_override = SubResource("StandardMaterial3D_23")
+
+[node name="Book68" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.007095, 1.16, 0.05343)
+
+[node name="Body" type="MeshInstance3D" parent="Book68"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.094955, 0)
+mesh = SubResource("BoxMesh_162")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book68"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.094955, 0.08237)
+mesh = SubResource("QuadMesh_163")
+material_override = SubResource("StandardMaterial3D_16")
+
+[node name="Book69" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.043906, 1.16, 0.035323)
+
+[node name="Body" type="MeshInstance3D" parent="Book69"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.104502, 0)
+mesh = SubResource("BoxMesh_164")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book69"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.104502, 0.100477)
+mesh = SubResource("QuadMesh_165")
+material_override = SubResource("StandardMaterial3D_18")
+
+[node name="Book70" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08543, 1.16, 0.043234)
+
+[node name="Body" type="MeshInstance3D" parent="Book70"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108911, 0)
+mesh = SubResource("BoxMesh_166")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book70"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108911, 0.092566)
+mesh = SubResource("QuadMesh_167")
+material_override = SubResource("StandardMaterial3D_19")
+
+[node name="Book71" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121893, 1.16, 0.040021)
+
+[node name="Body" type="MeshInstance3D" parent="Book71"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.107765, 0)
+mesh = SubResource("BoxMesh_168")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book71"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.107765, 0.095779)
+mesh = SubResource("QuadMesh_169")
+material_override = SubResource("StandardMaterial3D_23")
+
+[node name="Book72" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.156563, 1.16, 0.042718)
+
+[node name="Body" type="MeshInstance3D" parent="Book72"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.096411, 0)
+mesh = SubResource("BoxMesh_170")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book72"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.096411, 0.093082)
+mesh = SubResource("QuadMesh_171")
+material_override = SubResource("StandardMaterial3D_22")
+
+[node name="Book73" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.189289, 1.16, 0.03656)
+
+[node name="Body" type="MeshInstance3D" parent="Book73"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106929, 0)
+mesh = SubResource("BoxMesh_172")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book73"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.106929, 0.09924)
+mesh = SubResource("QuadMesh_173")
+material_override = SubResource("StandardMaterial3D_23")
+
+[node name="Book74" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.220505, 1.16, 0.057917)
+
+[node name="Body" type="MeshInstance3D" parent="Book74"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108824, 0)
+mesh = SubResource("BoxMesh_174")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book74"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108824, 0.077883)
+mesh = SubResource("QuadMesh_175")
+material_override = SubResource("StandardMaterial3D_24")
+
+[node name="Book75" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.255598, 1.16, 0.031693)
+
+[node name="Body" type="MeshInstance3D" parent="Book75"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.090089, 0)
+mesh = SubResource("BoxMesh_176")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="Book75"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.090089, 0.104107)
+mesh = SubResource("QuadMesh_177")
+material_override = SubResource("StandardMaterial3D_11")
+
+[node name="Book76" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.297401, 1.16, 0.057442)
+
+[node name="Body" type="MeshInstance3D" parent="Book76"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109247, 0)
+mesh = SubResource("BoxMesh_178")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book76"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.109247, 0.078358)
+mesh = SubResource("QuadMesh_179")
+material_override = SubResource("StandardMaterial3D_14")
+
+[node name="Book77" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.337979, 1.16, 0.045008)
+
+[node name="Body" type="MeshInstance3D" parent="Book77"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108535, 0)
+mesh = SubResource("BoxMesh_180")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="Book77"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.108535, 0.090792)
+mesh = SubResource("QuadMesh_181")
+material_override = SubResource("StandardMaterial3D_14")
+
+[node name="Book78" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.371636, 1.16, 0.053241)
+
+[node name="Body" type="MeshInstance3D" parent="Book78"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.097831, 0)
+mesh = SubResource("BoxMesh_182")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="Book78"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.097831, 0.082559)
+mesh = SubResource("QuadMesh_183")
+material_override = SubResource("StandardMaterial3D_13")
+
+[node name="Book79" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399183, 1.16, 0.042024)
+
+[node name="Body" type="MeshInstance3D" parent="Book79"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10966, 0)
+mesh = SubResource("BoxMesh_184")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="Book79"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.10966, 0.093776)
+mesh = SubResource("QuadMesh_185")
+material_override = SubResource("StandardMaterial3D_16")
+
+[node name="BookFlat" type="Node3D" parent="."]
+transform = Transform3D(0.997564, 0, -0.069756, 0, 1, 0, 0.069756, 0, 0.997564, -0.295, 1.16, 0.045)
+
+[node name="Body" type="MeshInstance3D" parent="BookFlat"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+mesh = SubResource("BoxMesh_186")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="BookFlat"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.015, 0.0908)
+mesh = SubResource("QuadMesh_187")
+material_override = SubResource("StandardMaterial3D_13")
+
+[node name="BookFlat2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.289, 1.19, 0.045)
+
+[node name="Body" type="MeshInstance3D" parent="BookFlat2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.019, 0)
+mesh = SubResource("BoxMesh_188")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="BookFlat2"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.019, 0.0908)
+mesh = SubResource("QuadMesh_189")
+material_override = SubResource("StandardMaterial3D_18")
+
+[node name="BookFlat3" type="Node3D" parent="."]
+transform = Transform3D(0.997564, 0, 0.069756, 0, 1, 0, -0.069756, 0, 0.997564, -0.283, 1.228, 0.045)
+
+[node name="Body" type="MeshInstance3D" parent="BookFlat3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+mesh = SubResource("BoxMesh_190")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="BookFlat3"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.015, 0.0908)
+mesh = SubResource("QuadMesh_191")
+material_override = SubResource("StandardMaterial3D_23")
+
+[node name="BookFlat4" type="Node3D" parent="."]
+transform = Transform3D(0.990268, 0, 0.139173, 0, 1, 0, -0.139173, 0, 0.990268, -0.277, 1.258, 0.045)
+
+[node name="Body" type="MeshInstance3D" parent="BookFlat4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.019, 0)
+mesh = SubResource("BoxMesh_192")
+material_override = ExtResource("5_book_cover_c")
+
+[node name="Spine" type="MeshInstance3D" parent="BookFlat4"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.019, 0.0908)
+mesh = SubResource("QuadMesh_193")
+material_override = SubResource("StandardMaterial3D_12")
+
+[node name="BookFlat5" type="Node3D" parent="."]
+transform = Transform3D(0.997564, 0, -0.069756, 0, 1, 0, 0.069756, 0, 0.997564, -0.18, 1.49, 0.045)
+
+[node name="Body" type="MeshInstance3D" parent="BookFlat5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+mesh = SubResource("BoxMesh_186")
+material_override = ExtResource("4_book_cover_d")
+
+[node name="Spine" type="MeshInstance3D" parent="BookFlat5"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.015, 0.0908)
+mesh = SubResource("QuadMesh_187")
+material_override = SubResource("StandardMaterial3D_13")
+
+[node name="BookFlat6" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.174, 1.52, 0.045)
+
+[node name="Body" type="MeshInstance3D" parent="BookFlat6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.019, 0)
+mesh = SubResource("BoxMesh_188")
+material_override = ExtResource("6_book_cover_a")
+
+[node name="Spine" type="MeshInstance3D" parent="BookFlat6"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.019, 0.0908)
+mesh = SubResource("QuadMesh_189")
+material_override = SubResource("StandardMaterial3D_18")
+
+[node name="BookFlat7" type="Node3D" parent="."]
+transform = Transform3D(0.997564, 0, 0.069756, 0, 1, 0, -0.069756, 0, 0.997564, -0.168, 1.558, 0.045)
+
+[node name="Body" type="MeshInstance3D" parent="BookFlat7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+mesh = SubResource("BoxMesh_190")
+material_override = ExtResource("7_book_cover_b")
+
+[node name="Spine" type="MeshInstance3D" parent="BookFlat7"]
+transform = Transform3D(0, -1, 0, 1, 0, 0, 0, 0, 1, 0, 0.015, 0.0908)
+mesh = SubResource("QuadMesh_191")
+material_override = SubResource("StandardMaterial3D_23")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("8_interactable")
+display_name = "Bookshelf"
+observations = Array[String](["Paperbacks, a road atlas, a medical guide. One book is back on the shelf upside down.", "A gap on the second shelf, two books wide. The dust stops at the edges of it.", "The spines on the top shelf have faded where the afternoon sun reaches them."])

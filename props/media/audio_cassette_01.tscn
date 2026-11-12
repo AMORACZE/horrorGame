@@ -1,0 +1,54 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/plastic_black.tres" id="1_plastic_black"]
+[ext_resource type="Texture2D" path="res://props/textures/cassette_label_01.png" id="2_cassette_label_01"]
+[ext_resource type="Material" path="res://art/materials/plastic_grey.tres" id="3_plastic_grey"]
+[ext_resource type="Script" path="res://interaction/examinable_interactable.gd" id="4_examinable_interactable"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_1"]
+size = Vector3(0.1003, 0.0125, 0.0635)
+
+[sub_resource type="QuadMesh" id="QuadMesh_2"]
+size = Vector2(0.092, 0.052)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3"]
+albedo_color = Color(1, 1, 1, 1)
+albedo_texture = ExtResource("2_cassette_label_01")
+roughness = 0.85
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(0.06, 0.0045, 0.003)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5"]
+size = Vector3(0.1003, 0.0125, 0.0635)
+
+[node name="AudioCassette" type="RigidBody3D"]
+collision_layer = 12
+collision_mask = 9
+mass = 0.05
+metadata/prop_class = "loose"
+
+[node name="Shell" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00625, 0)
+mesh = SubResource("BoxMesh_1")
+material_override = ExtResource("1_plastic_black")
+
+[node name="Label" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, 1, 0, -1, 0, 0, 0.0131, -0.002)
+mesh = SubResource("QuadMesh_2")
+material_override = SubResource("StandardMaterial3D_3")
+
+[node name="Edge" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0045, 0.0322)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_plastic_grey")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00625, 0)
+shape = SubResource("BoxShape3D_5")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("4_examinable_interactable")
+display_name = "Cassette"
+prompt = "Pick up"
+description = "MIX, SUMMER '88 in blue ballpoint. Side A. A loop of tape is pulled loose at the bottom edge."

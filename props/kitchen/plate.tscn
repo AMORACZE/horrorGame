@@ -1,0 +1,137 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/ceramic_white.tres" id="1_ceramic_white"]
+[ext_resource type="Material" path="res://props/materials/glaze_brown.tres" id="2_glaze_brown"]
+[ext_resource type="Material" path="res://art/materials/wood_light.tres" id="3_wood_light"]
+[ext_resource type="Material" path="res://art/materials/appliance_harvest_gold.tres" id="4_appliance_harvest_gold"]
+[ext_resource type="Material" path="res://art/materials/metal_chrome.tres" id="5_metal_chrome"]
+[ext_resource type="Script" path="res://interaction/examinable_interactable.gd" id="6_examinable_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.07
+bottom_radius = 0.07
+height = 0.006
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.13
+bottom_radius = 0.085
+height = 0.014
+radial_segments = 32
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_3"]
+inner_radius = 0.112
+outer_radius = 0.121
+rings = 32
+ring_segments = 4
+
+[sub_resource type="BoxMesh" id="BoxMesh_4"]
+size = Vector3(0.004, 0.002, 0.003)
+
+[sub_resource type="BoxMesh" id="BoxMesh_5"]
+size = Vector3(0.04, 0.0008, 0.02)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6"]
+size = Vector3(0.016, 0.002, 0.11)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7"]
+size = Vector3(0.016, 0.006, 0.09)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_8"]
+height = 0.03
+radius = 0.13
+
+[node name="Plate" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+metadata/prop_class = "tabletop"
+
+[node name="Foot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.003, 0)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("1_ceramic_white")
+
+[node name="Body" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.013, 0)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("1_ceramic_white")
+
+[node name="Band" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.12, 0, 0, 0, 1, 0, 0.0202, 0)
+mesh = SubResource("TorusMesh_3")
+material_override = ExtResource("2_glaze_brown")
+
+[node name="Crumb" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.397277, 0, 0.917699, 0, 1, 0, -0.917699, 0, 0.397277, 0.00367, 0.0212, 0.047956)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_wood_light")
+
+[node name="Crumb2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.978885, 0, 0.204414, 0, 1, 0, -0.204414, 0, 0.978885, -0.042796, 0.0212, -0.032603)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_wood_light")
+
+[node name="Crumb3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.686025, 0, 0.727578, 0, 1, 0, -0.727578, 0, 0.686025, 0.068388, 0.0212, 0.005668)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_wood_light")
+
+[node name="Crumb4" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.093284, 0, 0.99564, 0, 1, 0, -0.99564, 0, 0.093284, 0.007893, 0.0212, 0.079303)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_wood_light")
+
+[node name="Crumb5" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.423129, 0, 0.90607, 0, 1, 0, -0.90607, 0, -0.423129, 0.022307, 0.0212, -0.037164)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_wood_light")
+
+[node name="Crumb6" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.915299, 0, 0.402776, 0, 1, 0, -0.402776, 0, -0.915299, 0.03185, 0.0212, 0.044151)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_wood_light")
+
+[node name="Crumb7" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.512853, 0, 0.858476, 0, 1, 0, -0.858476, 0, -0.512853, -0.061247, 0.0212, -0.00888)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_wood_light")
+
+[node name="Crumb8" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.282307, 0, 0.959324, 0, 1, 0, -0.959324, 0, -0.282307, 0.058045, 0.0212, 0.024686)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_wood_light")
+
+[node name="Crumb9" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.912084, 0, 0.410004, 0, 1, 0, -0.410004, 0, -0.912084, -0.003842, 0.0212, 0.011549)
+mesh = SubResource("BoxMesh_4")
+material_override = ExtResource("3_wood_light")
+
+[node name="Butter" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.939693, 0, 0.34202, 0, 1, 0, -0.34202, 0, 0.939693, -0.03, 0.0208, -0.02)
+mesh = SubResource("BoxMesh_5")
+material_override = ExtResource("4_appliance_harvest_gold")
+
+[node name="Knife" type="Node3D" parent="."]
+transform = Transform3D(0.882948, 0, 0.469472, 0, 1, 0, -0.469472, 0, 0.882948, 0, 0.0225, 0)
+
+[node name="Blade" type="MeshInstance3D" parent="Knife"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.04)
+mesh = SubResource("BoxMesh_6")
+material_override = ExtResource("5_metal_chrome")
+
+[node name="Handle" type="MeshInstance3D" parent="Knife"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.001, 0.06)
+mesh = SubResource("BoxMesh_7")
+material_override = ExtResource("5_metal_chrome")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015, 0)
+shape = SubResource("CylinderShape3D_8")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("6_examinable_interactable")
+display_name = "Plate"
+prompt = "Pick up"
+description = "Toast crumbs and a smear of butter. The knife is laid across it, handle toward the chair."

@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://props/architecture/curtain_panels.gd" id="1_curtain_panels"]
+[ext_resource type="Material" path="res://art/materials/fabric_curtain_heavy.tres" id="2_fabric_curtain_heavy"]
+[ext_resource type="Material" path="res://art/materials/metal_brass.tres" id="3_metal_brass"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="4_interactable"]
+
+[node name="HeavyDrapes" type="StaticBody3D"]
+script = ExtResource("1_curtain_panels")
+collision_layer = 4
+collision_mask = 0
+width = 1.8
+height = 1.9
+rod_offset = 0.14
+open_amount = 0.7
+fullness = 2
+pleat_width = 0.13
+pinch_pleat_header = true
+metadata/prop_class = "wall"
+fabric_material = ExtResource("2_fabric_curtain_heavy")
+rod_material = ExtResource("3_metal_brass")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("4_interactable")
+display_name = "Drapes"
+observations = Array[String](["Heavy rust drapes, pinch-pleated, pulled back to the sides.", "The fabric facing the window has faded three shades lighter than the side facing the room."])

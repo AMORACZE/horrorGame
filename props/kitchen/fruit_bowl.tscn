@@ -1,0 +1,279 @@
+[gd_scene format=3]
+
+[ext_resource type="Material" path="res://art/materials/wood_light.tres" id="1_wood_light"]
+[ext_resource type="Material" path="res://art/materials/wood_medium.tres" id="2_wood_medium"]
+[ext_resource type="Material" path="res://props/materials/fruit_red.tres" id="3_fruit_red"]
+[ext_resource type="Material" path="res://props/materials/banana_brown.tres" id="4_banana_brown"]
+[ext_resource type="Material" path="res://art/materials/wood_dark.tres" id="5_wood_dark"]
+[ext_resource type="Material" path="res://props/materials/fruit_orange.tres" id="6_fruit_orange"]
+[ext_resource type="Script" path="res://interaction/interactable.gd" id="7_interactable"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_1"]
+top_radius = 0.06
+bottom_radius = 0.06
+height = 0.012
+radial_segments = 24
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2"]
+top_radius = 0.15
+bottom_radius = 0.075
+height = 0.075
+radial_segments = 28
+rings = 1
+
+[sub_resource type="TorusMesh" id="TorusMesh_3"]
+inner_radius = 0.142
+outer_radius = 0.156
+rings = 28
+ring_segments = 6
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_4"]
+top_radius = 0.142
+bottom_radius = 0.142
+height = 0.002
+radial_segments = 28
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_5"]
+radius = 0.038
+height = 0.076
+radial_segments = 16
+rings = 8
+
+[sub_resource type="SphereMesh" id="SphereMesh_6"]
+radius = 0.037
+height = 0.074
+radial_segments = 16
+rings = 8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_7"]
+top_radius = 0.017
+bottom_radius = 0.017
+height = 0.004
+radial_segments = 12
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_8"]
+top_radius = 0.002
+bottom_radius = 0.002
+height = 0.016553
+radial_segments = 5
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_9"]
+radius = 0.041
+height = 0.082
+radial_segments = 16
+rings = 8
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_10"]
+top_radius = 0.017
+bottom_radius = 0.017
+height = 0.05831
+radial_segments = 8
+rings = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_11"]
+radius = 0.017
+height = 0.034
+radial_segments = 8
+rings = 4
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_12"]
+top_radius = 0.017
+bottom_radius = 0.017
+height = 0.070456
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_13"]
+top_radius = 0.017
+bottom_radius = 0.017
+height = 0.072801
+radial_segments = 8
+rings = 1
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_14"]
+top_radius = 0.006
+bottom_radius = 0.006
+height = 0.021213
+radial_segments = 5
+rings = 1
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_15"]
+height = 0.18
+radius = 0.16
+
+[node name="FruitBowl" type="StaticBody3D"]
+collision_layer = 4
+collision_mask = 0
+metadata/prop_class = "tabletop"
+
+[node name="Foot" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.006, 0)
+mesh = SubResource("CylinderMesh_1")
+material_override = ExtResource("1_wood_light")
+
+[node name="Bowl" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0495, 0)
+mesh = SubResource("CylinderMesh_2")
+material_override = ExtResource("1_wood_light")
+
+[node name="Rim" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.087, 0)
+mesh = SubResource("TorusMesh_3")
+material_override = ExtResource("1_wood_light")
+
+[node name="Inside" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.082, 0)
+mesh = SubResource("CylinderMesh_4")
+material_override = ExtResource("2_wood_medium")
+
+[node name="Apple" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.92, 0, 0, 0, 1, -0.05, 0.11, 0.03)
+mesh = SubResource("SphereMesh_5")
+material_override = ExtResource("3_fruit_red")
+
+[node name="Apple2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.9, 0, 0, 0, 1, 0.035, 0.105, 0.05)
+mesh = SubResource("SphereMesh_6")
+material_override = ExtResource("3_fruit_red")
+
+[node name="Bite" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0.035, 0.105, 0.087)
+mesh = SubResource("CylinderMesh_7")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Stem" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.983298, 0.181237, -0.016702, -0.181237, 0.966595, -0.181237, -0.016702, 0.181237, 0.983298, -0.0485, 0.15, 0.0315)
+mesh = SubResource("CylinderMesh_8")
+material_override = ExtResource("5_wood_dark")
+
+[node name="Orange" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.11, -0.05)
+mesh = SubResource("SphereMesh_9")
+material_override = ExtResource("6_fruit_orange")
+
+[node name="Banana" type="Node3D" parent="."]
+transform = Transform3D(0.863916, -0.060411, 0.5, 0.069756, 0.997564, 0, -0.498782, 0.034878, 0.866025, -0.02, 0.135, -0.03)
+
+[node name="Seg" type="MeshInstance3D" parent="Banana"]
+transform = Transform3D(-0.514496, 0.857493, 0, -0.857493, -0.514496, 0, 0, 0, 1, -0.075, 0.015, 0)
+mesh = SubResource("CylinderMesh_10")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Joint" type="MeshInstance3D" parent="Banana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0)
+mesh = SubResource("SphereMesh_11")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Seg2" type="MeshInstance3D" parent="Banana"]
+transform = Transform3D(-0.113547, 0.993533, 0, -0.993533, -0.113547, 0, 0, 0, 1, -0.015, -0.004, 0)
+mesh = SubResource("CylinderMesh_12")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Joint2" type="MeshInstance3D" parent="Banana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.008, 0)
+mesh = SubResource("SphereMesh_11")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Seg3" type="MeshInstance3D" parent="Banana"]
+transform = Transform3D(0.274721, 0.961524, 0, -0.961524, 0.274721, 0, 0, 0, 1, 0.055, 0.002, 0)
+mesh = SubResource("CylinderMesh_13")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Joint3" type="MeshInstance3D" parent="Banana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0.012, 0)
+mesh = SubResource("SphereMesh_11")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Tip" type="MeshInstance3D" parent="Banana"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.1075, 0.0375, 0)
+mesh = SubResource("CylinderMesh_14")
+material_override = ExtResource("5_wood_dark")
+
+[node name="Banana2" type="Node3D" parent="."]
+transform = Transform3D(0.786091, -0.054969, 0.615661, 0.069756, 0.997564, 0, -0.614162, 0.042946, 0.788011, -0.02, 0.147, -0.018)
+
+[node name="Seg" type="MeshInstance3D" parent="Banana2"]
+transform = Transform3D(-0.514496, 0.857493, 0, -0.857493, -0.514496, 0, 0, 0, 1, -0.075, 0.015, 0)
+mesh = SubResource("CylinderMesh_10")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Joint" type="MeshInstance3D" parent="Banana2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0)
+mesh = SubResource("SphereMesh_11")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Seg2" type="MeshInstance3D" parent="Banana2"]
+transform = Transform3D(-0.113547, 0.993533, 0, -0.993533, -0.113547, 0, 0, 0, 1, -0.015, -0.004, 0)
+mesh = SubResource("CylinderMesh_12")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Joint2" type="MeshInstance3D" parent="Banana2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.008, 0)
+mesh = SubResource("SphereMesh_11")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Seg3" type="MeshInstance3D" parent="Banana2"]
+transform = Transform3D(0.274721, 0.961524, 0, -0.961524, 0.274721, 0, 0, 0, 1, 0.055, 0.002, 0)
+mesh = SubResource("CylinderMesh_13")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Joint3" type="MeshInstance3D" parent="Banana2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0.012, 0)
+mesh = SubResource("SphereMesh_11")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Tip" type="MeshInstance3D" parent="Banana2"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.1075, 0.0375, 0)
+mesh = SubResource("CylinderMesh_14")
+material_override = ExtResource("5_wood_dark")
+
+[node name="Banana3" type="Node3D" parent="."]
+transform = Transform3D(0.692966, -0.048457, 0.71934, 0.069756, 0.997564, 0, -0.717588, 0.050179, 0.694658, -0.02, 0.159, -0.006)
+
+[node name="Seg" type="MeshInstance3D" parent="Banana3"]
+transform = Transform3D(-0.514496, 0.857493, 0, -0.857493, -0.514496, 0, 0, 0, 1, -0.075, 0.015, 0)
+mesh = SubResource("CylinderMesh_10")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Joint" type="MeshInstance3D" parent="Banana3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05, 0, 0)
+mesh = SubResource("SphereMesh_11")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Seg2" type="MeshInstance3D" parent="Banana3"]
+transform = Transform3D(-0.113547, 0.993533, 0, -0.993533, -0.113547, 0, 0, 0, 1, -0.015, -0.004, 0)
+mesh = SubResource("CylinderMesh_12")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Joint2" type="MeshInstance3D" parent="Banana3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.02, -0.008, 0)
+mesh = SubResource("SphereMesh_11")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Seg3" type="MeshInstance3D" parent="Banana3"]
+transform = Transform3D(0.274721, 0.961524, 0, -0.961524, 0.274721, 0, 0, 0, 1, 0.055, 0.002, 0)
+mesh = SubResource("CylinderMesh_13")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Joint3" type="MeshInstance3D" parent="Banana3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09, 0.012, 0)
+mesh = SubResource("SphereMesh_11")
+material_override = ExtResource("4_banana_brown")
+
+[node name="Tip" type="MeshInstance3D" parent="Banana3"]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -0.1075, 0.0375, 0)
+mesh = SubResource("CylinderMesh_14")
+material_override = ExtResource("5_wood_dark")
+
+[node name="Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.09, 0)
+shape = SubResource("CylinderShape3D_15")
+
+[node name="Interactable" type="Node" parent="."]
+script = ExtResource("7_interactable")
+display_name = "Fruit bowl"
+observations = Array[String](["The bananas have gone brown all over.", "One apple has a single bite out of it. The bite has turned brown.", "Fruit flies lift off when I lean close, and settle again."])
